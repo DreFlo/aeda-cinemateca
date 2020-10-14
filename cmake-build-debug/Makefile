@@ -142,6 +142,114 @@ projeto/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\projeto.dir\build.make CMakeFiles/projeto.dir/build
 .PHONY : projeto/fast
 
+Aderente.obj: Aderente.cpp.obj
+
+.PHONY : Aderente.obj
+
+# target to build an object file
+Aderente.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\projeto.dir\build.make CMakeFiles/projeto.dir/Aderente.cpp.obj
+.PHONY : Aderente.cpp.obj
+
+Aderente.i: Aderente.cpp.i
+
+.PHONY : Aderente.i
+
+# target to preprocess a source file
+Aderente.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\projeto.dir\build.make CMakeFiles/projeto.dir/Aderente.cpp.i
+.PHONY : Aderente.cpp.i
+
+Aderente.s: Aderente.cpp.s
+
+.PHONY : Aderente.s
+
+# target to generate assembly for a file
+Aderente.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\projeto.dir\build.make CMakeFiles/projeto.dir/Aderente.cpp.s
+.PHONY : Aderente.cpp.s
+
+Cinemateca.obj: Cinemateca.cpp.obj
+
+.PHONY : Cinemateca.obj
+
+# target to build an object file
+Cinemateca.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\projeto.dir\build.make CMakeFiles/projeto.dir/Cinemateca.cpp.obj
+.PHONY : Cinemateca.cpp.obj
+
+Cinemateca.i: Cinemateca.cpp.i
+
+.PHONY : Cinemateca.i
+
+# target to preprocess a source file
+Cinemateca.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\projeto.dir\build.make CMakeFiles/projeto.dir/Cinemateca.cpp.i
+.PHONY : Cinemateca.cpp.i
+
+Cinemateca.s: Cinemateca.cpp.s
+
+.PHONY : Cinemateca.s
+
+# target to generate assembly for a file
+Cinemateca.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\projeto.dir\build.make CMakeFiles/projeto.dir/Cinemateca.cpp.s
+.PHONY : Cinemateca.cpp.s
+
+Data.obj: Data.cpp.obj
+
+.PHONY : Data.obj
+
+# target to build an object file
+Data.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\projeto.dir\build.make CMakeFiles/projeto.dir/Data.cpp.obj
+.PHONY : Data.cpp.obj
+
+Data.i: Data.cpp.i
+
+.PHONY : Data.i
+
+# target to preprocess a source file
+Data.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\projeto.dir\build.make CMakeFiles/projeto.dir/Data.cpp.i
+.PHONY : Data.cpp.i
+
+Data.s: Data.cpp.s
+
+.PHONY : Data.s
+
+# target to generate assembly for a file
+Data.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\projeto.dir\build.make CMakeFiles/projeto.dir/Data.cpp.s
+.PHONY : Data.cpp.s
+
+Evento.obj: Evento.cpp.obj
+
+.PHONY : Evento.obj
+
+# target to build an object file
+Evento.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\projeto.dir\build.make CMakeFiles/projeto.dir/Evento.cpp.obj
+.PHONY : Evento.cpp.obj
+
+Evento.i: Evento.cpp.i
+
+.PHONY : Evento.i
+
+# target to preprocess a source file
+Evento.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\projeto.dir\build.make CMakeFiles/projeto.dir/Evento.cpp.i
+.PHONY : Evento.cpp.i
+
+Evento.s: Evento.cpp.s
+
+.PHONY : Evento.s
+
+# target to generate assembly for a file
+Evento.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\projeto.dir\build.make CMakeFiles/projeto.dir/Evento.cpp.s
+.PHONY : Evento.cpp.s
+
 main.obj: main.cpp.obj
 
 .PHONY : main.obj
@@ -178,6 +286,18 @@ help:
 	@echo ... edit_cache
 	@echo ... rebuild_cache
 	@echo ... projeto
+	@echo ... Aderente.obj
+	@echo ... Aderente.i
+	@echo ... Aderente.s
+	@echo ... Cinemateca.obj
+	@echo ... Cinemateca.i
+	@echo ... Cinemateca.s
+	@echo ... Data.obj
+	@echo ... Data.i
+	@echo ... Data.s
+	@echo ... Evento.obj
+	@echo ... Evento.i
+	@echo ... Evento.s
 	@echo ... main.obj
 	@echo ... main.i
 	@echo ... main.s

@@ -3,4 +3,4 @@ project(projeto)
 
 set(CMAKE_CXX_STANDARD 14)
 
-add_executable(projeto main.cpp)
+add_executable(projeto main.cpp Cinemateca.cpp Cinemateca.h Evento.cpp Evento.h Aderente.cpp Aderente.h Data.cpp Data.h)

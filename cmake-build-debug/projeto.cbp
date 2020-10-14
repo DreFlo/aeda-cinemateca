@@ -80,6 +80,30 @@
 				</MakeCommands>
 			</Target>
 		</Build>
+		<Unit filename="C:/Users/andre/OneDrive - Universidade do Porto/FEUP/2A-1S-AEDA/projeto/Aderente.cpp">
+			<Option target="projeto"/>
+		</Unit>
+		<Unit filename="C:/Users/andre/OneDrive - Universidade do Porto/FEUP/2A-1S-AEDA/projeto/Aderente.h">
+			<Option target="projeto"/>
+		</Unit>
+		<Unit filename="C:/Users/andre/OneDrive - Universidade do Porto/FEUP/2A-1S-AEDA/projeto/Cinemateca.cpp">
+			<Option target="projeto"/>
+		</Unit>
+		<Unit filename="C:/Users/andre/OneDrive - Universidade do Porto/FEUP/2A-1S-AEDA/projeto/Cinemateca.h">
+			<Option target="projeto"/>
+		</Unit>
+		<Unit filename="C:/Users/andre/OneDrive - Universidade do Porto/FEUP/2A-1S-AEDA/projeto/Data.cpp">
+			<Option target="projeto"/>
+		</Unit>
+		<Unit filename="C:/Users/andre/OneDrive - Universidade do Porto/FEUP/2A-1S-AEDA/projeto/Data.h">
+			<Option target="projeto"/>
+		</Unit>
+		<Unit filename="C:/Users/andre/OneDrive - Universidade do Porto/FEUP/2A-1S-AEDA/projeto/Evento.cpp">
+			<Option target="projeto"/>
+		</Unit>
+		<Unit filename="C:/Users/andre/OneDrive - Universidade do Porto/FEUP/2A-1S-AEDA/projeto/Evento.h">
+			<Option target="projeto"/>
+		</Unit>
 		<Unit filename="C:/Users/andre/OneDrive - Universidade do Porto/FEUP/2A-1S-AEDA/projeto/main.cpp">
 			<Option target="projeto"/>
 		</Unit>
