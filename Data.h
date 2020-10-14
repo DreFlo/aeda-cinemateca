@@ -11,9 +11,12 @@ using namespace std;
 
 class Data {
 private:
-    unsigned int day, month, year;
+    const unsigned int day, month, year;
 public:
     Data(int dd, int mm, int yy);
+    unsigned int getDay() const;
+    unsigned int getMonth() const;
+    unsigned int getYear() const;
 };
 
 
