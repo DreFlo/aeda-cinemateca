@@ -17,3 +17,29 @@ unsigned int Data::getMonth() const {
 unsigned int Data::getYear() const {
     return year;
 }
+
+bool Data::operator<(Data date) const{
+    if (this->year < date.getYear())
+        return true;
+    else if (this->year == date.getYear()) {
+        if (this->month < date.getMonth())
+            return true;
+        else if (this->month == date.getMonth()) {
+            return this->day < date.getDay();
+        }
+    }
+    return false;
+}
+
+bool Data::operator>(Data date) const {
+    if (this->year > date.getYear())
+        return true;
+    else if (this->year == date.getYear()) {
+        if (this->month > date.getMonth())
+            return true;
+        else if (this->month == date.getMonth()) {
+            return this->day > date.getDay();
+        }
+    }
+    return false;
+}

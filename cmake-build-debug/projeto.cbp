@@ -98,10 +98,22 @@
 		<Unit filename="C:/Users/andre/OneDrive - Universidade do Porto/FEUP/2A-1S-AEDA/projeto/Data.h">
 			<Option target="projeto"/>
 		</Unit>
+		<Unit filename="C:/Users/andre/OneDrive - Universidade do Porto/FEUP/2A-1S-AEDA/projeto/DataEHora.cpp">
+			<Option target="projeto"/>
+		</Unit>
+		<Unit filename="C:/Users/andre/OneDrive - Universidade do Porto/FEUP/2A-1S-AEDA/projeto/DataEHora.h">
+			<Option target="projeto"/>
+		</Unit>
 		<Unit filename="C:/Users/andre/OneDrive - Universidade do Porto/FEUP/2A-1S-AEDA/projeto/Evento.cpp">
 			<Option target="projeto"/>
 		</Unit>
 		<Unit filename="C:/Users/andre/OneDrive - Universidade do Porto/FEUP/2A-1S-AEDA/projeto/Evento.h">
+			<Option target="projeto"/>
+		</Unit>
+		<Unit filename="C:/Users/andre/OneDrive - Universidade do Porto/FEUP/2A-1S-AEDA/projeto/Hora.cpp">
+			<Option target="projeto"/>
+		</Unit>
+		<Unit filename="C:/Users/andre/OneDrive - Universidade do Porto/FEUP/2A-1S-AEDA/projeto/Hora.h">
 			<Option target="projeto"/>
 		</Unit>
 		<Unit filename="C:/Users/andre/OneDrive - Universidade do Porto/FEUP/2A-1S-AEDA/projeto/main.cpp">

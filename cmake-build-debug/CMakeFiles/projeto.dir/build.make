@@ -141,13 +141,41 @@ CMakeFiles/projeto.dir/Data.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/projeto.dir/Data.cpp.s"
 	C:\PROGRA~1\MINGW-~1\X86_64~1.0-P\mingw64\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "C:\Users\andre\OneDrive - Universidade do Porto\FEUP\2A-1S-AEDA\projeto\Data.cpp" -o CMakeFiles\projeto.dir\Data.cpp.s
 
+CMakeFiles/projeto.dir/Hora.cpp.obj: CMakeFiles/projeto.dir/flags.make
+CMakeFiles/projeto.dir/Hora.cpp.obj: ../Hora.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="C:\Users\andre\OneDrive - Universidade do Porto\FEUP\2A-1S-AEDA\projeto\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/projeto.dir/Hora.cpp.obj"
+	C:\PROGRA~1\MINGW-~1\X86_64~1.0-P\mingw64\bin\G__~1.EXE  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\projeto.dir\Hora.cpp.obj -c "C:\Users\andre\OneDrive - Universidade do Porto\FEUP\2A-1S-AEDA\projeto\Hora.cpp"
+
+CMakeFiles/projeto.dir/Hora.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/projeto.dir/Hora.cpp.i"
+	C:\PROGRA~1\MINGW-~1\X86_64~1.0-P\mingw64\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "C:\Users\andre\OneDrive - Universidade do Porto\FEUP\2A-1S-AEDA\projeto\Hora.cpp" > CMakeFiles\projeto.dir\Hora.cpp.i
+
+CMakeFiles/projeto.dir/Hora.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/projeto.dir/Hora.cpp.s"
+	C:\PROGRA~1\MINGW-~1\X86_64~1.0-P\mingw64\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "C:\Users\andre\OneDrive - Universidade do Porto\FEUP\2A-1S-AEDA\projeto\Hora.cpp" -o CMakeFiles\projeto.dir\Hora.cpp.s
+
+CMakeFiles/projeto.dir/DataEHora.cpp.obj: CMakeFiles/projeto.dir/flags.make
+CMakeFiles/projeto.dir/DataEHora.cpp.obj: ../DataEHora.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="C:\Users\andre\OneDrive - Universidade do Porto\FEUP\2A-1S-AEDA\projeto\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/projeto.dir/DataEHora.cpp.obj"
+	C:\PROGRA~1\MINGW-~1\X86_64~1.0-P\mingw64\bin\G__~1.EXE  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\projeto.dir\DataEHora.cpp.obj -c "C:\Users\andre\OneDrive - Universidade do Porto\FEUP\2A-1S-AEDA\projeto\DataEHora.cpp"
+
+CMakeFiles/projeto.dir/DataEHora.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/projeto.dir/DataEHora.cpp.i"
+	C:\PROGRA~1\MINGW-~1\X86_64~1.0-P\mingw64\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "C:\Users\andre\OneDrive - Universidade do Porto\FEUP\2A-1S-AEDA\projeto\DataEHora.cpp" > CMakeFiles\projeto.dir\DataEHora.cpp.i
+
+CMakeFiles/projeto.dir/DataEHora.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/projeto.dir/DataEHora.cpp.s"
+	C:\PROGRA~1\MINGW-~1\X86_64~1.0-P\mingw64\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "C:\Users\andre\OneDrive - Universidade do Porto\FEUP\2A-1S-AEDA\projeto\DataEHora.cpp" -o CMakeFiles\projeto.dir\DataEHora.cpp.s
+
 # Object files for target projeto
 projeto_OBJECTS = \
 "CMakeFiles/projeto.dir/main.cpp.obj" \
 "CMakeFiles/projeto.dir/Cinemateca.cpp.obj" \
 "CMakeFiles/projeto.dir/Evento.cpp.obj" \
 "CMakeFiles/projeto.dir/Aderente.cpp.obj" \
-"CMakeFiles/projeto.dir/Data.cpp.obj"
+"CMakeFiles/projeto.dir/Data.cpp.obj" \
+"CMakeFiles/projeto.dir/Hora.cpp.obj" \
+"CMakeFiles/projeto.dir/DataEHora.cpp.obj"
 
 # External object files for target projeto
 projeto_EXTERNAL_OBJECTS =
@@ -157,11 +185,13 @@ projeto.exe: CMakeFiles/projeto.dir/Cinemateca.cpp.obj
 projeto.exe: CMakeFiles/projeto.dir/Evento.cpp.obj
 projeto.exe: CMakeFiles/projeto.dir/Aderente.cpp.obj
 projeto.exe: CMakeFiles/projeto.dir/Data.cpp.obj
+projeto.exe: CMakeFiles/projeto.dir/Hora.cpp.obj
+projeto.exe: CMakeFiles/projeto.dir/DataEHora.cpp.obj
 projeto.exe: CMakeFiles/projeto.dir/build.make
 projeto.exe: CMakeFiles/projeto.dir/linklibs.rsp
 projeto.exe: CMakeFiles/projeto.dir/objects1.rsp
 projeto.exe: CMakeFiles/projeto.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir="C:\Users\andre\OneDrive - Universidade do Porto\FEUP\2A-1S-AEDA\projeto\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_6) "Linking CXX executable projeto.exe"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir="C:\Users\andre\OneDrive - Universidade do Porto\FEUP\2A-1S-AEDA\projeto\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_8) "Linking CXX executable projeto.exe"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles\projeto.dir\link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

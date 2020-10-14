@@ -223,6 +223,33 @@ Data.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\projeto.dir\build.make CMakeFiles/projeto.dir/Data.cpp.s
 .PHONY : Data.cpp.s
 
+DataEHora.obj: DataEHora.cpp.obj
+
+.PHONY : DataEHora.obj
+
+# target to build an object file
+DataEHora.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\projeto.dir\build.make CMakeFiles/projeto.dir/DataEHora.cpp.obj
+.PHONY : DataEHora.cpp.obj
+
+DataEHora.i: DataEHora.cpp.i
+
+.PHONY : DataEHora.i
+
+# target to preprocess a source file
+DataEHora.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\projeto.dir\build.make CMakeFiles/projeto.dir/DataEHora.cpp.i
+.PHONY : DataEHora.cpp.i
+
+DataEHora.s: DataEHora.cpp.s
+
+.PHONY : DataEHora.s
+
+# target to generate assembly for a file
+DataEHora.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\projeto.dir\build.make CMakeFiles/projeto.dir/DataEHora.cpp.s
+.PHONY : DataEHora.cpp.s
+
 Evento.obj: Evento.cpp.obj
 
 .PHONY : Evento.obj
@@ -249,6 +276,33 @@ Evento.s: Evento.cpp.s
 Evento.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\projeto.dir\build.make CMakeFiles/projeto.dir/Evento.cpp.s
 .PHONY : Evento.cpp.s
+
+Hora.obj: Hora.cpp.obj
+
+.PHONY : Hora.obj
+
+# target to build an object file
+Hora.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\projeto.dir\build.make CMakeFiles/projeto.dir/Hora.cpp.obj
+.PHONY : Hora.cpp.obj
+
+Hora.i: Hora.cpp.i
+
+.PHONY : Hora.i
+
+# target to preprocess a source file
+Hora.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\projeto.dir\build.make CMakeFiles/projeto.dir/Hora.cpp.i
+.PHONY : Hora.cpp.i
+
+Hora.s: Hora.cpp.s
+
+.PHONY : Hora.s
+
+# target to generate assembly for a file
+Hora.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\projeto.dir\build.make CMakeFiles/projeto.dir/Hora.cpp.s
+.PHONY : Hora.cpp.s
 
 main.obj: main.cpp.obj
 
@@ -295,9 +349,15 @@ help:
 	@echo ... Data.obj
 	@echo ... Data.i
 	@echo ... Data.s
+	@echo ... DataEHora.obj
+	@echo ... DataEHora.i
+	@echo ... DataEHora.s
 	@echo ... Evento.obj
 	@echo ... Evento.i
 	@echo ... Evento.s
+	@echo ... Hora.obj
+	@echo ... Hora.i
+	@echo ... Hora.s
 	@echo ... main.obj
 	@echo ... main.i
 	@echo ... main.s
