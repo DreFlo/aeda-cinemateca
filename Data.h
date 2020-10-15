@@ -6,20 +6,36 @@
 #define PROJETO_DATA_H
 
 #include <iostream>
+#include <algorithm>
 
 using namespace std;
 
 class Data {
 private:
-    const unsigned int day, month, year;
+    unsigned int day, month, year;
 public:
+    /**
+     * Default constructor.
+     */
+    Data() = default;
     /**
      * Class constructor. Initializes day, month and year.
      * @param dd - Day of the date.
      * @param mm - Month of the date.
      * @param yy - Year of the date.
      */
-    Data(int dd, int mm, int yy);
+    Data(unsigned int dd, unsigned int mm, unsigned int yy);
+    /**
+     * Initializes day, month and year.
+     * @param dd - Day of the date.
+     * @param mm - Month of the date.
+     * @param yy - Year of the date.
+     */
+    void init(unsigned int dd, unsigned int mm, unsigned int yy);
+    /**
+     * @return Returns the date.
+     */
+    Data getDate() const;
     /**
      * @return The day stored in the date.
      */
@@ -33,17 +49,30 @@ public:
      */
     unsigned int getYear() const;
     /**
-     * @brief A date is lesser than another if it comes before.
+     * A date is lesser than another if it comes before.
      * @param date - The date to be compared to.
      * @return True if it comes before. False otherwise.
      */
     bool operator<(Data date) const;
     /**
-     * @brief A date is greater than another if it comes after.
+     * A date is greater than another if it comes after.
      * @param date - The date to be compared to.
      * @return True if it comes after. False otherwise.
      */
     bool operator>(Data date) const;
+    /**
+     * Checks if two dates are equal.
+     * @return True if they are. False otherwise.
+     */
+    bool operator==(Data date) const;
+    /**
+     * Checks if the parameters form a valid date in the gregorian calendar.
+     * @param dd - day
+     * @param mm - month
+     * @param yy - year
+     * @return True if date is valid. False otherwise.
+     */
+    bool checkDateValidity(unsigned int dd, unsigned int mm, unsigned int yy);
 };
 
 

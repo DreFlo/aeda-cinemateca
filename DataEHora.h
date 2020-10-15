@@ -10,10 +10,7 @@
 
 using namespace std;
 
-class DataEHora {
-private:
-    const Data date;
-    const Hora time;
+class DataEHora: public Data, Hora{
 public:
     /**
      * Constructor. Initializes day, month, year, hour, minute.
@@ -30,7 +27,16 @@ public:
      * @return End date and time of an event.
      */
     DataEHora operator+(Hora time) const;
-
+    /**
+    * Checks if a date and time is lesser than another. It is lesser if it comes before.
+    * @return True if it is. False otherwise.
+    */
+    bool operator<(DataEHora dateTime) const;
+    /**
+    * Checks if a date and time is greater than another. It is greater if it comes after.
+    * @return True if it is. False otherwise.
+    */
+    bool operator>(DataEHora dateTime) const;
 };
 
 

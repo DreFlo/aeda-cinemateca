@@ -5,6 +5,7 @@ file(REMOVE_RECURSE
   "CMakeFiles/projeto.dir/DataEHora.cpp.obj"
   "CMakeFiles/projeto.dir/Evento.cpp.obj"
   "CMakeFiles/projeto.dir/Hora.cpp.obj"
+  "CMakeFiles/projeto.dir/IntervaloDeTempo.cpp.obj"
   "CMakeFiles/projeto.dir/main.cpp.obj"
   "libprojeto.dll.a"
   "projeto.exe"

@@ -116,6 +116,12 @@
 		<Unit filename="C:/Users/andre/OneDrive - Universidade do Porto/FEUP/2A-1S-AEDA/projeto/Hora.h">
 			<Option target="projeto"/>
 		</Unit>
+		<Unit filename="C:/Users/andre/OneDrive - Universidade do Porto/FEUP/2A-1S-AEDA/projeto/IntervaloDeTempo.cpp">
+			<Option target="projeto"/>
+		</Unit>
+		<Unit filename="C:/Users/andre/OneDrive - Universidade do Porto/FEUP/2A-1S-AEDA/projeto/IntervaloDeTempo.h">
+			<Option target="projeto"/>
+		</Unit>
 		<Unit filename="C:/Users/andre/OneDrive - Universidade do Porto/FEUP/2A-1S-AEDA/projeto/main.cpp">
 			<Option target="projeto"/>
 		</Unit>
