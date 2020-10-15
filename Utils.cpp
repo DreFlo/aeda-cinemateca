@@ -21,7 +21,7 @@ bool checkDateValidity(unsigned int dd, unsigned int mm, unsigned int yy) {
     return false;
 }
 
-bool checkDateAndTimeValidity(unsigned int dd, unsigned int mm, unsigned int yy, unsigned int hh, unsigned int mim); {
+bool checkDateAndTimeValidity(unsigned int dd, unsigned int mm, unsigned int yy, unsigned int hh, unsigned int min) {
     return checkDateValidity(dd, mm, yy) && checkTimeValidity(hh, min);
 }
 
