@@ -11,8 +11,24 @@ using namespace std;
 
 class IntervaloDeTempo {
 private:
-    const DataEHora start, end;
+    DataEHora start, end;
 public:
+    /**
+     * Default constructor.
+     */
+    IntervaloDeTempo() = default;
+    /**
+     * Class constructor. Initializes beginning and end of interval.
+     * @param st - Beginning of the interval.
+     * @param ed - End of the interval.
+     */
+    IntervaloDeTempo(DataEHora st, DataEHora ed);
+    /**
+     * Initializes beginning and end of interval.
+     * @param st - Beginning of the interval.
+     * @param ed - End of the interval.
+     */
+    void init(DataEHora st, DataEHora ed);
     /**
      * @return Returns the beginning of the interval.
      */

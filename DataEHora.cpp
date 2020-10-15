@@ -6,6 +6,11 @@
 
 DataEHora::DataEHora(int dd, int mm, int yy, int hh, int min):Data(dd, mm, yy), Hora(hh, min) {}
 
+void DataEHora::initDateAndTime(int dd, int mm, int yy, int hh, int min) {
+    this->initTime(hh, min);
+    this->initDate(dd, mm, yy);
+}
+
 bool DataEHora::operator<(DataEHora dateTime) const {
     if (this->getDate() < dateTime.getDate())
         return true;

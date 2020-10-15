@@ -28,7 +28,7 @@ public:
      * @param hh - Hour of the time.
      * @param mm - Minute of the time.
      */
-    void init(unsigned int hh, unsigned int mm);
+    void initTime(unsigned int hh, unsigned int mm);
     /**
      * @return Returns the time
      */
@@ -53,13 +53,6 @@ public:
      * @return True if greater. False otherwise.
      */
     bool operator>(Hora time) const;
-    /**
-     * Checks if the function parameters for a valid time of day.
-     * @param hh - Hour of the day. Must be between 0 and 23.
-     * @param mm - Minute of the hour. Must be between 0 and 59.
-     * @return True if parameters are valid. False otherwise.
-     */
-    bool checkTimeValidity(unsigned int hh, unsigned int mm);
 };
 
 

@@ -12,15 +12,25 @@ using namespace std;
 
 class DataEHora: public Data, Hora{
 public:
+    DataEHora() = default;
     /**
      * Constructor. Initializes day, month, year, hour, minute.
-     * @param dd
-     * @param mm
-     * @param yy
-     * @param hh
-     * @param min
+     * @param dd - Day
+     * @param mm - Month
+     * @param yy - Year
+     * @param hh - Hour
+     * @param min - Minute
      */
     DataEHora(int dd, int mm, int yy, int hh, int min);
+    /**
+     * Initializes day, month, year, hour, minute.
+     * @param dd - Day
+     * @param mm - Month
+     * @param yy - Year
+     * @param hh - Hour
+     * @param min - Minute
+     */
+    void initDateAndTime(int dd, int mm, int yy, int hh, int min);
     /**
      * Adds an Hora object to a DataEHora object.
      * @param time - Duration to add to the date and time.

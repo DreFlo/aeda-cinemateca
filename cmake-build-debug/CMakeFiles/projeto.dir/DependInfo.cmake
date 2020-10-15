@@ -11,6 +11,7 @@ set(CMAKE_DEPENDS_CHECK_CXX
   "C:/Users/andre/OneDrive - Universidade do Porto/FEUP/2A-1S-AEDA/projeto/Evento.cpp" "C:/Users/andre/OneDrive - Universidade do Porto/FEUP/2A-1S-AEDA/projeto/cmake-build-debug/CMakeFiles/projeto.dir/Evento.cpp.obj"
   "C:/Users/andre/OneDrive - Universidade do Porto/FEUP/2A-1S-AEDA/projeto/Hora.cpp" "C:/Users/andre/OneDrive - Universidade do Porto/FEUP/2A-1S-AEDA/projeto/cmake-build-debug/CMakeFiles/projeto.dir/Hora.cpp.obj"
   "C:/Users/andre/OneDrive - Universidade do Porto/FEUP/2A-1S-AEDA/projeto/IntervaloDeTempo.cpp" "C:/Users/andre/OneDrive - Universidade do Porto/FEUP/2A-1S-AEDA/projeto/cmake-build-debug/CMakeFiles/projeto.dir/IntervaloDeTempo.cpp.obj"
+  "C:/Users/andre/OneDrive - Universidade do Porto/FEUP/2A-1S-AEDA/projeto/Utils.cpp" "C:/Users/andre/OneDrive - Universidade do Porto/FEUP/2A-1S-AEDA/projeto/cmake-build-debug/CMakeFiles/projeto.dir/Utils.cpp.obj"
   "C:/Users/andre/OneDrive - Universidade do Porto/FEUP/2A-1S-AEDA/projeto/main.cpp" "C:/Users/andre/OneDrive - Universidade do Porto/FEUP/2A-1S-AEDA/projeto/cmake-build-debug/CMakeFiles/projeto.dir/main.cpp.obj"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")

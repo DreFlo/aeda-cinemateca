@@ -4,17 +4,11 @@
 
 #include "Hora.h"
 
-Hora::Hora(unsigned int hh, unsigned int mm) {
-    init(hh, mm);
-}
+Hora::Hora(unsigned int hh, unsigned int mm):hour(hh), minute(mm) {}
 
-void Hora::init(unsigned int hh, unsigned int mm) {
-    if (checkTimeValidity(hh, mm)) {
-        hour = hh;
-        minute = mm;
-    }
-    else
-        throw invalid_argument("Invalid time");
+void Hora::initTime(unsigned int hh, unsigned int mm) {
+    hour = hh;
+    minute = mm;
 }
 
 Hora Hora::getTime() const {
@@ -43,8 +37,4 @@ bool Hora::operator>(Hora time) const {
     else if (this->hour == time.getHour())
         return this->minute > time.getMinute();
     return false;
-}
-
-bool Hora::checkTimeValidity(unsigned int hh, unsigned int mm) {
-    return hh < 24 && mm < 60;
 }

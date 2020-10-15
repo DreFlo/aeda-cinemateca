@@ -31,7 +31,7 @@ public:
      * @param mm - Month of the date.
      * @param yy - Year of the date.
      */
-    void init(unsigned int dd, unsigned int mm, unsigned int yy);
+    void initDate(unsigned int dd, unsigned int mm, unsigned int yy);
     /**
      * @return Returns the date.
      */
@@ -65,14 +65,6 @@ public:
      * @return True if they are. False otherwise.
      */
     bool operator==(Data date) const;
-    /**
-     * Checks if the parameters form a valid date in the gregorian calendar.
-     * @param dd - day
-     * @param mm - month
-     * @param yy - year
-     * @return True if date is valid. False otherwise.
-     */
-    bool checkDateValidity(unsigned int dd, unsigned int mm, unsigned int yy);
 };
 
 
