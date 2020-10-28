@@ -49,6 +49,27 @@ public:
      */
     unsigned int getYear() const;
     /**
+     * Changes day value.
+     * @param newDay - New day value.
+     */
+    void setDay(unsigned  int newDay) {
+        day = newDay;
+    }
+    /**
+     * Changes month value.
+     * @param newMonth - New month value.
+     */
+    void setMonth(unsigned  int newMonth) {
+        month = newMonth;
+    }
+    /**
+     * Changes year value.
+     * @param newYear - New year value.
+     */
+    void setYear(unsigned  int newYear) {
+        year = newYear;
+    }
+    /**
      * A date is lesser than another if it comes before.
      * @param date - The date to be compared to.
      * @return True if it comes before. False otherwise.

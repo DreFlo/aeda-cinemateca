@@ -23,3 +23,7 @@ bool IntervaloDeTempo::operator^(IntervaloDeTempo timeInterval) const {
     return (this->start < timeInterval.getStart() && this->end < timeInterval.getStart()) ||
            this->start > timeInterval.getEnd();
 }
+
+bool IntervaloDeTempo::operator==(IntervaloDeTempo timeInterval) const {
+    return this->start == timeInterval.getStart() && this->end == timeInterval.getEnd();
+}

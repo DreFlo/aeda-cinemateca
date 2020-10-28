@@ -42,6 +42,11 @@ public:
      * @return True if there is no overlap. False otherwise.
      */
     bool operator^(IntervaloDeTempo timeInterval) const;
+    /**
+     * Checks if two time intervals are equal.
+     * @return True if they are equal. False otherwise.
+     */
+    bool operator==(IntervaloDeTempo timeInterval) const;
 };
 
 

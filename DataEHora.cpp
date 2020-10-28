@@ -26,3 +26,17 @@ bool DataEHora::operator>(DataEHora dateTime) const {
         return this->getTime() > dateTime.getTime();
     return false;
 }
+
+bool DataEHora::operator==(DataEHora dateTime) const {
+    return this->getDate() == dateTime.getDate() && this->getTime() == dateTime.getTime();
+}
+
+DataEHora DataEHora::operator+(Hora time) const {
+    DataEHora result;
+    unsigned int resMin, resHour, resDay = this->getDay(), resMonth, resYear;
+    resMin = (this->getMinute() + time.getMinute()) % 60;
+    resHour = (this->getHour() + time.getHour() + ((this->getMinute() + time.getMinute()) / 60)) % 24;
+    resDay += (this->getHour() + time.getHour() + ((this->getMinute() + time.getMinute()) / 60)) / 24;
+
+
+}

@@ -42,17 +42,34 @@ public:
      */
     unsigned int getMinute() const;
     /**
+    * Changes hour value.
+    * @param newHour - New hour value.
+    */
+    void setHour(unsigned  int newHour) {
+        hour = newHour;
+    }
+    /**
+    * Changes minute value.
+    * @param newMin - New min value.
+    */
+    void setMinute(unsigned  int newMin) {
+        minute = newMin;
+    }
+    /**
      * A time is lesser than another if it comes before.
-     * @param time - The time to be compared to.
      * @return True if lesser. False otherwise.
      */
     bool operator<(Hora time) const;
     /**
      * A time is greater than another if it comes after.
-     * @param time - The time to be compared to.
      * @return True if greater. False otherwise.
      */
     bool operator>(Hora time) const;
+    /**
+     * Checks if two times are equal.
+     * @return True if they are. False otherwise.
+     */
+    bool operator==(Hora time) const;
 };
 
 

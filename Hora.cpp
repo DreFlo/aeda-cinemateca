@@ -38,3 +38,7 @@ bool Hora::operator>(Hora time) const {
         return this->minute > time.getMinute();
     return false;
 }
+
+bool Hora::operator==(Hora time) const {
+    return this->hour == time.getHour() && this->minute == time.getMinute();
+}

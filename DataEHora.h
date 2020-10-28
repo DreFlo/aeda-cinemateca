@@ -47,6 +47,11 @@ public:
     * @return True if it is. False otherwise.
     */
     bool operator>(DataEHora dateTime) const;
+    /**
+    * Checks if two DataEHora objects are equal.
+    * @return True they are. False otherwise.
+    */
+    bool operator==(DataEHora dateTime) const;
 };
 
 
