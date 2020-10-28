@@ -6,6 +6,12 @@
 
 Data::Data(unsigned int dd, unsigned int mm, unsigned int yy):day(dd), month(mm), year(yy) {}
 
+Data::Data(const Data &date) {
+    this->day = date.getYear();
+    this->month = date.getMonth();
+    this->year = date.getYear();
+}
+
 void Data::initDate(unsigned int dd, unsigned int mm, unsigned int yy) {
     day = dd;
     month = mm;

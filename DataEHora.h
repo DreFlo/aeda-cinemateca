@@ -22,6 +22,7 @@ public:
      * @param min - Minute
      */
     DataEHora(int dd, int mm, int yy, int hh, int min);
+    DataEHora(const DataEHora &dateAndTime);
     /**
      * Initializes day, month, year, hour, minute.
      * @param dd - Day

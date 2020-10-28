@@ -23,6 +23,7 @@ public:
      * @param mm - Minute of the time.
      */
     Hora(unsigned int hh, unsigned int mm);
+    Hora(const Hora &time);
     /**
      * Initializes hour and minute.
      * @param hh - Hour of the time.

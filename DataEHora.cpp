@@ -6,6 +6,8 @@
 
 DataEHora::DataEHora(int dd, int mm, int yy, int hh, int min):Data(dd, mm, yy), Hora(hh, min) {}
 
+DataEHora::DataEHora(const DataEHora &dateAndTime):Data(dateAndTime.getDate()), Hora(dateAndTime.getTime()) {}
+
 void DataEHora::initDateAndTime(int dd, int mm, int yy, int hh, int min) {
     this->initTime(hh, min);
     this->initDate(dd, mm, yy);
@@ -65,3 +67,5 @@ DataEHora DataEHora::operator+(Hora time) const {
     result.initDateAndTime(resDay, resMonth, resYear, resHour, resMin);
     return result;
 }
+
+

@@ -6,6 +6,11 @@
 
 Hora::Hora(unsigned int hh, unsigned int mm):hour(hh), minute(mm) {}
 
+Hora::Hora(const Hora &time) {
+    this->hour = time.getHour();
+    this->minute = time.getMinute();
+}
+
 void Hora::initTime(unsigned int hh, unsigned int mm) {
     hour = hh;
     minute = mm;

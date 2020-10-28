@@ -25,6 +25,7 @@ public:
      * @param yy - Year of the date.
      */
     Data(unsigned int dd, unsigned int mm, unsigned int yy);
+    Data(const Data & date);
     /**
      * Initializes day, month and year.
      * @param dd - Day of the date.
