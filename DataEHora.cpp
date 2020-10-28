@@ -33,10 +33,35 @@ bool DataEHora::operator==(DataEHora dateTime) const {
 
 DataEHora DataEHora::operator+(Hora time) const {
     DataEHora result;
-    unsigned int resMin, resHour, resDay = this->getDay(), resMonth, resYear;
+    unsigned int resMin, resHour, resDay = this->getDay(), resMonth = this->getMonth(), resYear = this->getYear();
+    unsigned int longMonths[7] = {1, 3, 5, 7, 8, 10, 12};
+    //Get correct hour and minute of the result.
     resMin = (this->getMinute() + time.getMinute()) % 60;
     resHour = (this->getHour() + time.getHour() + ((this->getMinute() + time.getMinute()) / 60)) % 24;
+    //Get correct day, month, year.
     resDay += (this->getHour() + time.getHour() + ((this->getMinute() + time.getMinute()) / 60)) / 24;
-
-
+    if (resMonth == 2 && resYear % 4 == 0 && resDay > 29) {
+        resMonth++;
+        resDay -= 29;
+    }
+    else if (resMonth == 2 && resYear % 4 == 1 && resDay > 28) {
+        resMonth++;
+        resDay -= 28;
+    }
+    else if (find(longMonths, longMonths + 7, resMonth) && resDay > 31) {
+        resMonth++;
+        resDay -= 31;
+    }
+    else if (!find(longMonths, longMonths + 7, resMonth) && resDay > 30) {
+        resMonth++;
+        resDay -= 30;
+    }
+    if (resMonth > 12) {
+        resYear++;
+        resMonth -= 12;
+        resDay -= 31;
+    }
+    //Init result.
+    result.initDateAndTime(resDay, resMonth, resYear, resHour, resMin);
+    return result;
 }
