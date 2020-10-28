@@ -4,26 +4,30 @@
 
 #include "IntervaloDeTempo.h"
 
-IntervaloDeTempo::IntervaloDeTempo(DataEHora st, DataEHora ed):start(st), end(ed) {}
+StartDataEHora::StartDataEHora(const DataEHora &dataEHora):DataEHora(dataEHora) {}
 
-void IntervaloDeTempo::init(DataEHora st, DataEHora ed) {
-    start = st;
-    end = ed;
+EndDataEHora::EndDataEHora(const DataEHora &dataEHora):DataEHora(dataEHora) {}
+
+IntervaloDeTempo::IntervaloDeTempo(const DataEHora& st, const DataEHora& ed):StartDataEHora(st), EndDataEHora(ed) {}
+
+void IntervaloDeTempo::set(const DataEHora& st, const DataEHora& ed) {
+    StartDataEHora::setDateAndTime(st);
+    EndDataEHora::setDateAndTime(ed);
 }
 
 DataEHora IntervaloDeTempo::getStart() const {
-    return start;
+    return StartDataEHora::getDateAndTime();
 }
 
 DataEHora IntervaloDeTempo::getEnd() const {
-    return end;
+    return EndDataEHora::getDateAndTime();
 }
 
-bool IntervaloDeTempo::operator^(IntervaloDeTempo timeInterval) const {
-    return (this->start < timeInterval.getStart() && this->end < timeInterval.getStart()) ||
-           this->start > timeInterval.getEnd();
+bool IntervaloDeTempo::operator^(const IntervaloDeTempo& timeInterval) const {
+    return (this->getStart() < timeInterval.getStart() && this->getEnd() < timeInterval.getStart()) ||
+           this->getStart() > timeInterval.getEnd();
 }
 
-bool IntervaloDeTempo::operator==(IntervaloDeTempo timeInterval) const {
-    return this->start == timeInterval.getStart() && this->end == timeInterval.getEnd();
+bool IntervaloDeTempo::operator==(const IntervaloDeTempo& timeInterval) const {
+    return this->getStart() == timeInterval.getStart() && this->getEnd() == timeInterval.getEnd();
 }

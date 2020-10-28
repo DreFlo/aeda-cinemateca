@@ -3,10 +3,12 @@
 
 CMakeFiles/projeto.dir/Aderente.cpp.obj: ../Aderente.cpp
 CMakeFiles/projeto.dir/Aderente.cpp.obj: ../Aderente.h
+CMakeFiles/projeto.dir/Aderente.cpp.obj: ../Data.h
 
 CMakeFiles/projeto.dir/Cinemateca.cpp.obj: ../Aderente.h
 CMakeFiles/projeto.dir/Cinemateca.cpp.obj: ../Cinemateca.cpp
 CMakeFiles/projeto.dir/Cinemateca.cpp.obj: ../Cinemateca.h
+CMakeFiles/projeto.dir/Cinemateca.cpp.obj: ../Data.h
 CMakeFiles/projeto.dir/Cinemateca.cpp.obj: ../Evento.h
 
 CMakeFiles/projeto.dir/Data.cpp.obj: ../Data.cpp

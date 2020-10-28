@@ -12,7 +12,7 @@ using namespace std;
 
 class Data {
 private:
-    unsigned int day, month, year;
+    unsigned int day = 0, month = 0, year = 0;
 public:
     /**
      * Default constructor.
@@ -25,14 +25,10 @@ public:
      * @param yy - Year of the date.
      */
     Data(unsigned int dd, unsigned int mm, unsigned int yy);
-    Data(const Data & date);
     /**
-     * Initializes day, month and year.
-     * @param dd - Day of the date.
-     * @param mm - Month of the date.
-     * @param yy - Year of the date.
+     * Copy constructor.
      */
-    void initDate(unsigned int dd, unsigned int mm, unsigned int yy);
+    Data(const Data & date);
     /**
      * @return Returns the date.
      */
@@ -50,43 +46,52 @@ public:
      */
     unsigned int getYear() const;
     /**
+     * Sets day, month and year.
+     * @param dd - Day of the date.
+     * @param mm - Month of the date.
+     * @param yy - Year of the date.
+     */
+    void setDate(unsigned int dd, unsigned int mm, unsigned int yy);
+    /**
+     * Sets date
+     */
+    void setDate(const Data& date);
+    /**
      * Changes day value.
      * @param newDay - New day value.
      */
-    void setDay(unsigned  int newDay) {
-        day = newDay;
-    }
+    void setDay(unsigned  int newDay);
     /**
      * Changes month value.
      * @param newMonth - New month value.
      */
-    void setMonth(unsigned  int newMonth) {
-        month = newMonth;
-    }
+    void setMonth(unsigned  int newMonth);
     /**
      * Changes year value.
      * @param newYear - New year value.
      */
-    void setYear(unsigned  int newYear) {
-        year = newYear;
-    }
+    void setYear(unsigned  int newYear);
     /**
      * A date is lesser than another if it comes before.
      * @param date - The date to be compared to.
      * @return True if it comes before. False otherwise.
      */
-    bool operator<(Data date) const;
+    bool operator<(const Data& date) const;
     /**
      * A date is greater than another if it comes after.
      * @param date - The date to be compared to.
      * @return True if it comes after. False otherwise.
      */
-    bool operator>(Data date) const;
+    bool operator>(const Data& date) const;
     /**
      * Checks if two dates are equal.
      * @return True if they are. False otherwise.
      */
-    bool operator==(Data date) const;
+    bool operator==(const Data& date) const;
+    /**
+     * Output operator.
+     */
+     friend ostream &operator<<(ostream &output, const Data &date);
 };
 
 

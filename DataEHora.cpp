@@ -8,12 +8,22 @@ DataEHora::DataEHora(int dd, int mm, int yy, int hh, int min):Data(dd, mm, yy), 
 
 DataEHora::DataEHora(const DataEHora &dateAndTime):Data(dateAndTime.getDate()), Hora(dateAndTime.getTime()) {}
 
-void DataEHora::initDateAndTime(int dd, int mm, int yy, int hh, int min) {
-    this->initTime(hh, min);
-    this->initDate(dd, mm, yy);
+// DEVE TAR A APARECER UM WARNING NESTA. IGNORA.
+void DataEHora::setDateAndTime(unsigned int dd, unsigned int mm, unsigned int yy, unsigned int hh, unsigned int min) {
+    Hora::setTime(hh, min);
+    Data::setDate(dd, mm, yy);
 }
 
-bool DataEHora::operator<(DataEHora dateTime) const {
+void DataEHora::setDateAndTime(const DataEHora &dateAndTime) {
+    Data::setDate(dateAndTime.getDate());
+    Hora::setTime(dateAndTime.getTime());
+}
+
+DataEHora DataEHora::getDateAndTime() const {
+    return *this;
+}
+
+bool DataEHora::operator<(const DataEHora& dateTime) const {
     if (this->getDate() < dateTime.getDate())
         return true;
     else if (this->getDate() == dateTime.getDate())
@@ -21,7 +31,7 @@ bool DataEHora::operator<(DataEHora dateTime) const {
     return false;
 }
 
-bool DataEHora::operator>(DataEHora dateTime) const {
+bool DataEHora::operator>(const DataEHora& dateTime) const {
     if (this->getDate() > dateTime.getDate())
         return true;
     else if (this->getDate() == dateTime.getDate())
@@ -29,11 +39,11 @@ bool DataEHora::operator>(DataEHora dateTime) const {
     return false;
 }
 
-bool DataEHora::operator==(DataEHora dateTime) const {
+bool DataEHora::operator==(const DataEHora& dateTime) const {
     return this->getDate() == dateTime.getDate() && this->getTime() == dateTime.getTime();
 }
 
-DataEHora DataEHora::operator+(Hora time) const {
+DataEHora DataEHora::operator+(const Hora& time) const {
     DataEHora result;
     unsigned int resMin, resHour, resDay = this->getDay(), resMonth = this->getMonth(), resYear = this->getYear();
     unsigned int longMonths[7] = {1, 3, 5, 7, 8, 10, 12};
@@ -64,8 +74,13 @@ DataEHora DataEHora::operator+(Hora time) const {
         resDay -= 31;
     }
     //Init result.
-    result.initDateAndTime(resDay, resMonth, resYear, resHour, resMin);
+    result.setDateAndTime(resDay, resMonth, resYear, resHour, resMin);
     return result;
+}
+
+ostream &operator<<(ostream &output, const DataEHora &dateAndTime) {
+    output << dateAndTime.getTime() << " " << dateAndTime.getDate();
+    return output;
 }
 
 

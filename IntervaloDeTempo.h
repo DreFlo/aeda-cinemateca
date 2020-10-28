@@ -9,9 +9,19 @@
 
 using namespace std;
 
-class IntervaloDeTempo {
-private:
-    DataEHora start, end;
+class StartDataEHora: public DataEHora {
+public:
+    StartDataEHora() = default;
+    explicit StartDataEHora(const DataEHora & dataEHora);
+};
+
+class EndDataEHora: public DataEHora {
+public:
+    EndDataEHora() = default;
+    explicit EndDataEHora(const DataEHora & dataEHora);
+};
+
+class IntervaloDeTempo: public StartDataEHora, public EndDataEHora {
 public:
     /**
      * Default constructor.
@@ -22,13 +32,13 @@ public:
      * @param st - Beginning of the interval.
      * @param ed - End of the interval.
      */
-    IntervaloDeTempo(DataEHora st, DataEHora ed);
+    IntervaloDeTempo(const DataEHora& st, const DataEHora& ed);
     /**
-     * Initializes beginning and end of interval.
+     * Sets beginning and end of interval.
      * @param st - Beginning of the interval.
      * @param ed - End of the interval.
      */
-    void init(DataEHora st, DataEHora ed);
+    void set(const DataEHora& st, const DataEHora& ed);
     /**
      * @return Returns the beginning of the interval.
      */
@@ -41,12 +51,12 @@ public:
      * Checks if two time intervals don´t overlap.
      * @return True if there is no overlap. False otherwise.
      */
-    bool operator^(IntervaloDeTempo timeInterval) const;
+    bool operator^(const IntervaloDeTempo& timeInterval) const;
     /**
      * Checks if two time intervals are equal.
      * @return True if they are equal. False otherwise.
      */
-    bool operator==(IntervaloDeTempo timeInterval) const;
+    bool operator==(const IntervaloDeTempo& timeInterval) const;
 };
 
 
