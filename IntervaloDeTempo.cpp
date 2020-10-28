@@ -31,3 +31,8 @@ bool IntervaloDeTempo::operator^(const IntervaloDeTempo& timeInterval) const {
 bool IntervaloDeTempo::operator==(const IntervaloDeTempo& timeInterval) const {
     return this->getStart() == timeInterval.getStart() && this->getEnd() == timeInterval.getEnd();
 }
+
+ostream &operator<<(ostream &output, const IntervaloDeTempo &timeInterval) {
+    output << "start - " << timeInterval.getStart() << " end - " << timeInterval.getEnd();
+    return output;
+}

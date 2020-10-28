@@ -5,6 +5,7 @@
 #ifndef PROJETO_INTERVALODETEMPO_H
 #define PROJETO_INTERVALODETEMPO_H
 
+#include <iostream>
 #include "DataEHora.h"
 
 using namespace std;
@@ -57,6 +58,10 @@ public:
      * @return True if they are equal. False otherwise.
      */
     bool operator==(const IntervaloDeTempo& timeInterval) const;
+    /**
+     * Output operator.
+     */
+    friend ostream &operator<<(ostream &output, const IntervaloDeTempo &timeInterval);
 };
 
 
