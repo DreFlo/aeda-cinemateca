@@ -1,7 +1,3 @@
-//
-// Created by andre on 10/15/2020.
-//
-
 #include "IntervaloDeTempo.h"
 
 StartDataEHora::StartDataEHora(const DataEHora &dataEHora):DataEHora(dataEHora) {}
@@ -21,6 +17,10 @@ DataEHora IntervaloDeTempo::getStart() const {
 
 DataEHora IntervaloDeTempo::getEnd() const {
     return EndDataEHora::getDateAndTime();
+}
+
+IntervaloDeTempo IntervaloDeTempo::getTimeInterval() const {
+    return *this;
 }
 
 bool IntervaloDeTempo::operator^(const IntervaloDeTempo& timeInterval) const {

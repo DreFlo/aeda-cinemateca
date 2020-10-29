@@ -1,7 +1,3 @@
-//
-// Created by andre on 10/15/2020.
-//
-
 #ifndef PROJETO_INTERVALODETEMPO_H
 #define PROJETO_INTERVALODETEMPO_H
 
@@ -48,6 +44,10 @@ public:
      * @return Returns the end of the interval.
      */
     DataEHora getEnd() const;
+    /**
+     * @return Returns self.
+     */
+    IntervaloDeTempo getTimeInterval() const;
     /**
      * Checks if two time intervals don´t overlap.
      * @return True if there is no overlap. False otherwise.

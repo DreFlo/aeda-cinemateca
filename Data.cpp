@@ -1,7 +1,3 @@
-//
-// Created by andre on 10/14/2020.
-//
-
 #include "Data.h"
 
 Data::Data(unsigned int dd, unsigned int mm, unsigned int yy):day(dd), month(mm), year(yy) {}

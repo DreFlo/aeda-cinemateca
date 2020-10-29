@@ -1,7 +1,3 @@
-//
-// Created by andre on 10/14/2020.
-//
-
 #include "Hora.h"
 
 Hora::Hora(unsigned int hh, unsigned int mm):hour(hh), minute(mm) {}

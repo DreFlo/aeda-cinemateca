@@ -1,7 +1,3 @@
-//
-// Created by andre on 10/14/2020.
-//
-
 #ifndef PROJETO_DATAEHORA_H
 #define PROJETO_DATAEHORA_H
 
@@ -10,7 +6,7 @@
 
 using namespace std;
 
-class DataEHora: public Data, Hora{
+class DataEHora: public Data, public Hora{
 public:
     DataEHora() = default;
     /**

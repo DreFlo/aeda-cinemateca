@@ -1,7 +1,3 @@
-//
-// Created by andre on 10/14/2020.
-//
-
 #ifndef PROJETO_DATA_H
 #define PROJETO_DATA_H
 

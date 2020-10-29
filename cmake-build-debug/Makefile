@@ -331,6 +331,33 @@ IntervaloDeTempo.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\projeto.dir\build.make CMakeFiles/projeto.dir/IntervaloDeTempo.cpp.s
 .PHONY : IntervaloDeTempo.cpp.s
 
+Sala.obj: Sala.cpp.obj
+
+.PHONY : Sala.obj
+
+# target to build an object file
+Sala.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\projeto.dir\build.make CMakeFiles/projeto.dir/Sala.cpp.obj
+.PHONY : Sala.cpp.obj
+
+Sala.i: Sala.cpp.i
+
+.PHONY : Sala.i
+
+# target to preprocess a source file
+Sala.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\projeto.dir\build.make CMakeFiles/projeto.dir/Sala.cpp.i
+.PHONY : Sala.cpp.i
+
+Sala.s: Sala.cpp.s
+
+.PHONY : Sala.s
+
+# target to generate assembly for a file
+Sala.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\projeto.dir\build.make CMakeFiles/projeto.dir/Sala.cpp.s
+.PHONY : Sala.cpp.s
+
 Utils.obj: Utils.cpp.obj
 
 .PHONY : Utils.obj
@@ -415,6 +442,9 @@ help:
 	@echo ... IntervaloDeTempo.obj
 	@echo ... IntervaloDeTempo.i
 	@echo ... IntervaloDeTempo.s
+	@echo ... Sala.obj
+	@echo ... Sala.i
+	@echo ... Sala.s
 	@echo ... Utils.obj
 	@echo ... Utils.i
 	@echo ... Utils.s
