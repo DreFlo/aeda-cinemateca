@@ -7,7 +7,7 @@ Hora::Hora(const Hora &time) {
     setMinute(time.getMinute());
 }
 
-Hora Hora::getTime() const {
+const Hora& Hora::getTime() const {
     return *this;
 }
 
@@ -27,6 +27,16 @@ void Hora::setTime(unsigned int hh, unsigned int mm) {
 void Hora::setTime(const Hora &time) {
     setHour(time.getHour());
     setMinute(time.getMinute());
+}
+
+void Hora::setTime(const string& in) {
+    unsigned int hh, min;
+    regex matchStr("[0-9][0-9]h[0-9][0-9]min");
+    if (!regex_match(in, matchStr))
+        throw invalid_argument("Input not correctly formatted");
+    hh = stoi(in.substr(0, 2));
+    min = stoi(in.substr(3, 2));
+    this->setTime(hh, min);
 }
 
 void Hora::setHour(unsigned int newHour) {
@@ -57,8 +67,21 @@ bool Hora::operator==(const Hora &time) const {
     return this->hour == time.getHour() && this->minute == time.getMinute();
 }
 
-ostream &operator<<(ostream &output, const Hora &time) {
-    output << time.getHour() << "h" << to_string(time.getMinute()) << "min";
+ostream& operator<<(ostream& output, const Hora &time) {
+    if (time.getHour() < 10 && time.getMinute() < 10)
+        output << "0" << time.getHour() << "h" << "0" << to_string(time.getMinute()) << "min";
+    else if (time.getHour() < 10 && time.getMinute() >= 10)
+        output << "0" << time.getHour() << "h" << to_string(time.getMinute()) << "min";
+    else if (time.getHour() >= 10 && time.getMinute() < 10)
+        output << time.getHour() << "h" << "0" << to_string(time.getMinute()) << "min";
+    else
+        output << time.getHour() << "h" << to_string(time.getMinute()) << "min";
     return output;
 }
 
+istream& operator>>(istream& input, Hora& time) {
+    string in;
+    input >> in;
+    time.setTime(in);
+    return input;
+}

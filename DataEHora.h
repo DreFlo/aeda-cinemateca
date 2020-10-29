@@ -47,24 +47,28 @@ public:
      */
     DataEHora operator+(const Hora& time) const;
     /**
-    * Checks if a date and time is lesser than another. It is lesser if it comes before.
-    * @return True if it is. False otherwise.
-    */
+     * Checks if a date and time is lesser than another. It is lesser if it comes before.
+     * @return True if it is. False otherwise.
+     */
     bool operator<(const DataEHora& dateTime) const;
     /**
-    * Checks if a date and time is greater than another. It is greater if it comes after.
-    * @return True if it is. False otherwise.
-    */
+     * Checks if a date and time is greater than another. It is greater if it comes after.
+     * @return True if it is. False otherwise.
+     */
     bool operator>(const DataEHora& dateTime) const;
     /**
-    * Checks if two DataEHora objects are equal.
-    * @return True they are. False otherwise.
-    */
+     * Checks if two DataEHora objects are equal.
+     * @return True they are. False otherwise.
+     */
     bool operator==(const DataEHora& dateTime) const;
     /**
      * Output operator.
      */
-    friend ostream &operator<<(ostream &output, const DataEHora &dateAndTime);
+    friend ostream& operator<<(ostream& output, const DataEHora& dateAndTime);
+    /**
+     * Input operator
+     */
+    friend istream& operator>>(istream& input, DataEHora& dateAndTime);
 };
 
 

@@ -3,6 +3,9 @@
 
 #include <iostream>
 #include <algorithm>
+#include <stdexcept>
+#include <regex>
+
 
 using namespace std;
 
@@ -24,11 +27,11 @@ public:
     /**
      * Copy constructor.
      */
-    Data(const Data & date);
+    Data(const Data& date);
     /**
      * @return Returns the date.
      */
-    Data getDate() const;
+    const Data& getDate() const;
     /**
      * @return The day stored in the date.
      */
@@ -52,6 +55,10 @@ public:
      * Sets date
      */
     void setDate(const Data& date);
+    /**
+     * Sets date from string.
+     */
+    void setDate(const string& in);
     /**
      * Changes day value.
      * @param newDay - New day value.
@@ -87,7 +94,11 @@ public:
     /**
      * Output operator.
      */
-     friend ostream &operator<<(ostream &output, const Data &date);
+    friend ostream& operator<<(ostream& output, const Data& date);
+    /**
+     * Input operator.
+     */
+    friend istream& operator>>(istream& input, Data& date);
 };
 
 

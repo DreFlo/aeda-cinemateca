@@ -6,6 +6,9 @@
 #define PROJETO_HORA_H
 
 #include <iostream>
+#include <string>
+#include <stdexcept>
+#include <regex>
 
 using namespace std;
 
@@ -30,7 +33,7 @@ public:
     /**
      * @return Returns the time
      */
-    Hora getTime() const;
+    const Hora& getTime() const;
     /**
      * @return Returns the hour of the time.
      */
@@ -49,6 +52,10 @@ public:
      * Sets time.
      */
     void setTime(const Hora& time);
+    /**
+     * Sets date from string.
+     */
+    void setTime(const string& in);
     /**
     * Changes hour value.
     * @param newHour - New hour value.
@@ -77,7 +84,11 @@ public:
     /**
      * Output operator.
      */
-    friend ostream &operator<<(ostream& output, const Hora& Time);
+    friend ostream& operator<<(ostream& output, const Hora& time);
+    /**
+     * Input operator.
+     */
+    friend istream& operator>>(istream& input, Hora& time)
 };
 
 

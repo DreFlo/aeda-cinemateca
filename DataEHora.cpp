@@ -74,9 +74,17 @@ DataEHora DataEHora::operator+(const Hora& time) const {
     return result;
 }
 
-ostream &operator<<(ostream &output, const DataEHora &dateAndTime) {
+ostream& operator<<(ostream& output, const DataEHora& dateAndTime) {
     output << dateAndTime.getTime() << " " << dateAndTime.getDate();
     return output;
+}
+
+istream& operator>>(istream& input, DataEHora& dateAndTime) {
+    string time, date;
+    input >> time >> date;
+    dateAndTime.setTime(time);
+    dateAndTime.setDate(date);
+    return input;
 }
 
 
