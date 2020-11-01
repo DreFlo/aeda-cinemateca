@@ -13,22 +13,24 @@ using namespace std;
 
 class Cinemateca {
     Data hoje;
-    const std::string morada;
+    std::string ficheiro;
+    std::string morada;
     std::vector<Sala> Salas;
     std::vector<Aderente> Aderentes;
     std::vector<Evento> EventosAntigos;
     std::vector<Evento> EventosHoje;
     std::vector<Evento> EventosFuturos;
 public:
-    Cinemateca(std::string m, Data h);
-    Cinemateca(std::string m, Data h, std::vector<Sala> ss);
-    Cinemateca(std::string m, Data h, std::vector<Sala> ss, std::vector<Aderente> as);
+    Cinemateca(std::string m, Data h, std::string f);
+    Cinemateca(std::string m, Data h, std::string f, std::vector<Sala> ss);
+    Cinemateca(std::string m, Data h, std::string f, std::vector<Sala> ss, std::vector<Aderente> as);
+    Cinemateca(std::string m, Data h, std::string f, std::vector<Aderente> as);
 
     void MudarDiaAtual(const Data &h);
 
     void AdicionarSala(const Sala &s);
-    void AdicionarSalas(const std::vector<Sala> ss);
-    void SetSalas(const std::vector<Sala> ss);
+    void AdicionarSalas(std::vector<Sala> ss);
+    void SetSalas(std::vector<Sala> ss);
 
     void AdicionarAderente(const Aderente a);
     void AdicionarAderentes(const std::vector<Aderente> as);
