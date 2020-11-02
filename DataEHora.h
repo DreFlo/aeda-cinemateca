@@ -45,6 +45,15 @@ public:
      */
     DataEHora& getDateAndTimeRef();
     /**
+     * Checks if date and time are valid.
+     * @return True if they are. False otherwise.
+     */
+    bool valid() const override;
+    /**
+     * @return Returns formatted string with the date and time.
+     */
+    string str() const override;
+    /**
      * Adds an Hora object to a DataEHora object.
      * @param time - Duration to add to the date and time.
      * @return End date and time of an event.

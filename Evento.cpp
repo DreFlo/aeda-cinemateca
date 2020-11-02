@@ -6,8 +6,6 @@ Evento::Evento(string nm, unsigned int mxCp, float prc, const DataEHora& st, con
         name(std::move(nm)), maxAttendance(mxCp), price(prc), start(st), duration(drtn),
         IntervaloDeTempo(st, st + drtn) {}
 
-//
-
 string Evento::getName() const {
     return name;
 }
@@ -50,6 +48,12 @@ void Evento::setStart(const DataEHora& st) {
 
 void Evento::setDuration(const Hora& drtn) {
     duration = drtn;
+}
+
+string Evento::str() const {
+    stringstream res;
+    res << name << " " << room << " " << maxAttendance << " " << price << " " << start.str() << " " << duration.str();
+    return res.str();
 }
 
 ostream& operator<<(ostream& output, const Evento& event) {

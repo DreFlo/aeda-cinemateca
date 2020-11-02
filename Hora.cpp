@@ -51,6 +51,23 @@ void Hora::setMinute(unsigned int newMin) {
     this->minute = newMin;
 }
 
+bool Hora::valid() const {
+    return hour < 24 && minute < 60;
+}
+
+string Hora::str() const {
+    stringstream res;
+    if (hour < 10 && minute < 10)
+        res << "0" << hour << "h" << "0" << minute << "min";
+    else if (hour < 10 && minute >= 10)
+        res << "0" << hour << "h" << minute << "min";
+    else if (hour >= 10 && minute < 10)
+        res << hour << "h" << "0" << minute << "min";
+    else
+        res << hour << "h" << minute << "min";
+    return res.str();
+}
+
 bool Hora::operator<(const Hora &time) const {
     if (this->hour < time.getHour())
         return true;
@@ -73,14 +90,7 @@ bool Hora::operator==(const Hora &time) const {
 
 ostream& operator<<(ostream& output, const Hora &time) {
     /*
-    if (time.getHour() < 10 && time.getMinute() < 10)
-        output << "0" << time.getHour() << "h" << "0" << to_string(time.getMinute()) << "min";
-    else if (time.getHour() < 10 && time.getMinute() >= 10)
-        output << "0" << time.getHour() << "h" << to_string(time.getMinute()) << "min";
-    else if (time.getHour() >= 10 && time.getMinute() < 10)
-        output << time.getHour() << "h" << "0" << to_string(time.getMinute()) << "min";
-    else
-        output << time.getHour() << "h" << to_string(time.getMinute()) << "min";
+
     */
     output << time.getHour() << " " << time.getMinute();
     return output;

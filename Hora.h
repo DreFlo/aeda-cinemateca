@@ -71,6 +71,15 @@ public:
     */
     void setMinute(unsigned  int newMin);
     /**
+     * Checks if time is valid.
+     * @return True if it is. False otherwise.
+     */
+    virtual bool valid() const;
+    /**
+     * @return Returns a formatted string with the time.
+     */
+    virtual string str() const;
+    /**
      * A time is lesser than another if it comes before.
      * @return True if lesser. False otherwise.
      */

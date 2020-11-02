@@ -79,6 +79,15 @@ public:
      */
     void setYear(unsigned  int newYear);
     /**
+     * Checks if date is valid in the gregorian calendar.
+     * @return True if it is. False otherwise.
+     */
+    virtual bool valid() const;
+    /**
+     * @return Formatted string with the date.
+     */
+    virtual string str() const;
+    /**
      * A date is lesser than another if it comes before.
      * @param date - The date to be compared to.
      * @return True if it comes before. False otherwise.

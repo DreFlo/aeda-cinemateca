@@ -27,6 +27,14 @@ IntervaloDeTempo& IntervaloDeTempo::getTimeIntervalRef() {
     return *this;
 }
 
+bool IntervaloDeTempo::valid() const {
+    return StartDataEHora::valid() && EndDataEHora::valid() && this->getStart() > this->getEnd();
+}
+
+string IntervaloDeTempo::str() const {
+    return "start - " + StartDataEHora::str() + " end - " + EndDataEHora::str();
+}
+
 bool IntervaloDeTempo::operator^(const IntervaloDeTempo& timeInterval) const {
     return (this->getStart() < timeInterval.getStart() && this->getEnd() < timeInterval.getStart()) ||
            this->getStart() > timeInterval.getEnd();

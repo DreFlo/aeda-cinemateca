@@ -27,10 +27,6 @@ public:
      */
     Evento(string nm, unsigned int mxCp, float prc, const DataEHora& st, const Hora& drtn);
     /**
-     * Copy constructor.
-     */
-    Evento(const Evento& newEvent);
-    /**
      * @return Event's name.
      */
     string getName() const;
@@ -74,6 +70,10 @@ public:
      * Changes event's duration.
      */
     void setDuration(const Hora& drtn);
+    /**
+     * @return Returns formatted string with the event.
+     */
+    string str() const override;
     /**
      * Output operator.
      */

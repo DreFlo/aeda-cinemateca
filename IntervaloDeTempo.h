@@ -53,6 +53,12 @@ public:
      */
     IntervaloDeTempo& getTimeIntervalRef();
     /**
+     * Checks if time interval is valid.
+     * @return True if it is false otherwhise.
+     */
+    bool valid() const override;
+    string str() const override;
+    /**
      * Checks if two time intervals don´t overlap.
      * @return True if there is no overlap. False otherwise.
      */

@@ -52,10 +52,14 @@ CMakeFiles/projeto.dir/Utils.cpp.obj: ../Hora.h
 CMakeFiles/projeto.dir/Utils.cpp.obj: ../Utils.cpp
 CMakeFiles/projeto.dir/Utils.cpp.obj: ../Utils.h
 
+CMakeFiles/projeto.dir/main.cpp.obj: ../Aderente.h
+CMakeFiles/projeto.dir/main.cpp.obj: ../Cinemateca.h
 CMakeFiles/projeto.dir/main.cpp.obj: ../Data.h
 CMakeFiles/projeto.dir/main.cpp.obj: ../DataEHora.h
 CMakeFiles/projeto.dir/main.cpp.obj: ../Evento.h
 CMakeFiles/projeto.dir/main.cpp.obj: ../Hora.h
 CMakeFiles/projeto.dir/main.cpp.obj: ../IntervaloDeTempo.h
+CMakeFiles/projeto.dir/main.cpp.obj: ../Sala.h
+CMakeFiles/projeto.dir/main.cpp.obj: ../Utils.h
 CMakeFiles/projeto.dir/main.cpp.obj: ../main.cpp
 

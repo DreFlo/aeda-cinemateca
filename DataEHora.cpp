@@ -23,6 +23,14 @@ DataEHora& DataEHora::getDateAndTimeRef() {
     return *this;
 }
 
+bool DataEHora::valid() const {
+    return Data::valid() && Hora::valid();
+}
+
+string DataEHora::str() const {
+    return Data::str() + " " + Hora::str();
+}
+
 bool DataEHora::operator<(const DataEHora& dateTime) const {
     if (this->getDate() < dateTime.getDate())
         return true;
