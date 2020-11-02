@@ -49,6 +49,10 @@ public:
      */
     IntervaloDeTempo getTimeInterval() const;
     /**
+     * @return Returns reference to self.
+     */
+    IntervaloDeTempo& getTimeIntervalRef();
+    /**
      * Checks if two time intervals don´t overlap.
      * @return True if there is no overlap. False otherwise.
      */
@@ -61,7 +65,11 @@ public:
     /**
      * Output operator.
      */
-    friend ostream &operator<<(ostream &output, const IntervaloDeTempo &timeInterval);
+    friend ostream& operator<<(ostream& output, const IntervaloDeTempo& timeInterval);
+    /**
+     * Input operator.
+     */
+    friend istream& operator>>(istream& input, IntervaloDeTempo& timeInterval);
 };
 
 

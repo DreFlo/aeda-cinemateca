@@ -7,7 +7,11 @@ Hora::Hora(const Hora &time) {
     setMinute(time.getMinute());
 }
 
-const Hora& Hora::getTime() const {
+Hora Hora::getTime() const {
+    return *this;
+}
+
+Hora& Hora::getTimeRef() {
     return *this;
 }
 
@@ -68,6 +72,7 @@ bool Hora::operator==(const Hora &time) const {
 }
 
 ostream& operator<<(ostream& output, const Hora &time) {
+    /*
     if (time.getHour() < 10 && time.getMinute() < 10)
         output << "0" << time.getHour() << "h" << "0" << to_string(time.getMinute()) << "min";
     else if (time.getHour() < 10 && time.getMinute() >= 10)
@@ -76,12 +81,13 @@ ostream& operator<<(ostream& output, const Hora &time) {
         output << time.getHour() << "h" << "0" << to_string(time.getMinute()) << "min";
     else
         output << time.getHour() << "h" << to_string(time.getMinute()) << "min";
+    */
+    output << time.getHour() << " " << time.getMinute();
     return output;
 }
 
 istream& operator>>(istream& input, Hora& time) {
     string in;
-    input >> in;
-    time.setTime(in);
+    input >> time.hour >> time.minute;
     return input;
 }

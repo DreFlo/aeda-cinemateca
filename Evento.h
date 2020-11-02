@@ -7,8 +7,8 @@
 using namespace std;
 
 class Evento: public IntervaloDeTempo {
-    string name;
-    unsigned int maxCapacity{};
+    string name, room = "NULL";
+    unsigned int maxAttendance{};
     float price{};
     DataEHora start;
     Hora duration;
@@ -35,17 +35,17 @@ public:
      */
     string getName() const;
     /**
+     * @return Event's room.
+     */
+    string getRoom() const;
+    /**
      * @return Event's maximum capacity.
      */
-    unsigned int getMaxCapacity() const;
+    unsigned int getMaxAttendance() const;
     /**
      * @return Event's price of admission.
      */
     float getPrice() const;
-    /**
-     * @return Event's start date and time.
-     */
-    DataEHora getStart() const;
     /**
      * @return Event's duration.
      */
@@ -55,9 +55,13 @@ public:
      */
     void setName(string nm);
     /**
+     * Changes event's room.
+     */
+    void setRoom(string rm);
+    /**
      * Changes event's maximum capacity.
      */
-    void setMaxCapacity(unsigned int mxCp);
+    void setMaxAttendance(unsigned int mxCp);
     /**
      * Changes event's price of admission.
      */
@@ -70,6 +74,14 @@ public:
      * Changes event's duration.
      */
     void setDuration(const Hora& drtn);
+    /**
+     * Output operator.
+     */
+    friend ostream& operator<<(ostream& output, const Evento& event);
+    /**
+     * Input operator.
+     */
+    friend istream& operator>>(istream& input, Evento& event);
 };
 
 
