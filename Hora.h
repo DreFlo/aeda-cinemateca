@@ -33,7 +33,11 @@ public:
     /**
      * @return Returns the time
      */
-    const Hora& getTime() const;
+    Hora getTime() const;
+    /**
+     * @return Returns a reference to the object.
+     */
+    Hora& getTimeRef();
     /**
      * @return Returns the hour of the time.
      */
@@ -88,7 +92,7 @@ public:
     /**
      * Input operator.
      */
-    friend istream& operator>>(istream& input, Hora& time)
+    friend istream& operator>>(istream& input, Hora& time);
 };
 
 

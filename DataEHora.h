@@ -41,6 +41,10 @@ public:
      */
     DataEHora getDateAndTime() const;
     /**
+     * @return Returns reference to itself.
+     */
+    DataEHora& getDateAndTimeRef();
+    /**
      * Adds an Hora object to a DataEHora object.
      * @param time - Duration to add to the date and time.
      * @return End date and time of an event.

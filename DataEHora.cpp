@@ -19,6 +19,10 @@ DataEHora DataEHora::getDateAndTime() const {
     return *this;
 }
 
+DataEHora& DataEHora::getDateAndTimeRef() {
+    return *this;
+}
+
 bool DataEHora::operator<(const DataEHora& dateTime) const {
     if (this->getDate() < dateTime.getDate())
         return true;
@@ -80,10 +84,7 @@ ostream& operator<<(ostream& output, const DataEHora& dateAndTime) {
 }
 
 istream& operator>>(istream& input, DataEHora& dateAndTime) {
-    string time, date;
-    input >> time >> date;
-    dateAndTime.setTime(time);
-    dateAndTime.setDate(date);
+    input >> dateAndTime.getDateRef() >> dateAndTime.getTimeRef();
     return input;
 }
 

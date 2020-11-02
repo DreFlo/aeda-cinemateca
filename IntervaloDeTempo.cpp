@@ -23,6 +23,10 @@ IntervaloDeTempo IntervaloDeTempo::getTimeInterval() const {
     return *this;
 }
 
+IntervaloDeTempo& IntervaloDeTempo::getTimeIntervalRef() {
+    return *this;
+}
+
 bool IntervaloDeTempo::operator^(const IntervaloDeTempo& timeInterval) const {
     return (this->getStart() < timeInterval.getStart() && this->getEnd() < timeInterval.getStart()) ||
            this->getStart() > timeInterval.getEnd();
@@ -32,7 +36,12 @@ bool IntervaloDeTempo::operator==(const IntervaloDeTempo& timeInterval) const {
     return this->getStart() == timeInterval.getStart() && this->getEnd() == timeInterval.getEnd();
 }
 
-ostream &operator<<(ostream &output, const IntervaloDeTempo &timeInterval) {
-    output << "start - " << timeInterval.getStart() << " end - " << timeInterval.getEnd();
+ostream& operator<<(ostream& output, const IntervaloDeTempo& timeInterval) {
+    output << timeInterval.getStart() << " " << timeInterval.getEnd();
     return output;
+}
+
+istream& operator>>(istream& input, IntervaloDeTempo& timeInterval) {
+    input >> timeInterval.StartDataEHora::getDateAndTimeRef() >> timeInterval.EndDataEHora::getDateAndTimeRef();
+    return input;
 }

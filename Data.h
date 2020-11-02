@@ -31,7 +31,11 @@ public:
     /**
      * @return Returns the date.
      */
-    const Data& getDate() const;
+    Data getDate() const;
+    /**
+     * @return Return's a reference to the object
+     */
+    Data& getDateRef();
     /**
      * @return The day stored in the date.
      */

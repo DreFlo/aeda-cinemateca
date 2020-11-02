@@ -9,7 +9,7 @@ Data::Data(const Data& date) {
 }
 
 
-const Data& Data::getDate() const {
+Data Data::getDate() const {
     return *this;
 }
 
@@ -91,6 +91,7 @@ bool Data::operator==(const Data &date) const {
 }
 
 ostream& operator<<(ostream& output, const Data& date) {
+    /*
     if (date.getDay() < 10 && date.getMonth() < 10)
         output << "0" <<  date.getDay() << "/0" << date.getMonth() << "/" << date.getYear();
     else if (date.getDay() < 10 && date.getMonth() >= 10)
@@ -99,12 +100,16 @@ ostream& operator<<(ostream& output, const Data& date) {
         output <<  date.getDay() << "/0" << date.getMonth() << "/" << date.getYear();
     else
         output <<  date.getDay() << "/" << date.getMonth() << "/" << date.getYear();
+        */
+    output<< date.getDay() << " " << date.getMonth() << " " << date.getYear();
     return output;
 }
 
 istream& operator>>(istream& input, Data& date) {
-    string in;
-    input >> in;
-    date.setDate(in);
+    input >> date.day >> date.month >> date.year;
     return input;
+}
+
+Data& Data::getDateRef() {
+    return *this;
 }

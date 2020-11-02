@@ -3,8 +3,8 @@
 #include <utility>
 
 Evento::Evento(string nm, unsigned int mxCp, float prc, const DataEHora& st, const Hora& drtn):
-    name(std::move(nm)), maxCapacity(mxCp), price(prc), start(st), duration(drtn),
-    IntervaloDeTempo(st, st + drtn) {}
+        name(std::move(nm)), maxAttendance(mxCp), price(prc), start(st), duration(drtn),
+        IntervaloDeTempo(st, st + drtn) {}
 
 //
 
@@ -12,16 +12,16 @@ string Evento::getName() const {
     return name;
 }
 
-unsigned int Evento::getMaxCapacity() const {
-    return maxCapacity;
+string Evento::getRoom() const{
+    return room;
+}
+
+unsigned int Evento::getMaxAttendance() const {
+    return maxAttendance;
 }
 
 float Evento::getPrice() const {
     return price;
-}
-
-DataEHora Evento::getStart() const {
-    return start;
 }
 
 Hora Evento::getDuration() const {
@@ -32,8 +32,12 @@ void Evento::setName(string nm) {
     name = std::move(nm);
 }
 
-void Evento::setMaxCapacity(unsigned int mxCp) {
-    maxCapacity = mxCp;
+void Evento::setRoom(string rm) {
+    room = std::move(rm);
+}
+
+void Evento::setMaxAttendance(unsigned int mxCp) {
+    maxAttendance = mxCp;
 }
 
 void Evento::setPrice(float prc) {
@@ -46,4 +50,16 @@ void Evento::setStart(const DataEHora& st) {
 
 void Evento::setDuration(const Hora& drtn) {
     duration = drtn;
+}
+
+ostream& operator<<(ostream& output, const Evento& event) {
+    output << event.getName() << " " << event.getRoom() << " " << event.getPrice() << " " << event.getMaxAttendance()
+           << " " << event.getStart() << " " << event.getDuration() << " " << event.getTimeInterval() << endl;
+    return output;
+}
+
+istream& operator>>(istream& input, Evento& event) {
+    input >> event.name >> event.room >> event.price >> event.maxAttendance >> event.start >> event.duration
+          >> event.getTimeIntervalRef();
+    return input;
 }
