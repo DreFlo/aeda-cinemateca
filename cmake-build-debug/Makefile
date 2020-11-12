@@ -196,6 +196,33 @@ Cinemateca.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\projeto.dir\build.make CMakeFiles/projeto.dir/Cinemateca.cpp.s
 .PHONY : Cinemateca.cpp.s
 
+Cliente.obj: Cliente.cpp.obj
+
+.PHONY : Cliente.obj
+
+# target to build an object file
+Cliente.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\projeto.dir\build.make CMakeFiles/projeto.dir/Cliente.cpp.obj
+.PHONY : Cliente.cpp.obj
+
+Cliente.i: Cliente.cpp.i
+
+.PHONY : Cliente.i
+
+# target to preprocess a source file
+Cliente.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\projeto.dir\build.make CMakeFiles/projeto.dir/Cliente.cpp.i
+.PHONY : Cliente.cpp.i
+
+Cliente.s: Cliente.cpp.s
+
+.PHONY : Cliente.s
+
+# target to generate assembly for a file
+Cliente.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\projeto.dir\build.make CMakeFiles/projeto.dir/Cliente.cpp.s
+.PHONY : Cliente.cpp.s
+
 Data.obj: Data.cpp.obj
 
 .PHONY : Data.obj
@@ -427,6 +454,9 @@ help:
 	@echo ... Cinemateca.obj
 	@echo ... Cinemateca.i
 	@echo ... Cinemateca.s
+	@echo ... Cliente.obj
+	@echo ... Cliente.i
+	@echo ... Cliente.s
 	@echo ... Data.obj
 	@echo ... Data.i
 	@echo ... Data.s

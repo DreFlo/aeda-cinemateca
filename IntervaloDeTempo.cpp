@@ -51,5 +51,6 @@ ostream& operator<<(ostream& output, const IntervaloDeTempo& timeInterval) {
 
 istream& operator>>(istream& input, IntervaloDeTempo& timeInterval) {
     input >> timeInterval.StartDataEHora::getDateAndTimeRef() >> timeInterval.EndDataEHora::getDateAndTimeRef();
+    if (!timeInterval.valid()) throw InvalidTimeInterval();
     return input;
 }

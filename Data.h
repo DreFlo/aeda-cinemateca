@@ -114,5 +114,11 @@ public:
     friend istream& operator>>(istream& input, Data& date);
 };
 
+class InvalidDate: public exception {
+    const Data date;
+public:
+    explicit InvalidDate(Data &D):date(D) {}
+    const Data & getDate() const { return date; }
+};
 
 #endif //PROJETO_DATA_H

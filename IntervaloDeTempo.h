@@ -57,6 +57,9 @@ public:
      * @return True if it is false otherwhise.
      */
     bool valid() const override;
+    /**
+     * @return Formatted string with the time interval.
+     */
     string str() const override;
     /**
      * Checks if two time intervals don´t overlap.
@@ -78,5 +81,11 @@ public:
     friend istream& operator>>(istream& input, IntervaloDeTempo& timeInterval);
 };
 
+class InvalidTimeInterval: public exception {
+    const IntervaloDeTempo timeInterval;
+public:
+    explicit InvalidTimeInterval(IntervaloDeTempo &TI):timeInterval(TI) {}
+    const IntervaloDeTempo & getTimeInterval() { return timeInterval; }
+};
 
 #endif //PROJETO_INTERVALODETEMPO_H

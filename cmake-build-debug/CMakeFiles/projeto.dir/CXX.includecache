@@ -6,10 +6,6 @@
 
 #IncludeRegexTransform: 
 
-C:/Users/andre/OneDrive - Universidade do Porto/FEUP/2A-1S-AEDA/projeto/Aderente.cpp
-Aderente.h
-C:/Users/andre/OneDrive - Universidade do Porto/FEUP/2A-1S-AEDA/projeto/Aderente.h
-
 C:/Users/andre/OneDrive - Universidade do Porto/FEUP/2A-1S-AEDA/projeto/Aderente.h
 string
 -
@@ -17,6 +13,8 @@ iostream
 -
 Data.h
 C:/Users/andre/OneDrive - Universidade do Porto/FEUP/2A-1S-AEDA/projeto/Data.h
+Cliente.h
+C:/Users/andre/OneDrive - Universidade do Porto/FEUP/2A-1S-AEDA/projeto/Cliente.h
 
 C:/Users/andre/OneDrive - Universidade do Porto/FEUP/2A-1S-AEDA/projeto/Cinemateca.cpp
 Cinemateca.h
@@ -30,9 +28,11 @@ C:/Users/andre/OneDrive - Universidade do Porto/FEUP/2A-1S-AEDA/projeto/Aderente
 Sala.h
 C:/Users/andre/OneDrive - Universidade do Porto/FEUP/2A-1S-AEDA/projeto/Sala.h
 
-C:/Users/andre/OneDrive - Universidade do Porto/FEUP/2A-1S-AEDA/projeto/Data.cpp
-Data.h
-C:/Users/andre/OneDrive - Universidade do Porto/FEUP/2A-1S-AEDA/projeto/Data.h
+C:/Users/andre/OneDrive - Universidade do Porto/FEUP/2A-1S-AEDA/projeto/Cliente.h
+string
+-
+iostream
+-
 
 C:/Users/andre/OneDrive - Universidade do Porto/FEUP/2A-1S-AEDA/projeto/Data.h
 iostream
@@ -44,31 +44,17 @@ stdexcept
 regex
 -
 
-C:/Users/andre/OneDrive - Universidade do Porto/FEUP/2A-1S-AEDA/projeto/DataEHora.cpp
-DataEHora.h
-C:/Users/andre/OneDrive - Universidade do Porto/FEUP/2A-1S-AEDA/projeto/DataEHora.h
-
 C:/Users/andre/OneDrive - Universidade do Porto/FEUP/2A-1S-AEDA/projeto/DataEHora.h
 Data.h
 C:/Users/andre/OneDrive - Universidade do Porto/FEUP/2A-1S-AEDA/projeto/Data.h
 Hora.h
 C:/Users/andre/OneDrive - Universidade do Porto/FEUP/2A-1S-AEDA/projeto/Hora.h
 
-C:/Users/andre/OneDrive - Universidade do Porto/FEUP/2A-1S-AEDA/projeto/Evento.cpp
-Evento.h
-C:/Users/andre/OneDrive - Universidade do Porto/FEUP/2A-1S-AEDA/projeto/Evento.h
-utility
--
-
 C:/Users/andre/OneDrive - Universidade do Porto/FEUP/2A-1S-AEDA/projeto/Evento.h
 utility
 -
 IntervaloDeTempo.h
 C:/Users/andre/OneDrive - Universidade do Porto/FEUP/2A-1S-AEDA/projeto/IntervaloDeTempo.h
-
-C:/Users/andre/OneDrive - Universidade do Porto/FEUP/2A-1S-AEDA/projeto/Hora.cpp
-Hora.h
-C:/Users/andre/OneDrive - Universidade do Porto/FEUP/2A-1S-AEDA/projeto/Hora.h
 
 C:/Users/andre/OneDrive - Universidade do Porto/FEUP/2A-1S-AEDA/projeto/Hora.h
 iostream
@@ -80,19 +66,11 @@ stdexcept
 regex
 -
 
-C:/Users/andre/OneDrive - Universidade do Porto/FEUP/2A-1S-AEDA/projeto/IntervaloDeTempo.cpp
-IntervaloDeTempo.h
-C:/Users/andre/OneDrive - Universidade do Porto/FEUP/2A-1S-AEDA/projeto/IntervaloDeTempo.h
-
 C:/Users/andre/OneDrive - Universidade do Porto/FEUP/2A-1S-AEDA/projeto/IntervaloDeTempo.h
 iostream
 -
 DataEHora.h
 C:/Users/andre/OneDrive - Universidade do Porto/FEUP/2A-1S-AEDA/projeto/DataEHora.h
-
-C:/Users/andre/OneDrive - Universidade do Porto/FEUP/2A-1S-AEDA/projeto/Sala.cpp
-Sala.h
-C:/Users/andre/OneDrive - Universidade do Porto/FEUP/2A-1S-AEDA/projeto/Sala.h
 
 C:/Users/andre/OneDrive - Universidade do Porto/FEUP/2A-1S-AEDA/projeto/Sala.h
 string
@@ -101,24 +79,6 @@ vector
 -
 IntervaloDeTempo.h
 C:/Users/andre/OneDrive - Universidade do Porto/FEUP/2A-1S-AEDA/projeto/IntervaloDeTempo.h
-
-C:/Users/andre/OneDrive - Universidade do Porto/FEUP/2A-1S-AEDA/projeto/Utils.cpp
-Utils.h
-C:/Users/andre/OneDrive - Universidade do Porto/FEUP/2A-1S-AEDA/projeto/Utils.h
-
-C:/Users/andre/OneDrive - Universidade do Porto/FEUP/2A-1S-AEDA/projeto/Utils.h
-algorithm
--
-DataEHora.h
-C:/Users/andre/OneDrive - Universidade do Porto/FEUP/2A-1S-AEDA/projeto/DataEHora.h
-
-C:/Users/andre/OneDrive - Universidade do Porto/FEUP/2A-1S-AEDA/projeto/main.cpp
-iostream
--
-fstream
--
-Cinemateca.h
-C:/Users/andre/OneDrive - Universidade do Porto/FEUP/2A-1S-AEDA/projeto/Cinemateca.h
-Utils.h
-C:/Users/andre/OneDrive - Universidade do Porto/FEUP/2A-1S-AEDA/projeto/Utils.h
+Evento.h
+C:/Users/andre/OneDrive - Universidade do Porto/FEUP/2A-1S-AEDA/projeto/Evento.h
 

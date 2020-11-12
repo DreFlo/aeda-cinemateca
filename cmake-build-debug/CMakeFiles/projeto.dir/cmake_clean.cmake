@@ -1,6 +1,7 @@
 file(REMOVE_RECURSE
   "CMakeFiles/projeto.dir/Aderente.cpp.obj"
   "CMakeFiles/projeto.dir/Cinemateca.cpp.obj"
+  "CMakeFiles/projeto.dir/Cliente.cpp.obj"
   "CMakeFiles/projeto.dir/Data.cpp.obj"
   "CMakeFiles/projeto.dir/DataEHora.cpp.obj"
   "CMakeFiles/projeto.dir/Evento.cpp.obj"

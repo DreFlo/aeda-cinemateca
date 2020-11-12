@@ -92,6 +92,12 @@
 		<Unit filename="C:/Users/andre/OneDrive - Universidade do Porto/FEUP/2A-1S-AEDA/projeto/Cinemateca.h">
 			<Option target="projeto"/>
 		</Unit>
+		<Unit filename="C:/Users/andre/OneDrive - Universidade do Porto/FEUP/2A-1S-AEDA/projeto/Cliente.cpp">
+			<Option target="projeto"/>
+		</Unit>
+		<Unit filename="C:/Users/andre/OneDrive - Universidade do Porto/FEUP/2A-1S-AEDA/projeto/Cliente.h">
+			<Option target="projeto"/>
+		</Unit>
 		<Unit filename="C:/Users/andre/OneDrive - Universidade do Porto/FEUP/2A-1S-AEDA/projeto/Data.cpp">
 			<Option target="projeto"/>
 		</Unit>

@@ -84,5 +84,4 @@ public:
     friend istream& operator>>(istream& input, Evento& event);
 };
 
-
 #endif //PROJETO_EVENTO_H

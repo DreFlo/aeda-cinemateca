@@ -6,6 +6,7 @@ set(CMAKE_DEPENDS_LANGUAGES
 set(CMAKE_DEPENDS_CHECK_CXX
   "C:/Users/andre/OneDrive - Universidade do Porto/FEUP/2A-1S-AEDA/projeto/Aderente.cpp" "C:/Users/andre/OneDrive - Universidade do Porto/FEUP/2A-1S-AEDA/projeto/cmake-build-debug/CMakeFiles/projeto.dir/Aderente.cpp.obj"
   "C:/Users/andre/OneDrive - Universidade do Porto/FEUP/2A-1S-AEDA/projeto/Cinemateca.cpp" "C:/Users/andre/OneDrive - Universidade do Porto/FEUP/2A-1S-AEDA/projeto/cmake-build-debug/CMakeFiles/projeto.dir/Cinemateca.cpp.obj"
+  "C:/Users/andre/OneDrive - Universidade do Porto/FEUP/2A-1S-AEDA/projeto/Cliente.cpp" "C:/Users/andre/OneDrive - Universidade do Porto/FEUP/2A-1S-AEDA/projeto/cmake-build-debug/CMakeFiles/projeto.dir/Cliente.cpp.obj"
   "C:/Users/andre/OneDrive - Universidade do Porto/FEUP/2A-1S-AEDA/projeto/Data.cpp" "C:/Users/andre/OneDrive - Universidade do Porto/FEUP/2A-1S-AEDA/projeto/cmake-build-debug/CMakeFiles/projeto.dir/Data.cpp.obj"
   "C:/Users/andre/OneDrive - Universidade do Porto/FEUP/2A-1S-AEDA/projeto/DataEHora.cpp" "C:/Users/andre/OneDrive - Universidade do Porto/FEUP/2A-1S-AEDA/projeto/cmake-build-debug/CMakeFiles/projeto.dir/DataEHora.cpp.obj"
   "C:/Users/andre/OneDrive - Universidade do Porto/FEUP/2A-1S-AEDA/projeto/Evento.cpp" "C:/Users/andre/OneDrive - Universidade do Porto/FEUP/2A-1S-AEDA/projeto/cmake-build-debug/CMakeFiles/projeto.dir/Evento.cpp.obj"
