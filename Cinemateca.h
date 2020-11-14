@@ -20,11 +20,20 @@ class Cinemateca {
     std::vector<Evento> EventosAntigos;
     std::vector<Evento> EventosHoje;
     std::vector<Evento> EventosFuturos;
+
 public:
     Cinemateca(std::string m, Data h, std::string f);
     Cinemateca(std::string m, Data h, std::string f, std::vector<Sala> ss);
     Cinemateca(std::string m, Data h, std::string f, std::vector<Sala> ss, std::vector<Aderente> as);
     Cinemateca(std::string m, Data h, std::string f, std::vector<Aderente> as);
+
+    Data GetHoje();
+    std::string GetMorada();
+    std::vector<Sala> Getsalas();
+    std::vector<Aderente> GetAderentes();
+    std::vector<Evento> GetEventosAntigos();
+    std::vector<Evento> GetEventosHoje();
+    std::vector<Evento> GetEventosFuturos();
 
     void MudarDiaAtual(const Data &h);
 
