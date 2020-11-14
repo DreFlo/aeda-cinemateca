@@ -33,6 +33,29 @@ Cinemateca::Cinemateca(std::string m, Data h, std::string f, std::vector<Aderent
     Aderentes = as;
 }
 
+Data Cinemateca::GetHoje(){
+    return hoje;
+}
+std::string Cinemateca::GetMorada(){
+    return morada;
+}
+std::vector<Sala> Cinemateca::Getsalas(){
+    return Salas;
+}
+std::vector<Aderente> Cinemateca::GetAderentes(){
+    return Aderentes;
+}
+std::vector<Evento> Cinemateca::GetEventosAntigos(){
+    return EventosAntigos;
+}
+std::vector<Evento> Cinemateca::GetEventosHoje(){
+    return EventosHoje;
+}
+std::vector<Evento> Cinemateca::GetEventosFuturos(){
+    return EventosFuturos;
+}
+
+
 void Cinemateca::MudarDiaAtual(const Data &h)
 {
     hoje = h;
@@ -71,7 +94,7 @@ void Cinemateca::SetAderentes(const std::vector<Aderente> as)
 /*
  * to implent
  */
-void Cinemateca::AdicionarEvento(const Evento &e);
+void AdicionarEvento(const Evento &e);
 void AdicionarEventos(const std::vector<Evento> &es);
 void SetEventos(const std::vector<Evento> &es);
 
