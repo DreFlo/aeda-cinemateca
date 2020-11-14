@@ -20,14 +20,14 @@ public:
      */
     Data() = default;
     /**
-     * Class constructor. Initializes day, month and year.
-     * @param dd - Day of the date.
-     * @param mm - Month of the date.
-     * @param yy - Year of the date.
+     * Class constructor. Initializes day, month and year. Parameters do not have to form a valid date
+     * @param dd Day
+     * @param mm Month
+     * @param yy Year
      */
     Data(unsigned int dd, unsigned int mm, unsigned int yy);
     /**
-     * Copy constructor.
+     * Copy constructor. Parameter does not have to be a valid date.
      */
     Data(const Data& date);
     /**
@@ -52,34 +52,41 @@ public:
     unsigned int getYear() const;
     /**
      * Sets day, month and year.
-     * @param dd - Day of the date.
-     * @param mm - Month of the date.
-     * @param yy - Year of the date.
+     * @param dd Day
+     * @param mm Month
+     * @param yy Year
+     * @throws InvalidDate if parameter date is not valid in the gregorian calendar
      */
-    void setDate(unsigned int dd, unsigned int mm, unsigned int yy);
+    void setDate(unsigned int dd, unsigned int mm, unsigned int yy) noexcept(false);
     /**
      * Sets date
+     * @throws InvalidDate if parameter date is not valid in the gregorian calendar
      */
-    void setDate(const Data& date);
+    void setDate(const Data& date) noexcept(false);
     /**
      * Sets date from string.
+     * @throws invalid_argument if parameter string is not properly formatted (dd/mm/yyyy)
+     * @throws InvalidDate if parameter date is not valid in the gregorian calendar
      */
-    void setDate(const string& in);
+    void setDate(const string& in) noexcept(false);
     /**
      * Changes day value.
-     * @param newDay - New day value.
+     * @param newDay new day value
+     * @throws InvalidDate if newDay does not form a valid date
      */
-    void setDay(unsigned  int newDay);
+    void setDay(unsigned  int newDay) noexcept(false);
     /**
      * Changes month value.
-     * @param newMonth - New month value.
+     * @param newMonth new month value
+     * @throws InvalidDate if newMonth does not form a valid date
      */
-    void setMonth(unsigned  int newMonth);
+    void setMonth(unsigned  int newMonth) noexcept(false);
     /**
      * Changes year value.
-     * @param newYear - New year value.
+     * @param newYear new year value
+     * @throws InvalidDate if newYear does not form a valid date
      */
-    void setYear(unsigned  int newYear);
+    void setYear(unsigned  int newYear) noexcept(false);
     /**
      * Checks if date is valid in the gregorian calendar.
      * @return True if it is. False otherwise.
@@ -94,25 +101,31 @@ public:
      * @param date - The date to be compared to.
      * @return True if it comes before. False otherwise.
      */
-    bool operator<(const Data& date) const noexcept;
+    bool operator<(const Data& date) const;
     /**
      * A date is greater than another if it comes after.
      * @param date - The date to be compared to.
      * @return True if it comes after. False otherwise.
      */
-    bool operator>(const Data& date) const noexcept;
+    bool operator>(const Data& date) const;
     /**
      * Checks if two dates are equal.
      * @return True if they are. False otherwise.
      */
-    bool operator==(const Data& date) const noexcept;
+    bool operator==(const Data& date) const;
+    /***
+     * Adds up to the next month's number of days to a date.
+     * @param no_days number of days to be added.
+     * @return A Data object with the result.
+     */
+    Data operator+(int no_days) const noexcept(false);
     /**
      * Output operator.
      */
-    friend ostream& operator<<(ostream& output, const Data& date) noexcept;
+    friend ostream& operator<<(ostream& output, const Data& date);
     /**
      * Input operator.
-     * @throws InvalidDate if it is not a valid date in the gregorian calendar.
+     * @throws InvalidDate if input is not a valid date in the gregorian calendar.
      */
     friend istream& operator>>(istream& input, Data& date) noexcept(false);
 };
@@ -121,9 +134,9 @@ class InvalidDate: public exception {
     const Data date;
     const string msg;
 public:
-    explicit InvalidDate(Data &D, string M):date(D), msg(std::move(M)) {}
-    const Data & getDate() const { return date; }
-    string getMsg() const { return msg; }
+    explicit InvalidDate(const Data &D, string M):date(D), msg(std::move(M)) {}
+    const Data & getDate() { return date; }
+    string getMsg() { return msg; }
 };
 
 #endif //PROJETO_DATA_H

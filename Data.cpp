@@ -25,54 +25,48 @@ unsigned int Data::getYear() const {
 }
 
 void Data::setDate(unsigned int dd, unsigned int mm, unsigned int yy) {
-    setDay(dd);
-    setMonth(mm);
-    setYear(yy);
+    if (!Data(dd, mm, yy).valid()) throw InvalidDate(Data(dd, mm, yy), "Invalid argument date");
+    this->day = dd;
+    this->month = mm;
+    this->year = yy;
 }
 
 void Data::setDate(const Data &date) {
-    setDay(date.getDay());
-    setMonth(date.getMonth());
-    setYear(date.getYear());
+    setDate(date.day, date.month, date.year);
 }
 
 void Data::setDate(const string& in) {
-    unsigned temp_d = day, temp_m = month, temp_y = year;
+    unsigned temp_d, temp_m, temp_y;
     // Checks if the argument string is well formatted. If not throws invalid_argument.
     regex matchStr("[0-9][0-9]/[0-9][0-9]/[0-9][0-9][0-9][0-9]");
     if (!regex_match(in, matchStr)) throw invalid_argument("Input not correctly formatted");
     // Get numbers from string.
-    day = stoi(in.substr(0, 2));
-    month = stoi(in.substr(3, 2));
-    year = stoi(in.substr(6, 4));
+    temp_d = stoi(in.substr(0, 2));
+    temp_m = stoi(in.substr(3, 2));
+    temp_y = stoi(in.substr(6, 4));
     // If argument date is not valid object remains unchanged. Throws InvalidDate.
-    if (!this->valid()) {
-        Data temp_date = *this;
-        day = temp_d;
-        month = temp_m;
-        year = temp_y;
-        throw InvalidDate(temp_date, "Invalid date");
-    }
+    this->setDate(temp_d, temp_m, temp_y);
 }
 
 void Data::setDay(unsigned int newDay) {
-    unsigned int temp = this->day;
+    if (!Data(newDay, this->month, this->year).valid())
+        throw InvalidDate(Data(newDay, this->month, this->year), "Invalid day. Not accepted.");
     this->day = newDay;
-    if (!this->valid()) {
-        this->day = temp;
-        throw InvalidDate(*this, "Invalid day. Not accepted.");
-    }
 }
 
 void Data::setMonth(unsigned int newMonth) {
+    if (!Data(this->day, newMonth, this->year).valid())
+        throw InvalidDate(Data(this->day, newMonth, this->year), "Invalid month. Not accepted.");
     this->month = newMonth;
 }
 
 void Data::setYear(unsigned int newYear) {
+    if (!Data(this->day, this->month, newYear).valid())
+        throw InvalidDate(Data(this->day, this->month, newYear), "Invalid year. Not accepted.");
     this->year = newYear;
 }
 
-bool Data::valid() const{
+bool Data::valid() const {
     unsigned int longMonths[7] = {1, 3, 5, 7, 8, 10, 12};
     if (month < 1 || month > 12 || year < 0)
         return false;
@@ -100,7 +94,7 @@ string Data::str() const {
     return res.str();
 }
 
-bool Data::operator<(const Data &date) const noexcept {
+bool Data::operator<(const Data &date) const {
     if (this->year < date.year)
         return true;
     else if (this->year == date.year) {
@@ -113,7 +107,7 @@ bool Data::operator<(const Data &date) const noexcept {
     return false;
 }
 
-bool Data::operator>(const Data &date) const noexcept {
+bool Data::operator>(const Data &date) const {
     if (this->year > date.year)
         return true;
     else if (this->year == date.year) {
@@ -126,11 +120,43 @@ bool Data::operator>(const Data &date) const noexcept {
     return false;
 }
 
-bool Data::operator==(const Data &date) const noexcept {
+bool Data::operator==(const Data &date) const {
     return this->day == date.day && this->month == date.month && this->year == date.year;
 }
 
-ostream& operator<<(ostream& output, const Data& date) noexcept{
+Data Data::operator+(const int no_days) const noexcept(false){
+    Data res;
+    unsigned res_day = this->day + no_days, res_month = this->month, res_year = this->year;
+    unsigned int longMonths[7] = {1, 3, 5, 7, 8, 10, 12};
+    // Get correct day, month, year.
+    if (res_month == 2 && res_year % 4 == 0 && res_day > 29) {
+        res_month++;
+        res_day -= 29;
+    }
+    else if (res_month == 2 && res_year % 4 == 1 && res_day > 28) {
+        res_month++;
+        res_day -= 28;
+    }
+    else if (find(longMonths, longMonths + 7, res_month) && res_day > 31) {
+        res_month++;
+        res_day -= 31;
+    }
+    else if (!find(longMonths, longMonths + 7, res_month) && res_day > 30) {
+        res_month++;
+        res_day -= 30;
+    }
+    if (res_month > 12) {
+        res_year++;
+        res_month -= 12;
+        res_day -= 31;
+    }
+    // Set and return result
+    res.setDate(res_day, res_month, res_year);
+    if (!res.valid()) throw InvalidDate(res, "Can't execute addition");
+    return res;
+}
+
+ostream& operator<<(ostream& output, const Data& date) {
     output<< date.day << " " << date.month << " " << date.year;
     return output;
 }

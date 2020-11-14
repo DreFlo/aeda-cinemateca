@@ -27,15 +27,18 @@ public:
     IntervaloDeTempo() = default;
     /**
      * Class constructor. Initializes beginning and end of interval.
-     * @param st - Beginning of the interval.
-     * @param ed - End of the interval.
+     * @param st Beginning of the interval.
+     * @param ed End of the interval.
      */
     IntervaloDeTempo(const DataEHora& st, const DataEHora& ed);
 
     /**
      * Sets beginning and end of interval.
-     * @param st - Beginning of the interval.
-     * @param ed - End of the interval.
+     * @param st Beginning of the interval.
+     * @param ed End of the interval.
+     * @throws InvalidDate if one of the inputs' sate is not valid
+     * @throws InvalidTime if one of the inputs' time is not valid
+     * @throws InvalidTimeInterval if interval starts after it finishes
      */
     void set(const DataEHora& st, const DataEHora& ed);
     /**
@@ -58,27 +61,30 @@ public:
      * Checks if time interval is valid.
      * @return True if it is false otherwhise.
      */
-    bool valid() const noexcept override;
+    bool valid() const override;
     /**
      * @return Formatted string with the time interval.
      */
-    string str() const noexcept override;
+    string str() const override;
     /**
      * Checks if two time intervals don´t overlap.
      * @return True if there is no overlap. False otherwise.
      */
-    bool operator^(const IntervaloDeTempo& timeInterval) const noexcept;
+    bool operator^(const IntervaloDeTempo& timeInterval) const;
     /**
      * Checks if two time intervals are equal.
      * @return True if they are equal. False otherwise.
      */
-    bool operator==(const IntervaloDeTempo& timeInterval) const noexcept;
+    bool operator==(const IntervaloDeTempo& timeInterval) const;
     /**
      * Output operator.
      */
-    friend ostream& operator<<(ostream& output, const IntervaloDeTempo& timeInterval) noexcept;
+    friend ostream& operator<<(ostream& output, const IntervaloDeTempo& timeInterval);
     /**
      * Input operator.
+     * @throws InvalidDate if one of the inputs' sate is not valid
+     * @throws InvalidTime if one of the inputs' time is not valid
+     * @throws InvalidTimeInterval if interval starts after it finishes
      */
     friend istream& operator>>(istream& input, IntervaloDeTempo& timeInterval) noexcept(false);
 };
@@ -87,7 +93,7 @@ class InvalidTimeInterval: public exception {
     const IntervaloDeTempo timeInterval;
     const string msg;
 public:
-    explicit InvalidTimeInterval(IntervaloDeTempo &TI, string M):timeInterval(TI), msg(std::move(M)) {}
+    explicit InvalidTimeInterval(const IntervaloDeTempo &TI, string M):timeInterval(TI), msg(std::move(M)) {}
     const IntervaloDeTempo & getTimeInterval() { return timeInterval; }
     string getMessage() const { return msg; }
 };

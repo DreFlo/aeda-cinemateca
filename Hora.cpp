@@ -24,18 +24,21 @@ unsigned int Hora::getMinute() const {
 }
 
 void Hora::setTime(unsigned int hh, unsigned int mm) {
-    setHour(hh);
-    setMinute(mm);
+    if (!Hora(hh, mm).valid()) throw InvalidTime(Hora(hh, mm), "Invalid time");
+    this->hour = hh;
+    this->minute = mm;
 }
 
 void Hora::setTime(const Hora &time) {
-    setHour(time.getHour());
-    setMinute(time.getMinute());
+    if (!time.valid()) throw InvalidTime(time, "Invalid time");
+    this->hour = time.hour;
+    this->minute = time.minute;
 }
 
 void Hora::setTime(const string& in) {
     unsigned int hh, min;
     regex matchStr("[0-9][0-9]h[0-9][0-9]min");
+    // Checks if arg is correctly formatted. Throws invalid_argument if not.
     if (!regex_match(in, matchStr))
         throw invalid_argument("Input not correctly formatted");
     hh = stoi(in.substr(0, 2));
@@ -44,10 +47,12 @@ void Hora::setTime(const string& in) {
 }
 
 void Hora::setHour(unsigned int newHour) {
+    if (!Hora(newHour, this->minute).valid()) throw InvalidTime(Hora(newHour, this->minute), "Invalid hour");
     this->hour = newHour;
 }
 
 void Hora::setMinute(unsigned int newMin) {
+    if (!Hora(this->hour, newMin).valid()) throw InvalidTime(Hora(this->hour, newMin), "Invalid hour");
     this->minute = newMin;
 }
 
@@ -89,15 +94,12 @@ bool Hora::operator==(const Hora &time) const {
 }
 
 ostream& operator<<(ostream& output, const Hora &time) {
-    /*
-
-    */
     output << time.getHour() << " " << time.getMinute();
     return output;
 }
 
 istream& operator>>(istream& input, Hora& time) {
-    string in;
     input >> time.hour >> time.minute;
+    if (!time.valid()) throw InvalidTime(time, " <- INVALID TIME");
     return input;
 }
