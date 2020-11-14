@@ -9,6 +9,8 @@
 
 using namespace std;
 
+class InvalidDate;
+
 class Data {
 private:
     unsigned int day = 0, month = 0, year = 0;
@@ -92,33 +94,36 @@ public:
      * @param date - The date to be compared to.
      * @return True if it comes before. False otherwise.
      */
-    bool operator<(const Data& date) const;
+    bool operator<(const Data& date) const noexcept;
     /**
      * A date is greater than another if it comes after.
      * @param date - The date to be compared to.
      * @return True if it comes after. False otherwise.
      */
-    bool operator>(const Data& date) const;
+    bool operator>(const Data& date) const noexcept;
     /**
      * Checks if two dates are equal.
      * @return True if they are. False otherwise.
      */
-    bool operator==(const Data& date) const;
+    bool operator==(const Data& date) const noexcept;
     /**
      * Output operator.
      */
-    friend ostream& operator<<(ostream& output, const Data& date);
+    friend ostream& operator<<(ostream& output, const Data& date) noexcept;
     /**
      * Input operator.
+     * @throws InvalidDate if it is not a valid date in the gregorian calendar.
      */
-    friend istream& operator>>(istream& input, Data& date);
+    friend istream& operator>>(istream& input, Data& date) noexcept(false);
 };
 
 class InvalidDate: public exception {
     const Data date;
+    const string msg;
 public:
-    explicit InvalidDate(Data &D):date(D) {}
+    explicit InvalidDate(Data &D, string M):date(D), msg(std::move(M)) {}
     const Data & getDate() const { return date; }
+    string getMsg() const { return msg; }
 };
 
 #endif //PROJETO_DATA_H

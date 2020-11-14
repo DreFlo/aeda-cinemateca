@@ -27,30 +27,30 @@ IntervaloDeTempo& IntervaloDeTempo::getTimeIntervalRef() {
     return *this;
 }
 
-bool IntervaloDeTempo::valid() const {
+bool IntervaloDeTempo::valid() const noexcept{
     return StartDataEHora::valid() && EndDataEHora::valid() && this->getStart() > this->getEnd();
 }
 
-string IntervaloDeTempo::str() const {
+string IntervaloDeTempo::str() const noexcept{
     return "start - " + StartDataEHora::str() + " end - " + EndDataEHora::str();
 }
 
-bool IntervaloDeTempo::operator^(const IntervaloDeTempo& timeInterval) const {
+bool IntervaloDeTempo::operator^(const IntervaloDeTempo& timeInterval) const noexcept{
     return (this->getStart() < timeInterval.getStart() && this->getEnd() < timeInterval.getStart()) ||
            this->getStart() > timeInterval.getEnd();
 }
 
-bool IntervaloDeTempo::operator==(const IntervaloDeTempo& timeInterval) const {
+bool IntervaloDeTempo::operator==(const IntervaloDeTempo& timeInterval) const noexcept{
     return this->getStart() == timeInterval.getStart() && this->getEnd() == timeInterval.getEnd();
 }
 
-ostream& operator<<(ostream& output, const IntervaloDeTempo& timeInterval) {
+ostream& operator<<(ostream& output, const IntervaloDeTempo& timeInterval) noexcept{
     output << timeInterval.getStart() << " " << timeInterval.getEnd();
     return output;
 }
 
-istream& operator>>(istream& input, IntervaloDeTempo& timeInterval) {
+istream& operator>>(istream& input, IntervaloDeTempo& timeInterval) noexcept(false){
     input >> timeInterval.StartDataEHora::getDateAndTimeRef() >> timeInterval.EndDataEHora::getDateAndTimeRef();
-    if (!timeInterval.valid()) throw InvalidTimeInterval();
+    if (!timeInterval.valid()) throw InvalidTimeInterval(timeInterval, " <- INVALID TIME INTERVAL");
     return input;
 }

@@ -2,6 +2,7 @@
 #define PROJETO_INTERVALODETEMPO_H
 
 #include <iostream>
+#include <utility>
 #include "DataEHora.h"
 
 using namespace std;
@@ -30,6 +31,7 @@ public:
      * @param ed - End of the interval.
      */
     IntervaloDeTempo(const DataEHora& st, const DataEHora& ed);
+
     /**
      * Sets beginning and end of interval.
      * @param st - Beginning of the interval.
@@ -56,36 +58,38 @@ public:
      * Checks if time interval is valid.
      * @return True if it is false otherwhise.
      */
-    bool valid() const override;
+    bool valid() const noexcept override;
     /**
      * @return Formatted string with the time interval.
      */
-    string str() const override;
+    string str() const noexcept override;
     /**
      * Checks if two time intervals don´t overlap.
      * @return True if there is no overlap. False otherwise.
      */
-    bool operator^(const IntervaloDeTempo& timeInterval) const;
+    bool operator^(const IntervaloDeTempo& timeInterval) const noexcept;
     /**
      * Checks if two time intervals are equal.
      * @return True if they are equal. False otherwise.
      */
-    bool operator==(const IntervaloDeTempo& timeInterval) const;
+    bool operator==(const IntervaloDeTempo& timeInterval) const noexcept;
     /**
      * Output operator.
      */
-    friend ostream& operator<<(ostream& output, const IntervaloDeTempo& timeInterval);
+    friend ostream& operator<<(ostream& output, const IntervaloDeTempo& timeInterval) noexcept;
     /**
      * Input operator.
      */
-    friend istream& operator>>(istream& input, IntervaloDeTempo& timeInterval);
+    friend istream& operator>>(istream& input, IntervaloDeTempo& timeInterval) noexcept(false);
 };
 
 class InvalidTimeInterval: public exception {
     const IntervaloDeTempo timeInterval;
+    const string msg;
 public:
-    explicit InvalidTimeInterval(IntervaloDeTempo &TI):timeInterval(TI) {}
+    explicit InvalidTimeInterval(IntervaloDeTempo &TI, string M):timeInterval(TI), msg(std::move(M)) {}
     const IntervaloDeTempo & getTimeInterval() { return timeInterval; }
+    string getMessage() const { return msg; }
 };
 
 #endif //PROJETO_INTERVALODETEMPO_H

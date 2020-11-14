@@ -50,13 +50,13 @@ void Evento::setDuration(const Hora& drtn) {
     duration = drtn;
 }
 
-string Evento::str() const {
+string Evento::str() const noexcept{
     stringstream res;
     res << name << " " << room << " " << maxAttendance << " " << price << " " << start.str() << " " << duration.str();
     return res.str();
 }
 
-ostream& operator<<(ostream& output, const Evento& event) {
+ostream& operator<<(ostream& output, const Evento& event) noexcept{
     output << event.getName() << " " << event.getRoom() << " " << event.getPrice() << " " << event.getMaxAttendance()
            << " " << event.getStart() << " " << event.getDuration() << " " << event.getTimeInterval() << endl;
     return output;

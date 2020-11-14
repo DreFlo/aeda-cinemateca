@@ -73,11 +73,11 @@ public:
     /**
      * @return Returns formatted string with the event.
      */
-    string str() const override;
+    string str() const noexcept override;
     /**
      * Output operator.
      */
-    friend ostream& operator<<(ostream& output, const Evento& event);
+    friend ostream& operator<<(ostream& output, const Evento& event) noexcept;
     /**
      * Input operator.
      */
