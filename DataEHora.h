@@ -11,11 +11,11 @@ public:
     DataEHora() = default;
     /**
      * Constructor. Initializes day, month, year, hour, minute.
-     * @param dd - Day
-     * @param mm - Month
-     * @param yy - Year
-     * @param hh - Hour
-     * @param min - Minute
+     * @param dd Day
+     * @param mm Month
+     * @param yy Year
+     * @param hh Hour
+     * @param min Minute
      */
     DataEHora(int dd, int mm, int yy, int hh, int min);
     /**
@@ -24,18 +24,29 @@ public:
     DataEHora(const DataEHora &dateAndTime);
     /**
      * Sets day, month, year, hour, minute.
-     * @param dd - Day
-     * @param mm - Month
-     * @param yy - Year
-     * @param hh - Hour
-     * @param min - Minute
+     * @param dd Day
+     * @param mm Month
+     * @param yy Year
+     * @param hh Hour
+     * @param min Minute
+     * @throws InvalidDate if parameter date is not valid in the gregorian calendar
+     * @throws InvalidTime if time formed by parameters is not valid
      */
     void setDateAndTime(unsigned int dd, unsigned int mm, unsigned int yy,
-                        unsigned int hh, unsigned int min);
+                        unsigned int hh, unsigned int min) noexcept(false);
     /**
      * Sets date and time.
+     * @throws InvalidDate if parameter's date is not valid in the gregorian calendar
+     * @throws InvalidTime if parameter time is not valid
      */
-    void setDateAndTime(const DataEHora & dateAndTime);
+    void setDateAndTime(const DataEHora & dateAndTime) noexcept(false);
+    /**
+     * Sets date and time from string.
+     * @throws invalid_argument if parameter string is not properly formatted (dd/mm/yyyy HHhMMmin)
+     * @throws InvalidDate if parameter's date is not valid in the gregorian calendar
+     * @throws InvalidTime if parameter's time is not valid
+     */
+    void setDateAndTime(const string &in) noexcept(false);
     /**
      * @return DataEHora object.
      */
@@ -80,8 +91,10 @@ public:
     friend ostream& operator<<(ostream& output, const DataEHora& dateAndTime);
     /**
      * Input operator
+     * @throws InvalidDate if input is not a valid date in the gregorian calendar
+     * @throws InvalidTime if input is not a valid time
      */
-    friend istream& operator>>(istream& input, DataEHora& dateAndTime);
+    friend istream& operator>>(istream& input, DataEHora& dateAndTime) noexcept(false);
 };
 
 
