@@ -5,7 +5,7 @@ DataEHora::DataEHora(int dd, int mm, int yy, int hh, int min):Data(dd, mm, yy), 
 DataEHora::DataEHora(const DataEHora &dateAndTime):Data(dateAndTime.getDate()), Hora(dateAndTime.getTime()) {}
 
 // DEVE TAR A APARECER UM WARNING NESTA.
-void DataEHora::setDateAndTime(unsigned int dd, unsigned int mm, unsigned int yy, unsigned int hh, unsigned int min) {
+void DataEHora::setDateAndTime(int dd, int mm, int yy, int hh, int min) {
     this->Hora::setTime(hh, min);
     this->Data::setDate(dd, mm, yy);
 }
@@ -63,8 +63,8 @@ bool DataEHora::operator==(const DataEHora& dateTime) const {
 
 DataEHora DataEHora::operator+(const Hora& time) const {
     DataEHora result;
-    unsigned int resMin, resHour, resDay = this->getDay(), resMonth = this->getMonth(), resYear = this->getYear();
-    unsigned int longMonths[7] = {1, 3, 5, 7, 8, 10, 12};
+    int resMin, resHour, resDay = this->getDay(), resMonth = this->getMonth(), resYear = this->getYear();
+    int longMonths[7] = {1, 3, 5, 7, 8, 10, 12};
     //Get correct hour and minute of the result.
     resMin = (this->getMinute() + time.getMinute()) % 60;
     resHour = (this->getHour() + time.getHour() + ((this->getMinute() + time.getMinute()) / 60)) % 24;

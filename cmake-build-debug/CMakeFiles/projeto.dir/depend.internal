@@ -18,6 +18,8 @@ CMakeFiles/projeto.dir/DataEHora.cpp.obj
  C:/Users/andre/OneDrive - Universidade do Porto/FEUP/2A-1S-AEDA/projeto/DataEHora.h
  C:/Users/andre/OneDrive - Universidade do Porto/FEUP/2A-1S-AEDA/projeto/Hora.h
 CMakeFiles/projeto.dir/Evento.cpp.obj
+ C:/Users/andre/OneDrive - Universidade do Porto/FEUP/2A-1S-AEDA/projeto/Aderente.h
+ C:/Users/andre/OneDrive - Universidade do Porto/FEUP/2A-1S-AEDA/projeto/Cliente.h
  C:/Users/andre/OneDrive - Universidade do Porto/FEUP/2A-1S-AEDA/projeto/Data.h
  C:/Users/andre/OneDrive - Universidade do Porto/FEUP/2A-1S-AEDA/projeto/DataEHora.h
  C:/Users/andre/OneDrive - Universidade do Porto/FEUP/2A-1S-AEDA/projeto/Evento.cpp
@@ -33,10 +35,26 @@ CMakeFiles/projeto.dir/IntervaloDeTempo.cpp.obj
  C:/Users/andre/OneDrive - Universidade do Porto/FEUP/2A-1S-AEDA/projeto/Hora.h
  C:/Users/andre/OneDrive - Universidade do Porto/FEUP/2A-1S-AEDA/projeto/IntervaloDeTempo.cpp
  C:/Users/andre/OneDrive - Universidade do Porto/FEUP/2A-1S-AEDA/projeto/IntervaloDeTempo.h
-CMakeFiles/projeto.dir/Utils.cpp.obj
+CMakeFiles/projeto.dir/Sala.cpp.obj
+ C:/Users/andre/OneDrive - Universidade do Porto/FEUP/2A-1S-AEDA/projeto/Aderente.h
+ C:/Users/andre/OneDrive - Universidade do Porto/FEUP/2A-1S-AEDA/projeto/Cliente.h
  C:/Users/andre/OneDrive - Universidade do Porto/FEUP/2A-1S-AEDA/projeto/Data.h
  C:/Users/andre/OneDrive - Universidade do Porto/FEUP/2A-1S-AEDA/projeto/DataEHora.h
+ C:/Users/andre/OneDrive - Universidade do Porto/FEUP/2A-1S-AEDA/projeto/Evento.h
  C:/Users/andre/OneDrive - Universidade do Porto/FEUP/2A-1S-AEDA/projeto/Hora.h
+ C:/Users/andre/OneDrive - Universidade do Porto/FEUP/2A-1S-AEDA/projeto/IntervaloDeTempo.h
+ C:/Users/andre/OneDrive - Universidade do Porto/FEUP/2A-1S-AEDA/projeto/Sala.cpp
+ C:/Users/andre/OneDrive - Universidade do Porto/FEUP/2A-1S-AEDA/projeto/Sala.h
+CMakeFiles/projeto.dir/Utils.cpp.obj
+ C:/Users/andre/OneDrive - Universidade do Porto/FEUP/2A-1S-AEDA/projeto/Aderente.h
+ C:/Users/andre/OneDrive - Universidade do Porto/FEUP/2A-1S-AEDA/projeto/Cinemateca.h
+ C:/Users/andre/OneDrive - Universidade do Porto/FEUP/2A-1S-AEDA/projeto/Cliente.h
+ C:/Users/andre/OneDrive - Universidade do Porto/FEUP/2A-1S-AEDA/projeto/Data.h
+ C:/Users/andre/OneDrive - Universidade do Porto/FEUP/2A-1S-AEDA/projeto/DataEHora.h
+ C:/Users/andre/OneDrive - Universidade do Porto/FEUP/2A-1S-AEDA/projeto/Evento.h
+ C:/Users/andre/OneDrive - Universidade do Porto/FEUP/2A-1S-AEDA/projeto/Hora.h
+ C:/Users/andre/OneDrive - Universidade do Porto/FEUP/2A-1S-AEDA/projeto/IntervaloDeTempo.h
+ C:/Users/andre/OneDrive - Universidade do Porto/FEUP/2A-1S-AEDA/projeto/Sala.h
  C:/Users/andre/OneDrive - Universidade do Porto/FEUP/2A-1S-AEDA/projeto/Utils.cpp
  C:/Users/andre/OneDrive - Universidade do Porto/FEUP/2A-1S-AEDA/projeto/Utils.h
 CMakeFiles/projeto.dir/main.cpp.obj

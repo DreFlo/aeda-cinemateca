@@ -1,6 +1,6 @@
 #include "Data.h"
 
-Data::Data(unsigned int dd, unsigned int mm, unsigned int yy):day(dd), month(mm), year(yy) {}
+Data::Data(int dd, int mm, int yy):day(dd), month(mm), year(yy) {}
 
 Data::Data(const Data& date) {
     this->day = date.day;
@@ -12,19 +12,19 @@ Data Data::getDate() const {
     return *this;
 }
 
-unsigned int Data::getDay() const {
+int Data::getDay() const {
     return day;
 }
 
-unsigned int Data::getMonth() const {
+int Data::getMonth() const {
     return month;
 }
 
-unsigned int Data::getYear() const {
+int Data::getYear() const {
     return year;
 }
 
-void Data::setDate(unsigned int dd, unsigned int mm, unsigned int yy) {
+void Data::setDate(int dd, int mm, int yy) {
     if (!Data(dd, mm, yy).valid()) throw InvalidDate(Data(dd, mm, yy), "Invalid argument date");
     this->day = dd;
     this->month = mm;
@@ -36,7 +36,7 @@ void Data::setDate(const Data &date) {
 }
 
 void Data::setDate(const string& in) {
-    unsigned temp_d, temp_m, temp_y;
+    int temp_d, temp_m, temp_y;
     // Checks if the argument string is well formatted. If not throws invalid_argument.
     regex matchStr("[0-9][0-9]/[0-9][0-9]/[0-9][0-9][0-9][0-9]");
     if (!regex_match(in, matchStr)) throw invalid_argument("Input not correctly formatted");
@@ -48,26 +48,26 @@ void Data::setDate(const string& in) {
     this->setDate(temp_d, temp_m, temp_y);
 }
 
-void Data::setDay(unsigned int newDay) {
+void Data::setDay(int newDay) {
     if (!Data(newDay, this->month, this->year).valid())
         throw InvalidDate(Data(newDay, this->month, this->year), "Invalid day. Not accepted.");
     this->day = newDay;
 }
 
-void Data::setMonth(unsigned int newMonth) {
+void Data::setMonth(int newMonth) {
     if (!Data(this->day, newMonth, this->year).valid())
         throw InvalidDate(Data(this->day, newMonth, this->year), "Invalid month. Not accepted.");
     this->month = newMonth;
 }
 
-void Data::setYear(unsigned int newYear) {
+void Data::setYear(int newYear) {
     if (!Data(this->day, this->month, newYear).valid())
         throw InvalidDate(Data(this->day, this->month, newYear), "Invalid year. Not accepted.");
     this->year = newYear;
 }
 
 bool Data::valid() const {
-    unsigned int longMonths[7] = {1, 3, 5, 7, 8, 10, 12};
+    int longMonths[7] = {1, 3, 5, 7, 8, 10, 12};
     if (month < 1 || month > 12 || year < 0)
         return false;
     else if (year % 4 == 0 && month == 2)
@@ -126,8 +126,8 @@ bool Data::operator==(const Data &date) const {
 
 Data Data::operator+(const int no_days) const noexcept(false){
     Data res;
-    unsigned res_day = this->day + no_days, res_month = this->month, res_year = this->year;
-    unsigned int longMonths[7] = {1, 3, 5, 7, 8, 10, 12};
+    int res_day = this->day + no_days, res_month = this->month, res_year = this->year;
+    int longMonths[7] = {1, 3, 5, 7, 8, 10, 12};
     // Get correct day, month, year.
     if (res_month == 2 && res_year % 4 == 0 && res_day > 29) {
         res_month++;

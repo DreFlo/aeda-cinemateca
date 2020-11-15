@@ -17,6 +17,8 @@ CMakeFiles/projeto.dir/DataEHora.cpp.obj: ../DataEHora.cpp
 CMakeFiles/projeto.dir/DataEHora.cpp.obj: ../DataEHora.h
 CMakeFiles/projeto.dir/DataEHora.cpp.obj: ../Hora.h
 
+CMakeFiles/projeto.dir/Evento.cpp.obj: ../Aderente.h
+CMakeFiles/projeto.dir/Evento.cpp.obj: ../Cliente.h
 CMakeFiles/projeto.dir/Evento.cpp.obj: ../Data.h
 CMakeFiles/projeto.dir/Evento.cpp.obj: ../DataEHora.h
 CMakeFiles/projeto.dir/Evento.cpp.obj: ../Evento.cpp
@@ -33,9 +35,25 @@ CMakeFiles/projeto.dir/IntervaloDeTempo.cpp.obj: ../Hora.h
 CMakeFiles/projeto.dir/IntervaloDeTempo.cpp.obj: ../IntervaloDeTempo.cpp
 CMakeFiles/projeto.dir/IntervaloDeTempo.cpp.obj: ../IntervaloDeTempo.h
 
+CMakeFiles/projeto.dir/Sala.cpp.obj: ../Aderente.h
+CMakeFiles/projeto.dir/Sala.cpp.obj: ../Cliente.h
+CMakeFiles/projeto.dir/Sala.cpp.obj: ../Data.h
+CMakeFiles/projeto.dir/Sala.cpp.obj: ../DataEHora.h
+CMakeFiles/projeto.dir/Sala.cpp.obj: ../Evento.h
+CMakeFiles/projeto.dir/Sala.cpp.obj: ../Hora.h
+CMakeFiles/projeto.dir/Sala.cpp.obj: ../IntervaloDeTempo.h
+CMakeFiles/projeto.dir/Sala.cpp.obj: ../Sala.cpp
+CMakeFiles/projeto.dir/Sala.cpp.obj: ../Sala.h
+
+CMakeFiles/projeto.dir/Utils.cpp.obj: ../Aderente.h
+CMakeFiles/projeto.dir/Utils.cpp.obj: ../Cinemateca.h
+CMakeFiles/projeto.dir/Utils.cpp.obj: ../Cliente.h
 CMakeFiles/projeto.dir/Utils.cpp.obj: ../Data.h
 CMakeFiles/projeto.dir/Utils.cpp.obj: ../DataEHora.h
+CMakeFiles/projeto.dir/Utils.cpp.obj: ../Evento.h
 CMakeFiles/projeto.dir/Utils.cpp.obj: ../Hora.h
+CMakeFiles/projeto.dir/Utils.cpp.obj: ../IntervaloDeTempo.h
+CMakeFiles/projeto.dir/Utils.cpp.obj: ../Sala.h
 CMakeFiles/projeto.dir/Utils.cpp.obj: ../Utils.cpp
 CMakeFiles/projeto.dir/Utils.cpp.obj: ../Utils.h
 

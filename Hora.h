@@ -17,7 +17,7 @@ class InvalidTime;
 
 class Hora {
 private:
-    unsigned int hour = 0, minute = 0;
+    int hour = 0, minute = 0;
 public:
     /**
      * Default constructor.
@@ -28,7 +28,7 @@ public:
      * @param hh Hour
      * @param mm Minute
      */
-    Hora(unsigned int hh, unsigned int mm);
+    Hora(int hh, int mm);
     /**
      * Copy constructor. Parameter does not have to be a valid time.
      */
@@ -44,18 +44,18 @@ public:
     /**
      * @return Returns the hour of the time.
      */
-    unsigned int getHour() const;
+    int getHour() const;
     /**
      * @return Returns the minute of the time.
      */
-    unsigned int getMinute() const;
+    int getMinute() const;
     /**
      * Sets hour and minute.
      * @param hh Hour
      * @param mm Minute
      * @throws InvalidTime if time formed by parameters is not valid
      */
-    void setTime(unsigned int hh, unsigned int mm) noexcept(false);
+    void setTime(int hh, int mm) noexcept(false);
     /**
      * Sets time.
      * @throws InvalidTime if parameter time is not valid
@@ -72,13 +72,13 @@ public:
     * @param newHour new hour value
     * @throws InvalidTime if parameter does not form a valid time
     */
-    void setHour(unsigned  int newHour) noexcept(false);
+    void setHour(int newHour) noexcept(false);
     /**
     * Changes minute value.
     * @param newMin new min value
     * @throws InvalidTime if parameter does not form a valid time
     */
-    void setMinute(unsigned  int newMin) noexcept(false);
+    void setMinute(int newMin) noexcept(false);
     /**
      * Checks if time is valid.
      * @return True if it is. False otherwise.

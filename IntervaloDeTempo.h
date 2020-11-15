@@ -93,7 +93,7 @@ class InvalidTimeInterval: public exception {
     const IntervaloDeTempo timeInterval;
     const string msg;
 public:
-    explicit InvalidTimeInterval(const IntervaloDeTempo &TI, string M):timeInterval(TI), msg(std::move(M)) {}
+    explicit InvalidTimeInterval(IntervaloDeTempo TI, string M):timeInterval(std::move(TI)), msg(std::move(M)) {}
     const IntervaloDeTempo & getTimeInterval() { return timeInterval; }
     string getMessage() const { return msg; }
 };

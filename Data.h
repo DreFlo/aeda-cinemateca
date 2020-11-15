@@ -13,7 +13,7 @@ class InvalidDate;
 
 class Data {
 private:
-    unsigned int day = 0, month = 0, year = 0;
+    int day = 0, month = 0, year = 0;
 public:
     /**
      * Default constructor.
@@ -25,7 +25,7 @@ public:
      * @param mm Month
      * @param yy Year
      */
-    Data(unsigned int dd, unsigned int mm, unsigned int yy);
+    Data(int dd, int mm, int yy);
     /**
      * Copy constructor. Parameter does not have to be a valid date.
      */
@@ -41,15 +41,15 @@ public:
     /**
      * @return The day stored in the date.
      */
-    unsigned int getDay() const;
+    int getDay() const;
     /**
      * @return The month stored in the date.
      */
-    unsigned int getMonth() const;
+    int getMonth() const;
     /**
      * @return The year stored in the date.
      */
-    unsigned int getYear() const;
+    int getYear() const;
     /**
      * Sets day, month and year.
      * @param dd Day
@@ -57,7 +57,7 @@ public:
      * @param yy Year
      * @throws InvalidDate if parameter date is not valid in the gregorian calendar
      */
-    void setDate(unsigned int dd, unsigned int mm, unsigned int yy) noexcept(false);
+    void setDate(int dd, int mm, int yy) noexcept(false);
     /**
      * Sets date
      * @throws InvalidDate if parameter date is not valid in the gregorian calendar
@@ -74,19 +74,19 @@ public:
      * @param newDay new day value
      * @throws InvalidDate if newDay does not form a valid date
      */
-    void setDay(unsigned  int newDay) noexcept(false);
+    void setDay(int newDay) noexcept(false);
     /**
      * Changes month value.
      * @param newMonth new month value
      * @throws InvalidDate if newMonth does not form a valid date
      */
-    void setMonth(unsigned  int newMonth) noexcept(false);
+    void setMonth(int newMonth) noexcept(false);
     /**
      * Changes year value.
      * @param newYear new year value
      * @throws InvalidDate if newYear does not form a valid date
      */
-    void setYear(unsigned  int newYear) noexcept(false);
+    void setYear(int newYear) noexcept(false);
     /**
      * Checks if date is valid in the gregorian calendar.
      * @return True if it is. False otherwise.

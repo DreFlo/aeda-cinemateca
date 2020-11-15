@@ -1,10 +1,10 @@
 #include "Hora.h"
 
-Hora::Hora(unsigned int hh, unsigned int mm):hour(hh), minute(mm) {}
+Hora::Hora(int hh, int mm):hour(hh), minute(mm) {}
 
 Hora::Hora(const Hora &time) {
-    setHour(time.getHour());
-    setMinute(time.getMinute());
+    this->hour = time.hour;
+    this->minute = time.minute;
 }
 
 Hora Hora::getTime() const {
@@ -15,15 +15,15 @@ Hora& Hora::getTimeRef() {
     return *this;
 }
 
-unsigned int Hora::getHour() const {
+int Hora::getHour() const {
     return hour;
 }
 
-unsigned int Hora::getMinute() const {
+int Hora::getMinute() const {
     return minute;
 }
 
-void Hora::setTime(unsigned int hh, unsigned int mm) {
+void Hora::setTime(int hh, int mm) {
     if (!Hora(hh, mm).valid()) throw InvalidTime(Hora(hh, mm), "Invalid time");
     this->hour = hh;
     this->minute = mm;
@@ -36,7 +36,7 @@ void Hora::setTime(const Hora &time) {
 }
 
 void Hora::setTime(const string& in) {
-    unsigned int hh, min;
+    int hh, min;
     regex matchStr("[0-9][0-9]h[0-9][0-9]min");
     // Checks if arg is correctly formatted. Throws invalid_argument if not.
     if (!regex_match(in, matchStr))
@@ -46,18 +46,18 @@ void Hora::setTime(const string& in) {
     this->setTime(hh, min);
 }
 
-void Hora::setHour(unsigned int newHour) {
+void Hora::setHour(int newHour) {
     if (!Hora(newHour, this->minute).valid()) throw InvalidTime(Hora(newHour, this->minute), "Invalid hour");
     this->hour = newHour;
 }
 
-void Hora::setMinute(unsigned int newMin) {
+void Hora::setMinute(int newMin) {
     if (!Hora(this->hour, newMin).valid()) throw InvalidTime(Hora(this->hour, newMin), "Invalid hour");
     this->minute = newMin;
 }
 
 bool Hora::valid() const {
-    return hour < 24 && minute < 60;
+    return hour < 24 && minute < 60 && hour > 0 && minute > 0;
 }
 
 string Hora::str() const {

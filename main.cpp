@@ -4,6 +4,10 @@
 using namespace std;
 using namespace utils;
 
+string input;
+DataEHora today;
+vector<Cinemateca *> cinemas;
+
 int main() {
     // Any input that would turn cin.fail() true throws an exception of type ios_base::failure.
     cin.exceptions(ios_base::failbit | ios_base::badbit);

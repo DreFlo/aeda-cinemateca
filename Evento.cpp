@@ -44,16 +44,22 @@ void Evento::setPrice(float prc) {
 
 void Evento::setStart(const DataEHora& st) {
     start = st;
+    this->IntervaloDeTempo::StartDataEHora::setDateAndTime(start);
 }
 
 void Evento::setDuration(const Hora& drtn) {
     duration = drtn;
+    this->IntervaloDeTempo::EndDataEHora::setDateAndTime(start + duration);
 }
 
 string Evento::str() const noexcept{
     stringstream res;
     res << name << " " << room << " " << maxAttendance << " " << price << " " << start.str() << " " << duration.str();
     return res.str();
+}
+
+bool Evento::operator<(Evento &E2) const {
+    return this->start < E2.start;
 }
 
 ostream& operator<<(ostream& output, const Evento& event) noexcept{

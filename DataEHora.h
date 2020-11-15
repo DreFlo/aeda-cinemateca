@@ -32,8 +32,7 @@ public:
      * @throws InvalidDate if parameter date is not valid in the gregorian calendar
      * @throws InvalidTime if time formed by parameters is not valid
      */
-    void setDateAndTime(unsigned int dd, unsigned int mm, unsigned int yy,
-                        unsigned int hh, unsigned int min) noexcept(false);
+    void setDateAndTime(int dd, int mm, int yy, int hh, int min) noexcept(false);
     /**
      * Sets date and time.
      * @throws InvalidDate if parameter's date is not valid in the gregorian calendar

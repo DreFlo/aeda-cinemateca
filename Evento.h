@@ -3,13 +3,14 @@
 
 #include <utility>
 #include "IntervaloDeTempo.h"
+#include "Aderente.h"
 
 using namespace std;
 
 class Evento: public IntervaloDeTempo {
     string name, room = "NULL";
     unsigned int maxAttendance{};
-    float price{};
+    float price{}, total = 0;
     DataEHora start;
     Hora duration;
 public:
@@ -74,6 +75,7 @@ public:
      * @return Returns formatted string with the event.
      */
     string str() const noexcept override;
+    bool operator<(Evento & E2) const;
     /**
      * Output operator.
      */
