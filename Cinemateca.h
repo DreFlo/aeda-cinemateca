@@ -8,12 +8,12 @@
 #include "Evento.h"
 #include "Aderente.h"
 #include "Sala.h"
+#include "Utils.h"
 
 using namespace std;
 
 class Cinemateca {
-    Data hoje;
-    std::string ficheiro;
+    static DataEHora hoje;
     std::string morada;
     std::vector<Sala> Salas;
     std::vector<Aderente> Aderentes;
@@ -22,12 +22,12 @@ class Cinemateca {
     std::vector<Evento> EventosFuturos;
 
 public:
-    Cinemateca(std::string m, Data h, std::string f);
-    Cinemateca(std::string m, Data h, std::string f, std::vector<Sala> ss);
-    Cinemateca(std::string m, Data h, std::string f, std::vector<Sala> ss, std::vector<Aderente> as);
-    Cinemateca(std::string m, Data h, std::string f, std::vector<Aderente> as);
+    Cinemateca(std::string m, const DataEHora& h);
+    Cinemateca(std::string m, const DataEHora& h, std::vector<Sala> ss);
+    Cinemateca(std::string m, const DataEHora& h, std::vector<Sala> ss, std::vector<Aderente> as);
+    Cinemateca(std::string m, DataEHora h, std::vector<Aderente> as);
 
-    Data GetHoje();
+    static DataEHora GetHoje();
     std::string GetMorada();
     std::vector<Sala> Getsalas();
     std::vector<Aderente> GetAderentes();
@@ -35,15 +35,15 @@ public:
     std::vector<Evento> GetEventosHoje();
     std::vector<Evento> GetEventosFuturos();
 
-    void MudarDiaAtual(const Data &h);
+    static void MudarAgora(const DataEHora &h);
 
     void AdicionarSala(const Sala &s);
-    void AdicionarSalas(std::vector<Sala> ss);
-    void SetSalas(std::vector<Sala> ss);
+    void AdicionarSalas(const std::vector<Sala> &ss);
+    void SetSalas(const std::vector<Sala> &ss);
 
-    void AdicionarAderente(const Aderente a);
-    void AdicionarAderentes(const std::vector<Aderente> as);
-    void SetAderentes(const std::vector<Aderente> as);
+    void AdicionarAderente(const Aderente &a);
+    void AdicionarAderentes(const std::vector<Aderente> &as);
+    void SetAderentes(const std::vector<Aderente> &as);
 
     void AdicionarEvento(const Evento &e);
     void AdicionarEventos(const std::vector<Evento> &es);
