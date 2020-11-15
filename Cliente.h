@@ -10,7 +10,7 @@ using namespace std;
 class Cliente{
 protected:
     string name, city;
-    unsigned cell;
+    unsigned int cell;
 public:
     /**
      * Class constructor
@@ -18,7 +18,7 @@ public:
      * @param cit City
      * @param cel Cellphone number
      */
-    Cliente(string nam, string cit, unsigned cel);
+    Cliente(string nam, string cit, unsigned int cel);
     /**
      * @return Person's name.
      */
@@ -27,6 +27,11 @@ public:
      * @return City where they live in.
      */
     string getCity() const;
+    /**
+     * @return Cellphone number.
+     */
+    unsigned int getCell() const;
+    bool compName(const Cliente &c1, const Cliente &c2) const;
 };
 
 #endif //PROJETO_CLIENTE_H

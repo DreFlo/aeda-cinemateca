@@ -4,6 +4,7 @@
 
 #include <string>
 #include <iostream>
+#include <sstream>
 
 #include "Data.h"
 #include "Cliente.h"
@@ -25,11 +26,11 @@ public:
      * @param bday Birthday
      * @param year Adhesion year
      */
-    Aderente(string nam, string cit, unsigned cel, unsigned nif, Data bday, int year);
+    Aderente(string nam, string cit, unsigned int cel, unsigned int nif, Data bday, int year);
     /**
      * @return Person's NIF.
      */
-    unsigned getNIF() const;
+    unsigned int getNIF() const;
     /**
      * @return Person's birthday.
      */
@@ -44,7 +45,7 @@ public:
      * @param p2 Second person to compare
      * @return True if the first person has been in the organization longer than the second person
      */
-    bool compYear(Aderente p1, Aderente p2) const;
+    bool compYear(const Aderente &p1, const Aderente &p2) const;
 };
 
 
