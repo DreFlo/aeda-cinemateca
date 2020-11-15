@@ -2,6 +2,7 @@
 #define PROJETO_UTILS_H
 
 #include <algorithm>
+#include "Evento.h"
 #include "DataEHora.h"
 
 #define WELCOME_MSG "Welcome! Please input today's date [dd mm yy]: "
@@ -14,6 +15,7 @@ using namespace std;
 
 namespace utils {
     void printHelp();
+    bool CompararEventos(const Evento e1, const Evento e2);
 }
 
 #endif //PROJETO_UTILS_H
