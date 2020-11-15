@@ -2,8 +2,8 @@
 
 #include <utility>
 
-Evento::Evento(string nm, unsigned int mxCp, float prc, const DataEHora& st, const Hora& drtn):
-        name(std::move(nm)), maxAttendance(mxCp), price(prc), start(st), duration(drtn),
+Evento::Evento(string nm, float prc, const DataEHora& st, const Hora& drtn, int mxAtn):
+        name(std::move(nm)), maxAttendance(mxAtn), price(prc), start(st), duration(drtn),
         IntervaloDeTempo(st, st + drtn) {}
 
 string Evento::getName() const {
@@ -14,7 +14,7 @@ string Evento::getRoom() const{
     return room;
 }
 
-unsigned int Evento::getMaxAttendance() const {
+int Evento::getMaxAttendance() const {
     return maxAttendance;
 }
 
@@ -26,6 +26,29 @@ Hora Evento::getDuration() const {
     return duration;
 }
 
+float Evento::getTotal() const {
+    return total;
+}
+
+int Evento::getLot() const {
+    return lot;
+}
+
+void Evento::signUp(const Cliente &C) {
+    if (lot == maxAttendance) throw EventFull();
+    lot++;
+    total += price;
+}
+
+void Evento::signUp(const Aderente &A, bool free) {
+    if (lot == maxAttendance) throw EventFull();
+    lot++;
+    if (!free) {
+        if (this->start.getYear() - A.getAdhYear() >= 15) total += price * 0.85;
+        else total += price * (1 - 0.01 * (this->start.getYear() - A.getAdhYear()));
+    }
+}
+
 void Evento::setName(string nm) {
     name = std::move(nm);
 }
@@ -34,7 +57,7 @@ void Evento::setRoom(string rm) {
     room = std::move(rm);
 }
 
-void Evento::setMaxAttendance(unsigned int mxCp) {
+void Evento::setMaxAttendance(int mxCp) {
     maxAttendance = mxCp;
 }
 
@@ -52,9 +75,11 @@ void Evento::setDuration(const Hora& drtn) {
     this->IntervaloDeTempo::EndDataEHora::setDateAndTime(start + duration);
 }
 
-string Evento::str() const noexcept{
+string Evento::str() const {
     stringstream res;
-    res << name << " " << room << " " << maxAttendance << " " << price << " " << start.str() << " " << duration.str();
+    res << "Name: " << name << " Room: " << room << " Admission price: " << price << " Event total: " << total
+        << " Maximum Attendance: " << maxAttendance << " Attendance: " << lot
+        << " " << start.str() << " " << duration.str();
     return res.str();
 }
 
@@ -62,14 +87,15 @@ bool Evento::operator<(Evento &E2) const {
     return this->start < E2.start;
 }
 
-ostream& operator<<(ostream& output, const Evento& event) noexcept{
-    output << event.getName() << " " << event.getRoom() << " " << event.getPrice() << " " << event.getMaxAttendance()
-           << " " << event.getStart() << " " << event.getDuration() << " " << event.getTimeInterval() << endl;
+ostream& operator<<(ostream& output, const Evento& event) {
+    output << event.name << " " << event.room << " " << event.price << " " << event.total
+           << " " << event.maxAttendance << " " << event.lot
+           << " " << event.start << " " << event.duration << " " << event.getTimeInterval() << endl;
     return output;
 }
 
 istream& operator>>(istream& input, Evento& event) {
-    input >> event.name >> event.room >> event.price >> event.maxAttendance >> event.start >> event.duration
-          >> event.getTimeIntervalRef();
+    input >> event.name >> event.room >> event.price >> event.total >> event.maxAttendance >> event.lot
+          >> event.start >> event.duration >> event.getTimeIntervalRef();
     return input;
 }
