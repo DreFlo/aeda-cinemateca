@@ -15,7 +15,7 @@ int main() {
     setToday();
     do {
         cout << GET_CMD_MSG;
-        cin >> input;
+        getline(cin, input);
         if (input == "help")
             utils::printHelp();
         else if (input == "exit")
