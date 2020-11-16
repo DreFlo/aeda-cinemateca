@@ -40,7 +40,7 @@ void Hora::setTime(const string& in) {
     regex matchStr("[0-9][0-9]h[0-9][0-9]min");
     // Checks if arg is correctly formatted. Throws invalid_argument if not.
     if (!regex_match(in, matchStr))
-        throw invalid_argument("Input not correctly formatted");
+        throw invalid_argument("Time input not correctly formatted!");
     hh = stoi(in.substr(0, 2));
     min = stoi(in.substr(3, 2));
     this->setTime(hh, min);
@@ -57,7 +57,7 @@ void Hora::setMinute(int newMin) {
 }
 
 bool Hora::valid() const {
-    return hour < 24 && minute < 60 && hour > 0 && minute > 0;
+    return (hour >= 0 && hour < 24 && minute >= 0 && minute < 60);
 }
 
 string Hora::str() const {
@@ -100,6 +100,6 @@ ostream& operator<<(ostream& output, const Hora &time) {
 
 istream& operator>>(istream& input, Hora& time) {
     input >> time.hour >> time.minute;
-    if (!time.valid()) throw InvalidTime(time, " <- INVALID TIME");
+    if (!(time.valid())) {throw InvalidTime(time, " <- INVALID TIME");}
     return input;
 }

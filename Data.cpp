@@ -38,8 +38,8 @@ void Data::setDate(const Data &date) {
 void Data::setDate(const string& in) {
     int temp_d, temp_m, temp_y;
     // Checks if the argument string is well formatted. If not throws invalid_argument.
-    regex matchStr("[0-9][0-9]/[0-9][0-9]/[0-9][0-9][0-9][0-9]");
-    if (!regex_match(in, matchStr)) throw invalid_argument("Input not correctly formatted");
+    regex matchStr("[0-9][0-9].[0-9][0-9].[0-9][0-9][0-9][0-9]");
+    if (!regex_match(in, matchStr)) throw invalid_argument("Date input not correctly formatted!");
     // Get numbers from string.
     temp_d = stoi(in.substr(0, 2));
     temp_m = stoi(in.substr(3, 2));
@@ -84,13 +84,13 @@ bool Data::valid() const {
 string Data::str() const {
     stringstream res;
     if (day < 10 && month < 10)
-        res << "0" <<  day << "/0" << month << "/" << year;
+        res << "0" <<  day << ".0" << month << "." << year;
     else if (day < 10 && month >= 10)
-        res << "0" <<  day << "/" << month << "/" << year;
+        res << "0" <<  day << "." << month << "." << year;
     else if (day >= 10 && month < 10)
-        res <<  day << "/0" << month << "/" << year;
+        res <<  day << ".0" << month << "." << year;
     else
-        res <<  day << "/" << month << "/" << year;
+        res <<  day << "." << month << "." << year;
     return res.str();
 }
 
@@ -163,7 +163,7 @@ ostream& operator<<(ostream& output, const Data& date) {
 
 istream& operator>>(istream& input, Data& date) {
     input >> date.day >> date.month >> date.year;
-    if(!date.valid()) throw InvalidDate(date, " <- INVALID DATE");
+    if(!(date.valid())) { throw InvalidDate(date, " <- INVALID DATE"); }
     return input;
 }
 

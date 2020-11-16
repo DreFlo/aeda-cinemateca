@@ -90,15 +90,15 @@ void Cinemateca::SetAderentes(const std::vector<Aderente> &as){
 void Cinemateca::AdicionarEvento(const Evento &e){
     if(e.getStart() < this->GetHoje()){
         EventosAntigos.push_back(e);
-        sort(EventosAntigos.begin(), EventosAntigos.end(), utils::CompararEventos);
+        sort(EventosAntigos.begin(), EventosAntigos.end());
     }
     else if(e.getStart() == this->GetHoje()){
         EventosHoje.push_back(e);
-        sort(EventosHoje.begin(), EventosHoje.end(), utils::CompararEventos);
+        sort(EventosHoje.begin(), EventosHoje.end());
     }
     else{
         EventosFuturos.push_back(e);
-        sort(EventosFuturos.begin(), EventosFuturos.end(), utils::CompararEventos);
+        sort(EventosFuturos.begin(), EventosFuturos.end());
     }
 }
 void Cinemateca::AdicionarEventos(const std::vector<Evento> &es){

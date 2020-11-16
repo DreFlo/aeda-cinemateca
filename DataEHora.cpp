@@ -6,8 +6,8 @@ DataEHora::DataEHora(const DataEHora &dateAndTime):Data(dateAndTime.getDate()), 
 
 // DEVE TAR A APARECER UM WARNING NESTA.
 void DataEHora::setDateAndTime(int dd, int mm, int yy, int hh, int min) {
-    this->Hora::setTime(hh, min);
-    this->Data::setDate(dd, mm, yy);
+    this->setTime(hh, min);
+    this->setDate(dd, mm, yy);
 }
 
 void DataEHora::setDateAndTime(const DataEHora &dateAndTime) {
@@ -17,8 +17,8 @@ void DataEHora::setDateAndTime(const DataEHora &dateAndTime) {
 
 void DataEHora::setDateAndTime(const string &in) noexcept(false) {
     string date_str, time_str;
-    regex matchStr("[0-9][0-9]/[0-9][0-9]/[0-9][0-9][0-9][0-9] [0-9][0-9]h[0-9][0-9]min");
-    if (!regex_match(in, matchStr)) throw invalid_argument("Input not correctly formatted");
+    regex matchStr("[0-9][0-9].[0-9][0-9].[0-9][0-9][0-9][0-9] [0-9][0-9]h[0-9][0-9]min");
+    if (!regex_match(in, matchStr)) throw invalid_argument("Date and time input not correctly formatted");
     date_str = in.substr(0,10);
     time_str = in.substr(11, in.size());
     this->setDate(date_str);
@@ -38,7 +38,7 @@ bool DataEHora::valid() const {
 }
 
 string DataEHora::str() const {
-    return Data::str() + " " + Hora::str();
+    return Hora::str() + " " + Data::str();
 }
 
 bool DataEHora::operator<(const DataEHora& dateTime) const {
@@ -102,6 +102,6 @@ ostream& operator<<(ostream& output, const DataEHora& dateAndTime) {
 }
 
 istream& operator>>(istream& input, DataEHora& dateAndTime) {
-    input >> dateAndTime.getDateRef() >> dateAndTime.getTimeRef();
+    input >> dateAndTime.getTimeRef() >> dateAndTime.getDateRef();
     return input;
 }

@@ -5,7 +5,7 @@
 #include "Cinemateca.h"
 
 #define WELCOME_MSG "Welcome!"
-#define INNPUT_TODAY_MSG "Please input the present date and time (dd/mm/yy HHhMMmin): "
+#define INNPUT_TODAY_MSG "Please input the present date and time (dd/mm/yyyy HHhMMmin): "
 #define CHOOSE_CINEMATECA_MSG "To which cinema would you like to add an event? "
 #define INVALID_INPUT_MSG "Invalid input"
 #define INVALID_DATE_MSG " is not a valid date in the gregorian calendar. Try again [dd mm yy]: "
@@ -23,6 +23,8 @@ namespace utils {
     void setToday();
     void addEvent();
     void constructEvent(Evento & event);
+    Cinemateca * findCinemateca(const string & name);
+    void decapitalize(string name);
 }
 
 #endif //PROJETO_UTILS_H

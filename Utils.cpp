@@ -8,7 +8,7 @@ void utils::printHelp() {
 
 void utils::setToday() try{
     cout << INNPUT_TODAY_MSG;
-    cin >> input;
+    getline(cin, input);
     cout << endl;
     today.setDateAndTime(input);
     Cinemateca::MudarAgora(today);
@@ -32,7 +32,28 @@ void utils::addEvent() try {
     Evento temp;
     cout << CHOOSE_CINEMATECA_MSG;
     cin >> input;
-    cout << endl;
+    decapitalize(input);
+    while (input != "lisboa" && input != "porto") {
+        cout << "There are only 'Lisboa' and 'Porto'. " << CHOOSE_CINEMATECA_MSG;
+        cin >> input;
+    }
     constructEvent(temp);
-    for (auto cine : cinemas) if (cine->GetMorada() == input) cine->AdicionarEvento(temp);
+    findCinemateca(input)->AdicionarEvento(temp);
 } catch (...) {}
+
+void utils::constructEvent(Evento &event) {
+
+}
+
+Cinemateca * utils::findCinemateca(const string &name) {
+    for (auto cine : cinemas)
+        if (cine->GetMorada() == name)
+            return cine;
+    return nullptr;
+}
+
+void utils::decapitalize(string name) {
+    for (char & i : name) {
+        i = ::tolower(i);
+    }
+}

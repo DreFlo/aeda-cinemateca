@@ -88,14 +88,15 @@ bool Evento::operator<(Evento &E2) const {
 }
 
 ostream& operator<<(ostream& output, const Evento& event) {
-    output << event.name << " " << event.room << " " << event.price << " " << event.total
+    output << event.name << '\t' << event.room << '\t' << event.price << " " << event.total
            << " " << event.maxAttendance << " " << event.lot
            << " " << event.start << " " << event.duration << " " << event.getTimeInterval() << endl;
     return output;
 }
 
 istream& operator>>(istream& input, Evento& event) {
-    input >> event.name >> event.room >> event.price >> event.total >> event.maxAttendance >> event.lot
+    getline(input, event.name, '\t');
+    getline(input, event.room, '\t') >> event.price >> event.total >> event.maxAttendance >> event.lot
           >> event.start >> event.duration >> event.getTimeIntervalRef();
     return input;
 }

@@ -8,7 +8,6 @@
 #include "Evento.h"
 #include "Aderente.h"
 #include "Sala.h"
-#include "Utils.h"
 
 using namespace std;
 
