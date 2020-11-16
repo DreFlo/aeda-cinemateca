@@ -8,6 +8,7 @@
 #include "Evento.h"
 #include "Aderente.h"
 #include "Sala.h"
+#include <fstream>
 
 using namespace std;
 
@@ -24,7 +25,7 @@ public:
     Cinemateca(std::string m, const DataEHora& h);
     Cinemateca(std::string m, const DataEHora& h, std::vector<Sala> ss);
     Cinemateca(std::string m, const DataEHora& h, std::vector<Sala> ss, std::vector<Aderente> as);
-    Cinemateca(std::string m, DataEHora h, std::vector<Aderente> as);
+    Cinemateca(std::string m, const DataEHora& h, std::vector<Aderente> as);
 
     static DataEHora GetHoje();
     std::string GetMorada();
@@ -36,21 +37,24 @@ public:
 
     static void MudarAgora(const DataEHora &h);
 
-    void AdicionarSala(const Sala &s);
-    void AdicionarSalas(const std::vector<Sala> &ss);
-    void SetSalas(const std::vector<Sala> &ss);
+    void AdicionarSala(const Sala &sal);
+    void AdicionarSalas(const std::vector<Sala> &sals);
+    void SetSalas(const std::vector<Sala> &sals);
 
-    void AdicionarAderente(const Aderente &a);
-    void AdicionarAderentes(const std::vector<Aderente> &as);
-    void SetAderentes(const std::vector<Aderente> &as);
+    void AdicionarAderente(const Aderente &aderen);
+    void AdicionarAderentes(const std::vector<Aderente> &aderens);
+    void SetAderentes(const std::vector<Aderente> &aderens);
 
-    void AdicionarEvento(const Evento &e);
-    void AdicionarEventos(const std::vector<Evento> &es);
-    void SetEventos(const std::vector<Evento> &es);
+    void AdicionarEvento(const Evento &event);
+    void AdicionarEventos(const std::vector<Evento> &events);
+    void SetEventos(const std::vector<Evento> &events);
 
     std::vector<Evento> ProcurarEventosData(const Data &d);
     std::vector<Evento> ProcurarEventosDepoisData(const Data &d);
     std::vector<Evento> ProcurarEventosAntesData(const Data &d);
+
+    void LerFicheiroEventos(const std::string& filepath);
+    void EscreverFicheiroEventos(const std::string& filepath);
 };
 
 

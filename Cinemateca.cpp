@@ -4,30 +4,32 @@
 
 #include "Cinemateca.h"
 
+#include <utility>
+
 DataEHora Cinemateca::hoje = DataEHora();
 
 /*
  * Construtores
  */
 Cinemateca::Cinemateca(std::string m, const DataEHora& h){
-    morada = m;
+    morada = std::move(m);
     hoje = h;
 }
 Cinemateca::Cinemateca(std::string m, const DataEHora& h, std::vector<Sala> ss){
-    morada = m;
+    morada = std::move(m);
     hoje = h;
-    Salas = ss;
+    Salas = std::move(ss);
 }
 Cinemateca::Cinemateca(std::string m, const DataEHora& h, std::vector<Sala> ss, std::vector<Aderente> as){
-    morada = m;
+    morada = std::move(m);
     hoje = h;
-    Salas = ss;
-    Aderentes = as;
+    Salas = std::move(ss);
+    Aderentes = std::move(as);
 }
-Cinemateca::Cinemateca(std::string m, DataEHora h, std::vector<Aderente> as){
-    morada = m;
+Cinemateca::Cinemateca(std::string m, const DataEHora& h, std::vector<Aderente> as){
+    morada = std::move(m);
     hoje = h;
-    Aderentes = as;
+    Aderentes = std::move(as);
 }
 
 
@@ -63,54 +65,54 @@ void Cinemateca::MudarAgora(const DataEHora &h){
 }
 
 
-void Cinemateca::AdicionarSala(const Sala &s){
-    Salas.push_back(s);
+void Cinemateca::AdicionarSala(const Sala &sal){
+    Salas.push_back(sal);
 }
-void Cinemateca::AdicionarSalas(const std::vector<Sala> &ss){
-    for(auto sala : ss){
+void Cinemateca::AdicionarSalas(const std::vector<Sala> &sals){
+    for(const auto& sala : sals){
         Salas.push_back(sala);
     }
 }
-void Cinemateca::SetSalas(const std::vector<Sala> &ss){
-    Salas = ss;
+void Cinemateca::SetSalas(const std::vector<Sala> &sals){
+    Salas = sals;
 }
 
-void Cinemateca::AdicionarAderente(const Aderente &a){
-    Aderentes.push_back(a);
+void Cinemateca::AdicionarAderente(const Aderente &aderen){
+    Aderentes.push_back(aderen);
 }
-void Cinemateca::AdicionarAderentes(const std::vector<Aderente> &as){
-    for(auto aderen : as){
+void Cinemateca::AdicionarAderentes(const std::vector<Aderente> &aderens){
+    for(const auto& aderen : aderens){
         Aderentes.push_back(aderen);
     }
 }
-void Cinemateca::SetAderentes(const std::vector<Aderente> &as){
-    Aderentes = as;
+void Cinemateca::SetAderentes(const std::vector<Aderente> &aderens){
+    Aderentes = aderens;
 }
 
-void Cinemateca::AdicionarEvento(const Evento &e){
-    if(e.getStart() < this->GetHoje()){
-        EventosAntigos.push_back(e);
+void Cinemateca::AdicionarEvento(const Evento &event){
+    if(event.getStart() < this->GetHoje()){
+        EventosAntigos.push_back(event);
         sort(EventosAntigos.begin(), EventosAntigos.end());
     }
-    else if(e.getStart() == this->GetHoje()){
-        EventosHoje.push_back(e);
+    else if(event.getStart() == this->GetHoje()){
+        EventosHoje.push_back(event);
         sort(EventosHoje.begin(), EventosHoje.end());
     }
     else{
-        EventosFuturos.push_back(e);
+        EventosFuturos.push_back(event);
         sort(EventosFuturos.begin(), EventosFuturos.end());
     }
 }
-void Cinemateca::AdicionarEventos(const std::vector<Evento> &es){
-    for(auto e : es){
-        AdicionarEvento(e);
+void Cinemateca::AdicionarEventos(const std::vector<Evento> &events){
+    for(const auto& event : events){
+        AdicionarEvento(event);
     }
 }
-void Cinemateca::SetEventos(const std::vector<Evento> &es){
+void Cinemateca::SetEventos(const std::vector<Evento> &events){
     EventosAntigos.clear();
     EventosHoje.clear();
     EventosFuturos.clear();
-    AdicionarEventos(es);
+    AdicionarEventos(events);
 }
 
 std::vector<Evento> Cinemateca::ProcurarEventosData(const Data &d){
@@ -120,7 +122,7 @@ std::vector<Evento> Cinemateca::ProcurarEventosData(const Data &d){
 
     std::vector<Evento> aux;
     if(d < hoje.getDate()){
-        for(auto event : EventosAntigos){
+        for(const auto& event : EventosAntigos){
             if(event.getStart().getDate() == d){
                 aux.push_back(event);
             }
@@ -132,7 +134,7 @@ std::vector<Evento> Cinemateca::ProcurarEventosData(const Data &d){
     }
 
     else{
-        for(auto event : EventosFuturos){
+        for(const auto& event : EventosFuturos){
             if(event.getStart().getDate() == d){
                 aux.push_back(event);
             }
@@ -152,7 +154,7 @@ std::vector<Evento> Cinemateca::ProcurarEventosDepoisData(const Data &d){
     std::vector<Evento> aux;
 
     if(d > hoje){
-        for(auto event : EventosFuturos){
+        for(const auto& event : EventosFuturos){
             if(d < event.getStart().getDate()){
                 aux.push_back(event);
             }
@@ -160,13 +162,13 @@ std::vector<Evento> Cinemateca::ProcurarEventosDepoisData(const Data &d){
     }
 
     else{
-        for(auto event : EventosHoje){
+        for(const auto& event : EventosHoje){
             aux.push_back(event);
         }
-        for(auto event : EventosFuturos){
+        for(const auto& event : EventosFuturos){
             aux.push_back(event);
         }
-        for(auto event : EventosAntigos){
+        for(const auto& event : EventosAntigos){
             if(d < event.getStart().getDate()){
                 aux.push_back(event);
             }
@@ -182,7 +184,7 @@ std::vector<Evento> Cinemateca::ProcurarEventosAntesData(const Data &d){
     std::vector<Evento> aux;
 
     if(d < hoje){
-        for(auto event : EventosAntigos){
+        for(const auto& event : EventosAntigos){
             if(d > event.getStart().getDate()){
                 aux.push_back(event);
             }
@@ -190,13 +192,13 @@ std::vector<Evento> Cinemateca::ProcurarEventosAntesData(const Data &d){
     }
 
     else{
-        for(auto event : EventosHoje){
+        for(const auto& event : EventosHoje){
             aux.push_back(event);
         }
-        for(auto event : EventosAntigos){
+        for(const auto& event : EventosAntigos){
             aux.push_back(event);
         }
-        for(auto event : EventosFuturos){
+        for(const auto& event : EventosFuturos){
             if(d > event.getStart().getDate()){
                 aux.push_back(event);
             }
@@ -206,3 +208,35 @@ std::vector<Evento> Cinemateca::ProcurarEventosAntesData(const Data &d){
     return aux;
 }
 
+void Cinemateca::LerFicheiroEventos(const std::string& filepath) {
+    Evento event;
+    ifstream myfile (filepath);
+
+    while(myfile >> event){
+        //assumindo que é um evento valido
+        AdicionarEvento(event);
+    }
+
+    myfile.close();
+}
+
+void Cinemateca::EscreverFicheiroEventos(const std::string &filepath) {
+    ofstream myfile (filepath);
+
+    if(myfile.is_open()){
+        for(const auto& event: EventosAntigos){
+            myfile << event;
+        }
+        for(const auto& event: EventosHoje){
+            myfile << event;
+        }
+        for(const auto& event: EventosFuturos){
+            myfile << event;
+        }
+    }
+    else{
+        //throw couldn't open file
+    }
+
+    myfile.close();
+}
