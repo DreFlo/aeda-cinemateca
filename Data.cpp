@@ -163,7 +163,7 @@ ostream& operator<<(ostream& output, const Data& date) {
 
 istream& operator>>(istream& input, Data& date) {
     input >> date.day >> date.month >> date.year;
-    if(!(date.valid())) { throw InvalidDate(date, " <- INVALID DATE"); }
+    //if(!(date.valid())) { throw InvalidDate(date, " <- INVALID DATE"); }
     return input;
 }
 

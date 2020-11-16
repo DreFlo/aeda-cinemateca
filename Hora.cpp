@@ -100,6 +100,6 @@ ostream& operator<<(ostream& output, const Hora &time) {
 
 istream& operator>>(istream& input, Hora& time) {
     input >> time.hour >> time.minute;
-    if (!(time.valid())) {throw InvalidTime(time, " <- INVALID TIME");}
+    //if (!(time.valid())) {throw InvalidTime(time, " <- INVALID TIME");}
     return input;
 }
