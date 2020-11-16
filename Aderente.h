@@ -45,8 +45,18 @@ public:
      * @param p2 Second person to compare
      * @return True if the first person has been in the organization longer than the second person
      */
-    bool compYear(const Aderente &p1, const Aderente &p2) const;
-};
+    void addAderente();
 
+    bool compYear(const Aderente &p1, const Aderente &p2) const;
+    bool compAge(const Aderente &p1, const Aderente &p2) const;
+};
+/*
+class InvalidAderente : public InvalidCliente{
+    string atribute;
+public:
+    InvalidAderente(string wrong) : atribute(wrong) {};
+
+
+};*/
 
 #endif //PROJETO_ADERENTE_H

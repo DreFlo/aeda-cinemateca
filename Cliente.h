@@ -31,7 +31,13 @@ public:
      * @return Cellphone number.
      */
     unsigned int getCell() const;
+    string addName() const;
     bool compName(const Cliente &c1, const Cliente &c2) const;
 };
+/*
+class InvalidCliente{
+protected:
+    string atribute;
+};*/
 
 #endif //PROJETO_CLIENTE_H
