@@ -57,7 +57,7 @@ public:
      */
     void endEvent(const Evento event, const IntervaloDeTempo time);
 private:
-    vector<IntervaloDeTempo> availability;
+    vector<IntervaloDeTempo> ocupacao;
     //vector<Evento, IntervaloDeTempo> pastEvents;
 };
 

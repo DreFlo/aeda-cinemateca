@@ -10,8 +10,8 @@ int Sala::getCapacity() const {return capacity;}
 string Sala::getCity() const {return city;}
 
 bool Sala::checkAvailability(const IntervaloDeTempo time) const {
-    for (int i = 0; i < availability.size(); i++){
-        if (availability[i]^time){
+    for (int i = 0; i < ocupacao.size(); i++){
+        if (ocupacao[i]^time){
             return false;
         }
     }
@@ -20,14 +20,14 @@ bool Sala::checkAvailability(const IntervaloDeTempo time) const {
 
 void Sala::addEvent(const IntervaloDeTempo time) {
     if (!checkAvailability(time)) throw  AlreadyScheduled(time);
-    availability.push_back(time);
+    ocupacao.push_back(time);
 }
 
 void Sala::cancelEvent(const IntervaloDeTempo time) {
     if (checkAvailability(time)) throw NoEventScheduled(time);
-    for (vector<IntervaloDeTempo>::iterator it = availability.begin(); it != availability.end(); it++){
+    for (vector<IntervaloDeTempo>::iterator it = ocupacao.begin(); it != ocupacao.end(); it++){
         if ((*it) == time){
-            availability.erase(it);
+            ocupacao.erase(it);
         }
     }
 }

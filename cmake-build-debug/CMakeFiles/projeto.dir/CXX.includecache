@@ -29,6 +29,8 @@ C:/Users/dluis/OneDrive - Universidade do Porto/2 ano/AEDA/aeda-cinemateca/aeda-
 C:/Users/dluis/OneDrive - Universidade do Porto/2 ano/AEDA/aeda-cinemateca/aeda-cinemateca/Cinemateca.cpp
 Cinemateca.h
 C:/Users/dluis/OneDrive - Universidade do Porto/2 ano/AEDA/aeda-cinemateca/aeda-cinemateca/Cinemateca.h
+utility
+-
 
 C:/Users/dluis/OneDrive - Universidade do Porto/2 ano/AEDA/aeda-cinemateca/aeda-cinemateca/Cinemateca.h
 Evento.h
@@ -37,6 +39,8 @@ Aderente.h
 C:/Users/dluis/OneDrive - Universidade do Porto/2 ano/AEDA/aeda-cinemateca/aeda-cinemateca/Aderente.h
 Sala.h
 C:/Users/dluis/OneDrive - Universidade do Porto/2 ano/AEDA/aeda-cinemateca/aeda-cinemateca/Sala.h
+fstream
+-
 
 C:/Users/dluis/OneDrive - Universidade do Porto/2 ano/AEDA/aeda-cinemateca/aeda-cinemateca/Cliente.cpp
 Cliente.h
@@ -48,10 +52,6 @@ string
 iostream
 -
 
-C:/Users/dluis/OneDrive - Universidade do Porto/2 ano/AEDA/aeda-cinemateca/aeda-cinemateca/Data.cpp
-Data.h
-C:/Users/dluis/OneDrive - Universidade do Porto/2 ano/AEDA/aeda-cinemateca/aeda-cinemateca/Data.h
-
 C:/Users/dluis/OneDrive - Universidade do Porto/2 ano/AEDA/aeda-cinemateca/aeda-cinemateca/Data.h
 iostream
 -
@@ -61,10 +61,6 @@ stdexcept
 -
 regex
 -
-
-C:/Users/dluis/OneDrive - Universidade do Porto/2 ano/AEDA/aeda-cinemateca/aeda-cinemateca/DataEHora.cpp
-DataEHora.h
-C:/Users/dluis/OneDrive - Universidade do Porto/2 ano/AEDA/aeda-cinemateca/aeda-cinemateca/DataEHora.h
 
 C:/Users/dluis/OneDrive - Universidade do Porto/2 ano/AEDA/aeda-cinemateca/aeda-cinemateca/DataEHora.h
 Data.h
@@ -86,10 +82,6 @@ C:/Users/dluis/OneDrive - Universidade do Porto/2 ano/AEDA/aeda-cinemateca/aeda-
 Aderente.h
 C:/Users/dluis/OneDrive - Universidade do Porto/2 ano/AEDA/aeda-cinemateca/aeda-cinemateca/Aderente.h
 
-C:/Users/dluis/OneDrive - Universidade do Porto/2 ano/AEDA/aeda-cinemateca/aeda-cinemateca/Hora.cpp
-Hora.h
-C:/Users/dluis/OneDrive - Universidade do Porto/2 ano/AEDA/aeda-cinemateca/aeda-cinemateca/Hora.h
-
 C:/Users/dluis/OneDrive - Universidade do Porto/2 ano/AEDA/aeda-cinemateca/aeda-cinemateca/Hora.h
 iostream
 -
@@ -101,10 +93,6 @@ regex
 -
 utility
 -
-
-C:/Users/dluis/OneDrive - Universidade do Porto/2 ano/AEDA/aeda-cinemateca/aeda-cinemateca/IntervaloDeTempo.cpp
-IntervaloDeTempo.h
-C:/Users/dluis/OneDrive - Universidade do Porto/2 ano/AEDA/aeda-cinemateca/aeda-cinemateca/IntervaloDeTempo.h
 
 C:/Users/dluis/OneDrive - Universidade do Porto/2 ano/AEDA/aeda-cinemateca/aeda-cinemateca/IntervaloDeTempo.h
 iostream
