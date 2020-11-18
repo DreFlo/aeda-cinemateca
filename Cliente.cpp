@@ -24,17 +24,3 @@ bool Cliente::operator==(const Cliente &p1) const {
 bool Cliente::operator<(const Cliente &c1) const {
     return (name < c1.name);
 }
-
-istream &operator>>(istream &input, Cliente &c1) {
-    string a, b, c, d;
-    input >> a >> b >> c >> d;
-    c1.name = (a + " " + b);
-    c1.city = c;
-    c1.cell = stoul(d);
-    return input;
-}
-
-ostream &operator<<(ostream &output, const Cliente &c1) {
-    output << c1.name << " " << c1.city << " " << c1.cell;
-    return output;
-}
