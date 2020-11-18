@@ -55,6 +55,12 @@ public:
 
     void LerFicheiroEventos(const std::string& filepath);
     void EscreverFicheiroEventos(const std::string& filepath);
+
+    void LerFicheiroAderentes(const std::string& filepath);
+    void EscreverFicheiroAderentes(const std::string& filepath);
+
+    void LerFicheiroSalas(const std::string& filepath);
+    void EscreverFicheiroSalas(const std::string& filepath);
 };
 
 

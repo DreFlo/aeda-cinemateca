@@ -240,3 +240,67 @@ void Cinemateca::EscreverFicheiroEventos(const std::string &filepath) {
 
     myfile.close();
 }
+
+void Cinemateca::LerFicheiroAderentes(const std::string &filepath) {
+    Aderente aderen("", "", 0, 0, Data(),0);
+    ifstream myfile (filepath);
+
+    if(myfile.is_open()){
+        while(myfile >> aderen){
+            //assumindo que é um Aderente valido
+            AdicionarAderente(aderen);
+        }
+    }
+    else{
+        //throw could't open file
+    }
+
+    myfile.close();
+}
+
+void Cinemateca::EscreverFicheiroAderentes(const std::string &filepath) {
+    ofstream myfile (filepath);
+
+    if(myfile.is_open()){
+        for(const auto& aderen: Aderentes){
+            myfile << aderen;
+        }
+    }
+    else{
+        //throw couldn't open file
+    }
+
+    myfile.close();
+}
+
+void Cinemateca::LerFicheiroSalas(const std::string &filepath) {
+    Sala sal("", 0);
+    ifstream myfile (filepath);
+
+    if(myfile.is_open()){
+        while(myfile >> sal){
+            //assumindo que é uma sala valida
+            AdicionarSala(sal);
+        }
+    }
+    else{
+        //throw could't open file
+    }
+
+    myfile.close();
+}
+
+void Cinemateca::EscreverFicheiroSalas(const std::string &filepath) {
+    ofstream myfile (filepath);
+
+    if(myfile.is_open()){
+        for(const auto& sal: Salas){
+            myfile << sal;
+        }
+    }
+    else{
+        //throw couldn't open file
+    }
+
+    myfile.close();
+}
