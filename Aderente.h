@@ -45,10 +45,10 @@ public:
      * @param p2 Second person to compare
      * @return True if the first person has been in the organization longer than the second person
      */
-    void addAderente();
-
     bool compYear(const Aderente &p1, const Aderente &p2) const;
     bool compAge(const Aderente &p1, const Aderente &p2) const;
+    friend istream& operator>>(istream& input, Aderente &p1);
+    friend ostream& operator<<(ostream& output, const Aderente &p1);
 };
 /*
 class InvalidAderente : public InvalidCliente{

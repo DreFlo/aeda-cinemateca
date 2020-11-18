@@ -32,6 +32,7 @@ public:
      */
     unsigned int getCell() const;
     bool compName(const Cliente &c1, const Cliente &c2) const;
+    bool compCell(const Cliente &c1, const Cliente &c2) const;
 };
 
 
