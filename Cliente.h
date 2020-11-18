@@ -31,8 +31,12 @@ public:
      * @return Cellphone number.
      */
     unsigned int getCell() const;
+    bool operator==(const Cliente &c1) const;
+    bool operator<(const Cliente &c1) const;
     bool compName(const Cliente &c1, const Cliente &c2) const;
     bool compCell(const Cliente &c1, const Cliente &c2) const;
+    friend istream& operator>>(istream& input, Cliente &c1);
+    friend ostream& operator<<(ostream& output, const Cliente &c1);
 };
 
 

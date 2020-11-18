@@ -1,13 +1,11 @@
 
 #include "Sala.h"
 
-Sala::Sala(string n, int cap, string cit) : name(n), capacity(cap), city(cit) {}
+Sala::Sala(string n, int cap) : name(n), capacity(cap) {}
 
 string Sala::getName() const {return name;}
 
 int Sala::getCapacity() const {return capacity;}
-
-string Sala::getCity() const {return city;}
 
 bool Sala::checkAvailability(const IntervaloDeTempo time) const {
     for (int i = 0; i < ocupacao.size(); i++){
@@ -30,6 +28,33 @@ void Sala::cancelEvent(const IntervaloDeTempo time) {
             ocupacao.erase(it);
         }
     }
+}
+
+bool Sala::operator==(const Sala &s1) const {
+    return (name == s1.name);
+}
+
+bool Sala::operator<(const Sala &s1) const {
+    return (capacity < s1.capacity);
+}
+
+istream &operator>>(istream &input, Sala &s1) {
+    string s;
+    int pos = 0;
+    input >> s;
+    for (int i = 0; i < s.size(); i++){
+        if ((int(s[i]) >= 48) && (int(s[i]) <= 57)){
+            if (pos = 0) {pos = i;}
+            break;
+        }
+    }
+    s1.capacity = stoi(s.substr(pos, (s.size() - pos)));
+    s1.name = s.substr(0, pos);
+    return input;
+}
+
+ostream &operator<<(ostream &output, const Sala &s1) {
+    output << s1.name << " " << s1.capacity;
 }
 
 

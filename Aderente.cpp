@@ -20,12 +20,12 @@ Data Aderente::getBirthday() const {return birthday;}
 
 int Aderente::getAdhYear() const {return adh_year;}
 
-bool Aderente::compYear(const Aderente &p1, const Aderente &p2) const {
-    return (p1.adh_year < p2.adh_year);
+bool Aderente::operator==(const Aderente &p1) const {
+    return (NIF == p1.NIF);
 }
 
-bool Aderente::compAge(const Aderente &p1, const Aderente &p2) const {
-    return (p1.birthday < p2.birthday);
+bool Aderente::operator<(const Aderente &p1) const {
+    return (name < p1.name);
 }
 
 istream &operator>>(istream &input, Aderente &p1) {

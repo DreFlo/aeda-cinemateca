@@ -13,15 +13,13 @@ using namespace std;
 class Sala{
     string name;
     int capacity;
-    string city;
 public:
     /**
      * Class constructor
      * @param n Name of the room.
      * @param cap Room's capacity.
-     * @param cit City where the room is located.
      */
-    Sala(string n, int cap, string cit);
+    Sala(string n, int cap);
     /**
      * @return Room's name.
      */
@@ -30,10 +28,6 @@ public:
      * @return Room capacity.
      */
     int getCapacity() const;
-    /**
-     * @return City where room is located.
-     */
-    string getCity() const;
     /**
      * Checks if room is available to schedule on a specific time.
      * @param time Time when the event is to be scheduled.
@@ -56,9 +50,12 @@ public:
      * @param time Time
      */
     void endEvent(const Evento event, const IntervaloDeTempo time);
+    bool operator==(const Sala &s1) const;
+    bool operator<(const Sala &s1) const;
+    friend istream& operator>>(istream& input, Sala &s1);
+    friend ostream& operator<<(ostream& output, const Sala &s1);
 private:
     vector<IntervaloDeTempo> ocupacao;
-    //vector<Evento, IntervaloDeTempo> pastEvents;
 };
 
 
