@@ -45,9 +45,9 @@ public:
     void AdicionarAderentes(const std::vector<Aderente> &aderens);
     void SetAderentes(const std::vector<Aderente> &aderens);
 
-    void AdicionarEvento(const Evento &event);
-    void AdicionarEventos(const std::vector<Evento> &events);
-    void SetEventos(const std::vector<Evento> &events);
+    void AdicionarEvento(Evento event);
+    void AdicionarEventos(std::vector<Evento> events);
+    void SetEventos(std::vector<Evento> events);
 
     std::vector<Evento> ProcurarEventosData(const Data &d);
     std::vector<Evento> ProcurarEventosDepoisData(const Data &d);

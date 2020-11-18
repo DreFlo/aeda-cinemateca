@@ -67,48 +67,101 @@ void Cinemateca::MudarAgora(const DataEHora &h){
 
 void Cinemateca::AdicionarSala(const Sala &sal){
     Salas.push_back(sal);
+    sort(Salas.begin(), Salas.end());
 }
 void Cinemateca::AdicionarSalas(const std::vector<Sala> &sals){
     for(const auto& sala : sals){
         Salas.push_back(sala);
     }
+    sort(Salas.begin(), Salas.end());
 }
 void Cinemateca::SetSalas(const std::vector<Sala> &sals){
     Salas = sals;
+    sort(Salas.begin(), Salas.end());
 }
 
 void Cinemateca::AdicionarAderente(const Aderente &aderen){
+    for(auto aux : Aderentes){
+        if (aux == aderen){
+            //throw nao pode haver 2 aderentes iguais
+            return;
+        }
+    }
     Aderentes.push_back(aderen);
+    sort(Aderentes.begin(), Aderentes.end());
 }
 void Cinemateca::AdicionarAderentes(const std::vector<Aderente> &aderens){
     for(const auto& aderen : aderens){
-        Aderentes.push_back(aderen);
+        AdicionarAderente(aderen);
     }
+    sort(Aderentes.begin(), Aderentes.end());
 }
 void Cinemateca::SetAderentes(const std::vector<Aderente> &aderens){
     Aderentes = aderens;
+    sort(Aderentes.begin(), Aderentes.end());
 }
 
-void Cinemateca::AdicionarEvento(const Evento &event){
-    if(event.getStart() < this->GetHoje()){
+void Cinemateca::AdicionarEvento(Evento event){
+    //Check if time distance isn't to large
+    Data OneYearFromNow(hoje.getDay(), hoje.getMonth(), 1 + hoje.getYear());
+    if(event.getStart().getDate() > OneYearFromNow){
+        //throw planning too far ahead
+        return;
+    }
+    
+    if(event.getStart().getDate() < hoje.getDate()){
         EventosAntigos.push_back(event);
         sort(EventosAntigos.begin(), EventosAntigos.end());
     }
-    else if(event.getStart() == this->GetHoje()){
+
+    else if(event.getStart().getDate() == hoje.getDate()){
+        std::cout << std::endl;
+        std::cout << "Hey! The event you are trying to add is for today, here in Cinemateca we require you"
+                        " to at least plan 1 day ahead! So there wont be any room assigned to your event."
+                            << std::endl;
+        std::cout << "The event is: " << std::endl;
+        std::cout << event.str() << std::endl;
         EventosHoje.push_back(event);
         sort(EventosHoje.begin(), EventosHoje.end());
     }
+
     else{
-        EventosFuturos.push_back(event);
-        sort(EventosFuturos.begin(), EventosFuturos.end());
+        bool NHaEspaco = true, NHaHorarios = true;
+
+        for(auto sal : Salas){
+
+            //check space
+            if(sal.getCapacity() >= event.getMaxAttendance()){
+                NHaEspaco = false;
+
+                //check time availability
+                if(sal.checkAvailability(event.getTimeInterval())){
+                    NHaHorarios = false;
+
+                    sal.addEvent(event.getTimeInterval());
+                    event.setRoom(sal.getName());
+                    EventosFuturos.push_back(event);
+                    sort(EventosFuturos.begin(), EventosFuturos.end());
+                }
+            }
+        }
+        if(NHaEspaco && NHaHorarios){
+            //throw nao ha espaco nem horarios
+        }
+        else if(NHaHorarios){
+            //throw nao ha horarios
+        }
+        else if(NHaEspaco){
+            //throw nao ha espaco
+        }
     }
 }
-void Cinemateca::AdicionarEventos(const std::vector<Evento> &events){
+void Cinemateca::AdicionarEventos(std::vector<Evento> events){
     for(const auto& event : events){
         AdicionarEvento(event);
     }
 }
-void Cinemateca::SetEventos(const std::vector<Evento> &events){
+void Cinemateca::SetEventos(std::vector<Evento> events){
     EventosAntigos.clear();
     EventosHoje.clear();
     EventosFuturos.clear();
