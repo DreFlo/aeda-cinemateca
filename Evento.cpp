@@ -100,3 +100,7 @@ istream& operator>>(istream& input, Evento& event) {
           >> event.start >> event.duration >> event.getTimeIntervalRef();
     return input;
 }
+
+bool Evento::operator==(Evento &E2) const {
+    return this->name == E2.name && this->room == E2.room && !(this->getTimeInterval()^E2.getTimeInterval());
+}

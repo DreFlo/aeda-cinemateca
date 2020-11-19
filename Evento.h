@@ -102,6 +102,10 @@ public:
      */
     bool operator<(Evento & E2) const;
     /**
+     * Tests equality.
+     */
+    bool operator==(Evento & E2) const;
+    /**
      * Output operator.
      */
     friend ostream& operator<<(ostream& output, const Evento& event);
