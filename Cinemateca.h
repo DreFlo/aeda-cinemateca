@@ -10,6 +10,14 @@
 #include "Sala.h"
 #include <fstream>
 
+#define PLANNING2FAR_AHEAD "You are trying to schedule an event way too far ahead from today. \nWe can only schedule your event up to a year from now, \nConsider waiting some time"
+#define NO_SPACE_NOR_TIME "It is going to be impossible to schedule your event since there is no room nor time slot available"
+#define NO_TIME_AVAILABLE "It is going to be impossible to schedule your event since there is no room available"
+#define NO_SPACE_AVAILABLE "It is going to be impossible to schedule your event since there is no time slot available"
+#define NO_EVENTS_THERE_FUTURE "Looks like there is no events schedule for that time interval \nYou can be de first ;)"
+#define NO_EVENTS_THERE_PAST "Looks like there is no events schedule for that time interval"
+#define COULDNT_OPEN_FILE "Well that file path doesn't exist \nFor reference the file path was: "
+
 using namespace std;
 
 class Cinemateca {
@@ -40,14 +48,17 @@ public:
     void AdicionarSala(const Sala &sal);
     void AdicionarSalas(const std::vector<Sala> &sals);
     void SetSalas(const std::vector<Sala> &sals);
+    void SortSalas();
 
     void AdicionarAderente(const Aderente &aderen);
     void AdicionarAderentes(const std::vector<Aderente> &aderens);
     void SetAderentes(const std::vector<Aderente> &aderens);
+    void SortAderentes();
 
     void AdicionarEvento(Evento event);
     void AdicionarEventos(std::vector<Evento> events);
     void SetEventos(std::vector<Evento> events);
+    void SortEventos();
 
     std::vector<Evento> ProcurarEventosData(const Data &d);
     std::vector<Evento> ProcurarEventosDepoisData(const Data &d);

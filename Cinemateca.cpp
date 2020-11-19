@@ -104,43 +104,42 @@ void Cinemateca::MudarAgora(const DataEHora &h){
 
 
 void Cinemateca::AdicionarSala(const Sala &sal){
-    for(auto s : Salas){
+    for(const auto& s : Salas){
         if(s == sal){
             throw sal;
         }
     }
     Salas.push_back(sal);
-    sort(Salas.begin(), Salas.end());
 }
 void Cinemateca::AdicionarSalas(const std::vector<Sala> &sals){
     for(const auto& sala : sals){
         Salas.push_back(sala);
     }
-    sort(Salas.begin(), Salas.end());
 }
 void Cinemateca::SetSalas(const std::vector<Sala> &sals){
     Salas = sals;
+}
+void Cinemateca::SortSalas() {
     sort(Salas.begin(), Salas.end());
 }
 
 void Cinemateca::AdicionarAderente(const Aderente &aderen){
-    for(auto aux : Aderentes){
+    for(const auto& aux : Aderentes){
         if (aux == aderen){
-            //throw nao pode haver 2 aderentes iguais
-            return;
+            throw aderen;
         }
     }
     Aderentes.push_back(aderen);
-    sort(Aderentes.begin(), Aderentes.end());
 }
 void Cinemateca::AdicionarAderentes(const std::vector<Aderente> &aderens){
     for(const auto& aderen : aderens){
         AdicionarAderente(aderen);
     }
-    sort(Aderentes.begin(), Aderentes.end());
 }
 void Cinemateca::SetAderentes(const std::vector<Aderente> &aderens){
     Aderentes = aderens;
+}
+void Cinemateca::SortAderentes() {
     sort(Aderentes.begin(), Aderentes.end());
 }
 
@@ -148,13 +147,11 @@ void Cinemateca::AdicionarEvento(Evento event){
     //Check if time distance isn't to large
     Data OneYearFromNow(hoje.getDay(), hoje.getMonth(), 1 + hoje.getYear());
     if(event.getStart().getDate() > OneYearFromNow){
-        //throw planning too far ahead
-        return;
+        throw PLANNING2FAR_AHEAD;
     }
     
     if(event.getStart().getDate() < hoje.getDate()){
         EventosAntigos.push_back(event);
-        sort(EventosAntigos.begin(), EventosAntigos.end());
     }
 
     else if(event.getStart().getDate() == hoje.getDate()){
@@ -165,7 +162,6 @@ void Cinemateca::AdicionarEvento(Evento event){
         std::cout << "The event is: " << std::endl;
         std::cout << event.str() << std::endl;
         EventosHoje.push_back(event);
-        sort(EventosHoje.begin(), EventosHoje.end());
     }
 
     else{
@@ -184,18 +180,17 @@ void Cinemateca::AdicionarEvento(Evento event){
                     sal.addEvent(event.getTimeInterval());
                     event.setRoom(sal.getName());
                     EventosFuturos.push_back(event);
-                    sort(EventosFuturos.begin(), EventosFuturos.end());
                 }
             }
         }
         if(NHaEspaco && NHaHorarios){
-            //throw nao ha espaco nem horarios
+            throw NO_SPACE_NOR_TIME;
         }
         else if(NHaHorarios){
-            //throw nao ha horarios
+            throw NO_TIME_AVAILABLE;
         }
         else if(NHaEspaco){
-            //throw nao ha espaco
+            throw NO_SPACE_AVAILABLE;
         }
     }
 }
@@ -209,6 +204,11 @@ void Cinemateca::SetEventos(std::vector<Evento> events){
     EventosHoje.clear();
     EventosFuturos.clear();
     AdicionarEventos(events);
+}
+void Cinemateca::SortEventos() {
+    sort(EventosAntigos.begin(), EventosAntigos.end());
+    sort(EventosHoje.begin(), EventosHoje.end());
+    sort(EventosFuturos.begin(), EventosFuturos.end());
 }
 
 std::vector<Evento> Cinemateca::ProcurarEventosData(const Data &d){
@@ -262,6 +262,9 @@ std::vector<Evento> Cinemateca::ProcurarEventosDepoisData(const Data &d){
             }
         }
     }
+    if(aux.empty()){
+        throw NO_EVENTS_THERE_FUTURE;
+    }
     return aux;
 }
 std::vector<Evento> Cinemateca::ProcurarEventosAntesData(const Data &d){
@@ -292,7 +295,9 @@ std::vector<Evento> Cinemateca::ProcurarEventosAntesData(const Data &d){
             }
         }
     }
-
+    if(aux.empty()){
+        throw NO_EVENTS_THERE_PAST;
+    }
     return aux;
 }
 
@@ -302,12 +307,13 @@ void Cinemateca::LerFicheiroEventos(const std::string& filepath) {
 
     if(myfile.is_open()){
         while(myfile >> event){
-            //assumindo que é um evento valido
-            AdicionarEvento(event);
+            if(event.valid()){
+                AdicionarEvento(event);
+            }
         }
     }
     else{
-        //throw couldn't open file
+        throw COULDNT_OPEN_FILE + filepath;
     }
 
     myfile.close();
@@ -328,7 +334,7 @@ void Cinemateca::EscreverFicheiroEventos(const std::string &filepath) {
         }
     }
     else{
-        //throw couldn't open file
+        throw COULDNT_OPEN_FILE + filepath;
     }
 
     myfile.close();
@@ -345,7 +351,7 @@ void Cinemateca::LerFicheiroAderentes(const std::string &filepath) {
         }
     }
     else{
-        //throw could't open file
+        throw COULDNT_OPEN_FILE + filepath;
     }
 
     myfile.close();
@@ -360,7 +366,7 @@ void Cinemateca::EscreverFicheiroAderentes(const std::string &filepath) {
         }
     }
     else{
-        //throw couldn't open file
+        throw COULDNT_OPEN_FILE + filepath;
     }
 
     myfile.close();
@@ -377,7 +383,7 @@ void Cinemateca::LerFicheiroSalas(const std::string &filepath) {
         }
     }
     else{
-        //throw could't open file
+        throw COULDNT_OPEN_FILE + filepath;
     }
 
     myfile.close();
@@ -392,7 +398,7 @@ void Cinemateca::EscreverFicheiroSalas(const std::string &filepath) {
         }
     }
     else{
-        //throw couldn't open file
+        throw COULDNT_OPEN_FILE + filepath;
     }
 
     myfile.close();
