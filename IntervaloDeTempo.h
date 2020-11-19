@@ -82,9 +82,6 @@ public:
     friend ostream& operator<<(ostream& output, const IntervaloDeTempo& timeInterval);
     /**
      * Input operator.
-     * @throws InvalidDate if one of the inputs' sate is not valid
-     * @throws InvalidTime if one of the inputs' time is not valid
-     * @throws InvalidTimeInterval if interval starts after it finishes
      */
     friend istream& operator>>(istream& input, IntervaloDeTempo& timeInterval) noexcept(false);
 };

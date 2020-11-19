@@ -125,7 +125,6 @@ public:
     friend ostream& operator<<(ostream& output, const Data& date);
     /**
      * Input operator.
-     * @throws InvalidDate if input is not a valid date in the gregorian calendar.
      */
     friend istream& operator>>(istream& input, Data& date) noexcept(false);
 };

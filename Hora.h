@@ -105,7 +105,6 @@ public:
     friend ostream& operator<<(ostream& output, const Hora& time);
     /**
      * Input operator.
-     * @throws InvalidTime if input is not a valid time
      */
     friend istream& operator>>(istream& input, Hora& time) noexcept(false);
 };

@@ -52,6 +52,5 @@ ostream& operator<<(ostream& output, const IntervaloDeTempo& timeInterval) {
 
 istream& operator>>(istream& input, IntervaloDeTempo& timeInterval) noexcept(false){
     input >> timeInterval.StartDataEHora::getDateAndTimeRef() >> timeInterval.EndDataEHora::getDateAndTimeRef();
-    //if (!(timeInterval.valid())) throw InvalidTimeInterval(timeInterval, "Time only goes forwards");
     return input;
 }

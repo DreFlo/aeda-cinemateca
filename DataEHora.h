@@ -90,8 +90,6 @@ public:
     friend ostream& operator<<(ostream& output, const DataEHora& dateAndTime);
     /**
      * Input operator
-     * @throws InvalidDate if input is not a valid date in the gregorian calendar
-     * @throws InvalidTime if input is not a valid time
      */
     friend istream& operator>>(istream& input, DataEHora& dateAndTime) noexcept(false);
 };
