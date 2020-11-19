@@ -35,7 +35,7 @@ public:
     std::vector<Evento> GetEventosHoje();
     std::vector<Evento> GetEventosFuturos();
 
-    static void MudarAgora(const DataEHora &h);
+    void MudarAgora(const DataEHora &h);
 
     void AdicionarSala(const Sala &sal);
     void AdicionarSalas(const std::vector<Sala> &sals);

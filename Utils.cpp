@@ -24,7 +24,9 @@ void utils::setToday() try{
     getline(cin, input);
     cout << endl;
     today.setDateAndTime(input);
-    Cinemateca::MudarAgora(today);
+    for(auto cinematec : cinemas){
+        cinematec->MudarAgora(today);
+    }
 } catch (InvalidDate &D) {
     cout << D.getDate().str() << " " << D.getMsg() << endl;
     setToday();

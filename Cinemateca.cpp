@@ -61,11 +61,54 @@ std::vector<Evento> Cinemateca::GetEventosFuturos(){
 
 
 void Cinemateca::MudarAgora(const DataEHora &h){
-    hoje = h;
+    //caso seja o mesmo dia é so mudar a hora
+    if(hoje.getDate() == h.getDate()){
+        hoje = h;
+    }
+    else{
+        std::vector<Evento> AuxEventosHoje;
+
+        //caso mude para um dia anterior a hoje
+        if(h.getDate() < hoje.getDate()){
+            for(const auto& event : EventosAntigos){
+                if(event.getStart().getDate() == h.getDate()){
+                    AuxEventosHoje.push_back(event);
+                }
+            }
+
+            for(const auto& event : EventosHoje){
+                EventosFuturos.push_back(event);
+            }
+            EventosHoje.clear();
+            EventosHoje = AuxEventosHoje;
+        }
+
+        //caso mude para um dia depois de hoje
+        else if(h.getDate() > hoje.getDate()){
+            for(const auto& event : EventosFuturos){
+                if(event.getStart().getDate() == h.getDate()){
+                    AuxEventosHoje.push_back(event);
+                }
+            }
+
+            for(const auto& event : EventosHoje){
+                EventosAntigos.push_back(event);
+            }
+            EventosHoje.clear();
+            EventosHoje = AuxEventosHoje;
+        }
+
+        hoje = h;
+    }
 }
 
 
 void Cinemateca::AdicionarSala(const Sala &sal){
+    for(auto s : Salas){
+        if(s == sal){
+            throw sal;
+        }
+    }
     Salas.push_back(sal);
     sort(Salas.begin(), Salas.end());
 }
@@ -179,10 +222,6 @@ std::vector<Evento> Cinemateca::ProcurarEventosData(const Data &d){
             if(event.getStart().getDate() == d){
                 aux.push_back(event);
             }
-            //Para tornar o codigo mais rapido
-            if(event.getStart().getDate() > d){
-                break;
-            }
         }
     }
 
@@ -190,10 +229,6 @@ std::vector<Evento> Cinemateca::ProcurarEventosData(const Data &d){
         for(const auto& event : EventosFuturos){
             if(event.getStart().getDate() == d){
                 aux.push_back(event);
-            }
-            //Para tornar o codigo mais rapido
-            if(event.getStart().getDate() > d){
-                break;
             }
         }
     }
@@ -265,9 +300,14 @@ void Cinemateca::LerFicheiroEventos(const std::string& filepath) {
     Evento event;
     ifstream myfile (filepath);
 
-    while(myfile >> event){
-        //assumindo que é um evento valido
-        AdicionarEvento(event);
+    if(myfile.is_open()){
+        while(myfile >> event){
+            //assumindo que é um evento valido
+            AdicionarEvento(event);
+        }
+    }
+    else{
+        //throw couldn't open file
     }
 
     myfile.close();
