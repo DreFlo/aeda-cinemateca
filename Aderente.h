@@ -16,6 +16,7 @@ protected:
     unsigned NIF;
     Data birthday;
     int adh_year;
+    float saved_money;
 public:
     /**
      * Class constructor
@@ -26,7 +27,7 @@ public:
      * @param bday Birthday
      * @param year Adhesion year
      */
-    Aderente(string nam, string cit, unsigned int cel, unsigned int nif, Data bday, int year);
+    Aderente(string nam, string cit, unsigned int cel, unsigned int nif, Data bday, int year, float s_m= 0);
     /**
      * @return Person's NIF.
      */
@@ -39,12 +40,8 @@ public:
      * @return Year when they joined the organization.
      */
     int getAdhYear() const;
-    /**
-     * An "Aderente" is greater than another if they've been longer in the organization.
-     * @param p1 First person to compare
-     * @param p2 Second person to compare
-     * @return True if the first person has been in the organization longer than the second person
-     */
+    float getSavedMoney() const;
+    void addSavedMoney(float money);
     bool operator==(const Aderente &p1) const;
     bool operator<(const Aderente &p1) const;
     friend istream& operator>>(istream& input, Aderente &p1);

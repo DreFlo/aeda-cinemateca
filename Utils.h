@@ -3,6 +3,7 @@
 
 #include <algorithm>
 #include "Cinemateca.h"
+#include "Data.h"
 
 #define WELCOME_MSG "Welcome!"
 #define INNPUT_TODAY_MSG "Please input the present date and time (dd.mm.yyyy HHhMMmin): "
@@ -68,6 +69,27 @@ namespace utils {
      * Get past events
      */
     void getPastEvents();
+    /**
+     * Checks if name is valid.
+     * @param num Name
+     * @return True if valid, else false
+     */
+    bool validName(string num);
+    /**
+     * Add an Aderente
+     */
+    void addAderente();
+    void addCliente();
+    /**
+     * Gets info to buy ticket
+     * @return True if ticket was bought, false otherwise.
+     */
+    bool creditInfo();
+    bool purchaseAderente();
+    /**
+     * Buy ticket to specific event.
+     */
+    void buyTicket();
 }
 
 #endif //PROJETO_UTILS_H

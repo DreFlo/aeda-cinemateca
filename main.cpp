@@ -40,6 +40,10 @@ int main() {
             utils::getPastEvents();
         else if (input == "get present")
             cout << today.str() << endl;
+        else if (input == "add aderente")
+            utils::addAderente();
+        else if (input == "buy ticket")
+            utils::buyTicket();
         else {
             cout << input << INVALID_CMD_MSG << endl;
             continue;

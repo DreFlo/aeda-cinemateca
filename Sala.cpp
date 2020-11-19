@@ -41,7 +41,7 @@ bool Sala::operator<(const Sala &s1) const {
 istream &operator>>(istream &input, Sala &s1) {
     string s;
     int pos = 0;
-    input >> s;
+    getline(input, s);
     for (int i = 0; i < s.size(); i++){
         if ((int(s[i]) >= 48) && (int(s[i]) <= 57)){
             if (pos = 0) {pos = i;}
@@ -55,6 +55,7 @@ istream &operator>>(istream &input, Sala &s1) {
 
 ostream &operator<<(ostream &output, const Sala &s1) {
     output << s1.name << " " << s1.capacity;
+    return output;
 }
 
 
