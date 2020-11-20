@@ -113,11 +113,12 @@ void Cinemateca::AdicionarSala(const Sala &sal){
 }
 void Cinemateca::AdicionarSalas(const std::vector<Sala> &sals){
     for(const auto& sala : sals){
-        Salas.push_back(sala);
+        AdicionarSala(sala);
     }
 }
 void Cinemateca::SetSalas(const std::vector<Sala> &sals){
-    Salas = sals;
+    Salas.clear();
+    AdicionarSalas(sals);
 }
 void Cinemateca::SortSalas() {
     sort(Salas.begin(), Salas.end());
@@ -137,13 +138,15 @@ void Cinemateca::AdicionarAderentes(const std::vector<Aderente> &aderens){
     }
 }
 void Cinemateca::SetAderentes(const std::vector<Aderente> &aderens){
-    Aderentes = aderens;
+    Aderentes.clear();
+    AdicionarAderentes(aderens);
 }
 void Cinemateca::SortAderentes() {
     sort(Aderentes.begin(), Aderentes.end());
 }
 
 void Cinemateca::AdicionarEvento(Evento event){
+
     //Check if time distance isn't to large
     Data OneYearFromNow(hoje.getDay(), hoje.getMonth(), 1 + hoje.getYear());
     if(event.getStart().getDate() > OneYearFromNow){
@@ -151,10 +154,20 @@ void Cinemateca::AdicionarEvento(Evento event){
     }
     
     if(event.getStart().getDate() < hoje.getDate()){
+        for(auto aux : EventosAntigos){
+            if(event == aux){
+                throw event;
+            }
+        }
         EventosAntigos.push_back(event);
     }
 
     else if(event.getStart().getDate() == hoje.getDate()){
+        for(auto aux : EventosHoje){
+            if(event == aux){
+                throw event;
+            }
+        }
         std::cout << std::endl;
         std::cout << "Hey! The event you are trying to add is for today, here in Cinemateca we require you"
                         " to at least plan 1 day ahead! So there wont be any room assigned to your event."
@@ -165,6 +178,12 @@ void Cinemateca::AdicionarEvento(Evento event){
     }
 
     else{
+        for(auto aux : EventosFuturos){
+            if(event == aux){
+                throw event;
+            }
+        }
+
         bool NHaEspaco = true, NHaHorarios = true;
 
         for(auto sal : Salas){
@@ -232,6 +251,7 @@ std::vector<Evento> Cinemateca::ProcurarEventosData(const Data &d){
             }
         }
     }
+    sort(aux.begin(), aux.end());
     return aux;
 }
 std::vector<Evento> Cinemateca::ProcurarEventosDepoisData(const Data &d){
@@ -250,9 +270,7 @@ std::vector<Evento> Cinemateca::ProcurarEventosDepoisData(const Data &d){
     }
 
     else{
-        for(const auto& event : EventosHoje){
-            aux.push_back(event);
-        }
+        aux = EventosHoje;
         for(const auto& event : EventosFuturos){
             aux.push_back(event);
         }
@@ -265,6 +283,7 @@ std::vector<Evento> Cinemateca::ProcurarEventosDepoisData(const Data &d){
     if(aux.empty()){
         throw NO_EVENTS_THERE_FUTURE;
     }
+    sort(aux.begin(), aux.end());
     return aux;
 }
 std::vector<Evento> Cinemateca::ProcurarEventosAntesData(const Data &d){
@@ -283,9 +302,7 @@ std::vector<Evento> Cinemateca::ProcurarEventosAntesData(const Data &d){
     }
 
     else{
-        for(const auto& event : EventosHoje){
-            aux.push_back(event);
-        }
+        aux = EventosHoje;
         for(const auto& event : EventosAntigos){
             aux.push_back(event);
         }
@@ -298,6 +315,7 @@ std::vector<Evento> Cinemateca::ProcurarEventosAntesData(const Data &d){
     if(aux.empty()){
         throw NO_EVENTS_THERE_PAST;
     }
+    sort(aux.begin(), aux.end());
     return aux;
 }
 
