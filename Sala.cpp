@@ -30,6 +30,14 @@ void Sala::cancelEvent(const IntervaloDeTempo time) {
     }
 }
 
+void Sala::updateSalaName(string new_name) {
+    name = new_name;
+}
+
+void Sala::updateSalaCap(int new_cap) {
+    capacity = new_cap;
+}
+
 bool Sala::operator==(const Sala &s1) const {
     return (name == s1.name);
 }

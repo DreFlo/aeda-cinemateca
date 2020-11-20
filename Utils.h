@@ -79,19 +79,40 @@ namespace utils {
      * Add an Aderente
      */
     void addAderente();
+    /**
+     * Prints Aderentes on screen in a specific city or both.
+     */
     void getAderentes();
+    /**
+     * Removes a specific Aderente
+     */
     void removeAderente();
+    /**
+     * Finds a specific Aderente.
+     */
     void findAderente();
+    /**
+     * Changes one of Aderente's atributes;
+     */
+    void updateAderente();
+    /**
+     * Add a Sala to a city.
+     */
     void addSala();
+    /**
+     * Prints Salas on screen for a specific city or both.
+     */
     void getSalas();
+    /**
+     * Finds a specific Sala.
+     */
     void findSala();
     /**
-     * Gets info to buy ticket
-     * @return True if ticket was bought, false otherwise.
+     * Changes one of Sala's atributes.
      */
-    bool creditInfo();
+    void updateSala();
     /**
-     * Buy ticket to specific event.
+     * Reserve ticket to specific event.
      */
     void buyTicket();
 }

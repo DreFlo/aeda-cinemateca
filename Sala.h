@@ -47,12 +47,38 @@ public:
     /**
      * Records event in room's history.
      * @param event Event that occured.
-     * @param time Time
+     * @param time Time.
      */
     void endEvent(const Evento event, const IntervaloDeTempo time);
+    /**
+     * Changes Sala's name.
+     * @param new_name New name for Sala.
+     */
+    void updateSalaName(string new_name);
+    /**
+     * Changes Sala's capacity.
+     * @param new_cap New capacity.
+     */
+    void updateSalaCap(int new_cap);
+    /**
+     * Checks if two sala's are the same by name;
+     * @param s1 Sala to compare with.
+     * @return True if the same, false otherwise.
+     */
     bool operator==(const Sala &s1) const;
+    /**
+     * Checks if a Sala is less than another by which comes first alphabetically.
+     * @param s1 Sala to compare with.
+     * @return Ture if it comes before, false otherwise.
+     */
     bool operator<(const Sala &s1) const;
+    /**
+     * Input operator.
+     */
     friend istream& operator>>(istream& input, Sala &s1);
+    /**
+     * Output operator.
+     */
     friend ostream& operator<<(ostream& output, const Sala &s1);
 private:
     vector<IntervaloDeTempo> ocupacao;

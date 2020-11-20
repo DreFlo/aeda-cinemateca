@@ -9,6 +9,18 @@ string Cliente::getCity() const {return city;}
 
 unsigned int Cliente::getCell() const {return cell;}
 
+void Cliente::updateName(string new_name) {
+    name = new_name;
+}
+
+void Cliente::updateCity(string new_city) {
+    city = new_city;
+}
+
+void Cliente::updateCell(unsigned int new_cell) {
+    cell = new_cell;
+}
+
 bool Cliente::operator==(const Cliente &p1) const {
     return (cell == p1.cell);
 }
