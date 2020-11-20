@@ -25,8 +25,9 @@ public:
      * @param st - Event's start date and time.
      * @param drtn - Event's duration.
      * @param mxAtn - Event's maximum capacity (default = 0)
+     * @param sala - Event's room (default = "NULL")
      */
-    Evento(string nm, float prc, const DataEHora& st, const Hora& drtn, int mxAtn = 0);
+    Evento(string nm, float prc, const DataEHora& st, const Hora& drtn, int mxAtn = 0, string sala = "NULL");
     /**
      * @return Event's name.
      */
@@ -67,7 +68,7 @@ public:
      * @param free true if Event is free for Adherent
      * @throws EventFull if Event's maximum attendance has alredy been reached
      */
-    void signUp(const Aderente & A, bool free = false) noexcept(false);
+    void signUp(Aderente & A, bool free = false) noexcept(false);
     /**
      * Changes event's name.
      */

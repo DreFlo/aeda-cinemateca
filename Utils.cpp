@@ -21,6 +21,7 @@ void utils::printHelp() {
 
 void utils::setToday() try{
     cout << INNPUT_TODAY_MSG;
+    cin.ignore(1000, '\n');
     getline(cin, input);
     cout << endl;
     today.setDateAndTime(input);
@@ -57,12 +58,12 @@ void utils::addEvent() try {
 } catch (...) {} // PLS TRATEM DOS CATCHES QUE ACHO QUE DEVE HAVER TANTO DA CINEMATECA
 //COMO DA SALA DE HOUVER CONFLITO ENTRE DOIS EVENTOS
 
-// TA A DAR ME UM BUG BOE ESQUISITO NESTA. JA QUERO MATAR UM PORCO
 int utils::constructEvent(Evento &event) try {
     string room, name;
     DataEHora start;
     Hora duration;
     int attn;
+    cin.ignore(1000, '\n');
     // EVENT NAME
     cout << "Input event name: ";
     getline(cin, input);
@@ -93,7 +94,13 @@ int utils::constructEvent(Evento &event) try {
     event.setDuration(duration);
     cout << "Input event's maximum attendance: ";
     cin >> attn;
+    cin.ignore(1000, '\n');
     event.setMaxAttendance(attn);
+    if (attn > 0) {
+        cout << "Input sala: ";
+        getline(cin, input);
+        event.setRoom(input);
+    }
     return 0;
 } catch (invalid_argument &I) {
     return 1;
@@ -119,6 +126,7 @@ void utils::getEventsOn() try {
     string name;
     vector<Evento> res;
     cout << INPUT_DATE_MSG;
+    cin.ignore(100, '\n');
     getline(cin, input);
     if (input == "CANCEL") return;
     date.setDate(input);
@@ -128,21 +136,22 @@ void utils::getEventsOn() try {
         cout << "There are only 'Lisboa' and 'Porto'. " << CHOOSE_CINEMATECA_MSG;
         cin >> input;
     }
+    cin.ignore(1000, '\n');
     if (name == "CANCEL") return;
     res = findCinemateca(name)->ProcurarEventosData(date);
     for (const auto& event : res)
         cout << event.str() << endl;
 } catch (InvalidDate &D) {
-    cout << endl << D.getDate().str() << D.getMsg();
-    setToday();
+    cout << D.getDate().str() << " " << D.getMsg() << endl;
+    getEventsOn();
 } catch (InvalidTime &T) {
-    cout << endl << T.getTime().str() << T.getMsg();
+    cout << T.getTime().str() << " " << T.getMsg() << endl;
     getEventsOn();
 } catch (invalid_argument &I) {
-    cout << endl << I.what();
+    cout << I.what() << endl;
     getEventsOn();
 } catch (ios_base::failure &e) {
-    cout  << endl << INVALID_INPUT_MSG;
+    cout  << INVALID_INPUT_MSG << endl;
     cin.clear();
     cin.ignore(numeric_limits<streamsize>::max(), '\n');
     getEventsOn();
@@ -154,6 +163,7 @@ void utils::getEventsAfter() try {
     vector<Evento> res;
     // INPUT DATE
     cout << INPUT_DATE_MSG;
+    cin.ignore(1000, '\n');
     getline(cin, input);
     if (input == "CANCEL") return;
     date.setDate(input);
@@ -164,22 +174,23 @@ void utils::getEventsAfter() try {
         cout << "There are only 'Lisboa' and 'Porto'. " << CHOOSE_CINEMATECA_MSG;
         cin >> input;
     }
+    cin.ignore(1000, '\n');
     if (name == "CANCEL") return;
     res = findCinemateca(name)->ProcurarEventosDepoisData(date);
     // PRINT
     for (const auto& event : res)
         cout << event.str() << endl;
 } catch (InvalidDate &D) {
-    cout << endl << D.getDate().str() << D.getMsg();
-    setToday();
+    cout << D.getDate().str() << " " << D.getMsg() << endl;
+    getEventsAfter();
 } catch (InvalidTime &T) {
-    cout << endl << T.getTime().str() << T.getMsg();
+    cout << T.getTime().str() << " " << T.getMsg() << endl;
     getEventsAfter();
 } catch (invalid_argument &I) {
-    cout << endl << I.what();
+    cout << I.what() << endl;
     getEventsAfter();
 } catch (ios_base::failure &e) {
-    cout  << endl << INVALID_INPUT_MSG;
+    cout  << INVALID_INPUT_MSG << endl;
     cin.clear();
     cin.ignore(numeric_limits<streamsize>::max(), '\n');
     getEventsAfter();
@@ -190,6 +201,7 @@ void utils::getEventsBefore() try {
     string name;
     vector<Evento> res;
     cout << INPUT_DATE_MSG;
+    cin.ignore(1000, '\n');
     getline(cin, input);
     if (input == "CANCEL") return;
     date.setDate(input);
@@ -199,21 +211,22 @@ void utils::getEventsBefore() try {
         cout << "There are only 'Lisboa' and 'Porto'. " << CHOOSE_CINEMATECA_MSG;
         cin >> input;
     }
+    cin.ignore(1000, '\n');
     if (name == "CANCEL") return;
     res = findCinemateca(name)->ProcurarEventosAntesData(date);
     for (const auto& event : res)
         cout << event.str() << endl;
 } catch (InvalidDate &D) {
-    cout << endl << D.getDate().str() << D.getMsg();
-    setToday();
+    cout << D.getDate().str() << " " << D.getMsg() << endl;
+    getEventsBefore();
 } catch (InvalidTime &T) {
-    cout << endl << T.getTime().str() << T.getMsg();
+    cout << T.getTime().str() << " " << T.getMsg() << endl;
     getEventsBefore();
 } catch (invalid_argument &I) {
-    cout << endl << I.what();
+    cout << I.what() << endl;
     getEventsBefore();
 } catch (ios_base::failure &e) {
-    cout  << endl << INVALID_INPUT_MSG;
+    cout  << INVALID_INPUT_MSG << endl;
     cin.clear();
     cin.ignore(numeric_limits<streamsize>::max(), '\n');
     getEventsBefore();
@@ -224,11 +237,13 @@ void utils::getEventsToday() {
     vector<Evento> res;
     // CHOOSE CINEMATECA
     cout << "From which city do you want to get today's events?";
+    cin.ignore(1000, '\n');
     cin >> name;
     while (name != "Lisboa" && name != "Porto" && name != "CANCEL") {
         cout << "There are only 'Lisboa' and 'Porto'. " << CHOOSE_CINEMATECA_MSG;
         cin >> input;
     }
+    cin.ignore(1000, '\n');
     if (name == "CANCEL") return;
     res = findCinemateca(name)->GetEventosHoje();
     for (const auto& event : res)
@@ -240,11 +255,13 @@ void utils::getFutureEvents() {
     vector<Evento> res;
     // CHOOSE CINEMATECA
     cout << "From which city do you want the future events?";
+    cin.ignore(1000, '\n');
     cin >> name;
     while (name != "Lisboa" && name != "Porto" && name != "CANCEL") {
         cout << "There are only 'Lisboa' and 'Porto'. " << CHOOSE_CINEMATECA_MSG;
         cin >> input;
     }
+    cin.ignore(1000, '\n');
     if (name == "CANCEL") return;
     res = findCinemateca(name)->GetEventosFuturos();
     for (const auto& event : res)
@@ -256,11 +273,13 @@ void utils::getPastEvents() {
     vector<Evento> res;
     // CHOOSE CINEMATECA
     cout << "From which city do you want the past events?";
+    cin.ignore(1000, '\n');
     cin >> name;
     while (name != "Lisboa" && name != "Porto" && name != "CANCEL") {
         cout << "There are only 'Lisboa' and 'Porto'. " << CHOOSE_CINEMATECA_MSG;
         cin >> input;
     }
+    cin.ignore(1000, '\n');
     if (name == "CANCEL") return;
     res = findCinemateca(name)->GetEventosAntigos();
     for (const auto& event : res)

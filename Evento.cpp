@@ -2,8 +2,8 @@
 
 #include <utility>
 
-Evento::Evento(string nm, float prc, const DataEHora& st, const Hora& drtn, int mxAtn):
-        name(std::move(nm)), maxAttendance(mxAtn), price(prc), start(st), duration(drtn),
+Evento::Evento(string nm, float prc, const DataEHora& st, const Hora& drtn, int mxAtn, string sala):
+        name(std::move(nm)), maxAttendance(mxAtn), price(prc), start(st), duration(drtn), room(std::move(sala)),
         IntervaloDeTempo(st, st + drtn) {}
 
 string Evento::getName() const {
@@ -40,13 +40,20 @@ void Evento::signUp(const Cliente &C) {
     total += price;
 }
 
-void Evento::signUp(const Aderente &A, bool free) {
+void Evento::signUp(Aderente &A, bool free) {
     if (lot == maxAttendance) throw EventFull();
     lot++;
     if (!free) {
-        if (this->start.getYear() - A.getAdhYear() >= 15) total += price * 0.85;
-        else total += price * (1 - 0.01 * (this->start.getYear() - A.getAdhYear()));
+        if (this->start.getYear() - A.getAdhYear() >= 15) {
+            total += price * 0.85;
+            A.addSavedMoney(price * 0.15);
+        }
+        else {
+            total += price * (1 - 0.01 * (this->start.getYear() - A.getAdhYear()));
+            A.addSavedMoney(price * (0.01 * (this->start.getYear()-A.getAdhYear())));
+        }
     }
+    else A.addSavedMoney(price);
 }
 
 void Evento::setName(string nm) {
