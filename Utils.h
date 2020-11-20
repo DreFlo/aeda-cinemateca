@@ -76,6 +76,27 @@ namespace utils {
      */
     bool validName(string num);
     /**
+     * Gets a name for someone.
+     * @return Name.
+     */
+    string inputName();
+    /**
+     * Gets chosen city from Porto or Lisboa.
+     * @param aderentes Whether it is for an Aderente or not.
+     * @return City.
+     */
+    string inputCity(bool aderentes = true);
+    /**
+     * Gets NIF for a person.
+     * @return NIF.
+     */
+    unsigned int inputNIF();
+    /**
+     * Gets a person's cellphone number.
+     * @return Cellphone number.
+     */
+    unsigned int inputCell();
+    /**
      * Add an Aderente
      */
     void addAderente();
@@ -95,6 +116,11 @@ namespace utils {
      * Changes one of Aderente's atributes;
      */
     void updateAderente();
+    /**
+     * Gets a name for a Sala.
+     * @return Sala's name.
+     */
+    string inputSalaName();
     /**
      * Add a Sala to a city.
      */

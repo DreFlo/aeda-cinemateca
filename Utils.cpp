@@ -307,8 +307,8 @@ bool utils::validName(string num) {
     return true;
 }
 
-void utils::addAderente() {
-    string f_name, s_name, city, cell, nif, date;
+string utils::inputName() {
+    string f_name, s_name;
     while (true) {
         cout << "Input name: ";
         cin >> f_name >> s_name;
@@ -316,8 +316,18 @@ void utils::addAderente() {
         if (!validName(s_name)) continue;
         break;
     }
+    return (f_name + " " + s_name);
+}
+
+string utils::inputCity(bool aderentes) {
+    string city;
     while (true) {
-        cout << "Input city where person uses the Cinemateca facilities (If both, choose the most used): ";
+        if (aderentes) {
+            cout << "Input city where person uses the Cinemateca facilities (If both, choose the most used): ";
+        }
+        else{
+            cout << "Input city: ";
+        }
         cin >> city;
         if ((city != "Porto") && (city != "Lisboa")){
             cout << "City needs to be either Lisboa or Porto.";
@@ -325,6 +335,33 @@ void utils::addAderente() {
         }
         break;
     }
+    return city;
+}
+
+unsigned int utils::inputNIF() {
+    string nif;
+    while (true){
+        cout << "Input NIF: ";
+        cin >> nif;
+        if (nif.size() != 9){
+            cout << "NIF's size is 9.";
+            continue;
+        }
+        bool valid = true;
+        for (int i = 0; i < nif.size(); i++){
+            if ((!((int(nif[i]) >= 48) && (int(nif[i]) <= 57))) && (valid == true)){
+                cout << "NIF only has digits from 0 to 9.";
+                valid = false;
+            }
+        }
+        if(!valid) continue;
+        break;
+    }
+    return stoul(nif);
+}
+
+unsigned int utils::inputCell() {
+    string cell;
     while (true) {
         cout << "Input cellphone number: ";
         cin >> cell;
@@ -346,27 +383,27 @@ void utils::addAderente() {
         if(!valid) continue;
         break;
     }
-    while (true){
-        cout << "Input NIF: ";
-        cin >> nif;
-        if (nif.size() != 9){
-            cout << "NIF's size is 9.";
-            continue;
-        }
-        bool valid = true;
-        for (int i = 0; i < nif.size(); i++){
-            if ((!((int(nif[i]) >= 48) && (int(nif[i]) <= 57))) && (valid == true)){
-                cout << "NIF only has digits from 0 to 9.";
-                valid = false;
-            }
-        }
-        if(!valid) continue;
-        break;
-    }
+    return stoul(cell);
+}
+
+void utils::addAderente() {
+    string name, city, date;
+    unsigned int nif, cell;
+    name = inputName();
+    nif = inputNIF();
+    city = inputCity();
     int day, month, year;
     while (true){
-        cout << "Input birthday (dd mm yyyy): ";
-        cin >> day >> month >> year;
+        cout << "Input birthday (dd/mm/yyy): ";
+        cin >> date;
+        regex matchStr("[0-9][0-9].[0-9][0-9].[0-9][0-9][0-9][0-9]");
+        if(!(regex_match(date, matchStr))){
+            cout << "Invalid date.";
+            continue;
+        }
+        day = stoi(date.substr(0, 2));
+        month = stoi(date.substr(2, 2));
+        year = stoi(date.substr(5, 4));
         if ((day == 0) || (month == 0) || (year == 0)){
             cout << "Invalid Date.";
             continue;
@@ -399,7 +436,7 @@ void utils::addAderente() {
         break;
     }
     Data d1(day, month, year);
-    Aderente a1(f_name + " " + s_name, city, stoul(cell), stoul(nif), d1, today.getYear());
+    Aderente a1(name, city, cell, nif, d1, today.getYear());
     try{
         findCinemateca(city)->AdicionarAderente(a1);
     } catch (Aderente &ad){
@@ -434,8 +471,8 @@ void utils::getAderentes() {
             vector<Aderente>aderentes_p = findCinemateca("Porto")->GetAderentes();
             for (vector<Aderente>::iterator it = aderentes_p.begin(); it != aderentes_p.end(); it++){
                 cout << "Name: " << it->getName() << ", " << "Cell: " << it->getCell() << endl << "NIF: " << it->getNIF()
-                    << "Birthday: " << it->getBirthday().getDay() << "/" << it->getBirthday().getMonth() << "/"
-                    << it->getBirthday().getYear() << endl << "Adhesion year: " << it->getAdhYear() << "Money saved: "
+                    << ", Birthday: " << it->getBirthday().getDay() << "/" << it->getBirthday().getMonth() << "/"
+                    << it->getBirthday().getYear() << endl << "Adhesion year: " << it->getAdhYear() << ", Money saved: "
                     << it->getSavedMoney() << "€" << endl;
             }
         }
@@ -481,27 +518,10 @@ void utils::getAderentes() {
 }
 
 void utils::removeAderente() {
-    string nif;
+    unsigned int NIF;
     while (true) {
         bool again = false;
-        while (true) {
-            cout << "What is the Aderente's NIF? ";
-            cin >> nif;
-            if (nif.size() != 9) {
-                cout << "NIF's size is 9.";
-                continue;
-            }
-            bool valid = true;
-            for (int i = 0; i < nif.size(); i++) {
-                if ((!((int(nif[i]) >= 48) && (int(nif[i]) <= 57))) && (valid == true)) {
-                    cout << "NIF only has digits from 0 to 9.";
-                    valid = false;
-                }
-            }
-            if (!valid) continue;
-            break;
-        }
-        unsigned int NIF = stoul(nif);
+        NIF = inputNIF();
         vector<Aderente> aderentes_p = findCinemateca("Porto")->GetAderentes();
         for (vector<Aderente>::iterator it = aderentes_p.begin(); it != aderentes_p.end(); it++) {
             if (it->getNIF() == NIF) {
@@ -537,27 +557,10 @@ void utils::removeAderente() {
 }
 
 void utils::findAderente() {
-    string nif;
+    unsigned int NIF;
     while (true) {
         bool again = false;
-        while (true) {
-            cout << "What is the Aderente's NIF? ";
-            cin >> nif;
-            if (nif.size() != 9) {
-                cout << "NIF's size is 9.";
-                continue;
-            }
-            bool valid = true;
-            for (int i = 0; i < nif.size(); i++) {
-                if ((!((int(nif[i]) >= 48) && (int(nif[i]) <= 57))) && (valid == true)) {
-                    cout << "NIF only has digits from 0 to 9.";
-                    valid = false;
-                }
-            }
-            if (!valid) continue;
-            break;
-        }
-        unsigned int NIF = stoul(nif);
+        NIF = inputNIF();
         vector<Aderente> aderentes_p = findCinemateca("Porto")->GetAderentes();
         for (vector<Aderente>::iterator it = aderentes_p.begin(); it != aderentes_p.end(); it++) {
             if (it->getNIF() == NIF) {
@@ -597,29 +600,13 @@ void utils::findAderente() {
 }
 
 void utils::updateAderente() {
-    string city, nif;
+    string city;
+    unsigned int NIF;
     Aderente *p1;
     vector<Aderente> *aderentes;
     while (true) {
         bool again = false;
-        while (true) {
-            cout << "What is the Aderente's NIF? ";
-            cin >> nif;
-            if (nif.size() != 9) {
-                cout << "NIF's size is 9.";
-                continue;
-            }
-            bool valid = true;
-            for (int i = 0; i < nif.size(); i++) {
-                if ((!((int(nif[i]) >= 48) && (int(nif[i]) <= 57))) && (valid == true)) {
-                    cout << "NIF only has digits from 0 to 9.";
-                    valid = false;
-                }
-            }
-            if (!valid) continue;
-            break;
-        }
-        unsigned int NIF = stoul(nif);
+        NIF = inputNIF();
         bool in_porto = false;
         vector<Aderente> aderentes_p = findCinemateca("Porto")->GetAderentes();
         for (vector<Aderente>::iterator it = aderentes_p.begin(); it != aderentes_p.end(); it++) {
@@ -627,7 +614,7 @@ void utils::updateAderente() {
                 *p1 = *it;
                 in_porto = true;
                 city = "Porto";
-                *aderentes = aderentes_p;
+                aderentes = &aderentes_p;
                 break;
             }
         }
@@ -637,7 +624,7 @@ void utils::updateAderente() {
                 if (it->getNIF() == NIF) {
                     *p1 = *it;
                     city = "Lisboa";
-                    *aderentes = aderentes_l;
+                    aderentes = &aderentes_l;
                     break;
                 }
             }
@@ -663,30 +650,14 @@ void utils::updateAderente() {
         cout << "Which atribute do you want to change?";
         cin >> atribute;
         if (atribute == "name"){
-            string f_name, s_name;
-            while (true) {
-                cout << "Input name: ";
-                cin >> f_name >> s_name;
-                if (!validName(f_name)) continue;
-                if (!validName(s_name)) continue;
-                break;
-            }
-            (*p1).updateName(f_name + " " + s_name);
+            string n_name = inputName();
+            (*p1).updateName(n_name);
             findCinemateca(city)->SetAderentes(*aderentes);
             cout << "Aderente updated";
             return;
         }
         else if (atribute == "city"){
-            string n_city;
-            while (true) {
-                cout << "Input city where person uses the Cinemateca facilities (If both, choose the most used): ";
-                cin >> n_city;
-                if ((n_city != "Porto") && (n_city != "Lisboa")) {
-                    cout << "City needs to be either Lisboa or Porto.";
-                    continue;
-                }
-                break;
-            }
+            string n_city = inputCity();
             if (n_city == (*p1).getCity()){
                 cout << "City was already " << n_city << ", so no changes were made.";
                 return;
@@ -695,7 +666,7 @@ void utils::updateAderente() {
             if(n_city == "Porto"){
                 ads = findCinemateca("Lisboa")->GetAderentes();
                 for(vector<Aderente>::iterator it = ads.begin(); it != ads.end(); it++){
-                    if (it->getNIF() == stoul(nif)){
+                    if (it->getNIF() == NIF){
                         ads.erase(it);
                         findCinemateca("Lisboa")->SetAderentes(ads);
                         break;
@@ -705,7 +676,7 @@ void utils::updateAderente() {
             else {
                 ads = findCinemateca("Porto")->GetAderentes();
                 for (vector<Aderente>::iterator it = ads.begin(); it != ads.end(); it++) {
-                    if (it->getNIF() == stoul(nif)) {
+                    if (it->getNIF() == NIF) {
                         ads.erase(it);
                         findCinemateca("Porto")->SetAderentes(ads);
                         break;
@@ -719,29 +690,8 @@ void utils::updateAderente() {
             return;
         }
         else if (atribute == "cellphone"){
-            string cell;
-            while (true) {
-                cout << "Input cellphone number: ";
-                cin >> cell;
-                if (cell.size() != 9){
-                    cout << "Cellphone number has 9 digits.";
-                    continue;
-                }
-                if (int(cell[0]) != 57){
-                    cout << "Cellphone number must start with a 9.";
-                    continue;
-                }
-                bool valid = true;
-                for (int i = 0; i < cell.size(); i++){
-                    if ((!((int(cell[i]) >= 48) && (int(cell[i]) <= 57))) && (valid == true)){
-                        cout << "Cellphone number only has digits from 0 to 9.";
-                        valid = false;
-                    }
-                }
-                if(!valid) continue;
-                break;
-            }
-            (*p1).updateCell(stoul(cell));
+            unsigned int cell = inputCell();
+            (*p1).updateCell(cell);
             findCinemateca(city)->SetAderentes(*aderentes);
             cout << "Aderente updated.";
             return;
@@ -772,19 +722,10 @@ void utils::updateAderente() {
     }
 }
 
-void utils::addSala() {
-    string city, name, cap;
-    while (true) {
-        cout << "To which city do you want to add it? ";
-        cin >> city;
-        if ((city != "Porto") && (city != "Lisboa")) {
-            cout << "City needs to be either Lisboa or Porto.";
-            continue;
-        }
-        break;
-    }
+string utils::inputSalaName() {
+    string name;
     while(true) {
-        cout << "What's its name?";
+        cout << "What's the Sala's name?";
         getline(cin, name);
         bool valid = true;
         for (int i = 0; i < name.size(); i++) {
@@ -796,6 +737,13 @@ void utils::addSala() {
         if (!valid) continue;
         break;
     }
+    return name;
+}
+
+void utils::addSala() {
+    string city, name, cap;
+    city = inputCity(false);
+    name = inputSalaName();
     while(true){
         cout << "What is its capacity?";
         cin >> cap;
@@ -876,28 +824,8 @@ void utils::getSalas() {
 
 void utils::findSala() {
     string city, name;
-    while (true) {
-        cout << "Do you want to find a Sala in Porto or Lisboa?";
-        cin >> city;
-        if ((city != "Porto") && (city != "Lisboa")){
-            cout << "They only exists in Porto os Lisboa";
-            continue;
-        }
-        break;
-    }
-    while (true){
-        cout << "What's its name?";
-        getline(cin, name);
-        bool valid = true;
-        for (int i = 0; i < name.size(); i++) {
-            if ((((int(name[i]) >= 48) && (int(name[i]) <= 57))) && (valid == true)) {
-                cout << "Salas don't have numbers in their names.";
-                valid = false;
-            }
-        }
-        if (!valid) continue;
-        break;
-    }
+    city = inputCity();
+    name = inputSalaName();
     vector<Sala>salas = findCinemateca(city)->Getsalas();
     for (vector<Sala>::iterator it = salas.begin(); it != salas.end(); it++){
         if ((*it).getName() == name){
@@ -912,28 +840,8 @@ void utils::updateSala() {
     vector<Sala> salas;
     Sala *s;
     while(true) {
-        while (true) {
-            cout << "Do you want to find a Sala in Porto or Lisboa?";
-            cin >> city;
-            if ((city != "Porto") && (city != "Lisboa")) {
-                cout << "They only exists in Porto os Lisboa";
-                continue;
-            }
-            break;
-        }
-        while (true) {
-            cout << "What's its name?";
-            getline(cin, name);
-            bool valid = true;
-            for (int i = 0; i < name.size(); i++) {
-                if ((((int(name[i]) >= 48) && (int(name[i]) <= 57))) && (valid == true)) {
-                    cout << "Salas don't have numbers in their names.";
-                    valid = false;
-                }
-            }
-            if (!valid) continue;
-            break;
-        }
+        city = inputCity();
+        name = inputSalaName();
         salas = findCinemateca(city)->Getsalas();
         for (vector<Sala>::iterator it = salas.begin(); it != salas.end(); it++) {
             if ((*it).getName() == name) {
@@ -967,19 +875,7 @@ void utils::updateSala() {
         cin >> atribute;
         if (atribute == "name"){
             string new_name;
-            while(true){
-                cout << "What is the new name?";
-                getline(cin, new_name);
-                bool valid_n = true;
-                for (int i = 0; i < new_name.size(); i++) {
-                    if ((((int(new_name[i]) >= 48) && (int(new_name[i]) <= 57))) && (valid_n == true)) {
-                        cout << "Numbers aren't allowed in the name.";
-                        valid_n = false;
-                    }
-                }
-                if (!valid_n) continue;
-                break;
-            }
+            new_name = inputSalaName();
             (*s).updateSalaName(new_name);
             findCinemateca(city)->SetSalas(salas);
             cout << "Sala updated.";
@@ -1013,19 +909,12 @@ void utils::updateSala() {
 
 }
 
+//Linha 1135 c1 = &c;
 void utils::buyTicket() {
     string city, answer;
-    while (true) {
-        cout << "Do you want to see the events from which city?";
-        cin >> city;
-        if ((city != "Porto") && (city != "Lisboa")){
-            cout << "City needs to be either Lisboa or Porto.";
-            continue;
-        }
-        break;
-    }
+    city = inputCity(false);
     vector<Evento>future = findCinemateca(city)->GetEventosFuturos();
-    if (future.size() == 0){
+    if (future.empty()){
         cout << "There are no scheduled events for the future in " << city << ".";
         return;
     }
@@ -1035,6 +924,7 @@ void utils::buyTicket() {
             " people and it costs " << future[i].getPrice() << "€." << endl;
     }
     bool valid = true, buy = false, cl = false;
+    unsigned int NIF;
     string nif;
     Cliente *c;
     Evento *ev;
@@ -1053,24 +943,11 @@ void utils::buyTicket() {
                         if (answer == "y"){
                             bool valid_ad = false;
                             while (true) {
-                                cout << "Input NIF: ";
-                                cin >> nif;
-                                if (nif.size() != 9) {
-                                    cout << "NIF's size is 9.";
-                                    continue;
-                                }
-                                bool valid_nif = true;
-                                for (int i = 0; i < nif.size(); i++) {
-                                    if ((!((int(nif[i]) >= 48) && (int(nif[i]) <= 57))) && (valid == true)) {
-                                        cout << "NIF only has digits from 0 to 9.";
-                                        valid_nif = false;
-                                    }
-                                }
-                                if (!valid_nif) continue;
+                                NIF = inputNIF();
                                 vector<Aderente> ads = findCinemateca(city)->GetAderentes();
                                 bool valid_ad = false;
                                 for (vector<Aderente>::iterator it = ads.begin(); it != ads.end(); it++) {
-                                    if (it->getNIF() == stoul(nif)) {
+                                    if (it->getNIF() == NIF) {
                                         valid_ad = true;
                                         buy = true;
                                         *ad = *it;
@@ -1102,37 +979,12 @@ void utils::buyTicket() {
                         }
                         if (answer == "n"){
                             cout << "To reserve the ticket, you need to input some information." << endl;
-                            string f_name, s_name, cell;
-                            while (true) {
-                                cout << "Input name: ";
-                                cin >> f_name >> s_name;
-                                if (!validName(f_name)) continue;
-                                if (!validName(s_name)) continue;
-                                break;
-                            }
-                            while (true) {
-                                cout << "Input cellphone number: ";
-                                cin >> cell;
-                                if (cell.size() != 9){
-                                    cout << "Cellphone number has 9 digits.";
-                                    continue;
-                                }
-                                if (int(cell[0]) != 57){
-                                    cout << "Cellphone number must start with a 9.";
-                                    continue;
-                                }
-                                for (int i = 0; i < cell.size(); i++){
-                                    bool valid = true;
-                                    if (!((int(cell[i]) >= 48) && (int(cell[i]) <= 57))){
-                                        cout << "Cellphone number only has digits from 0 to 9.";
-                                        valid = false;
-                                    }
-                                    if (!valid) continue;
-                                }
-                                break;
-                            }
-                            Cliente c1(f_name + " " + s_name, city, stoul(cell));
-                            *c = c1;
+                            string name;
+                            unsigned int cell;
+                            name = inputName();
+                            cell = inputCell();
+                            Cliente c1(name, city, cell);
+                            c = &c1;
                             buy = true;
                             cl = true;
                             break;
@@ -1165,3 +1017,4 @@ void utils::buyTicket() {
     cout << "There's a reserved ticket in your name for " <<  ev->getPrice() * (1 - 0.01 * (today.getYear() - ad->getAdhYear()))
     << "€, already with your discount.";
 }
+
