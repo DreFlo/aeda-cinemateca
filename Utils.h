@@ -79,13 +79,17 @@ namespace utils {
      * Add an Aderente
      */
     void addAderente();
-    void addCliente();
+    void getAderentes();
+    void removeAderente();
+    void findAderente();
+    void addSala();
+    void getSalas();
+    void findSala();
     /**
      * Gets info to buy ticket
      * @return True if ticket was bought, false otherwise.
      */
     bool creditInfo();
-    bool purchaseAderente();
     /**
      * Buy ticket to specific event.
      */
