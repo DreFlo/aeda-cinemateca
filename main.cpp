@@ -44,6 +44,18 @@ int main() {
             utils::addAderente();
         else if (input == "buy ticket")
             utils::buyTicket();
+        else if (input == "get aderentes")
+            utils::getAderentes();
+        else if (input == "remove aderente")
+            utils::removeAderente();
+        else if (input == "find aderente")
+            utils::findAderente();
+        else if (input == "add sala")
+            utils::addSala();
+        else if (input == "get salas")
+            utils::getSalas();
+        else if (input == "find sala")
+            utils::findSala();
         else {
             cout << input << INVALID_CMD_MSG << endl;
             continue;

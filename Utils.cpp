@@ -17,6 +17,12 @@ void utils::printHelp() {
     cout << "get future events - print future events" << endl;
     cout << "get past events - print future events" << endl;
     cout << "get present - prints the current date and time" << endl;
+    cout << "get aderentes - get aderentes for a given city" << endl;
+    cout << "remove aderente - remove a given aderente" << endl;
+    cout << "find aderente - find a given aderente" << endl;
+    cout << "add sala - add a new room" << endl;
+    cout << "get salas - print rooms on the screen" << endl;
+    cout << "find sala - finds a given room" << endl;
 }
 
 void utils::setToday() try{
