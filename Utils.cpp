@@ -28,7 +28,6 @@ void utils::printHelp() {
 
 void utils::setToday() try{
     cout << INNPUT_TODAY_MSG;
-    cin.ignore(1000, '\n');
     getline(cin, input);
     cout << endl;
     today.setDateAndTime(input);
