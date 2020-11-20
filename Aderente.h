@@ -47,11 +47,6 @@ public:
     friend istream& operator>>(istream& input, Aderente &p1);
     friend ostream& operator<<(ostream& output, const Aderente &p1);
 };
-/*
-class InvalidAderente : public InvalidCliente{
-    string atribute;
-public:
-    InvalidAderente(string wrong) : atribute(wrong) {};
 
 
 };*/
