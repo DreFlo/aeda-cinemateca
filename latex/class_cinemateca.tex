@@ -1,0 +1,502 @@
+\hypertarget{class_cinemateca}{}\doxysection{Cinemateca Class Reference}
+\label{class_cinemateca}\index{Cinemateca@{Cinemateca}}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_cinemateca_af544121e1c4ae6c6b9d7cd09cf8e2090}{Cinemateca}} (std\+::string m, const \mbox{\hyperlink{class_data_e_hora}{Data\+E\+Hora}} \&h)
+\item 
+\mbox{\hyperlink{class_cinemateca_af2a52efd1f813d172248b4ee9c72b37d}{Cinemateca}} (std\+::string m, const \mbox{\hyperlink{class_data_e_hora}{Data\+E\+Hora}} \&h, std\+::vector$<$ \mbox{\hyperlink{class_sala}{Sala}} $>$ ss)
+\item 
+\mbox{\hyperlink{class_cinemateca_a9df3d0f100a2cd74d5aba91bf308cdce}{Cinemateca}} (std\+::string m, const \mbox{\hyperlink{class_data_e_hora}{Data\+E\+Hora}} \&h, std\+::vector$<$ \mbox{\hyperlink{class_sala}{Sala}} $>$ ss, std\+::vector$<$ \mbox{\hyperlink{class_aderente}{Aderente}} $>$ as)
+\item 
+\mbox{\hyperlink{class_cinemateca_a2243161bcf01be7ca247dabd2fda836d}{Cinemateca}} (std\+::string m, const \mbox{\hyperlink{class_data_e_hora}{Data\+E\+Hora}} \&h, std\+::vector$<$ \mbox{\hyperlink{class_aderente}{Aderente}} $>$ as)
+\item 
+std\+::string \mbox{\hyperlink{class_cinemateca_a28489b4b9be4783ed78c17cece0d2b40}{Get\+Morada}} ()
+\item 
+std\+::vector$<$ \mbox{\hyperlink{class_sala}{Sala}} $>$ \mbox{\hyperlink{class_cinemateca_a9032895d19f9712c22e48807a42a9f85}{Getsalas}} ()
+\item 
+std\+::vector$<$ \mbox{\hyperlink{class_aderente}{Aderente}} $>$ \mbox{\hyperlink{class_cinemateca_ac9080446b52a82c2877e6ae89b815deb}{Get\+Aderentes}} ()
+\item 
+std\+::vector$<$ \mbox{\hyperlink{class_evento}{Evento}} $>$ \mbox{\hyperlink{class_cinemateca_ad5da968d2ed6a2209cefe1f7159a1339}{Get\+Eventos\+Antigos}} ()
+\item 
+std\+::vector$<$ \mbox{\hyperlink{class_evento}{Evento}} $>$ \mbox{\hyperlink{class_cinemateca_ab9f00b03266c5c1ccdd1d605687880c5}{Get\+Eventos\+Hoje}} ()
+\item 
+std\+::vector$<$ \mbox{\hyperlink{class_evento}{Evento}} $>$ \mbox{\hyperlink{class_cinemateca_a3de1caaa569eeb4bc2fbc680c0cddd66}{Get\+Eventos\+Futuros}} ()
+\item 
+void \mbox{\hyperlink{class_cinemateca_a71cfb4bbdbcfaaddd86f34c187aa72fd}{Mudar\+Agora}} (const \mbox{\hyperlink{class_data_e_hora}{Data\+E\+Hora}} \&h)
+\item 
+void \mbox{\hyperlink{class_cinemateca_a4b2ea4cbf1ea1756e6d94bc483bb91a6}{Adicionar\+Sala}} (const \mbox{\hyperlink{class_sala}{Sala}} \&sal)
+\item 
+void \mbox{\hyperlink{class_cinemateca_a8cab844544f3894e78fa79f1614fe5ab}{Adicionar\+Salas}} (const std\+::vector$<$ \mbox{\hyperlink{class_sala}{Sala}} $>$ \&sals)
+\item 
+void \mbox{\hyperlink{class_cinemateca_a4818f75cb301738bc6e270020531bb6e}{Set\+Salas}} (const std\+::vector$<$ \mbox{\hyperlink{class_sala}{Sala}} $>$ \&sals)
+\item 
+void \mbox{\hyperlink{class_cinemateca_ae6e6674e9d39705eb7fbfc03cf367e47}{Sort\+Salas}} ()
+\item 
+void \mbox{\hyperlink{class_cinemateca_a5494501c0710cbd653f5754e85fa4fa4}{Adicionar\+Aderente}} (const \mbox{\hyperlink{class_aderente}{Aderente}} \&aderen)
+\item 
+void \mbox{\hyperlink{class_cinemateca_a17b54ea5d9013e3b6a4949340f20e7e5}{Adicionar\+Aderentes}} (const std\+::vector$<$ \mbox{\hyperlink{class_aderente}{Aderente}} $>$ \&aderens)
+\item 
+void \mbox{\hyperlink{class_cinemateca_ae159097af4c078430a3078a63e29548b}{Set\+Aderentes}} (const std\+::vector$<$ \mbox{\hyperlink{class_aderente}{Aderente}} $>$ \&aderens)
+\item 
+void \mbox{\hyperlink{class_cinemateca_ac9a5cc5c36c330ba1baf455afe52a64b}{Sort\+Aderentes}} ()
+\item 
+void \mbox{\hyperlink{class_cinemateca_a3012470ea6582b390fb768efec0ae579}{Adicionar\+Evento}} (\mbox{\hyperlink{class_evento}{Evento}} event)
+\item 
+void \mbox{\hyperlink{class_cinemateca_aa813ab41acd6de3c2e99642054a6d8c9}{Adicionar\+Eventos}} (std\+::vector$<$ \mbox{\hyperlink{class_evento}{Evento}} $>$ events)
+\item 
+void \mbox{\hyperlink{class_cinemateca_aca84c3cf69f3bdd15ba916d5dcad1603}{Set\+Eventos}} (std\+::vector$<$ \mbox{\hyperlink{class_evento}{Evento}} $>$ events)
+\item 
+void \mbox{\hyperlink{class_cinemateca_a57e92a996f05c76f08485698f933284e}{Sort\+Eventos}} ()
+\item 
+std\+::vector$<$ \mbox{\hyperlink{class_evento}{Evento}} $>$ \mbox{\hyperlink{class_cinemateca_a44b4067ba9f508156f3ce1d833c5165d}{Procurar\+Eventos\+Data}} (const \mbox{\hyperlink{class_data}{Data}} \&d)
+\item 
+std\+::vector$<$ \mbox{\hyperlink{class_evento}{Evento}} $>$ \mbox{\hyperlink{class_cinemateca_a9ca24c73e7de6fe92264367980d16dea}{Procurar\+Eventos\+Depois\+Data}} (const \mbox{\hyperlink{class_data}{Data}} \&d)
+\item 
+std\+::vector$<$ \mbox{\hyperlink{class_evento}{Evento}} $>$ \mbox{\hyperlink{class_cinemateca_a647cd6368dfd66ba1245ec851481d4e7}{Procurar\+Eventos\+Antes\+Data}} (const \mbox{\hyperlink{class_data}{Data}} \&d)
+\item 
+void \mbox{\hyperlink{class_cinemateca_a1fa7ec5534f5d551a6ef4efb2e24ce4f}{Ler\+Ficheiro\+Eventos}} (const std\+::string \&filepath)
+\item 
+void \mbox{\hyperlink{class_cinemateca_af20fe8e94a50b1275ddd90f3017be058}{Escrever\+Ficheiro\+Eventos}} (const std\+::string \&filepath)
+\item 
+void \mbox{\hyperlink{class_cinemateca_a2ab69d051ff22936c393cce6e9b764da}{Ler\+Ficheiro\+Aderentes}} (const std\+::string \&filepath)
+\item 
+void \mbox{\hyperlink{class_cinemateca_af406f027f1c43c9b0b1110d930693b0e}{Escrever\+Ficheiro\+Aderentes}} (const std\+::string \&filepath)
+\item 
+void \mbox{\hyperlink{class_cinemateca_a00ad448cf5c1938aefc249c1d4e941c2}{Ler\+Ficheiro\+Salas}} (const std\+::string \&filepath)
+\item 
+void \mbox{\hyperlink{class_cinemateca_a4396f3cb15f76b7ee8c4bba43512c321}{Escrever\+Ficheiro\+Salas}} (const std\+::string \&filepath)
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \mbox{\hyperlink{class_data_e_hora}{Data\+E\+Hora}} \mbox{\hyperlink{class_cinemateca_a0510d9b537eadfec1715b50f3fbf7ed4}{Get\+Hoje}} ()
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_cinemateca_af544121e1c4ae6c6b9d7cd09cf8e2090}\label{class_cinemateca_af544121e1c4ae6c6b9d7cd09cf8e2090}} 
+\index{Cinemateca@{Cinemateca}!Cinemateca@{Cinemateca}}
+\index{Cinemateca@{Cinemateca}!Cinemateca@{Cinemateca}}
+\doxysubsubsection{\texorpdfstring{Cinemateca()}{Cinemateca()}\hspace{0.1cm}{\footnotesize\ttfamily [1/4]}}
+{\footnotesize\ttfamily Cinemateca\+::\+Cinemateca (\begin{DoxyParamCaption}\item[{std\+::string}]{m,  }\item[{const \mbox{\hyperlink{class_data_e_hora}{Data\+E\+Hora}} \&}]{h }\end{DoxyParamCaption})}
+
+Constructor. 
+\begin{DoxyParams}{Parameters}
+{\em m} & -\/ \mbox{\hyperlink{class_cinemateca}{Cinemateca}}\textquotesingle{}s address \\
+\hline
+{\em h} & -\/ Current Date and Time \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_cinemateca_af2a52efd1f813d172248b4ee9c72b37d}\label{class_cinemateca_af2a52efd1f813d172248b4ee9c72b37d}} 
+\index{Cinemateca@{Cinemateca}!Cinemateca@{Cinemateca}}
+\index{Cinemateca@{Cinemateca}!Cinemateca@{Cinemateca}}
+\doxysubsubsection{\texorpdfstring{Cinemateca()}{Cinemateca()}\hspace{0.1cm}{\footnotesize\ttfamily [2/4]}}
+{\footnotesize\ttfamily Cinemateca\+::\+Cinemateca (\begin{DoxyParamCaption}\item[{std\+::string}]{m,  }\item[{const \mbox{\hyperlink{class_data_e_hora}{Data\+E\+Hora}} \&}]{h,  }\item[{std\+::vector$<$ \mbox{\hyperlink{class_sala}{Sala}} $>$}]{ss }\end{DoxyParamCaption})}
+
+Constructor. 
+\begin{DoxyParams}{Parameters}
+{\em m} & -\/ \mbox{\hyperlink{class_cinemateca}{Cinemateca}}\textquotesingle{}s address \\
+\hline
+{\em h} & -\/ Current Date and Time \\
+\hline
+{\em ss} & -\/ Vector of room(s) (\mbox{\hyperlink{class_sala}{Sala}}) to begin with \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_cinemateca_a9df3d0f100a2cd74d5aba91bf308cdce}\label{class_cinemateca_a9df3d0f100a2cd74d5aba91bf308cdce}} 
+\index{Cinemateca@{Cinemateca}!Cinemateca@{Cinemateca}}
+\index{Cinemateca@{Cinemateca}!Cinemateca@{Cinemateca}}
+\doxysubsubsection{\texorpdfstring{Cinemateca()}{Cinemateca()}\hspace{0.1cm}{\footnotesize\ttfamily [3/4]}}
+{\footnotesize\ttfamily Cinemateca\+::\+Cinemateca (\begin{DoxyParamCaption}\item[{std\+::string}]{m,  }\item[{const \mbox{\hyperlink{class_data_e_hora}{Data\+E\+Hora}} \&}]{h,  }\item[{std\+::vector$<$ \mbox{\hyperlink{class_sala}{Sala}} $>$}]{ss,  }\item[{std\+::vector$<$ \mbox{\hyperlink{class_aderente}{Aderente}} $>$}]{as }\end{DoxyParamCaption})}
+
+Constructor. 
+\begin{DoxyParams}{Parameters}
+{\em m} & -\/ \mbox{\hyperlink{class_cinemateca}{Cinemateca}}\textquotesingle{}s address \\
+\hline
+{\em h} & -\/ Current Date and Time \\
+\hline
+{\em ss} & -\/ Vector of room(s) (\mbox{\hyperlink{class_sala}{Sala}}) to begin with \\
+\hline
+{\em as} & -\/ Vector of Adherent(s) (\mbox{\hyperlink{class_aderente}{Aderente}}) to begin with \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_cinemateca_a2243161bcf01be7ca247dabd2fda836d}\label{class_cinemateca_a2243161bcf01be7ca247dabd2fda836d}} 
+\index{Cinemateca@{Cinemateca}!Cinemateca@{Cinemateca}}
+\index{Cinemateca@{Cinemateca}!Cinemateca@{Cinemateca}}
+\doxysubsubsection{\texorpdfstring{Cinemateca()}{Cinemateca()}\hspace{0.1cm}{\footnotesize\ttfamily [4/4]}}
+{\footnotesize\ttfamily Cinemateca\+::\+Cinemateca (\begin{DoxyParamCaption}\item[{std\+::string}]{m,  }\item[{const \mbox{\hyperlink{class_data_e_hora}{Data\+E\+Hora}} \&}]{h,  }\item[{std\+::vector$<$ \mbox{\hyperlink{class_aderente}{Aderente}} $>$}]{as }\end{DoxyParamCaption})}
+
+Constructor. 
+\begin{DoxyParams}{Parameters}
+{\em m} & -\/ \mbox{\hyperlink{class_cinemateca}{Cinemateca}}\textquotesingle{}s address \\
+\hline
+{\em h} & -\/ Current Date and Time \\
+\hline
+{\em as} & -\/ Vector of Adherent(s) (\mbox{\hyperlink{class_aderente}{Aderente}}) to begin with \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_cinemateca_a5494501c0710cbd653f5754e85fa4fa4}\label{class_cinemateca_a5494501c0710cbd653f5754e85fa4fa4}} 
+\index{Cinemateca@{Cinemateca}!AdicionarAderente@{AdicionarAderente}}
+\index{AdicionarAderente@{AdicionarAderente}!Cinemateca@{Cinemateca}}
+\doxysubsubsection{\texorpdfstring{AdicionarAderente()}{AdicionarAderente()}}
+{\footnotesize\ttfamily void Cinemateca\+::\+Adicionar\+Aderente (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_aderente}{Aderente}} \&}]{aderen }\end{DoxyParamCaption})}
+
+Adds a Adherent (\mbox{\hyperlink{class_aderente}{Aderente}}) to the \mbox{\hyperlink{class_cinemateca}{Cinemateca}} 
+\begin{DoxyParams}{Parameters}
+{\em aderen} & -\/ Adherent (\mbox{\hyperlink{class_aderente}{Aderente}}) to add to \mbox{\hyperlink{class_cinemateca}{Cinemateca}} \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em aderen} & -\/ if there are 2 equal Adherents (\mbox{\hyperlink{class_aderente}{Aderente}}) \\
+\hline
+\end{DoxyExceptions}
+\mbox{\Hypertarget{class_cinemateca_a17b54ea5d9013e3b6a4949340f20e7e5}\label{class_cinemateca_a17b54ea5d9013e3b6a4949340f20e7e5}} 
+\index{Cinemateca@{Cinemateca}!AdicionarAderentes@{AdicionarAderentes}}
+\index{AdicionarAderentes@{AdicionarAderentes}!Cinemateca@{Cinemateca}}
+\doxysubsubsection{\texorpdfstring{AdicionarAderentes()}{AdicionarAderentes()}}
+{\footnotesize\ttfamily void Cinemateca\+::\+Adicionar\+Aderentes (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ \mbox{\hyperlink{class_aderente}{Aderente}} $>$ \&}]{aderens }\end{DoxyParamCaption})}
+
+Adds a vector of Adherent (\mbox{\hyperlink{class_aderente}{Aderente}}) to the \mbox{\hyperlink{class_cinemateca}{Cinemateca}} 
+\begin{DoxyParams}{Parameters}
+{\em aderens} & -\/ Adherent(s) (\mbox{\hyperlink{class_aderente}{Aderente}}) to add to \mbox{\hyperlink{class_cinemateca}{Cinemateca}} \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_cinemateca_a3012470ea6582b390fb768efec0ae579}\label{class_cinemateca_a3012470ea6582b390fb768efec0ae579}} 
+\index{Cinemateca@{Cinemateca}!AdicionarEvento@{AdicionarEvento}}
+\index{AdicionarEvento@{AdicionarEvento}!Cinemateca@{Cinemateca}}
+\doxysubsubsection{\texorpdfstring{AdicionarEvento()}{AdicionarEvento()}}
+{\footnotesize\ttfamily void Cinemateca\+::\+Adicionar\+Evento (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_evento}{Evento}}}]{event }\end{DoxyParamCaption})}
+
+Adds an Event (\mbox{\hyperlink{class_evento}{Evento}}) to the \mbox{\hyperlink{class_cinemateca}{Cinemateca}} 
+\begin{DoxyParams}{Parameters}
+{\em event} & -\/ event (\mbox{\hyperlink{class_evento}{Evento}}) to add to \mbox{\hyperlink{class_cinemateca}{Cinemateca}} \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em P\+L\+A\+N\+N\+I\+N\+G2\+F\+A\+R\+\_\+\+A\+H\+E\+AD} & -\/ if the event to add is further than a year away \\
+\hline
+{\em event} & -\/ if there are 2 equal Events (\mbox{\hyperlink{class_evento}{Evento}}) \\
+\hline
+\end{DoxyExceptions}
+\mbox{\Hypertarget{class_cinemateca_aa813ab41acd6de3c2e99642054a6d8c9}\label{class_cinemateca_aa813ab41acd6de3c2e99642054a6d8c9}} 
+\index{Cinemateca@{Cinemateca}!AdicionarEventos@{AdicionarEventos}}
+\index{AdicionarEventos@{AdicionarEventos}!Cinemateca@{Cinemateca}}
+\doxysubsubsection{\texorpdfstring{AdicionarEventos()}{AdicionarEventos()}}
+{\footnotesize\ttfamily void Cinemateca\+::\+Adicionar\+Eventos (\begin{DoxyParamCaption}\item[{std\+::vector$<$ \mbox{\hyperlink{class_evento}{Evento}} $>$}]{events }\end{DoxyParamCaption})}
+
+Adds a vector of Events (\mbox{\hyperlink{class_evento}{Evento}}) to \mbox{\hyperlink{class_cinemateca}{Cinemateca}} 
+\begin{DoxyParams}{Parameters}
+{\em events} & -\/ Events (\mbox{\hyperlink{class_evento}{Evento}}) to add to \mbox{\hyperlink{class_cinemateca}{Cinemateca}} \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_cinemateca_a4b2ea4cbf1ea1756e6d94bc483bb91a6}\label{class_cinemateca_a4b2ea4cbf1ea1756e6d94bc483bb91a6}} 
+\index{Cinemateca@{Cinemateca}!AdicionarSala@{AdicionarSala}}
+\index{AdicionarSala@{AdicionarSala}!Cinemateca@{Cinemateca}}
+\doxysubsubsection{\texorpdfstring{AdicionarSala()}{AdicionarSala()}}
+{\footnotesize\ttfamily void Cinemateca\+::\+Adicionar\+Sala (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_sala}{Sala}} \&}]{sal }\end{DoxyParamCaption})}
+
+Adds a room (\mbox{\hyperlink{class_sala}{Sala}}) to the \mbox{\hyperlink{class_cinemateca}{Cinemateca}} 
+\begin{DoxyParams}{Parameters}
+{\em sal} & -\/ room (\mbox{\hyperlink{class_sala}{Sala}}) to add to \mbox{\hyperlink{class_cinemateca}{Cinemateca}} \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em sal} & -\/ if there are 2 equal rooms (\mbox{\hyperlink{class_sala}{Sala}}) \\
+\hline
+\end{DoxyExceptions}
+\mbox{\Hypertarget{class_cinemateca_a8cab844544f3894e78fa79f1614fe5ab}\label{class_cinemateca_a8cab844544f3894e78fa79f1614fe5ab}} 
+\index{Cinemateca@{Cinemateca}!AdicionarSalas@{AdicionarSalas}}
+\index{AdicionarSalas@{AdicionarSalas}!Cinemateca@{Cinemateca}}
+\doxysubsubsection{\texorpdfstring{AdicionarSalas()}{AdicionarSalas()}}
+{\footnotesize\ttfamily void Cinemateca\+::\+Adicionar\+Salas (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ \mbox{\hyperlink{class_sala}{Sala}} $>$ \&}]{sals }\end{DoxyParamCaption})}
+
+Adds a vector of room(s) (\mbox{\hyperlink{class_sala}{Sala}}) to the \mbox{\hyperlink{class_cinemateca}{Cinemateca}} 
+\begin{DoxyParams}{Parameters}
+{\em sals} & -\/ room(s) (\mbox{\hyperlink{class_sala}{Sala}}) to add to \mbox{\hyperlink{class_cinemateca}{Cinemateca}} \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_cinemateca_af406f027f1c43c9b0b1110d930693b0e}\label{class_cinemateca_af406f027f1c43c9b0b1110d930693b0e}} 
+\index{Cinemateca@{Cinemateca}!EscreverFicheiroAderentes@{EscreverFicheiroAderentes}}
+\index{EscreverFicheiroAderentes@{EscreverFicheiroAderentes}!Cinemateca@{Cinemateca}}
+\doxysubsubsection{\texorpdfstring{EscreverFicheiroAderentes()}{EscreverFicheiroAderentes()}}
+{\footnotesize\ttfamily void Cinemateca\+::\+Escrever\+Ficheiro\+Aderentes (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{filepath }\end{DoxyParamCaption})}
+
+Writes to a .txt file the Adherents (\mbox{\hyperlink{class_aderente}{Aderente}}) of \mbox{\hyperlink{class_cinemateca}{Cinemateca}} 
+\begin{DoxyParams}{Parameters}
+{\em filepath} & -\/ the file path for the file to write \mbox{\hyperlink{class_cinemateca}{Cinemateca}}\textquotesingle{}s Adherent (\mbox{\hyperlink{class_aderente}{Aderente}}) \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em C\+O\+U\+L\+D\+N\+T\+\_\+\+O\+P\+E\+N\+\_\+\+F\+I\+LE} & + filepath if the file couldn\textquotesingle{}t be open \\
+\hline
+\end{DoxyExceptions}
+\mbox{\Hypertarget{class_cinemateca_af20fe8e94a50b1275ddd90f3017be058}\label{class_cinemateca_af20fe8e94a50b1275ddd90f3017be058}} 
+\index{Cinemateca@{Cinemateca}!EscreverFicheiroEventos@{EscreverFicheiroEventos}}
+\index{EscreverFicheiroEventos@{EscreverFicheiroEventos}!Cinemateca@{Cinemateca}}
+\doxysubsubsection{\texorpdfstring{EscreverFicheiroEventos()}{EscreverFicheiroEventos()}}
+{\footnotesize\ttfamily void Cinemateca\+::\+Escrever\+Ficheiro\+Eventos (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{filepath }\end{DoxyParamCaption})}
+
+Writes to a .txt file the Events (\mbox{\hyperlink{class_evento}{Evento}}) of \mbox{\hyperlink{class_cinemateca}{Cinemateca}} 
+\begin{DoxyParams}{Parameters}
+{\em filepath} & -\/ the file path for the file to write \mbox{\hyperlink{class_cinemateca}{Cinemateca}}\textquotesingle{}s Events (\mbox{\hyperlink{class_evento}{Evento}}) \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em C\+O\+U\+L\+D\+N\+T\+\_\+\+O\+P\+E\+N\+\_\+\+F\+I\+LE} & + filepath if the file couldn\textquotesingle{}t be open \\
+\hline
+\end{DoxyExceptions}
+\mbox{\Hypertarget{class_cinemateca_a4396f3cb15f76b7ee8c4bba43512c321}\label{class_cinemateca_a4396f3cb15f76b7ee8c4bba43512c321}} 
+\index{Cinemateca@{Cinemateca}!EscreverFicheiroSalas@{EscreverFicheiroSalas}}
+\index{EscreverFicheiroSalas@{EscreverFicheiroSalas}!Cinemateca@{Cinemateca}}
+\doxysubsubsection{\texorpdfstring{EscreverFicheiroSalas()}{EscreverFicheiroSalas()}}
+{\footnotesize\ttfamily void Cinemateca\+::\+Escrever\+Ficheiro\+Salas (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{filepath }\end{DoxyParamCaption})}
+
+Writes to a .txt file the rooms (\mbox{\hyperlink{class_sala}{Sala}}) of \mbox{\hyperlink{class_cinemateca}{Cinemateca}} 
+\begin{DoxyParams}{Parameters}
+{\em filepath} & -\/ the file path for the file to write \mbox{\hyperlink{class_cinemateca}{Cinemateca}}\textquotesingle{}s rooms (\mbox{\hyperlink{class_sala}{Sala}}) \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em C\+O\+U\+L\+D\+N\+T\+\_\+\+O\+P\+E\+N\+\_\+\+F\+I\+LE} & + filepath if the file couldn\textquotesingle{}t be open \\
+\hline
+\end{DoxyExceptions}
+\mbox{\Hypertarget{class_cinemateca_ac9080446b52a82c2877e6ae89b815deb}\label{class_cinemateca_ac9080446b52a82c2877e6ae89b815deb}} 
+\index{Cinemateca@{Cinemateca}!GetAderentes@{GetAderentes}}
+\index{GetAderentes@{GetAderentes}!Cinemateca@{Cinemateca}}
+\doxysubsubsection{\texorpdfstring{GetAderentes()}{GetAderentes()}}
+{\footnotesize\ttfamily std\+::vector$<$ \mbox{\hyperlink{class_aderente}{Aderente}} $>$ Cinemateca\+::\+Get\+Aderentes (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\begin{DoxyReturn}{Returns}
+\mbox{\hyperlink{class_cinemateca}{Cinemateca}}\textquotesingle{}s current \mbox{\hyperlink{class_aderente}{Aderente(s)}} 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_cinemateca_ad5da968d2ed6a2209cefe1f7159a1339}\label{class_cinemateca_ad5da968d2ed6a2209cefe1f7159a1339}} 
+\index{Cinemateca@{Cinemateca}!GetEventosAntigos@{GetEventosAntigos}}
+\index{GetEventosAntigos@{GetEventosAntigos}!Cinemateca@{Cinemateca}}
+\doxysubsubsection{\texorpdfstring{GetEventosAntigos()}{GetEventosAntigos()}}
+{\footnotesize\ttfamily std\+::vector$<$ \mbox{\hyperlink{class_evento}{Evento}} $>$ Cinemateca\+::\+Get\+Eventos\+Antigos (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\begin{DoxyReturn}{Returns}
+\mbox{\hyperlink{class_cinemateca}{Cinemateca}}\textquotesingle{}s old events 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_cinemateca_a3de1caaa569eeb4bc2fbc680c0cddd66}\label{class_cinemateca_a3de1caaa569eeb4bc2fbc680c0cddd66}} 
+\index{Cinemateca@{Cinemateca}!GetEventosFuturos@{GetEventosFuturos}}
+\index{GetEventosFuturos@{GetEventosFuturos}!Cinemateca@{Cinemateca}}
+\doxysubsubsection{\texorpdfstring{GetEventosFuturos()}{GetEventosFuturos()}}
+{\footnotesize\ttfamily std\+::vector$<$ \mbox{\hyperlink{class_evento}{Evento}} $>$ Cinemateca\+::\+Get\+Eventos\+Futuros (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\begin{DoxyReturn}{Returns}
+\mbox{\hyperlink{class_cinemateca}{Cinemateca}}\textquotesingle{}s future events 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_cinemateca_ab9f00b03266c5c1ccdd1d605687880c5}\label{class_cinemateca_ab9f00b03266c5c1ccdd1d605687880c5}} 
+\index{Cinemateca@{Cinemateca}!GetEventosHoje@{GetEventosHoje}}
+\index{GetEventosHoje@{GetEventosHoje}!Cinemateca@{Cinemateca}}
+\doxysubsubsection{\texorpdfstring{GetEventosHoje()}{GetEventosHoje()}}
+{\footnotesize\ttfamily std\+::vector$<$ \mbox{\hyperlink{class_evento}{Evento}} $>$ Cinemateca\+::\+Get\+Eventos\+Hoje (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\begin{DoxyReturn}{Returns}
+\mbox{\hyperlink{class_cinemateca}{Cinemateca}}\textquotesingle{}s events for today 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_cinemateca_a0510d9b537eadfec1715b50f3fbf7ed4}\label{class_cinemateca_a0510d9b537eadfec1715b50f3fbf7ed4}} 
+\index{Cinemateca@{Cinemateca}!GetHoje@{GetHoje}}
+\index{GetHoje@{GetHoje}!Cinemateca@{Cinemateca}}
+\doxysubsubsection{\texorpdfstring{GetHoje()}{GetHoje()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_data_e_hora}{Data\+E\+Hora}} Cinemateca\+::\+Get\+Hoje (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\begin{DoxyReturn}{Returns}
+Current Date and Time 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_cinemateca_a28489b4b9be4783ed78c17cece0d2b40}\label{class_cinemateca_a28489b4b9be4783ed78c17cece0d2b40}} 
+\index{Cinemateca@{Cinemateca}!GetMorada@{GetMorada}}
+\index{GetMorada@{GetMorada}!Cinemateca@{Cinemateca}}
+\doxysubsubsection{\texorpdfstring{GetMorada()}{GetMorada()}}
+{\footnotesize\ttfamily std\+::string Cinemateca\+::\+Get\+Morada (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\begin{DoxyReturn}{Returns}
+\mbox{\hyperlink{class_cinemateca}{Cinemateca}}\textquotesingle{}s address 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_cinemateca_a9032895d19f9712c22e48807a42a9f85}\label{class_cinemateca_a9032895d19f9712c22e48807a42a9f85}} 
+\index{Cinemateca@{Cinemateca}!Getsalas@{Getsalas}}
+\index{Getsalas@{Getsalas}!Cinemateca@{Cinemateca}}
+\doxysubsubsection{\texorpdfstring{Getsalas()}{Getsalas()}}
+{\footnotesize\ttfamily std\+::vector$<$ \mbox{\hyperlink{class_sala}{Sala}} $>$ Cinemateca\+::\+Getsalas (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\begin{DoxyReturn}{Returns}
+\mbox{\hyperlink{class_cinemateca}{Cinemateca}}\textquotesingle{}s rooms 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_cinemateca_a2ab69d051ff22936c393cce6e9b764da}\label{class_cinemateca_a2ab69d051ff22936c393cce6e9b764da}} 
+\index{Cinemateca@{Cinemateca}!LerFicheiroAderentes@{LerFicheiroAderentes}}
+\index{LerFicheiroAderentes@{LerFicheiroAderentes}!Cinemateca@{Cinemateca}}
+\doxysubsubsection{\texorpdfstring{LerFicheiroAderentes()}{LerFicheiroAderentes()}}
+{\footnotesize\ttfamily void Cinemateca\+::\+Ler\+Ficheiro\+Aderentes (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{filepath }\end{DoxyParamCaption})}
+
+Reads a .txt file of Adherent (\mbox{\hyperlink{class_aderente}{Aderente}}) and adds them to \mbox{\hyperlink{class_cinemateca}{Cinemateca}} 
+\begin{DoxyParams}{Parameters}
+{\em filepath} & -\/ the file path for the file from which to read Adherents (\mbox{\hyperlink{class_aderente}{Aderente}}) \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em C\+O\+U\+L\+D\+N\+T\+\_\+\+O\+P\+E\+N\+\_\+\+F\+I\+LE} & + filepath if the file couldn\textquotesingle{}t be open \\
+\hline
+\end{DoxyExceptions}
+\mbox{\Hypertarget{class_cinemateca_a1fa7ec5534f5d551a6ef4efb2e24ce4f}\label{class_cinemateca_a1fa7ec5534f5d551a6ef4efb2e24ce4f}} 
+\index{Cinemateca@{Cinemateca}!LerFicheiroEventos@{LerFicheiroEventos}}
+\index{LerFicheiroEventos@{LerFicheiroEventos}!Cinemateca@{Cinemateca}}
+\doxysubsubsection{\texorpdfstring{LerFicheiroEventos()}{LerFicheiroEventos()}}
+{\footnotesize\ttfamily void Cinemateca\+::\+Ler\+Ficheiro\+Eventos (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{filepath }\end{DoxyParamCaption})}
+
+Reads a .txt file of Events (\mbox{\hyperlink{class_evento}{Evento}}) and adds them to \mbox{\hyperlink{class_cinemateca}{Cinemateca}} 
+\begin{DoxyParams}{Parameters}
+{\em filepath} & -\/ the file path for the file from which to read Events (\mbox{\hyperlink{class_evento}{Evento}}) \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em C\+O\+U\+L\+D\+N\+T\+\_\+\+O\+P\+E\+N\+\_\+\+F\+I\+LE} & + filepath if the file couldn\textquotesingle{}t be open \\
+\hline
+\end{DoxyExceptions}
+\mbox{\Hypertarget{class_cinemateca_a00ad448cf5c1938aefc249c1d4e941c2}\label{class_cinemateca_a00ad448cf5c1938aefc249c1d4e941c2}} 
+\index{Cinemateca@{Cinemateca}!LerFicheiroSalas@{LerFicheiroSalas}}
+\index{LerFicheiroSalas@{LerFicheiroSalas}!Cinemateca@{Cinemateca}}
+\doxysubsubsection{\texorpdfstring{LerFicheiroSalas()}{LerFicheiroSalas()}}
+{\footnotesize\ttfamily void Cinemateca\+::\+Ler\+Ficheiro\+Salas (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{filepath }\end{DoxyParamCaption})}
+
+Reads a .txt file of rooms (\mbox{\hyperlink{class_sala}{Sala}}) and adds them to \mbox{\hyperlink{class_cinemateca}{Cinemateca}} 
+\begin{DoxyParams}{Parameters}
+{\em filepath} & -\/ the file path for the file from which to read rooms (\mbox{\hyperlink{class_sala}{Sala}}) \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em C\+O\+U\+L\+D\+N\+T\+\_\+\+O\+P\+E\+N\+\_\+\+F\+I\+LE} & + filepath if the file couldn\textquotesingle{}t be open \\
+\hline
+\end{DoxyExceptions}
+\mbox{\Hypertarget{class_cinemateca_a71cfb4bbdbcfaaddd86f34c187aa72fd}\label{class_cinemateca_a71cfb4bbdbcfaaddd86f34c187aa72fd}} 
+\index{Cinemateca@{Cinemateca}!MudarAgora@{MudarAgora}}
+\index{MudarAgora@{MudarAgora}!Cinemateca@{Cinemateca}}
+\doxysubsubsection{\texorpdfstring{MudarAgora()}{MudarAgora()}}
+{\footnotesize\ttfamily void Cinemateca\+::\+Mudar\+Agora (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_data_e_hora}{Data\+E\+Hora}} \&}]{h }\end{DoxyParamCaption})}
+
+Changes the current Date and Time and moves events to the correct vector 
+\begin{DoxyParams}{Parameters}
+{\em h} & -\/ Date and Time to chance to \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_cinemateca_a647cd6368dfd66ba1245ec851481d4e7}\label{class_cinemateca_a647cd6368dfd66ba1245ec851481d4e7}} 
+\index{Cinemateca@{Cinemateca}!ProcurarEventosAntesData@{ProcurarEventosAntesData}}
+\index{ProcurarEventosAntesData@{ProcurarEventosAntesData}!Cinemateca@{Cinemateca}}
+\doxysubsubsection{\texorpdfstring{ProcurarEventosAntesData()}{ProcurarEventosAntesData()}}
+{\footnotesize\ttfamily std\+::vector$<$ \mbox{\hyperlink{class_evento}{Evento}} $>$ Cinemateca\+::\+Procurar\+Eventos\+Antes\+Data (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_data}{Data}} \&}]{d }\end{DoxyParamCaption})}
+
+Searches for the Events before a specific Date (\mbox{\hyperlink{class_data}{Data}}) 
+\begin{DoxyParams}{Parameters}
+{\em d} & -\/ The Date (\mbox{\hyperlink{class_data}{Data}}) before which to search events \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A sorted vector of Events (\mbox{\hyperlink{class_evento}{Evento}}) before the given date 
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em N\+O\+\_\+\+E\+V\+E\+N\+T\+S\+\_\+\+T\+H\+E\+R\+E\+\_\+\+P\+A\+ST} & if there weren\textquotesingle{}t any events (\mbox{\hyperlink{class_evento}{Evento}}) before the given Date (\mbox{\hyperlink{class_data}{Data}}) \\
+\hline
+\end{DoxyExceptions}
+\mbox{\Hypertarget{class_cinemateca_a44b4067ba9f508156f3ce1d833c5165d}\label{class_cinemateca_a44b4067ba9f508156f3ce1d833c5165d}} 
+\index{Cinemateca@{Cinemateca}!ProcurarEventosData@{ProcurarEventosData}}
+\index{ProcurarEventosData@{ProcurarEventosData}!Cinemateca@{Cinemateca}}
+\doxysubsubsection{\texorpdfstring{ProcurarEventosData()}{ProcurarEventosData()}}
+{\footnotesize\ttfamily std\+::vector$<$ \mbox{\hyperlink{class_evento}{Evento}} $>$ Cinemateca\+::\+Procurar\+Eventos\+Data (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_data}{Data}} \&}]{d }\end{DoxyParamCaption})}
+
+Searches for the Events of a specific Date (\mbox{\hyperlink{class_data}{Data}}) 
+\begin{DoxyParams}{Parameters}
+{\em d} & -\/ The Date (\mbox{\hyperlink{class_data}{Data}}) to search events \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A sorted vector of Events (\mbox{\hyperlink{class_evento}{Evento}}) from the given date 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_cinemateca_a9ca24c73e7de6fe92264367980d16dea}\label{class_cinemateca_a9ca24c73e7de6fe92264367980d16dea}} 
+\index{Cinemateca@{Cinemateca}!ProcurarEventosDepoisData@{ProcurarEventosDepoisData}}
+\index{ProcurarEventosDepoisData@{ProcurarEventosDepoisData}!Cinemateca@{Cinemateca}}
+\doxysubsubsection{\texorpdfstring{ProcurarEventosDepoisData()}{ProcurarEventosDepoisData()}}
+{\footnotesize\ttfamily std\+::vector$<$ \mbox{\hyperlink{class_evento}{Evento}} $>$ Cinemateca\+::\+Procurar\+Eventos\+Depois\+Data (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_data}{Data}} \&}]{d }\end{DoxyParamCaption})}
+
+Searches for the Events after a specific Date (\mbox{\hyperlink{class_data}{Data}}) 
+\begin{DoxyParams}{Parameters}
+{\em d} & -\/ The Date (\mbox{\hyperlink{class_data}{Data}}) after which to search events \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A sorted vector of Events (\mbox{\hyperlink{class_evento}{Evento}}) after the given date 
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em N\+O\+\_\+\+E\+V\+E\+N\+T\+S\+\_\+\+T\+H\+E\+R\+E\+\_\+\+F\+U\+T\+U\+RE} & if there weren\textquotesingle{}t any events (\mbox{\hyperlink{class_evento}{Evento}}) after the given Date (\mbox{\hyperlink{class_data}{Data}}) \\
+\hline
+\end{DoxyExceptions}
+\mbox{\Hypertarget{class_cinemateca_ae159097af4c078430a3078a63e29548b}\label{class_cinemateca_ae159097af4c078430a3078a63e29548b}} 
+\index{Cinemateca@{Cinemateca}!SetAderentes@{SetAderentes}}
+\index{SetAderentes@{SetAderentes}!Cinemateca@{Cinemateca}}
+\doxysubsubsection{\texorpdfstring{SetAderentes()}{SetAderentes()}}
+{\footnotesize\ttfamily void Cinemateca\+::\+Set\+Aderentes (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ \mbox{\hyperlink{class_aderente}{Aderente}} $>$ \&}]{aderens }\end{DoxyParamCaption})}
+
+Sets the Adherents (\mbox{\hyperlink{class_aderente}{Aderente}}) of \mbox{\hyperlink{class_cinemateca}{Cinemateca}} 
+\begin{DoxyParams}{Parameters}
+{\em aderens} & -\/ Adherent(s) (\mbox{\hyperlink{class_aderente}{Aderente}}) that \mbox{\hyperlink{class_cinemateca}{Cinemateca}} has now \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_cinemateca_aca84c3cf69f3bdd15ba916d5dcad1603}\label{class_cinemateca_aca84c3cf69f3bdd15ba916d5dcad1603}} 
+\index{Cinemateca@{Cinemateca}!SetEventos@{SetEventos}}
+\index{SetEventos@{SetEventos}!Cinemateca@{Cinemateca}}
+\doxysubsubsection{\texorpdfstring{SetEventos()}{SetEventos()}}
+{\footnotesize\ttfamily void Cinemateca\+::\+Set\+Eventos (\begin{DoxyParamCaption}\item[{std\+::vector$<$ \mbox{\hyperlink{class_evento}{Evento}} $>$}]{events }\end{DoxyParamCaption})}
+
+Sets the Events (\mbox{\hyperlink{class_evento}{Evento}}) of \mbox{\hyperlink{class_cinemateca}{Cinemateca}} 
+\begin{DoxyParams}{Parameters}
+{\em events} & -\/ Events (\mbox{\hyperlink{class_evento}{Evento}}) that \mbox{\hyperlink{class_cinemateca}{Cinemateca}} has now \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_cinemateca_a4818f75cb301738bc6e270020531bb6e}\label{class_cinemateca_a4818f75cb301738bc6e270020531bb6e}} 
+\index{Cinemateca@{Cinemateca}!SetSalas@{SetSalas}}
+\index{SetSalas@{SetSalas}!Cinemateca@{Cinemateca}}
+\doxysubsubsection{\texorpdfstring{SetSalas()}{SetSalas()}}
+{\footnotesize\ttfamily void Cinemateca\+::\+Set\+Salas (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ \mbox{\hyperlink{class_sala}{Sala}} $>$ \&}]{sals }\end{DoxyParamCaption})}
+
+Sets the rooms (\mbox{\hyperlink{class_sala}{Sala}}) of \mbox{\hyperlink{class_cinemateca}{Cinemateca}} 
+\begin{DoxyParams}{Parameters}
+{\em sals} & -\/ room(s) (\mbox{\hyperlink{class_sala}{Sala}}) that \mbox{\hyperlink{class_cinemateca}{Cinemateca}} has now \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_cinemateca_ac9a5cc5c36c330ba1baf455afe52a64b}\label{class_cinemateca_ac9a5cc5c36c330ba1baf455afe52a64b}} 
+\index{Cinemateca@{Cinemateca}!SortAderentes@{SortAderentes}}
+\index{SortAderentes@{SortAderentes}!Cinemateca@{Cinemateca}}
+\doxysubsubsection{\texorpdfstring{SortAderentes()}{SortAderentes()}}
+{\footnotesize\ttfamily void Cinemateca\+::\+Sort\+Aderentes (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Sorts \mbox{\hyperlink{class_cinemateca}{Cinemateca}}\textquotesingle{}s vector of Adherent(s) (\mbox{\hyperlink{class_aderente}{Aderente}}) \mbox{\Hypertarget{class_cinemateca_a57e92a996f05c76f08485698f933284e}\label{class_cinemateca_a57e92a996f05c76f08485698f933284e}} 
+\index{Cinemateca@{Cinemateca}!SortEventos@{SortEventos}}
+\index{SortEventos@{SortEventos}!Cinemateca@{Cinemateca}}
+\doxysubsubsection{\texorpdfstring{SortEventos()}{SortEventos()}}
+{\footnotesize\ttfamily void Cinemateca\+::\+Sort\+Eventos (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Sorts \mbox{\hyperlink{class_cinemateca}{Cinemateca}}\textquotesingle{}s vector of Events (\mbox{\hyperlink{class_evento}{Evento}}) \mbox{\Hypertarget{class_cinemateca_ae6e6674e9d39705eb7fbfc03cf367e47}\label{class_cinemateca_ae6e6674e9d39705eb7fbfc03cf367e47}} 
+\index{Cinemateca@{Cinemateca}!SortSalas@{SortSalas}}
+\index{SortSalas@{SortSalas}!Cinemateca@{Cinemateca}}
+\doxysubsubsection{\texorpdfstring{SortSalas()}{SortSalas()}}
+{\footnotesize\ttfamily void Cinemateca\+::\+Sort\+Salas (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Sorts \mbox{\hyperlink{class_cinemateca}{Cinemateca}}\textquotesingle{}s vector of room(s) (\mbox{\hyperlink{class_sala}{Sala}}) 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Cinemateca.\+h\item 
+Cinemateca.\+cpp\end{DoxyCompactItemize}

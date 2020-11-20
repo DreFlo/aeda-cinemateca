@@ -1,0 +1,267 @@
+\hypertarget{class_hora}{}\doxysection{Hora Class Reference}
+\label{class_hora}\index{Hora@{Hora}}
+Inheritance diagram for Hora\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=5.000000cm]{class_hora}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_hora_ae05fd06528302df59fbf8ffe8ad7f9bc}{Hora}} ()=default
+\item 
+\mbox{\hyperlink{class_hora_a81063d589b0fb2da8ed796349dc45cc8}{Hora}} (int hh, int mm)
+\item 
+\mbox{\hyperlink{class_hora_a6ebaa6b208e37e26c4c50fb954afe97a}{Hora}} (const \mbox{\hyperlink{class_hora}{Hora}} \&time)
+\item 
+\mbox{\hyperlink{class_hora}{Hora}} \mbox{\hyperlink{class_hora_acfef6e0992cb4580b09c9f7ce2b55dc9}{get\+Time}} () const
+\item 
+\mbox{\hyperlink{class_hora}{Hora}} \& \mbox{\hyperlink{class_hora_aadb2a15675e0f27af28378384fa1f860}{get\+Time\+Ref}} ()
+\item 
+int \mbox{\hyperlink{class_hora_aa753f095041082b4d05c485161b9815f}{get\+Hour}} () const
+\item 
+int \mbox{\hyperlink{class_hora_a807bfc16c9110c8ffe44bd1f5e9859b1}{get\+Minute}} () const
+\item 
+void \mbox{\hyperlink{class_hora_a800e8561545fd8f3271c85478d105501}{set\+Time}} (int hh, int mm) noexcept(false)
+\item 
+void \mbox{\hyperlink{class_hora_ae3bb248de3b184a36b1c44953f4de605}{set\+Time}} (const \mbox{\hyperlink{class_hora}{Hora}} \&time) noexcept(false)
+\item 
+void \mbox{\hyperlink{class_hora_a67106b7597c8f3a6a08b19c1a52b8de1}{set\+Time}} (const string \&in) noexcept(false)
+\item 
+void \mbox{\hyperlink{class_hora_a886bd34818b3f0c5b8a48544bc1208b9}{set\+Hour}} (int new\+Hour) noexcept(false)
+\item 
+void \mbox{\hyperlink{class_hora_a9b52abed1d0c5fede8f6ef344d572d37}{set\+Minute}} (int new\+Min) noexcept(false)
+\item 
+virtual bool \mbox{\hyperlink{class_hora_aaf0a0682901752032e45bb0109d12341}{valid}} () const
+\item 
+virtual string \mbox{\hyperlink{class_hora_ae7c1909a8da2809ec4a7b035dbad4eb6}{str}} () const
+\item 
+bool \mbox{\hyperlink{class_hora_a1893dd1e0c68018fba42e6ac4cd9919d}{operator$<$}} (const \mbox{\hyperlink{class_hora}{Hora}} \&time) const
+\item 
+bool \mbox{\hyperlink{class_hora_adeaaaaacf5de69513b58bc6ce4924684}{operator$>$}} (const \mbox{\hyperlink{class_hora}{Hora}} \&time) const
+\item 
+bool \mbox{\hyperlink{class_hora_aa3813a4ad7cdc4a2b1e251d353e22ff7}{operator==}} (const \mbox{\hyperlink{class_hora}{Hora}} \&time) const
+\end{DoxyCompactItemize}
+\doxysubsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+ostream \& \mbox{\hyperlink{class_hora_a18e4670ff8e3b01a162c4252ada80e8b}{operator$<$$<$}} (ostream \&output, const \mbox{\hyperlink{class_hora}{Hora}} \&time)
+\item 
+istream \& \mbox{\hyperlink{class_hora_a4bbedbab909845a374ea4a7dc8c888a5}{operator$>$$>$}} (istream \&input, \mbox{\hyperlink{class_hora}{Hora}} \&time) noexcept(false)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_hora_ae05fd06528302df59fbf8ffe8ad7f9bc}\label{class_hora_ae05fd06528302df59fbf8ffe8ad7f9bc}} 
+\index{Hora@{Hora}!Hora@{Hora}}
+\index{Hora@{Hora}!Hora@{Hora}}
+\doxysubsubsection{\texorpdfstring{Hora()}{Hora()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily Hora\+::\+Hora (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [default]}}
+
+Default constructor. \mbox{\Hypertarget{class_hora_a81063d589b0fb2da8ed796349dc45cc8}\label{class_hora_a81063d589b0fb2da8ed796349dc45cc8}} 
+\index{Hora@{Hora}!Hora@{Hora}}
+\index{Hora@{Hora}!Hora@{Hora}}
+\doxysubsubsection{\texorpdfstring{Hora()}{Hora()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily Hora\+::\+Hora (\begin{DoxyParamCaption}\item[{int}]{hh,  }\item[{int}]{mm }\end{DoxyParamCaption})}
+
+Class constructor. Initializes hour and minute. Does not have to be a valid time. 
+\begin{DoxyParams}{Parameters}
+{\em hh} & Hour \\
+\hline
+{\em mm} & Minute \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_hora_a6ebaa6b208e37e26c4c50fb954afe97a}\label{class_hora_a6ebaa6b208e37e26c4c50fb954afe97a}} 
+\index{Hora@{Hora}!Hora@{Hora}}
+\index{Hora@{Hora}!Hora@{Hora}}
+\doxysubsubsection{\texorpdfstring{Hora()}{Hora()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily Hora\+::\+Hora (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_hora}{Hora}} \&}]{time }\end{DoxyParamCaption})}
+
+Copy constructor. Parameter does not have to be a valid time. 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_hora_aa753f095041082b4d05c485161b9815f}\label{class_hora_aa753f095041082b4d05c485161b9815f}} 
+\index{Hora@{Hora}!getHour@{getHour}}
+\index{getHour@{getHour}!Hora@{Hora}}
+\doxysubsubsection{\texorpdfstring{getHour()}{getHour()}}
+{\footnotesize\ttfamily int Hora\+::get\+Hour (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\begin{DoxyReturn}{Returns}
+Returns the hour of the time. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_hora_a807bfc16c9110c8ffe44bd1f5e9859b1}\label{class_hora_a807bfc16c9110c8ffe44bd1f5e9859b1}} 
+\index{Hora@{Hora}!getMinute@{getMinute}}
+\index{getMinute@{getMinute}!Hora@{Hora}}
+\doxysubsubsection{\texorpdfstring{getMinute()}{getMinute()}}
+{\footnotesize\ttfamily int Hora\+::get\+Minute (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\begin{DoxyReturn}{Returns}
+Returns the minute of the time. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_hora_acfef6e0992cb4580b09c9f7ce2b55dc9}\label{class_hora_acfef6e0992cb4580b09c9f7ce2b55dc9}} 
+\index{Hora@{Hora}!getTime@{getTime}}
+\index{getTime@{getTime}!Hora@{Hora}}
+\doxysubsubsection{\texorpdfstring{getTime()}{getTime()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_hora}{Hora}} Hora\+::get\+Time (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\begin{DoxyReturn}{Returns}
+Returns the time 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_hora_aadb2a15675e0f27af28378384fa1f860}\label{class_hora_aadb2a15675e0f27af28378384fa1f860}} 
+\index{Hora@{Hora}!getTimeRef@{getTimeRef}}
+\index{getTimeRef@{getTimeRef}!Hora@{Hora}}
+\doxysubsubsection{\texorpdfstring{getTimeRef()}{getTimeRef()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_hora}{Hora}} \& Hora\+::get\+Time\+Ref (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\begin{DoxyReturn}{Returns}
+Returns a reference to the object. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_hora_a1893dd1e0c68018fba42e6ac4cd9919d}\label{class_hora_a1893dd1e0c68018fba42e6ac4cd9919d}} 
+\index{Hora@{Hora}!operator$<$@{operator$<$}}
+\index{operator$<$@{operator$<$}!Hora@{Hora}}
+\doxysubsubsection{\texorpdfstring{operator$<$()}{operator<()}}
+{\footnotesize\ttfamily bool Hora\+::operator$<$ (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_hora}{Hora}} \&}]{time }\end{DoxyParamCaption}) const}
+
+A time is lesser than another if it comes before. \begin{DoxyReturn}{Returns}
+True if lesser. False otherwise. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_hora_aa3813a4ad7cdc4a2b1e251d353e22ff7}\label{class_hora_aa3813a4ad7cdc4a2b1e251d353e22ff7}} 
+\index{Hora@{Hora}!operator==@{operator==}}
+\index{operator==@{operator==}!Hora@{Hora}}
+\doxysubsubsection{\texorpdfstring{operator==()}{operator==()}}
+{\footnotesize\ttfamily bool Hora\+::operator== (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_hora}{Hora}} \&}]{time }\end{DoxyParamCaption}) const}
+
+Checks if two times are equal. \begin{DoxyReturn}{Returns}
+True if they are. False otherwise. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_hora_adeaaaaacf5de69513b58bc6ce4924684}\label{class_hora_adeaaaaacf5de69513b58bc6ce4924684}} 
+\index{Hora@{Hora}!operator$>$@{operator$>$}}
+\index{operator$>$@{operator$>$}!Hora@{Hora}}
+\doxysubsubsection{\texorpdfstring{operator$>$()}{operator>()}}
+{\footnotesize\ttfamily bool Hora\+::operator$>$ (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_hora}{Hora}} \&}]{time }\end{DoxyParamCaption}) const}
+
+A time is greater than another if it comes after. \begin{DoxyReturn}{Returns}
+True if greater. False otherwise. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_hora_a886bd34818b3f0c5b8a48544bc1208b9}\label{class_hora_a886bd34818b3f0c5b8a48544bc1208b9}} 
+\index{Hora@{Hora}!setHour@{setHour}}
+\index{setHour@{setHour}!Hora@{Hora}}
+\doxysubsubsection{\texorpdfstring{setHour()}{setHour()}}
+{\footnotesize\ttfamily void Hora\+::set\+Hour (\begin{DoxyParamCaption}\item[{int}]{new\+Hour }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [noexcept]}}
+
+Changes hour value. 
+\begin{DoxyParams}{Parameters}
+{\em new\+Hour} & new hour value \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em \mbox{\hyperlink{class_invalid_time}{Invalid\+Time}}} & if parameter does not form a valid time \\
+\hline
+\end{DoxyExceptions}
+\mbox{\Hypertarget{class_hora_a9b52abed1d0c5fede8f6ef344d572d37}\label{class_hora_a9b52abed1d0c5fede8f6ef344d572d37}} 
+\index{Hora@{Hora}!setMinute@{setMinute}}
+\index{setMinute@{setMinute}!Hora@{Hora}}
+\doxysubsubsection{\texorpdfstring{setMinute()}{setMinute()}}
+{\footnotesize\ttfamily void Hora\+::set\+Minute (\begin{DoxyParamCaption}\item[{int}]{new\+Min }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [noexcept]}}
+
+Changes minute value. 
+\begin{DoxyParams}{Parameters}
+{\em new\+Min} & new min value \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em \mbox{\hyperlink{class_invalid_time}{Invalid\+Time}}} & if parameter does not form a valid time \\
+\hline
+\end{DoxyExceptions}
+\mbox{\Hypertarget{class_hora_ae3bb248de3b184a36b1c44953f4de605}\label{class_hora_ae3bb248de3b184a36b1c44953f4de605}} 
+\index{Hora@{Hora}!setTime@{setTime}}
+\index{setTime@{setTime}!Hora@{Hora}}
+\doxysubsubsection{\texorpdfstring{setTime()}{setTime()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily void Hora\+::set\+Time (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_hora}{Hora}} \&}]{time }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [noexcept]}}
+
+Sets time. 
+\begin{DoxyExceptions}{Exceptions}
+{\em \mbox{\hyperlink{class_invalid_time}{Invalid\+Time}}} & if parameter time is not valid \\
+\hline
+\end{DoxyExceptions}
+\mbox{\Hypertarget{class_hora_a67106b7597c8f3a6a08b19c1a52b8de1}\label{class_hora_a67106b7597c8f3a6a08b19c1a52b8de1}} 
+\index{Hora@{Hora}!setTime@{setTime}}
+\index{setTime@{setTime}!Hora@{Hora}}
+\doxysubsubsection{\texorpdfstring{setTime()}{setTime()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily void Hora\+::set\+Time (\begin{DoxyParamCaption}\item[{const string \&}]{in }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [noexcept]}}
+
+Sets date from string. 
+\begin{DoxyExceptions}{Exceptions}
+{\em invalid\+\_\+argument} & if parameter in is not correctly formatted (H\+Hh\+M\+Mmin) \\
+\hline
+{\em \mbox{\hyperlink{class_invalid_time}{Invalid\+Time}}} & if parameter time is not valid \\
+\hline
+\end{DoxyExceptions}
+\mbox{\Hypertarget{class_hora_a800e8561545fd8f3271c85478d105501}\label{class_hora_a800e8561545fd8f3271c85478d105501}} 
+\index{Hora@{Hora}!setTime@{setTime}}
+\index{setTime@{setTime}!Hora@{Hora}}
+\doxysubsubsection{\texorpdfstring{setTime()}{setTime()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily void Hora\+::set\+Time (\begin{DoxyParamCaption}\item[{int}]{hh,  }\item[{int}]{mm }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [noexcept]}}
+
+Sets hour and minute. 
+\begin{DoxyParams}{Parameters}
+{\em hh} & Hour \\
+\hline
+{\em mm} & Minute \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em \mbox{\hyperlink{class_invalid_time}{Invalid\+Time}}} & if time formed by parameters is not valid \\
+\hline
+\end{DoxyExceptions}
+\mbox{\Hypertarget{class_hora_ae7c1909a8da2809ec4a7b035dbad4eb6}\label{class_hora_ae7c1909a8da2809ec4a7b035dbad4eb6}} 
+\index{Hora@{Hora}!str@{str}}
+\index{str@{str}!Hora@{Hora}}
+\doxysubsubsection{\texorpdfstring{str()}{str()}}
+{\footnotesize\ttfamily string Hora\+::str (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+\begin{DoxyReturn}{Returns}
+Returns a formatted string with the time. 
+\end{DoxyReturn}
+
+
+Reimplemented in \mbox{\hyperlink{class_intervalo_de_tempo_a594f7878654c5e255be8974a01de2dee}{Intervalo\+De\+Tempo}}, \mbox{\hyperlink{class_evento_ae6cbb885507fd6ffea9ec28a3dcc4589}{Evento}}, and \mbox{\hyperlink{class_data_e_hora_abd1d4f163725a1daa24806958d60fd96}{Data\+E\+Hora}}.
+
+\mbox{\Hypertarget{class_hora_aaf0a0682901752032e45bb0109d12341}\label{class_hora_aaf0a0682901752032e45bb0109d12341}} 
+\index{Hora@{Hora}!valid@{valid}}
+\index{valid@{valid}!Hora@{Hora}}
+\doxysubsubsection{\texorpdfstring{valid()}{valid()}}
+{\footnotesize\ttfamily bool Hora\+::valid (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Checks if time is valid. \begin{DoxyReturn}{Returns}
+True if it is. False otherwise. 
+\end{DoxyReturn}
+
+
+Reimplemented in \mbox{\hyperlink{class_intervalo_de_tempo_a851f9ec3190740286f86836e8f5723fd}{Intervalo\+De\+Tempo}}, and \mbox{\hyperlink{class_data_e_hora_a777c421cde5946b5c70a6024d3a23bec}{Data\+E\+Hora}}.
+
+
+
+\doxysubsection{Friends And Related Function Documentation}
+\mbox{\Hypertarget{class_hora_a18e4670ff8e3b01a162c4252ada80e8b}\label{class_hora_a18e4670ff8e3b01a162c4252ada80e8b}} 
+\index{Hora@{Hora}!operator$<$$<$@{operator$<$$<$}}
+\index{operator$<$$<$@{operator$<$$<$}!Hora@{Hora}}
+\doxysubsubsection{\texorpdfstring{operator$<$$<$}{operator<<}}
+{\footnotesize\ttfamily ostream\& operator$<$$<$ (\begin{DoxyParamCaption}\item[{ostream \&}]{output,  }\item[{const \mbox{\hyperlink{class_hora}{Hora}} \&}]{time }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [friend]}}
+
+Output operator. \mbox{\Hypertarget{class_hora_a4bbedbab909845a374ea4a7dc8c888a5}\label{class_hora_a4bbedbab909845a374ea4a7dc8c888a5}} 
+\index{Hora@{Hora}!operator$>$$>$@{operator$>$$>$}}
+\index{operator$>$$>$@{operator$>$$>$}!Hora@{Hora}}
+\doxysubsubsection{\texorpdfstring{operator$>$$>$}{operator>>}}
+{\footnotesize\ttfamily istream\& operator$>$$>$ (\begin{DoxyParamCaption}\item[{istream \&}]{input,  }\item[{\mbox{\hyperlink{class_hora}{Hora}} \&}]{time }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [friend]}}
+
+Input operator. 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Hora.\+h\item 
+Hora.\+cpp\end{DoxyCompactItemize}

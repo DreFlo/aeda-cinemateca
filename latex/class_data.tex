@@ -1,0 +1,313 @@
+\hypertarget{class_data}{}\doxysection{Data Class Reference}
+\label{class_data}\index{Data@{Data}}
+Inheritance diagram for Data\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=5.000000cm]{class_data}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_data_a0e7804c3ebc7bee43b54e4c4f87261ee}{Data}} ()=default
+\item 
+\mbox{\hyperlink{class_data_ad1acb7a3118802be73e8a33366dc4df6}{Data}} (int dd, int mm, int yy)
+\item 
+\mbox{\hyperlink{class_data_ab14794d90eb76fb2a78df477abf70b9a}{Data}} (const \mbox{\hyperlink{class_data}{Data}} \&date)
+\item 
+\mbox{\hyperlink{class_data}{Data}} \mbox{\hyperlink{class_data_a4f282fe94bd207becd2a7c3b629f5a0b}{get\+Date}} () const
+\item 
+\mbox{\hyperlink{class_data}{Data}} \& \mbox{\hyperlink{class_data_a588c0fded6568cf046f643933ef54a88}{get\+Date\+Ref}} ()
+\item 
+int \mbox{\hyperlink{class_data_a2f0f53eeb7adf41164bdc8e1a31ae78b}{get\+Day}} () const
+\item 
+int \mbox{\hyperlink{class_data_ab3d6db1197cae2954ef304e825d0cb9b}{get\+Month}} () const
+\item 
+int \mbox{\hyperlink{class_data_af47e5aeeaa27ce915608038c13db0fd9}{get\+Year}} () const
+\item 
+void \mbox{\hyperlink{class_data_a4c1ee0adb38528d59d04ef529fb9dd44}{set\+Date}} (int dd, int mm, int yy) noexcept(false)
+\item 
+void \mbox{\hyperlink{class_data_af7b12889da0a3696f5ea04cec2efca02}{set\+Date}} (const \mbox{\hyperlink{class_data}{Data}} \&date) noexcept(false)
+\item 
+void \mbox{\hyperlink{class_data_ad679e26590bb762a22829fa109d32892}{set\+Date}} (const string \&in) noexcept(false)
+\item 
+void \mbox{\hyperlink{class_data_a55d305bf5ebd42613173e3ce0253228a}{set\+Day}} (int new\+Day) noexcept(false)
+\item 
+void \mbox{\hyperlink{class_data_afb0a4ca2e7068b312fb3460ff09c242c}{set\+Month}} (int new\+Month) noexcept(false)
+\item 
+void \mbox{\hyperlink{class_data_aa73da01ec87738e8bcb9078cdb48d748}{set\+Year}} (int new\+Year) noexcept(false)
+\item 
+virtual bool \mbox{\hyperlink{class_data_a0693535e64514ebdea90a3d3b94ba9ac}{valid}} () const
+\item 
+virtual string \mbox{\hyperlink{class_data_a52023474fde40e9d9f6a9331af763c13}{str}} () const
+\item 
+bool \mbox{\hyperlink{class_data_aefc8b751b1acdac21b7f195275c69b3f}{operator$<$}} (const \mbox{\hyperlink{class_data}{Data}} \&date) const
+\item 
+bool \mbox{\hyperlink{class_data_a398691fb71b370b2e0323f60396d2cf0}{operator$>$}} (const \mbox{\hyperlink{class_data}{Data}} \&date) const
+\item 
+bool \mbox{\hyperlink{class_data_a39dbb3a08d1693bd3427c4452aa864d4}{operator==}} (const \mbox{\hyperlink{class_data}{Data}} \&date) const
+\item 
+\mbox{\Hypertarget{class_data_aef065392a7d05bd74de430fb5e45d596}\label{class_data_aef065392a7d05bd74de430fb5e45d596}} 
+\mbox{\hyperlink{class_data}{Data}} {\bfseries operator+} (int no\+\_\+days) const noexcept(false)
+\end{DoxyCompactItemize}
+\doxysubsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+ostream \& \mbox{\hyperlink{class_data_aa5126dfbc44e3af73d629d7125e322f9}{operator$<$$<$}} (ostream \&output, const \mbox{\hyperlink{class_data}{Data}} \&date)
+\item 
+istream \& \mbox{\hyperlink{class_data_a370c43820feb97e21163829e5e4e3cbd}{operator$>$$>$}} (istream \&input, \mbox{\hyperlink{class_data}{Data}} \&date) noexcept(false)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_data_a0e7804c3ebc7bee43b54e4c4f87261ee}\label{class_data_a0e7804c3ebc7bee43b54e4c4f87261ee}} 
+\index{Data@{Data}!Data@{Data}}
+\index{Data@{Data}!Data@{Data}}
+\doxysubsubsection{\texorpdfstring{Data()}{Data()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily Data\+::\+Data (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [default]}}
+
+Default constructor. \mbox{\Hypertarget{class_data_ad1acb7a3118802be73e8a33366dc4df6}\label{class_data_ad1acb7a3118802be73e8a33366dc4df6}} 
+\index{Data@{Data}!Data@{Data}}
+\index{Data@{Data}!Data@{Data}}
+\doxysubsubsection{\texorpdfstring{Data()}{Data()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily Data\+::\+Data (\begin{DoxyParamCaption}\item[{int}]{dd,  }\item[{int}]{mm,  }\item[{int}]{yy }\end{DoxyParamCaption})}
+
+Class constructor. Initializes day, month and year. Parameters do not have to form a valid date 
+\begin{DoxyParams}{Parameters}
+{\em dd} & Day \\
+\hline
+{\em mm} & Month \\
+\hline
+{\em yy} & Year \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_data_ab14794d90eb76fb2a78df477abf70b9a}\label{class_data_ab14794d90eb76fb2a78df477abf70b9a}} 
+\index{Data@{Data}!Data@{Data}}
+\index{Data@{Data}!Data@{Data}}
+\doxysubsubsection{\texorpdfstring{Data()}{Data()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily Data\+::\+Data (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_data}{Data}} \&}]{date }\end{DoxyParamCaption})}
+
+Copy constructor. Parameter does not have to be a valid date. 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_data_a4f282fe94bd207becd2a7c3b629f5a0b}\label{class_data_a4f282fe94bd207becd2a7c3b629f5a0b}} 
+\index{Data@{Data}!getDate@{getDate}}
+\index{getDate@{getDate}!Data@{Data}}
+\doxysubsubsection{\texorpdfstring{getDate()}{getDate()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_data}{Data}} Data\+::get\+Date (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\begin{DoxyReturn}{Returns}
+Returns the date. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_data_a588c0fded6568cf046f643933ef54a88}\label{class_data_a588c0fded6568cf046f643933ef54a88}} 
+\index{Data@{Data}!getDateRef@{getDateRef}}
+\index{getDateRef@{getDateRef}!Data@{Data}}
+\doxysubsubsection{\texorpdfstring{getDateRef()}{getDateRef()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_data}{Data}} \& Data\+::get\+Date\+Ref (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\begin{DoxyReturn}{Returns}
+Return\textquotesingle{}s a reference to the object 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_data_a2f0f53eeb7adf41164bdc8e1a31ae78b}\label{class_data_a2f0f53eeb7adf41164bdc8e1a31ae78b}} 
+\index{Data@{Data}!getDay@{getDay}}
+\index{getDay@{getDay}!Data@{Data}}
+\doxysubsubsection{\texorpdfstring{getDay()}{getDay()}}
+{\footnotesize\ttfamily int Data\+::get\+Day (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\begin{DoxyReturn}{Returns}
+The day stored in the date. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_data_ab3d6db1197cae2954ef304e825d0cb9b}\label{class_data_ab3d6db1197cae2954ef304e825d0cb9b}} 
+\index{Data@{Data}!getMonth@{getMonth}}
+\index{getMonth@{getMonth}!Data@{Data}}
+\doxysubsubsection{\texorpdfstring{getMonth()}{getMonth()}}
+{\footnotesize\ttfamily int Data\+::get\+Month (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\begin{DoxyReturn}{Returns}
+The month stored in the date. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_data_af47e5aeeaa27ce915608038c13db0fd9}\label{class_data_af47e5aeeaa27ce915608038c13db0fd9}} 
+\index{Data@{Data}!getYear@{getYear}}
+\index{getYear@{getYear}!Data@{Data}}
+\doxysubsubsection{\texorpdfstring{getYear()}{getYear()}}
+{\footnotesize\ttfamily int Data\+::get\+Year (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\begin{DoxyReturn}{Returns}
+The year stored in the date. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_data_aefc8b751b1acdac21b7f195275c69b3f}\label{class_data_aefc8b751b1acdac21b7f195275c69b3f}} 
+\index{Data@{Data}!operator$<$@{operator$<$}}
+\index{operator$<$@{operator$<$}!Data@{Data}}
+\doxysubsubsection{\texorpdfstring{operator$<$()}{operator<()}}
+{\footnotesize\ttfamily bool Data\+::operator$<$ (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_data}{Data}} \&}]{date }\end{DoxyParamCaption}) const}
+
+A date is lesser than another if it comes before. 
+\begin{DoxyParams}{Parameters}
+{\em date} & -\/ The date to be compared to. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if it comes before. False otherwise. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_data_a39dbb3a08d1693bd3427c4452aa864d4}\label{class_data_a39dbb3a08d1693bd3427c4452aa864d4}} 
+\index{Data@{Data}!operator==@{operator==}}
+\index{operator==@{operator==}!Data@{Data}}
+\doxysubsubsection{\texorpdfstring{operator==()}{operator==()}}
+{\footnotesize\ttfamily bool Data\+::operator== (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_data}{Data}} \&}]{date }\end{DoxyParamCaption}) const}
+
+Checks if two dates are equal. \begin{DoxyReturn}{Returns}
+True if they are. False otherwise. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_data_a398691fb71b370b2e0323f60396d2cf0}\label{class_data_a398691fb71b370b2e0323f60396d2cf0}} 
+\index{Data@{Data}!operator$>$@{operator$>$}}
+\index{operator$>$@{operator$>$}!Data@{Data}}
+\doxysubsubsection{\texorpdfstring{operator$>$()}{operator>()}}
+{\footnotesize\ttfamily bool Data\+::operator$>$ (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_data}{Data}} \&}]{date }\end{DoxyParamCaption}) const}
+
+A date is greater than another if it comes after. 
+\begin{DoxyParams}{Parameters}
+{\em date} & -\/ The date to be compared to. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if it comes after. False otherwise. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_data_af7b12889da0a3696f5ea04cec2efca02}\label{class_data_af7b12889da0a3696f5ea04cec2efca02}} 
+\index{Data@{Data}!setDate@{setDate}}
+\index{setDate@{setDate}!Data@{Data}}
+\doxysubsubsection{\texorpdfstring{setDate()}{setDate()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily void Data\+::set\+Date (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_data}{Data}} \&}]{date }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [noexcept]}}
+
+Sets date 
+\begin{DoxyExceptions}{Exceptions}
+{\em \mbox{\hyperlink{class_invalid_date}{Invalid\+Date}}} & if parameter date is not valid in the gregorian calendar \\
+\hline
+\end{DoxyExceptions}
+\mbox{\Hypertarget{class_data_ad679e26590bb762a22829fa109d32892}\label{class_data_ad679e26590bb762a22829fa109d32892}} 
+\index{Data@{Data}!setDate@{setDate}}
+\index{setDate@{setDate}!Data@{Data}}
+\doxysubsubsection{\texorpdfstring{setDate()}{setDate()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily void Data\+::set\+Date (\begin{DoxyParamCaption}\item[{const string \&}]{in }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [noexcept]}}
+
+Sets date from string. 
+\begin{DoxyExceptions}{Exceptions}
+{\em invalid\+\_\+argument} & if parameter string is not properly formatted (dd/mm/yyyy) \\
+\hline
+{\em \mbox{\hyperlink{class_invalid_date}{Invalid\+Date}}} & if parameter date is not valid in the gregorian calendar \\
+\hline
+\end{DoxyExceptions}
+\mbox{\Hypertarget{class_data_a4c1ee0adb38528d59d04ef529fb9dd44}\label{class_data_a4c1ee0adb38528d59d04ef529fb9dd44}} 
+\index{Data@{Data}!setDate@{setDate}}
+\index{setDate@{setDate}!Data@{Data}}
+\doxysubsubsection{\texorpdfstring{setDate()}{setDate()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily void Data\+::set\+Date (\begin{DoxyParamCaption}\item[{int}]{dd,  }\item[{int}]{mm,  }\item[{int}]{yy }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [noexcept]}}
+
+Sets day, month and year. 
+\begin{DoxyParams}{Parameters}
+{\em dd} & Day \\
+\hline
+{\em mm} & Month \\
+\hline
+{\em yy} & Year \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em \mbox{\hyperlink{class_invalid_date}{Invalid\+Date}}} & if parameter date is not valid in the gregorian calendar \\
+\hline
+\end{DoxyExceptions}
+\mbox{\Hypertarget{class_data_a55d305bf5ebd42613173e3ce0253228a}\label{class_data_a55d305bf5ebd42613173e3ce0253228a}} 
+\index{Data@{Data}!setDay@{setDay}}
+\index{setDay@{setDay}!Data@{Data}}
+\doxysubsubsection{\texorpdfstring{setDay()}{setDay()}}
+{\footnotesize\ttfamily void Data\+::set\+Day (\begin{DoxyParamCaption}\item[{int}]{new\+Day }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [noexcept]}}
+
+Changes day value. 
+\begin{DoxyParams}{Parameters}
+{\em new\+Day} & new day value \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em \mbox{\hyperlink{class_invalid_date}{Invalid\+Date}}} & if new\+Day does not form a valid date \\
+\hline
+\end{DoxyExceptions}
+\mbox{\Hypertarget{class_data_afb0a4ca2e7068b312fb3460ff09c242c}\label{class_data_afb0a4ca2e7068b312fb3460ff09c242c}} 
+\index{Data@{Data}!setMonth@{setMonth}}
+\index{setMonth@{setMonth}!Data@{Data}}
+\doxysubsubsection{\texorpdfstring{setMonth()}{setMonth()}}
+{\footnotesize\ttfamily void Data\+::set\+Month (\begin{DoxyParamCaption}\item[{int}]{new\+Month }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [noexcept]}}
+
+Changes month value. 
+\begin{DoxyParams}{Parameters}
+{\em new\+Month} & new month value \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em \mbox{\hyperlink{class_invalid_date}{Invalid\+Date}}} & if new\+Month does not form a valid date \\
+\hline
+\end{DoxyExceptions}
+\mbox{\Hypertarget{class_data_aa73da01ec87738e8bcb9078cdb48d748}\label{class_data_aa73da01ec87738e8bcb9078cdb48d748}} 
+\index{Data@{Data}!setYear@{setYear}}
+\index{setYear@{setYear}!Data@{Data}}
+\doxysubsubsection{\texorpdfstring{setYear()}{setYear()}}
+{\footnotesize\ttfamily void Data\+::set\+Year (\begin{DoxyParamCaption}\item[{int}]{new\+Year }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [noexcept]}}
+
+Changes year value. 
+\begin{DoxyParams}{Parameters}
+{\em new\+Year} & new year value \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em \mbox{\hyperlink{class_invalid_date}{Invalid\+Date}}} & if new\+Year does not form a valid date \\
+\hline
+\end{DoxyExceptions}
+\mbox{\Hypertarget{class_data_a52023474fde40e9d9f6a9331af763c13}\label{class_data_a52023474fde40e9d9f6a9331af763c13}} 
+\index{Data@{Data}!str@{str}}
+\index{str@{str}!Data@{Data}}
+\doxysubsubsection{\texorpdfstring{str()}{str()}}
+{\footnotesize\ttfamily string Data\+::str (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+\begin{DoxyReturn}{Returns}
+Formatted string with the date. 
+\end{DoxyReturn}
+
+
+Reimplemented in \mbox{\hyperlink{class_intervalo_de_tempo_a594f7878654c5e255be8974a01de2dee}{Intervalo\+De\+Tempo}}, \mbox{\hyperlink{class_evento_ae6cbb885507fd6ffea9ec28a3dcc4589}{Evento}}, and \mbox{\hyperlink{class_data_e_hora_abd1d4f163725a1daa24806958d60fd96}{Data\+E\+Hora}}.
+
+\mbox{\Hypertarget{class_data_a0693535e64514ebdea90a3d3b94ba9ac}\label{class_data_a0693535e64514ebdea90a3d3b94ba9ac}} 
+\index{Data@{Data}!valid@{valid}}
+\index{valid@{valid}!Data@{Data}}
+\doxysubsubsection{\texorpdfstring{valid()}{valid()}}
+{\footnotesize\ttfamily bool Data\+::valid (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Checks if date is valid in the gregorian calendar. \begin{DoxyReturn}{Returns}
+True if it is. False otherwise. 
+\end{DoxyReturn}
+
+
+Reimplemented in \mbox{\hyperlink{class_intervalo_de_tempo_a851f9ec3190740286f86836e8f5723fd}{Intervalo\+De\+Tempo}}, and \mbox{\hyperlink{class_data_e_hora_a777c421cde5946b5c70a6024d3a23bec}{Data\+E\+Hora}}.
+
+
+
+\doxysubsection{Friends And Related Function Documentation}
+\mbox{\Hypertarget{class_data_aa5126dfbc44e3af73d629d7125e322f9}\label{class_data_aa5126dfbc44e3af73d629d7125e322f9}} 
+\index{Data@{Data}!operator$<$$<$@{operator$<$$<$}}
+\index{operator$<$$<$@{operator$<$$<$}!Data@{Data}}
+\doxysubsubsection{\texorpdfstring{operator$<$$<$}{operator<<}}
+{\footnotesize\ttfamily ostream\& operator$<$$<$ (\begin{DoxyParamCaption}\item[{ostream \&}]{output,  }\item[{const \mbox{\hyperlink{class_data}{Data}} \&}]{date }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [friend]}}
+
+Output operator. \mbox{\Hypertarget{class_data_a370c43820feb97e21163829e5e4e3cbd}\label{class_data_a370c43820feb97e21163829e5e4e3cbd}} 
+\index{Data@{Data}!operator$>$$>$@{operator$>$$>$}}
+\index{operator$>$$>$@{operator$>$$>$}!Data@{Data}}
+\doxysubsubsection{\texorpdfstring{operator$>$$>$}{operator>>}}
+{\footnotesize\ttfamily istream\& operator$>$$>$ (\begin{DoxyParamCaption}\item[{istream \&}]{input,  }\item[{\mbox{\hyperlink{class_data}{Data}} \&}]{date }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [friend]}}
+
+Input operator. 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Data.\+h\item 
+Data.\+cpp\end{DoxyCompactItemize}

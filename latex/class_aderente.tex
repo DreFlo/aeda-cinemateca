@@ -1,0 +1,174 @@
+\hypertarget{class_aderente}{}\doxysection{Aderente Class Reference}
+\label{class_aderente}\index{Aderente@{Aderente}}
+Inheritance diagram for Aderente\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_aderente}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_aderente_a01c3c2617a73de2c36981648e62fa7f5}{Aderente}} (string nam, string cit, unsigned int cel, unsigned int nif, \mbox{\hyperlink{class_data}{Data}} bday, int year, float s\+\_\+m=0)
+\item 
+unsigned int \mbox{\hyperlink{class_aderente_a84dee33af2171ba909c54f792b8ae1d9}{get\+N\+IF}} () const
+\item 
+\mbox{\hyperlink{class_data}{Data}} \mbox{\hyperlink{class_aderente_af4448c2cc3294c3f16975a9d3dffc021}{get\+Birthday}} () const
+\item 
+int \mbox{\hyperlink{class_aderente_ac9d284106be34eae831d5ac4a1478d36}{get\+Adh\+Year}} () const
+\item 
+float \mbox{\hyperlink{class_aderente_ae43b0336a1d8c0a5c3a25b404c05c24d}{get\+Saved\+Money}} () const
+\item 
+void \mbox{\hyperlink{class_aderente_ae7696e14843976f5871831d93bd6618f}{add\+Saved\+Money}} (float money)
+\item 
+bool \mbox{\hyperlink{class_aderente_aa3908c8e95d3f9ca49555cd31ed4d2b1}{operator==}} (const \mbox{\hyperlink{class_aderente}{Aderente}} \&p1) const
+\item 
+bool \mbox{\hyperlink{class_aderente_a0326baa251391a77f48525727eea0c9d}{operator$<$}} (const \mbox{\hyperlink{class_aderente}{Aderente}} \&p1) const
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_aderente_a5a49b7cd197a577a3b4b1849d954a0f4}\label{class_aderente_a5a49b7cd197a577a3b4b1849d954a0f4}} 
+unsigned int {\bfseries N\+IF}
+\item 
+\mbox{\Hypertarget{class_aderente_a8a3f2ae7d11708d1cea61015c697afe4}\label{class_aderente_a8a3f2ae7d11708d1cea61015c697afe4}} 
+\mbox{\hyperlink{class_data}{Data}} {\bfseries birthday}
+\item 
+\mbox{\Hypertarget{class_aderente_ab726ad37a5d5652907f2892cf8163836}\label{class_aderente_ab726ad37a5d5652907f2892cf8163836}} 
+int {\bfseries adh\+\_\+year}
+\item 
+\mbox{\Hypertarget{class_aderente_ad376b029962a3c58c690f25c1f4d887f}\label{class_aderente_ad376b029962a3c58c690f25c1f4d887f}} 
+float {\bfseries saved\+\_\+money}
+\end{DoxyCompactItemize}
+\doxysubsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+istream \& \mbox{\hyperlink{class_aderente_a2fc841bf379ba516599b3c41e80ff381}{operator$>$$>$}} (istream \&input, \mbox{\hyperlink{class_aderente}{Aderente}} \&p1)
+\item 
+ostream \& \mbox{\hyperlink{class_aderente_a7f9a535f9580d1423623523358d1e9a5}{operator$<$$<$}} (ostream \&output, const \mbox{\hyperlink{class_aderente}{Aderente}} \&p1)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_aderente_a01c3c2617a73de2c36981648e62fa7f5}\label{class_aderente_a01c3c2617a73de2c36981648e62fa7f5}} 
+\index{Aderente@{Aderente}!Aderente@{Aderente}}
+\index{Aderente@{Aderente}!Aderente@{Aderente}}
+\doxysubsubsection{\texorpdfstring{Aderente()}{Aderente()}}
+{\footnotesize\ttfamily Aderente\+::\+Aderente (\begin{DoxyParamCaption}\item[{string}]{nam,  }\item[{string}]{cit,  }\item[{unsigned int}]{cel,  }\item[{unsigned int}]{nif,  }\item[{\mbox{\hyperlink{class_data}{Data}}}]{bday,  }\item[{int}]{year,  }\item[{float}]{s\+\_\+m = {\ttfamily 0} }\end{DoxyParamCaption})}
+
+Class constructor 
+\begin{DoxyParams}{Parameters}
+{\em nam} & Name \\
+\hline
+{\em cit} & City \\
+\hline
+{\em cel} & Cellphone number \\
+\hline
+{\em nif} & N\+IF \\
+\hline
+{\em bday} & Birthday \\
+\hline
+{\em year} & Adhesion year \\
+\hline
+{\em s\+\_\+m} & Saved money \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_aderente_ae7696e14843976f5871831d93bd6618f}\label{class_aderente_ae7696e14843976f5871831d93bd6618f}} 
+\index{Aderente@{Aderente}!addSavedMoney@{addSavedMoney}}
+\index{addSavedMoney@{addSavedMoney}!Aderente@{Aderente}}
+\doxysubsubsection{\texorpdfstring{addSavedMoney()}{addSavedMoney()}}
+{\footnotesize\ttfamily void Aderente\+::add\+Saved\+Money (\begin{DoxyParamCaption}\item[{float}]{money }\end{DoxyParamCaption})}
+
+Adds money that was saved to the saved money total. 
+\begin{DoxyParams}{Parameters}
+{\em money} & Money to add. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_aderente_ac9d284106be34eae831d5ac4a1478d36}\label{class_aderente_ac9d284106be34eae831d5ac4a1478d36}} 
+\index{Aderente@{Aderente}!getAdhYear@{getAdhYear}}
+\index{getAdhYear@{getAdhYear}!Aderente@{Aderente}}
+\doxysubsubsection{\texorpdfstring{getAdhYear()}{getAdhYear()}}
+{\footnotesize\ttfamily int Aderente\+::get\+Adh\+Year (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\begin{DoxyReturn}{Returns}
+Year when they joined the organization. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_aderente_af4448c2cc3294c3f16975a9d3dffc021}\label{class_aderente_af4448c2cc3294c3f16975a9d3dffc021}} 
+\index{Aderente@{Aderente}!getBirthday@{getBirthday}}
+\index{getBirthday@{getBirthday}!Aderente@{Aderente}}
+\doxysubsubsection{\texorpdfstring{getBirthday()}{getBirthday()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_data}{Data}} Aderente\+::get\+Birthday (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\begin{DoxyReturn}{Returns}
+Person\textquotesingle{}s birthday. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_aderente_a84dee33af2171ba909c54f792b8ae1d9}\label{class_aderente_a84dee33af2171ba909c54f792b8ae1d9}} 
+\index{Aderente@{Aderente}!getNIF@{getNIF}}
+\index{getNIF@{getNIF}!Aderente@{Aderente}}
+\doxysubsubsection{\texorpdfstring{getNIF()}{getNIF()}}
+{\footnotesize\ttfamily unsigned int Aderente\+::get\+N\+IF (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\begin{DoxyReturn}{Returns}
+Person\textquotesingle{}s N\+IF. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_aderente_ae43b0336a1d8c0a5c3a25b404c05c24d}\label{class_aderente_ae43b0336a1d8c0a5c3a25b404c05c24d}} 
+\index{Aderente@{Aderente}!getSavedMoney@{getSavedMoney}}
+\index{getSavedMoney@{getSavedMoney}!Aderente@{Aderente}}
+\doxysubsubsection{\texorpdfstring{getSavedMoney()}{getSavedMoney()}}
+{\footnotesize\ttfamily float Aderente\+::get\+Saved\+Money (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\begin{DoxyReturn}{Returns}
+Gets the total amount of money they saved by being Aderentes. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_aderente_a0326baa251391a77f48525727eea0c9d}\label{class_aderente_a0326baa251391a77f48525727eea0c9d}} 
+\index{Aderente@{Aderente}!operator$<$@{operator$<$}}
+\index{operator$<$@{operator$<$}!Aderente@{Aderente}}
+\doxysubsubsection{\texorpdfstring{operator$<$()}{operator<()}}
+{\footnotesize\ttfamily bool Aderente\+::operator$<$ (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_aderente}{Aderente}} \&}]{p1 }\end{DoxyParamCaption}) const}
+
+Checks if an \mbox{\hyperlink{class_aderente}{Aderente}} is less than another, by checking if it is first by alphabetical order. 
+\begin{DoxyParams}{Parameters}
+{\em p1} & \mbox{\hyperlink{class_aderente}{Aderente}} to compare with. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if first, false otherwise. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_aderente_aa3908c8e95d3f9ca49555cd31ed4d2b1}\label{class_aderente_aa3908c8e95d3f9ca49555cd31ed4d2b1}} 
+\index{Aderente@{Aderente}!operator==@{operator==}}
+\index{operator==@{operator==}!Aderente@{Aderente}}
+\doxysubsubsection{\texorpdfstring{operator==()}{operator==()}}
+{\footnotesize\ttfamily bool Aderente\+::operator== (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_aderente}{Aderente}} \&}]{p1 }\end{DoxyParamCaption}) const}
+
+Checks if two Aderentes are the same by checking their N\+IF\textquotesingle{}s. 
+\begin{DoxyParams}{Parameters}
+{\em p1} & \mbox{\hyperlink{class_aderente}{Aderente}} to compare with. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if the same, false otherwise. 
+\end{DoxyReturn}
+
+
+\doxysubsection{Friends And Related Function Documentation}
+\mbox{\Hypertarget{class_aderente_a7f9a535f9580d1423623523358d1e9a5}\label{class_aderente_a7f9a535f9580d1423623523358d1e9a5}} 
+\index{Aderente@{Aderente}!operator$<$$<$@{operator$<$$<$}}
+\index{operator$<$$<$@{operator$<$$<$}!Aderente@{Aderente}}
+\doxysubsubsection{\texorpdfstring{operator$<$$<$}{operator<<}}
+{\footnotesize\ttfamily ostream\& operator$<$$<$ (\begin{DoxyParamCaption}\item[{ostream \&}]{output,  }\item[{const \mbox{\hyperlink{class_aderente}{Aderente}} \&}]{p1 }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [friend]}}
+
+Output operator. \mbox{\Hypertarget{class_aderente_a2fc841bf379ba516599b3c41e80ff381}\label{class_aderente_a2fc841bf379ba516599b3c41e80ff381}} 
+\index{Aderente@{Aderente}!operator$>$$>$@{operator$>$$>$}}
+\index{operator$>$$>$@{operator$>$$>$}!Aderente@{Aderente}}
+\doxysubsubsection{\texorpdfstring{operator$>$$>$}{operator>>}}
+{\footnotesize\ttfamily istream\& operator$>$$>$ (\begin{DoxyParamCaption}\item[{istream \&}]{input,  }\item[{\mbox{\hyperlink{class_aderente}{Aderente}} \&}]{p1 }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [friend]}}
+
+Input operator. 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Aderente.\+h\item 
+Aderente.\+cpp\end{DoxyCompactItemize}
