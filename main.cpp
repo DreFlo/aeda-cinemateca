@@ -50,12 +50,16 @@ int main() {
             utils::removeAderente();
         else if (input == "find aderente")
             utils::findAderente();
+        else if (input == "update aderente")
+            utils::updateAderente();
         else if (input == "add sala")
             utils::addSala();
         else if (input == "get salas")
             utils::getSalas();
         else if (input == "find sala")
             utils::findSala();
+        else if (input == "update sala")
+            utils::updateSala();
         else {
             cout << input << INVALID_CMD_MSG << endl;
             continue;
