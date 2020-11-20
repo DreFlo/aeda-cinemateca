@@ -33,8 +33,6 @@ public:
     unsigned int getCell() const;
     bool operator==(const Cliente &c1) const;
     bool operator<(const Cliente &c1) const;
-    bool compName(const Cliente &c1, const Cliente &c2) const;
-    bool compCell(const Cliente &c1, const Cliente &c2) const;
 };
 
 

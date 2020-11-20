@@ -9,14 +9,6 @@ string Cliente::getCity() const {return city;}
 
 unsigned int Cliente::getCell() const {return cell;}
 
-bool Cliente::compName(const Cliente &c1, const Cliente &c2) const {
-    return (c1.name < c2.name);
-}
-
-bool Cliente::compCell(const Cliente &c1, const Cliente &c2) const {
-    return (c1.cell < c2.cell);
-}
-
 bool Cliente::operator==(const Cliente &p1) const {
     return (cell == p1.cell);
 }

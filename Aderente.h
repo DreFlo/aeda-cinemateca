@@ -13,7 +13,7 @@ using namespace std;
 
 class Aderente: public Cliente{
 protected:
-    unsigned NIF;
+    unsigned int NIF;
     Data birthday;
     int adh_year;
     float saved_money;
@@ -47,8 +47,5 @@ public:
     friend istream& operator>>(istream& input, Aderente &p1);
     friend ostream& operator<<(ostream& output, const Aderente &p1);
 };
-
-
-};*/
 
 #endif //PROJETO_ADERENTE_H
