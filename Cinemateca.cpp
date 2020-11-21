@@ -207,6 +207,7 @@ void Cinemateca::AdicionarEvento(Evento event){
                     event.setRoom(sal.getName());
                     sal.addEvent(event.getTimeInterval());
                     EventosFuturos.push_back(event);
+                    break;
                 }
             }
         }

@@ -28,8 +28,8 @@
 				</MakeCommands>
 			</Target>
 			<Target title="projeto">
-				<Option output="C:/Users/dluis/OneDrive - Universidade do Porto/2 ano/AEDA/aeda-cinemateca/aeda-cinemateca/cmake-build-debug/projeto.exe" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="C:/Users/dluis/OneDrive - Universidade do Porto/2 ano/AEDA/aeda-cinemateca/aeda-cinemateca/cmake-build-debug"/>
+				<Option output="C:/Users/dluis/OneDrive - Universidade do Porto/2 ano/AEDA/aeda-cinemateca/aeda-cinemateca/projeto.exe" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="C:/Users/dluis/OneDrive - Universidade do Porto/2 ano/AEDA/aeda-cinemateca/aeda-cinemateca"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
 				<Option compiler="gcc"/>
@@ -49,8 +49,8 @@
 				</MakeCommands>
 			</Target>
 			<Target title="projeto/fast">
-				<Option output="C:/Users/dluis/OneDrive - Universidade do Porto/2 ano/AEDA/aeda-cinemateca/aeda-cinemateca/cmake-build-debug/projeto.exe" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="C:/Users/dluis/OneDrive - Universidade do Porto/2 ano/AEDA/aeda-cinemateca/aeda-cinemateca/cmake-build-debug"/>
+				<Option output="C:/Users/dluis/OneDrive - Universidade do Porto/2 ano/AEDA/aeda-cinemateca/aeda-cinemateca/projeto.exe" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="C:/Users/dluis/OneDrive - Universidade do Porto/2 ano/AEDA/aeda-cinemateca/aeda-cinemateca"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
 				<Option compiler="gcc"/>

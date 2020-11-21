@@ -1,4 +1,7 @@
 file(REMOVE_RECURSE
+  "../projeto.exe"
+  "../projeto.exe.manifest"
+  "../projeto.pdb"
   "CMakeFiles/projeto.dir/Aderente.cpp.obj"
   "CMakeFiles/projeto.dir/Cinemateca.cpp.obj"
   "CMakeFiles/projeto.dir/Cliente.cpp.obj"
@@ -11,9 +14,6 @@ file(REMOVE_RECURSE
   "CMakeFiles/projeto.dir/Utils.cpp.obj"
   "CMakeFiles/projeto.dir/main.cpp.obj"
   "libprojeto.dll.a"
-  "projeto.exe"
-  "projeto.exe.manifest"
-  "projeto.pdb"
 )
 
 # Per-language clean rules from dependency scanning.

@@ -18,8 +18,15 @@ int main() {
     cout << WELCOME_MSG;
     utils::setToday();
     Cinemateca Porto("Porto", today);
+    cout << endl << "1" << endl;
+    Porto.LerFicheiroAderentes("AderentesPorto.txt");
+    Porto.LerFicheiroSalas("SalasPorto.txt");
+    Porto.LerFicheiroEventos("EventosPorto.txt");
     cinemas.push_back(&Porto);
     Cinemateca Lisboa("Lisboa", today);
+    Porto.LerFicheiroAderentes("AderentesLisboa.txt");
+    Porto.LerFicheiroSalas("SalasLisboa.txt");
+    Porto.LerFicheiroEventos("EventosLisboa.txt");
     cinemas.push_back(&Lisboa);
     while (true) {
         cout << GET_CMD_MSG;
@@ -66,8 +73,9 @@ int main() {
             utils::findSala();
         else if (input == "update sala")
             utils::updateSala();
+        /*
         else if (input == "read file")
-            utils::readfile();
+            utils::readfile();*/
         else {
             cout << input << INVALID_CMD_MSG << endl;
             continue;
