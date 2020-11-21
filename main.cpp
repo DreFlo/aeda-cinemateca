@@ -79,9 +79,7 @@ int main() {
             cout << input << INVALID_CMD_MSG << endl;
             continue;
         }
-        std::cout << std::endl;
-        input = "";
-        cin.clear();
+        cout << endl;
     }
     cout << "Would you like to store changes? (Yes/No) ";
     cin >> input;

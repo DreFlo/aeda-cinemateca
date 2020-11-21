@@ -37,7 +37,7 @@ istream &operator>>(istream &input, Aderente &p1) {
 
 ostream &operator<<(ostream &output, const Aderente &p1) {
     output << p1.name << " " << p1.city << " " << p1.cell << " " << p1.NIF << " " << p1.birthday
-           << " " << p1.adh_year << " " << p1.saved_money;
+           << " " << p1.adh_year << " " << p1.saved_money << endl;
     return output;
 }
 
