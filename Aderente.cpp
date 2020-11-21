@@ -28,23 +28,16 @@ bool Aderente::operator<(const Aderente &p1) const {
 }
 
 istream &operator>>(istream &input, Aderente &p1) {
-    string a, b, c, d, e, f, g, h;
-    input >> a >> b >> c >> d >> e >> f >> g >> h;
-    Data d_temp(stoul(f.substr(0, 2)), stoul(f.substr(2, 2)),
-                stoul(f.substr(4, 4)));
-    p1.name = (a + " " + b);
-    p1.city = c;
-    p1.cell = stoul(d);
-    p1.NIF = stoul(e);
-    p1.birthday = d_temp;
-    p1.adh_year = stoi(g);
-    p1.saved_money = stof(h);
+    string firstname, lastname;
+    input >> firstname >> lastname >> p1.city >> p1.cell >> p1.NIF >> p1.birthday >> p1.adh_year
+    >> p1.saved_money;
+    p1.updateName(firstname + " " + lastname);
     return input;
 }
 
 ostream &operator<<(ostream &output, const Aderente &p1) {
-    output << p1.name << " " << p1.city << " " << p1.cell << " " << p1.NIF << " " << p1.birthday.getDay() <<
-            p1.birthday.getMonth() << p1.birthday.getYear() << " " << p1.adh_year << " " << p1.saved_money;
+    output << p1.name << " " << p1.city << " " << p1.cell << " " << p1.NIF << " " << p1.birthday
+           << " " << p1.adh_year << " " << p1.saved_money;
     return output;
 }
 
