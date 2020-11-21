@@ -201,7 +201,7 @@ public:
      * @param filepath - the file path for the file from which to read rooms (Sala)
      * @throw COULDNT_OPEN_FILE + filepath if the file couldn't be open
      */
-    void LerFicheiroSalas(const std::string& filepath);
+    void LerFicheiroSalas(std::string filepath);
     /**
      * Writes to a .txt file the rooms (Sala) of Cinemateca
      * @param filepath - the file path for the file to write Cinemateca's rooms (Sala)

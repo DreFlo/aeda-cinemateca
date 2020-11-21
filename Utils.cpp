@@ -5,6 +5,7 @@
 
 void utils::printHelp() {
     cout << "help - get commands and descriptions" << endl;
+    cout << "exit - exits the menu" << endl;
     cout << "add event - add an event to a cinema" << endl;
     cout << "change present - change current date and time" << endl;
     cout << "add aderente - add a new aderente" << endl;
@@ -24,6 +25,8 @@ void utils::printHelp() {
     cout << "get salas - print rooms on the screen" << endl;
     cout << "find sala - finds a given room" << endl;
     cout << "update sala - update a parameter in a specific Sala" << endl;
+    cout << "read file - reads a spefic file and adds what it needs to Cinemateca" << endl;
+    cout << endl;
 }
 
 void utils::setToday() try{
@@ -321,6 +324,7 @@ string utils::inputName() {
 string utils::inputCity(bool aderentes) {
     string city;
     while (true) {
+        cin.clear();
         if (aderentes) {
             cout << "Input city where person uses the Cinemateca facilities (If both, choose the most used): ";
         }
@@ -724,6 +728,8 @@ void utils::updateAderente() {
 string utils::inputSalaName() {
     string name;
     while(true) {
+        cin.clear();
+        cin.ignore();
         cout << "What's the Sala's name?";
         getline(cin, name);
         bool valid = true;
@@ -744,6 +750,7 @@ void utils::addSala() {
     city = inputCity(false);
     name = inputSalaName();
     while(true){
+        cin.clear();
         cout << "What is its capacity?";
         cin >> cap;
         bool valid = true;
@@ -772,7 +779,7 @@ void utils::getSalas() {
         cout << "Do you want the Salas sorted? (y/n):";
         cin >> sort;
         if (sort == "y") {
-            sor == true;
+            sor = true;
             break;
         }
         else if (sort == "n") break;
@@ -792,6 +799,7 @@ void utils::getSalas() {
             for(vector<Sala>::iterator it = sP.begin(); it != sP.end(); it++){
                 cout << "Name: " << (*it).getName() << ", " << "Capacity: " << (*it).getCapacity() << endl;
             }
+            break;
         }
         else if (city == "Lisboa"){
             if (sor){
@@ -801,6 +809,7 @@ void utils::getSalas() {
             for(vector<Sala>::iterator it = sL.begin(); it != sL.end(); it++){
                 cout << "Name: " << (*it).getName() << ", " << "Capacity: " << (*it).getCapacity() << endl;
             }
+            break;
         }
         else if (city == "both"){
             if (sor){
@@ -817,6 +826,7 @@ void utils::getSalas() {
             for(vector<Sala>::iterator it = sL.begin(); it != sL.end(); it++){
                 cout << "Name: " << (*it).getName() << ", " << "Capacity: " << (*it).getCapacity() << endl;
             }
+            break;
         }
     }
 }
@@ -1015,5 +1025,66 @@ void utils::buyTicket() {
     }
     cout << "There's a reserved ticket in your name for " <<  ev->getPrice() * (1 - 0.01 * (today.getYear() - ad->getAdhYear()))
     << "€, already with your discount.";
+}
+
+void utils::readfile() {
+    std::string city, filepath, typetoread;
+    while (true){
+        std::cout << "Please input the city: ";
+        std::cin >> city;
+        if((city == "Porto") || (city == "Lisboa")){
+            break;
+        }
+        else{
+            std::cout << "That's not a valid city name, please try again" << std::endl;
+            cin.clear();
+            city = "";
+        }
+    }
+    while(true){
+        std::cout << "Please input the file path: ";
+        std::cin >> filepath;
+        if(filepath.substr(filepath.length() - 4) == ".txt"){
+            break;
+        }
+        else{
+            std::cout << "That's not a valid file path please try again" << std::endl;
+            cin.clear();
+            filepath = "";
+        }
+    }
+    while (true){
+        std::cout << "Please input the type of data to read: ";
+        std::cin >> typetoread;
+        if((typetoread == "event") || (typetoread == "sala") || (typetoread == "aderente")){
+            break;
+        }
+        else{
+            std::cout << "That's not a valid type of data, the options are event, sala or aderente" << std::endl;
+            cin.clear();
+            typetoread = "";
+        }
+    }
+    if(typetoread == "event"){
+        try{
+            findCinemateca(city)->LerFicheiroEventos(filepath);
+        } catch (std::string &filepat) {
+            cout << COULDNT_OPEN_FILE << filepat << std::endl;
+        }
+    }
+    if(typetoread == "sala"){
+        try{
+            findCinemateca(city)->LerFicheiroSalas(filepath);
+        } catch (std::string &filepat) {
+            cout << COULDNT_OPEN_FILE << filepat << std::endl;
+        }
+    }
+    if(typetoread == "aderente"){
+        try{
+            findCinemateca(city)->LerFicheiroAderentes(filepath);
+        } catch (std::string &filepat) {
+            cout << COULDNT_OPEN_FILE << filepat << std::endl;
+        }
+    }
 }
 

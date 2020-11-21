@@ -12,7 +12,7 @@
 #define INVALID_INPUT_MSG "Invalid input"
 #define INVALID_DATE_MSG " is not a valid date in the gregorian calendar. Try again [dd mm yy]: "
 #define INVALID_CMD_MSG " is not a specified command. Type 'help' to get command list and description."
-#define GET_CMD_MSG "What would you like to do?  "
+#define GET_CMD_MSG "What would you like to do? "
 
 using namespace std;
 
@@ -141,6 +141,10 @@ namespace utils {
      * Reserve ticket to specific event.
      */
     void buyTicket();
+    /**
+     * Reads a specific file and adds what it needs to a Cinemateca.
+     */
+     void readfile();
 }
 
 #endif //PROJETO_UTILS_H

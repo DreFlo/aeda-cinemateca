@@ -325,20 +325,26 @@ void Cinemateca::LerFicheiroEventos(const std::string& filepath) {
 
     if(myfile.is_open()){
         while(myfile >> event){
-            if(event.valid()){
-                AdicionarEvento(event);
+            if(event.getStart().getDate() < hoje.getDate()){
+                EventosAntigos.push_back(event);
+            }
+            if(event.getStart().getDate() == hoje.getDate()){
+                EventosHoje.push_back(event);
+            }
+            if(event.getStart().getDate() > hoje.getDate()){
+                EventosFuturos.push_back(event);
             }
         }
     }
     else{
-        throw COULDNT_OPEN_FILE + filepath;
+        throw filepath;
     }
 
     myfile.close();
 }
 
 void Cinemateca::EscreverFicheiroEventos(const std::string &filepath) {
-    ofstream myfile (filepath);
+    ofstream myfile (filepath, ios::out | ios::trunc);
 
     if(myfile.is_open()){
         for(const auto& event: EventosAntigos){
@@ -352,7 +358,7 @@ void Cinemateca::EscreverFicheiroEventos(const std::string &filepath) {
         }
     }
     else{
-        throw COULDNT_OPEN_FILE + filepath;
+        throw filepath;
     }
 
     myfile.close();
@@ -369,14 +375,14 @@ void Cinemateca::LerFicheiroAderentes(const std::string &filepath) {
         }
     }
     else{
-        throw COULDNT_OPEN_FILE + filepath;
+        throw filepath;
     }
 
     myfile.close();
 }
 
 void Cinemateca::EscreverFicheiroAderentes(const std::string &filepath) {
-    ofstream myfile (filepath);
+    ofstream myfile (filepath, ios::out | ios::trunc);
 
     if(myfile.is_open()){
         for(const auto& aderen: Aderentes){
@@ -384,31 +390,30 @@ void Cinemateca::EscreverFicheiroAderentes(const std::string &filepath) {
         }
     }
     else{
-        throw COULDNT_OPEN_FILE + filepath;
+        throw filepath;
     }
 
     myfile.close();
 }
 
-void Cinemateca::LerFicheiroSalas(const std::string &filepath) {
+void Cinemateca::LerFicheiroSalas(std::string filepath) {
     Sala sal("", 0);
-    ifstream myfile (filepath);
+    ifstream myfile(filepath);
 
     if(myfile.is_open()){
         while(myfile >> sal){
-            //assumindo que é uma sala valida
             AdicionarSala(sal);
         }
     }
     else{
-        throw COULDNT_OPEN_FILE + filepath;
+        throw filepath;
     }
 
     myfile.close();
 }
 
 void Cinemateca::EscreverFicheiroSalas(const std::string &filepath) {
-    ofstream myfile (filepath);
+    ofstream myfile (filepath, ios::out | ios::trunc);
 
     if(myfile.is_open()){
         for(const auto& sal: Salas){
@@ -416,7 +421,7 @@ void Cinemateca::EscreverFicheiroSalas(const std::string &filepath) {
         }
     }
     else{
-        throw COULDNT_OPEN_FILE + filepath;
+        throw filepath;
     }
 
     myfile.close();

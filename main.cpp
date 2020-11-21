@@ -12,9 +12,15 @@ int main() {
     /*
      * N FAÇO A MINIMA DE COMO DAR LOAD DA CINEMATECA
      * INICIALIZEM OS OBJS DAS DUAS AQUI E DEEM PUSH_BACK DOS PTRS PRA O CINEMAS
+     *
+     * Done ;)
      */
     cout << WELCOME_MSG;
     utils::setToday();
+    Cinemateca Porto("Porto", today);
+    cinemas.push_back(&Porto);
+    Cinemateca Lisboa("Lisboa", today);
+    cinemas.push_back(&Lisboa);
     while (true) {
         cout << GET_CMD_MSG;
         getline(cin, input);
@@ -60,15 +66,26 @@ int main() {
             utils::findSala();
         else if (input == "update sala")
             utils::updateSala();
+        else if (input == "read file")
+            utils::readfile();
         else {
             cout << input << INVALID_CMD_MSG << endl;
             continue;
         }
+        std::cout << std::endl;
+        input = "";
+        cin.clear();
     }
     cout << "Would you like to store changes? (Yes/No) ";
     cin >> input;
     if (input == "Yes") {
-        // Aqui e para guardar idk how to do that
+        cinemas[0]->EscreverFicheiroSalas("SalasPorto.txt");
+        cinemas[0]->EscreverFicheiroAderentes("AderentesPorto.txt");
+        cinemas[0]->EscreverFicheiroEventos("EventosPorto.txt");
+
+        cinemas[1]->EscreverFicheiroSalas("SalasLisboa.txt");
+        cinemas[1]->EscreverFicheiroAderentes("AderentesLisboa.txt");
+        cinemas[1]->EscreverFicheiroEventos("EventosLisboa.txt");
     }
     return 0;
 }
