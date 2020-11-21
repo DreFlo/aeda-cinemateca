@@ -43,7 +43,7 @@ bool Sala::operator==(const Sala &s1) const {
 }
 
 bool Sala::operator<(const Sala &s1) const {
-    return (capacity < s1.capacity);
+    return (name < s1.name);
 }
 
 istream &operator>>(istream &input, Sala &s1) {

@@ -55,7 +55,7 @@ public:
      */
     void updateSalaCap(int new_cap);
     /**
-     * Checks if two sala's are the same by name;
+     * Checks if two sala's are the same by checking their names;
      * @param s1 Sala to compare with.
      * @return True if the same, false otherwise.
      */

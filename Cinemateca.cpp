@@ -106,7 +106,7 @@ void Cinemateca::MudarAgora(const DataEHora &h){
 void Cinemateca::AdicionarSala(const Sala &sal){
     for(const auto& s : Salas){
         if(s == sal){
-            throw sal;
+            throw s;
         }
     }
     Salas.push_back(sal);
@@ -127,7 +127,7 @@ void Cinemateca::SortSalas() {
 void Cinemateca::AdicionarAderente(const Aderente &aderen){
     for(const auto& aux : Aderentes){
         if (aux == aderen){
-            throw aderen;
+            throw aux;
         }
     }
     Aderentes.push_back(aderen);

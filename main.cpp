@@ -18,15 +18,14 @@ int main() {
     cout << WELCOME_MSG;
     utils::setToday();
     Cinemateca Porto("Porto", today);
-    cout << endl << "1" << endl;
+    Cinemateca Lisboa("Lisboa", today);
     Porto.LerFicheiroAderentes("AderentesPorto.txt");
     Porto.LerFicheiroSalas("SalasPorto.txt");
     Porto.LerFicheiroEventos("EventosPorto.txt");
+    Lisboa.LerFicheiroAderentes("AderentesLisboa.txt");
+    Lisboa.LerFicheiroSalas("SalasLisboa.txt");
+    Lisboa.LerFicheiroEventos("EventosLisboa.txt");
     cinemas.push_back(&Porto);
-    Cinemateca Lisboa("Lisboa", today);
-    Porto.LerFicheiroAderentes("AderentesLisboa.txt");
-    Porto.LerFicheiroSalas("SalasLisboa.txt");
-    Porto.LerFicheiroEventos("EventosLisboa.txt");
     cinemas.push_back(&Lisboa);
     while (true) {
         cout << GET_CMD_MSG;

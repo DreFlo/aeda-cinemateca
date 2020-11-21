@@ -392,6 +392,7 @@ void utils::addAderente() {
     name = inputName();
     nif = inputNIF();
     city = inputCity();
+    cell = inputCell();
     int day, month, year;
     while (true){
         cout << "Input birthday (dd/mm/yyy): ";
@@ -402,8 +403,8 @@ void utils::addAderente() {
             continue;
         }
         day = stoi(date.substr(0, 2));
-        month = stoi(date.substr(2, 2));
-        year = stoi(date.substr(5, 4));
+        month = stoi(date.substr(3, 2));
+        year = stoi(date.substr(6, 4));
         if ((day == 0) || (month == 0) || (year == 0)){
             cout << "Invalid Date.";
             continue;
@@ -440,7 +441,11 @@ void utils::addAderente() {
     try{
         findCinemateca(city)->AdicionarAderente(a1);
     } catch (Aderente &ad){
-        cout << "Aderente already exists.";
+        cout << "Aderente with NIF = " << nif << " already exists with info:" << endl;
+        cout << "Name: " << ad.getName() << ", Cell: " << ad.getCell() << endl << "NIF: " << ad.getNIF()
+             << ", Birthday: " << ad.getBirthday().getDay() << "/" << ad.getBirthday().getMonth() << "/"
+             << ad.getBirthday().getYear() << endl << "Adhesion year: " << ad.getAdhYear() << ", City: Porto"
+             << endl << "Money saved: " << ad.getSavedMoney() << "eur." << endl;
         return;
     }
 }
@@ -452,7 +457,7 @@ void utils::getAderentes() {
         cout << "Do you want the Aderentes sorted? (y/n):";
         cin >> sort;
         if (sort == "y") {
-            sor == true;
+            sor = true;
             break;
         }
         else if (sort == "n") break;
@@ -473,10 +478,10 @@ void utils::getAderentes() {
                 cout << "Name: " << it->getName() << ", " << "Cell: " << it->getCell() << endl << "NIF: " << it->getNIF()
                     << ", Birthday: " << it->getBirthday().getDay() << "/" << it->getBirthday().getMonth() << "/"
                     << it->getBirthday().getYear() << endl << "Adhesion year: " << it->getAdhYear() << ", Money saved: "
-                    << it->getSavedMoney() << "€" << endl;
+                    << it->getSavedMoney() << "eur." << endl << endl;
             }
         }
-        if (city == "Lisboa"){
+        else if (city == "Lisboa"){
             if (sor) {
                 findCinemateca("Lisboa")->SortAderentes();
             }
@@ -485,10 +490,10 @@ void utils::getAderentes() {
                 cout << "Name: " << it->getName() << ", " << "Cell: " << it->getCell() << endl << "NIF: " << it->getNIF()
                      << "Birthday: " << it->getBirthday().getDay() << "/" << it->getBirthday().getMonth() << "/"
                      << it->getBirthday().getYear() << endl << "Adhesion year: " << it->getAdhYear() << "Money saved: "
-                     << it->getSavedMoney() << "€" << endl;
+                     << it->getSavedMoney() << "eur." << endl << endl;
             }
         }
-        if (city == "both"){
+        else if (city == "both"){
             if (sor) {
                 findCinemateca("Porto")->SortAderentes();
                 findCinemateca("Lisboa")->SortAderentes();
@@ -500,20 +505,21 @@ void utils::getAderentes() {
                 cout << "Name: " << it->getName() << ", " << "Cell: " << it->getCell() << endl << "NIF: " << it->getNIF()
                      << "Birthday: " << it->getBirthday().getDay() << "/" << it->getBirthday().getMonth() << "/"
                      << it->getBirthday().getYear() << endl << "Adhesion year: " << it->getAdhYear() << "Money saved: "
-                     << it->getSavedMoney() << "€" << endl;
+                     << it->getSavedMoney() << "eur." << endl << endl;
             }
             cout << "Lisboa: " << endl;
             for (vector<Aderente>::iterator it = aderentes_l.begin(); it != aderentes_l.end(); it++){
                 cout << "Name: " << it->getName() << ", " << "Cell: " << it->getCell() << endl << "NIF: " << it->getNIF()
                      << "Birthday: " << it->getBirthday().getDay() << "/" << it->getBirthday().getMonth() << "/"
                      << it->getBirthday().getYear() << endl << "Adhesion year: " << it->getAdhYear() << "Money saved: "
-                     << it->getSavedMoney() << "€" << endl;
+                     << it->getSavedMoney() << "eur." << endl << endl;
             }
         }
         else{
             cout << "Invalid input.";
             continue;
         }
+        break;
     }
 }
 
@@ -564,20 +570,20 @@ void utils::findAderente() {
         vector<Aderente> aderentes_p = findCinemateca("Porto")->GetAderentes();
         for (vector<Aderente>::iterator it = aderentes_p.begin(); it != aderentes_p.end(); it++) {
             if (it->getNIF() == NIF) {
-                cout << "Name: " << it->getName() << ", " << "Cell: " << it->getCell() << endl << "NIF: " << it->getNIF()
-                     << "Birthday: " << it->getBirthday().getDay() << "/" << it->getBirthday().getMonth() << "/"
-                     << it->getBirthday().getYear() << endl << "Adhesion year: " << it->getAdhYear() << "Money saved: "
-                     << it->getSavedMoney() << "€" << endl;
+                cout << "Name: " << it->getName() << ", Cell: " << it->getCell() << endl << "NIF: " << it->getNIF()
+                     << ", Birthday: " << it->getBirthday().getDay() << "/" << it->getBirthday().getMonth() << "/"
+                     << it->getBirthday().getYear() << endl << "Adhesion year: " << it->getAdhYear() << ", City: Porto"
+                     << endl << "Money saved: " << it->getSavedMoney() << "eur." << endl;
                 return;
             }
         }
         vector<Aderente> aderentes_l = findCinemateca("Lisboa")->GetAderentes();
         for (vector<Aderente>::iterator it = aderentes_l.begin(); it != aderentes_l.end(); it++) {
             if (it->getNIF() == NIF) {
-                cout << "Name: " << it->getName() << ", " << "Cell: " << it->getCell() << endl << "NIF: " << it->getNIF()
-                     << "Birthday: " << it->getBirthday().getDay() << "/" << it->getBirthday().getMonth() << "/"
-                     << it->getBirthday().getYear() << endl << "Adhesion year: " << it->getAdhYear() << "Money saved: "
-                     << it->getSavedMoney() << "€" << endl;
+                cout << "Name: " << it->getName() << ", Cell: " << it->getCell() << endl << "NIF: " << it->getNIF()
+                     << ", Birthday: " << it->getBirthday().getDay() << "/" << it->getBirthday().getMonth() << "/"
+                     << it->getBirthday().getYear() << endl << "Adhesion year: " << it->getAdhYear() << ", City: Lisboa"
+                     << endl << "Money saved: "<< it->getSavedMoney() << "eur." << endl;
                 return;
             }
         }
@@ -605,30 +611,31 @@ void utils::updateAderente() {
     Aderente *p1;
     vector<Aderente> *aderentes;
     while (true) {
-        bool again = false;
+        bool again = false, found = false;
         NIF = inputNIF();
-        bool in_porto = false;
         vector<Aderente> aderentes_p = findCinemateca("Porto")->GetAderentes();
         for (vector<Aderente>::iterator it = aderentes_p.begin(); it != aderentes_p.end(); it++) {
             if (it->getNIF() == NIF) {
-                *p1 = *it;
-                in_porto = true;
-                city = "Porto";
                 aderentes = &aderentes_p;
+                p1 = &(*it);
+                found = true;
+                city = "Porto";
                 break;
             }
         }
-        if (!in_porto) {
+        if (!found) {
             vector<Aderente> aderentes_l = findCinemateca("Lisboa")->GetAderentes();
             for (vector<Aderente>::iterator it = aderentes_l.begin(); it != aderentes_l.end(); it++) {
                 if (it->getNIF() == NIF) {
-                    *p1 = *it;
-                    city = "Lisboa";
                     aderentes = &aderentes_l;
+                    p1 = &(*it);
+                    city = "Lisboa";
+                    found = true;
                     break;
                 }
             }
         }
+        if (found) break;
         string answer;
         while (true) {
             cout << "No Aderente with that NIF found. Write 'CANCEL' to leave or 'again' to try again: ";
@@ -657,7 +664,7 @@ void utils::updateAderente() {
             return;
         }
         else if (atribute == "city"){
-            string n_city = inputCity();
+            string n_city = inputCity(false);
             if (n_city == (*p1).getCity()){
                 cout << "City was already " << n_city << ", so no changes were made.";
                 return;
@@ -830,12 +837,27 @@ void utils::getSalas() {
 
 void utils::findSala() {
     string city, name;
-    city = inputCity();
-    name = inputSalaName();
-    vector<Sala>salas = findCinemateca(city)->Getsalas();
-    for (vector<Sala>::iterator it = salas.begin(); it != salas.end(); it++){
-        if ((*it).getName() == name){
-            cout << "Sala found:" << endl << "Name: " << (*it).getName() << ", Capacity: " << (*it).getCapacity();
+    while(true) {
+        city = inputCity(false);
+        name = inputSalaName();
+        vector<Sala> salas = findCinemateca(city)->Getsalas();
+        for (vector<Sala>::iterator it = salas.begin(); it != salas.end(); it++) {
+            if ((*it).getName() == name) {
+                cout << "Sala found:" << endl << "Name: " << (*it).getName() << ", Capacity: " << (*it).getCapacity();
+                return;
+            }
+        }
+        string answer;
+        while(true){
+            cout << "No Sala with that name. Input 'again' to try again or 'CANCEL' to leave: ";
+            cin >> answer;
+            if (answer == "CANCEL") return;
+            else if (answer == "again") {
+                break;
+            } else {
+                cout << "Invalid input." << endl;
+                continue;
+            }
         }
     }
 }
@@ -846,13 +868,13 @@ void utils::updateSala() {
     vector<Sala> salas;
     Sala *s;
     while(true) {
-        city = inputCity();
+        city = inputCity(false);
         name = inputSalaName();
         salas = findCinemateca(city)->Getsalas();
         for (vector<Sala>::iterator it = salas.begin(); it != salas.end(); it++) {
             if ((*it).getName() == name) {
                 sala_found = true;
-                *s = *it;
+                s = &(*it);
             }
         }
         if(sala_found) break;
@@ -915,7 +937,6 @@ void utils::updateSala() {
 
 }
 
-//Linha 1135 c1 = &c;
 void utils::buyTicket() {
     string city, answer;
     city = inputCity(false);
