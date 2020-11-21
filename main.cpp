@@ -80,6 +80,7 @@ int main() {
             continue;
         }
         cout << endl;
+        cin.ignore();
     }
     cout << "Would you like to store changes? (Yes/No) ";
     cin >> input;

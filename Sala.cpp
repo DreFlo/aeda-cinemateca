@@ -48,6 +48,7 @@ bool Sala::operator<(const Sala &s1) const {
 
 istream &operator>>(istream &input, Sala &s1) {
     getline(input, s1.name, '\t') >> s1.capacity;
+    if (s1.name[0] == '\n') s1.name = s1.name.substr(1, s1.name.size());
     return input;
 }
 

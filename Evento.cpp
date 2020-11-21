@@ -105,6 +105,7 @@ istream& operator>>(istream& input, Evento& event) {
     getline(input, event.name, '\t');
     getline(input, event.room, '\t') >> event.price >> event.total >> event.maxAttendance >> event.lot
           >> event.start >> event.duration >> event.getTimeIntervalRef();
+    if (event.name[0] == '\n') event.name = event.name.substr(1, event.name.size());
     return input;
 }
 
