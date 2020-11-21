@@ -53,7 +53,7 @@ istream &operator>>(istream &input, Sala &s1) {
 }
 
 ostream &operator<<(ostream &output, const Sala &s1) {
-    output << s1.name << '\t' << s1.capacity;
+    output << s1.name << '\t' << s1.capacity << endl;
     return output;
 }
 

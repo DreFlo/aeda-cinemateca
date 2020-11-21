@@ -97,7 +97,7 @@ bool Evento::operator<(Evento &E2) const {
 ostream& operator<<(ostream& output, const Evento& event) {
     output << event.name << '\t' << event.room << '\t' << event.price << '\t' << event.total
            << '\t' << event.maxAttendance << '\t' << event.lot
-           << '\t' << event.start << '\t' << event.duration << '\t' << event.getTimeInterval();
+           << '\t' << event.start << '\t' << event.duration << '\t' << event.getTimeInterval() << endl;
     return output;
 }
 

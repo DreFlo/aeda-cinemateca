@@ -66,7 +66,7 @@ void utils::addEvent() try {
     }
     if (constructEvent(temp) != 0) return;
     findCinemateca(input)->AdicionarEvento(temp);
-} catch (...) {} // PLS TRATEM DOS CATCHES QUE ACHO QUE DEVE HAVER TANTO DA CINEMATECA
+} catch (...) {return;} // PLS TRATEM DOS CATCHES QUE ACHO QUE DEVE HAVER TANTO DA CINEMATECA
 //COMO DA SALA DE HOUVER CONFLITO ENTRE DOIS EVENTOS
 
 int utils::constructEvent(Evento &event) try {
@@ -210,6 +210,7 @@ void utils::getEventsBefore() try {
     vector<Evento> res;
     cout << INPUT_DATE_MSG;
     cin.ignore(1000, '\n');
+    getline(cin, input);
     if (input == "CANCEL") return;
     date.setDate(input);
     cout << CHOOSE_CINEMATECA_MSG;
@@ -249,7 +250,6 @@ void utils::getEventsToday() {
         cout << "There are only 'Lisboa' and 'Porto'. " << CHOOSE_CINEMATECA_MSG;
         cin >> input;
     }
-    cin.ignore(1000, '\n');
     if (name == "CANCEL") return;
     res = findCinemateca(name)->GetEventosHoje();
     for (const auto& event : res)
@@ -260,7 +260,6 @@ void utils::getFutureEvents() {
     string name;
     vector<Evento> res;
     // CHOOSE CINEMATECA
-    cin.clear();
     cout << "From which city do you want the future events?";
     cin >> name;
     while (name != "Lisboa" && name != "Porto" && name != "CANCEL") {
@@ -279,13 +278,11 @@ void utils::getPastEvents() {
     vector<Evento> res;
     // CHOOSE CINEMATECA
     cout << "From which city do you want the past events?";
-    cin.ignore(1000, '\n');
     cin >> name;
     while (name != "Lisboa" && name != "Porto" && name != "CANCEL") {
         cout << "There are only 'Lisboa' and 'Porto'. " << CHOOSE_CINEMATECA_MSG;
         cin >> input;
     }
-    cin.ignore(1000, '\n');
     if (name == "CANCEL") return;
     res = findCinemateca(name)->GetEventosAntigos();
     for (const auto& event : res)
