@@ -45,12 +45,6 @@ public:
      */
     void cancelEvent(const IntervaloDeTempo time);
     /**
-     * Records event in room's history.
-     * @param event Event that occured.
-     * @param time Time.
-     */
-    void endEvent(const Evento event, const IntervaloDeTempo time);
-    /**
      * Changes Sala's name.
      * @param new_name New name for Sala.
      */

@@ -1,4 +1,4 @@
-Sala Colombo 55
-Sala da Vida 25
-Sala Belchior 125
-Sala Tret 86
+Sala Colombo	55
+Sala da Vida	25
+Sala Belchior	125
+Sala Tret	86
