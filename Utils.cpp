@@ -25,6 +25,8 @@ void utils::printHelp() {
     cout << "get salas - print rooms on the screen" << endl;
     cout << "find sala - finds a given room" << endl;
     cout << "update sala - update a parameter in a specific Sala" << endl;
+    cout << "remove event - remove a agiven event" << endl;
+    cout << "update event - alter a given event" << endl;
     /*cout << "read file - reads a spefic file and adds what it needs to Cinemateca" << endl;*/
     cout << endl;
 }
@@ -72,7 +74,6 @@ int utils::constructEvent(Evento &event) try {
     DataEHora start;
     Hora duration;
     int attn;
-    cin.ignore(1000, '\n');
     // EVENT NAME
     cout << "Input event name: ";
     getline(cin, input);
@@ -135,7 +136,6 @@ void utils::getEventsOn() try {
     string name;
     vector<Evento> res;
     cout << INPUT_DATE_MSG;
-    cin.ignore(100, '\n');
     getline(cin, input);
     if (input == "CANCEL") return;
     date.setDate(input);
@@ -172,7 +172,6 @@ void utils::getEventsAfter() try {
     vector<Evento> res;
     // INPUT DATE
     cout << INPUT_DATE_MSG;
-    cin.ignore(1000, '\n');
     getline(cin, input);
     if (input == "CANCEL") return;
     date.setDate(input);
@@ -211,7 +210,6 @@ void utils::getEventsBefore() try {
     vector<Evento> res;
     cout << INPUT_DATE_MSG;
     cin.ignore(1000, '\n');
-    getline(cin, input);
     if (input == "CANCEL") return;
     date.setDate(input);
     cout << CHOOSE_CINEMATECA_MSG;
@@ -246,7 +244,6 @@ void utils::getEventsToday() {
     vector<Evento> res;
     // CHOOSE CINEMATECA
     cout << "From which city do you want to get today's events?";
-    cin.ignore(1000, '\n');
     cin >> name;
     while (name != "Lisboa" && name != "Porto" && name != "CANCEL") {
         cout << "There are only 'Lisboa' and 'Porto'. " << CHOOSE_CINEMATECA_MSG;
@@ -1134,3 +1131,74 @@ void utils::avisarAderentes() {
         }
     }
 }
+
+void utils::removeEvent() try {
+    string name, eventName, eventStart;
+    DataEHora eventStartTime;
+    vector<Evento> bef, now, af, res;
+    int index = -1;
+    cout << CHOOSE_CINEMATECA_MSG;
+    cin >> name;
+    while (name != "Lisboa" && name != "Porto" && name != "CANCEL") {
+        cout << "There are only 'Lisboa' and 'Porto'. " << CHOOSE_CINEMATECA_MSG;
+        cin >> input;
+    }
+    cin.ignore(1000, '\n');
+    cout << "Input event name: ";
+    getline(cin, eventName);
+    cout << "Input event start date and time (dd.mm.yyyy HHhMMmin): ";
+    getline(cin, eventStart);
+    eventStartTime.setDateAndTime(eventStart);
+    bef = findCinemateca(name)->GetEventosAntigos();
+    now = findCinemateca(name)->GetEventosHoje();
+    af = findCinemateca(name)->GetEventosFuturos();
+    res.insert(res.end(), bef.begin(), bef.end());
+    res.insert(res.end(), now.begin(), now.end());
+    res.insert(res.end(), af.begin(), af.end());
+    for (int i = 0; i < res.size(); i++)
+        if (res[i].getName() == eventName && res[i].getStart() == eventStartTime)
+            index = i;
+    if (index == -1) {
+        cout << "Event does not exist\n";
+        return;
+    }
+    res.erase(res.begin()+index);
+    findCinemateca(name)->SetEventos(res);
+} catch (...) {cout << "An unexpected error occurred.\n"; return;}
+
+void utils::updateEvent() try {
+    string name, eventName, eventStart;
+    DataEHora eventStartTime;
+    vector<Evento> bef, now, af, res;
+    Evento newEvent;
+    int index = -1;
+    cout << CHOOSE_CINEMATECA_MSG;
+    cin >> name;
+    while (name != "Lisboa" && name != "Porto" && name != "CANCEL") {
+        cout << "There are only 'Lisboa' and 'Porto'. " << CHOOSE_CINEMATECA_MSG;
+        cin >> input;
+    }
+    cin.ignore(1000, '\n');
+    cout << "Input event name: ";
+    getline(cin, eventName);
+    cout << "Input event start date and time (dd.mm.yyyy HHhMMmin): ";
+    getline(cin, eventStart);
+    eventStartTime.setDateAndTime(eventStart);
+    bef = findCinemateca(name)->GetEventosAntigos();
+    now = findCinemateca(name)->GetEventosHoje();
+    af = findCinemateca(name)->GetEventosFuturos();
+    res.insert(res.end(), bef.begin(), bef.end());
+    res.insert(res.end(), now.begin(), now.end());
+    res.insert(res.end(), af.begin(), af.end());
+    for (int i = 0; i < res.size(); i++)
+        if (res[i].getName() == eventName && res[i].getStart() == eventStartTime)
+            index = i;
+    if (index == -1) {
+        cout << "Event does not exist\n";
+        return;
+    }
+    cout << "Currently the event reads: " << res[index].str() << endl;
+    constructEvent(newEvent);
+    res[index] = newEvent;
+    findCinemateca(name)->SetEventos(res);
+} catch (...) {cout << "An unexpected error occurred."; return;}

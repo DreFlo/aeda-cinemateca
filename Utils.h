@@ -149,6 +149,14 @@ namespace utils {
       * Warns aderentes over 65 years old that they can go to an event for free
       */
      void avisarAderentes();
+    /**
+     * Remove given event.
+     */
+    void removeEvent();
+    /**
+     * Alter a given event
+     */
+    void updateEvent();
 }
 
 #endif //PROJETO_UTILS_H
