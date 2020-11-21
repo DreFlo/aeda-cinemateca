@@ -183,6 +183,14 @@ void Cinemateca::AdicionarEvento(Evento event){
                 throw event;
             }
         }
+        if(event.getRoom() != ""){
+            for(auto sal : Salas){
+                if(event.getRoom() == sal.getName()){
+                    sal.addEvent(event.getTimeInterval());
+                    break;
+                }
+            }
+        }
 
         bool NHaEspaco = true, NHaHorarios = true;
 
@@ -196,8 +204,8 @@ void Cinemateca::AdicionarEvento(Evento event){
                 if(sal.checkAvailability(event.getTimeInterval())){
                     NHaHorarios = false;
 
-                    sal.addEvent(event.getTimeInterval());
                     event.setRoom(sal.getName());
+                    sal.addEvent(event.getTimeInterval());
                     EventosFuturos.push_back(event);
                 }
             }
@@ -325,15 +333,7 @@ void Cinemateca::LerFicheiroEventos(const std::string& filepath) {
 
     if(myfile.is_open()){
         while(myfile >> event){
-            if(event.getStart().getDate() < hoje.getDate()){
-                EventosAntigos.push_back(event);
-            }
-            if(event.getStart().getDate() == hoje.getDate()){
-                EventosHoje.push_back(event);
-            }
-            if(event.getStart().getDate() > hoje.getDate()){
-                EventosFuturos.push_back(event);
-            }
+            AdicionarEvento(event);
         }
     }
     else{

@@ -145,6 +145,10 @@ namespace utils {
      * Reads a specific file and adds what it needs to a Cinemateca.
      */
      void readfile();
+     /**
+      * Warns aderentes over 65 years old that they can go to an event for free
+      */
+     void avisarAderentes();
 }
 
 #endif //PROJETO_UTILS_H

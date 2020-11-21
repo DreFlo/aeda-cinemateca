@@ -25,7 +25,7 @@ void utils::printHelp() {
     cout << "get salas - print rooms on the screen" << endl;
     cout << "find sala - finds a given room" << endl;
     cout << "update sala - update a parameter in a specific Sala" << endl;
-    cout << "read file - reads a spefic file and adds what it needs to Cinemateca" << endl;
+    /*cout << "read file - reads a spefic file and adds what it needs to Cinemateca" << endl;*/
     cout << endl;
 }
 
@@ -263,8 +263,8 @@ void utils::getFutureEvents() {
     string name;
     vector<Evento> res;
     // CHOOSE CINEMATECA
+    cin.clear();
     cout << "From which city do you want the future events?";
-    cin.ignore(1000, '\n');
     cin >> name;
     while (name != "Lisboa" && name != "Porto" && name != "CANCEL") {
         cout << "There are only 'Lisboa' and 'Porto'. " << CHOOSE_CINEMATECA_MSG;
@@ -1026,7 +1026,7 @@ void utils::buyTicket() {
     cout << "There's a reserved ticket in your name for " <<  ev->getPrice() * (1 - 0.01 * (today.getYear() - ad->getAdhYear()))
     << "€, already with your discount.";
 }
-
+/*
 void utils::readfile() {
     std::string city, filepath, typetoread;
     while (true){
@@ -1087,4 +1087,50 @@ void utils::readfile() {
         }
     }
 }
+*/
 
+void utils::avisarAderentes() {
+    std::vector<Aderente> AdersM65;
+    Data Ha65anos(today.getDay(), today.getMonth(), today.getYear() - 65);
+    for(auto cinematec : cinemas){
+        for(const auto& Ader : cinematec->GetAderentes()){
+            if(Ader.getBirthday() < Ha65anos){
+                AdersM65.push_back(Ader);
+            }
+        }
+    }
+    if(AdersM65.empty()){
+        std::cout << "Looks like there's no one that can get a free event " << std::endl;
+        return;
+    }
+
+    std::vector<Evento> EventsProx8h;
+    DataEHora DaquiA8h(today.getDay(), today.getMonth(), today.getYear(), today.getHour() + 8, today.getMinute());
+    for(auto cinematec : cinemas){
+        for(const auto& event : cinematec->GetEventosHoje()){
+            if(event.getStart() < DaquiA8h){
+                if(((event.getLot()/event.getMaxAttendance()) * 100) < 50){
+                    EventsProx8h.push_back(event);
+                }
+            }
+        }
+    }
+    if(EventsProx8h.empty()){
+        std::cout << "Looks like there's no events in the next 8 hours" << std::endl;
+        return;
+    }
+
+    for(auto Ader : AdersM65){
+        std::cout << "Hey " << Ader.getName()
+            << " you are able to sinup for free to the following event(s)" << std::endl;
+        for(auto event : EventsProx8h){
+            std::string answer = "";
+            std::cout << "Would you like to join the following event? " << std::endl << event.str();
+            std::cout << std::endl << "(y/n) ";
+            getline(cin, answer);
+            if(answer == "y"){
+                event.signUp(Ader, true);
+            }
+        }
+    }
+}
