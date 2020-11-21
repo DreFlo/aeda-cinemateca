@@ -945,22 +945,24 @@ void utils::buyTicket() {
     cout << "These are the next events to happen in " << city << "." << endl;
     for(int i = 0; i < future.size(); i++){
         cout << future[i].getName() << " with " << future[i].getLot() << "/" << future[i].getMaxAttendance() <<
-            " people and it costs " << future[i].getPrice() << "€." << endl;
+            " people and it costs " << future[i].getPrice() << "eur." << endl;
     }
-    bool valid = true, buy = false, cl = false;
+    bool valid = true, found = false;
     unsigned int NIF;
     string nif;
-    Cliente *c;
     Evento *ev;
-    Aderente *ad;
     while(true) {
         cout << "If you're interested in any, write the name, else write 'CANCEL': ";
+        cin.ignore(1000, '\n');
         getline(cin, answer);
         if(answer == "CANCEL") return;
         for (vector<Evento>::iterator it = future.begin(); it != future.end(); it++){
             if ((*it).getName() == answer){
-                *ev = *it;
+                cout << "1" << endl;
+                found = true;
+                ev = &(*it);
                 if ((*it).getLot() < (*it).getMaxAttendance()){
+                    cout << "2" << endl;
                     while (true){
                         cout << "Are you an Aderente or not (y/n)?";
                         cin >> answer;
@@ -973,9 +975,11 @@ void utils::buyTicket() {
                                 for (vector<Aderente>::iterator it = ads.begin(); it != ads.end(); it++) {
                                     if (it->getNIF() == NIF) {
                                         valid_ad = true;
-                                        buy = true;
-                                        *ad = *it;
-                                        break;
+                                        ev ->signUp(*it);
+                                        cout << "There's a reserved ticket in your name for "
+                                        << ev->getPrice() * (1 - 0.01 * (today.getYear() - (*it).getAdhYear()))
+                                        << "eur, already with your discount.";
+                                        return;
                                     }
                                 }
                                 if(!valid_ad){
@@ -1008,10 +1012,9 @@ void utils::buyTicket() {
                             name = inputName();
                             cell = inputCell();
                             Cliente c1(name, city, cell);
-                            c = &c1;
-                            buy = true;
-                            cl = true;
-                            break;
+                            ev->signUp(c1);
+                            cout << "There's a reserved ticket in your name for " << ev->getPrice() << "eur.";
+                            return;
                         }
                         if ((answer != "y") && (answer != "n")){
                             cout << "Answer y or n.";
@@ -1025,21 +1028,14 @@ void utils::buyTicket() {
                     valid = false;
                 }
             }
-            else{
-                cout << "Invalid name";
-                valid = false;
-            }
+        }
+        if (!found){
+            cout << "Invalid name." << endl;
+            valid = false;
         }
         if (!valid) continue;
         break;
     }
-    if (!buy) return;
-    if (cl){
-        cout << "There's a reserved ticket in your name for " << ev->getPrice() << "€.";
-        return;
-    }
-    cout << "There's a reserved ticket in your name for " <<  ev->getPrice() * (1 - 0.01 * (today.getYear() - ad->getAdhYear()))
-    << "€, already with your discount.";
 }
 /*
 void utils::readfile() {
