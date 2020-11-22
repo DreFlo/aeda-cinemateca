@@ -942,7 +942,7 @@ void utils::buyTicket() {
         cout << "There are no scheduled events for the future in " << city << ".";
         return;
     }
-    cout << "These are the next events to happen in " << city << "." << endl;
+    cout << "These are the next events to happen in " << city << ":" << endl;
     for(int i = 0; i < future.size(); i++){
         cout << future[i].getName() << " with " << future[i].getLot() << "/" << future[i].getMaxAttendance() <<
             " people and it costs " << future[i].getPrice() << "eur." << endl;
@@ -958,11 +958,9 @@ void utils::buyTicket() {
         if(answer == "CANCEL") return;
         for (vector<Evento>::iterator it = future.begin(); it != future.end(); it++){
             if ((*it).getName() == answer){
-                cout << "1" << endl;
                 found = true;
                 ev = &(*it);
                 if ((*it).getLot() < (*it).getMaxAttendance()){
-                    cout << "2" << endl;
                     while (true){
                         cout << "Are you an Aderente or not (y/n)?";
                         cin >> answer;
@@ -976,6 +974,16 @@ void utils::buyTicket() {
                                     if (it->getNIF() == NIF) {
                                         valid_ad = true;
                                         ev ->signUp(*it);
+                                        findCinemateca(city)->SetAderentes(ads);
+                                        vector<Evento>past = findCinemateca(city)->GetEventosAntigos();
+                                        vector<Evento>now = findCinemateca(city)->GetEventosHoje();
+                                        for (auto ev: past){
+                                            future.push_back(ev);
+                                        }
+                                        for (auto ev: now){
+                                            future.push_back(ev);
+                                        }
+                                        findCinemateca(city)->SetEventos(future);
                                         cout << "There's a reserved ticket in your name for "
                                         << ev->getPrice() * (1 - 0.01 * (today.getYear() - (*it).getAdhYear()))
                                         << "eur, already with your discount.";
@@ -1013,6 +1021,15 @@ void utils::buyTicket() {
                             cell = inputCell();
                             Cliente c1(name, city, cell);
                             ev->signUp(c1);
+                            vector<Evento>past = findCinemateca(city)->GetEventosAntigos();
+                            vector<Evento>now = findCinemateca(city)->GetEventosHoje();
+                            for (auto ev: past){
+                                future.push_back(ev);
+                            }
+                            for (auto ev: now){
+                                future.push_back(ev);
+                            }
+                            findCinemateca(city)->SetEventos(future);
                             cout << "There's a reserved ticket in your name for " << ev->getPrice() << "eur.";
                             return;
                         }
