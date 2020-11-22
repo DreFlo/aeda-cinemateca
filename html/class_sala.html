@@ -84,8 +84,6 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a57a3d034eb8ec80c7e908487ca31abff"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a32f7492e7cbfbc835ee8a540252b2ede"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_sala.html#a32f7492e7cbfbc835ee8a540252b2ede">cancelEvent</a> (const <a class="el" href="class_intervalo_de_tempo.html">IntervaloDeTempo</a> time)</td></tr>
 <tr class="separator:a32f7492e7cbfbc835ee8a540252b2ede"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a02437f446282c2e12f53d41530ce3395"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_sala.html#a02437f446282c2e12f53d41530ce3395">endEvent</a> (const <a class="el" href="class_evento.html">Evento</a> event, const <a class="el" href="class_intervalo_de_tempo.html">IntervaloDeTempo</a> time)</td></tr>
-<tr class="separator:a02437f446282c2e12f53d41530ce3395"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9860ccc2a074c03ded4181e8572bcd30"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_sala.html#a9860ccc2a074c03ded4181e8572bcd30">updateSalaName</a> (string new_name)</td></tr>
 <tr class="separator:a9860ccc2a074c03ded4181e8572bcd30"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad8d761b4a74f5c8fdf83c4a2da205413"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_sala.html#ad8d761b4a74f5c8fdf83c4a2da205413">updateSalaCap</a> (int new_cap)</td></tr>
@@ -212,41 +210,6 @@ Friends</h2></td></tr>
 
 </div>
 </div>
-<a id="a02437f446282c2e12f53d41530ce3395"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a02437f446282c2e12f53d41530ce3395">&#9670;&nbsp;</a></span>endEvent()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void Sala::endEvent </td>
-          <td>(</td>
-          <td class="paramtype">const <a class="el" href="class_evento.html">Evento</a>&#160;</td>
-          <td class="paramname"><em>event</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const <a class="el" href="class_intervalo_de_tempo.html">IntervaloDeTempo</a>&#160;</td>
-          <td class="paramname"><em>time</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<p>Records event in room's history. </p><dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">event</td><td>Event that occured. </td></tr>
-    <tr><td class="paramname">time</td><td>Time. </td></tr>
-  </table>
-  </dd>
-</dl>
-
-</div>
-</div>
 <a id="a22899ad090118a79c83b5858ffeff666"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a22899ad090118a79c83b5858ffeff666">&#9670;&nbsp;</a></span>getCapacity()</h2>
 
@@ -323,7 +286,7 @@ Friends</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Checks if two sala's are the same by name; </p><dl class="params"><dt>Parameters</dt><dd>
+<p>Checks if two sala's are the same by checking their names; </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">s1</td><td><a class="el" href="class_sala.html">Sala</a> to compare with. </td></tr>
   </table>
