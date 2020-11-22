@@ -148,7 +148,7 @@ void Cinemateca::SortAderentes() {
 void Cinemateca::AdicionarEvento(Evento event){
     //Check if time distance isn't to large
     Data OneYearFromNow(hoje.getDay(), hoje.getMonth(), 1 + hoje.getYear());
-    if(event.getStart().getDate() > OneYearFromNow){
+    if(event.getRoom().empty() && (event.getStart().getDate() > OneYearFromNow)){
         throw PLANNING2FAR_AHEAD;
     }
     
