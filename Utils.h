@@ -4,6 +4,7 @@
 #include <algorithm>
 #include "Cinemateca.h"
 #include "Data.h"
+#include <random>
 
 #define WELCOME_MSG "Welcome!"
 #define INNPUT_TODAY_MSG "Please input the present date and time (dd.mm.yyyy HHhMMmin): "

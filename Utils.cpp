@@ -1144,25 +1144,51 @@ void utils::avisarAderentes() {
             }
         }
     }
-
     if(EventsProx8h.empty()){
         std::cout << "Looks like there's no events in the next 8 hours" << std::endl;
         return;
     }
 
-    for(auto Ader : AdersM65){
-        std::cout << "Hey " << Ader.getName()
-            << " you are able to sinup for free to the following event(s)" << std::endl;
-        for(auto event : EventsProx8h){
-            std::string answer = "";
-            std::cout << "Would you like to join the following event? " << std::endl << event.str();
-            std::cout << std::endl << "(y/n) ";
-            getline(cin, answer);
-            if(answer == "y"){
-                event.signUp(Ader, true);
+    srand(time(NULL) );
+    int randomnoofader = rand() % AdersM65.size(), cont = 0;
+
+    for(auto event : EventsProx8h){
+        for(auto Ader : AdersM65){
+            if(randomnoofader > (AdersM65.size() / 2)){
+                if(((event.getLot()/event.getMaxAttendance()) * 100) < 50){
+                    event.signUp(Ader, true);
+                    cont++;
+                }
+                else{
+                    break;
+                }
+            }
+            randomnoofader = rand() % AdersM65.size();
+        }
+        std::cout << cont << " person/people over 65 accept the free invite promoted by the CM Porto "
+                             "for the following event : " << event.str() << std::endl;
+        cont = 0;
+    }
+
+    //inputting changes to Cinemateca;
+    for(const auto& even : cinemas[0]->GetEventosAntigos()){
+        EventsProx8h.push_back(even);
+    }
+    for(const auto& even : cinemas[0]->GetEventosFuturos()){
+        EventsProx8h.push_back(even);
+    }
+    bool add = true;
+    for(const auto& even1 : cinemas[0]->GetEventosHoje()){
+        for(const auto& even2 : EventsProx8h){
+            if(even1.getName() == even2.getName()){
+                add = false;
             }
         }
+        if(add){
+            EventsProx8h.push_back(even1);
+        }
     }
+    cinemas[0]->SetEventos(EventsProx8h);
 }
 
 void utils::removeEvent() try {
