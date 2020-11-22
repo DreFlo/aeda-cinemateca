@@ -168,12 +168,14 @@ void Cinemateca::AdicionarEvento(Evento event){
                 throw event;
             }
         }
-        std::cout << std::endl;
-        std::cout << "Hey! The event you are trying to add is for today, here in Cinemateca we require you"
-                        " to at least plan 1 day ahead! So there wont be any room assigned to your event."
-                            << std::endl;
-        std::cout << "The event is: " << std::endl;
-        std::cout << event.str() << std::endl;
+        if(event.getRoom().empty()){
+            std::cout << std::endl;
+            std::cout << "Hey! The event you are trying to add is for today, here in Cinemateca we require you"
+                         " to at least plan 1 day ahead! So there wont be any room assigned to your event."
+                      << std::endl;
+            std::cout << "The event is: " << std::endl;
+            std::cout << event.str() << std::endl;
+        }
         EventosHoje.push_back(event);
     }
 
