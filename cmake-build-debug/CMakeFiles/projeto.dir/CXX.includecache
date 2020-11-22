@@ -6,7 +6,7 @@
 
 #IncludeRegexTransform: 
 
-C:/Users/dluis/OneDrive - Universidade do Porto/2 ano/AEDA/aeda-cinemateca/aeda-cinemateca/Aderente.h
+C:/Users/andre/OneDrive - Universidade do Porto/FEUP/2A-1S-AEDA/projeto/Aderente.h
 string
 -
 iostream
@@ -14,27 +14,27 @@ iostream
 sstream
 -
 Data.h
-C:/Users/dluis/OneDrive - Universidade do Porto/2 ano/AEDA/aeda-cinemateca/aeda-cinemateca/Data.h
+C:/Users/andre/OneDrive - Universidade do Porto/FEUP/2A-1S-AEDA/projeto/Data.h
 Cliente.h
-C:/Users/dluis/OneDrive - Universidade do Porto/2 ano/AEDA/aeda-cinemateca/aeda-cinemateca/Cliente.h
+C:/Users/andre/OneDrive - Universidade do Porto/FEUP/2A-1S-AEDA/projeto/Cliente.h
 
-C:/Users/dluis/OneDrive - Universidade do Porto/2 ano/AEDA/aeda-cinemateca/aeda-cinemateca/Cinemateca.h
+C:/Users/andre/OneDrive - Universidade do Porto/FEUP/2A-1S-AEDA/projeto/Cinemateca.h
 Evento.h
-C:/Users/dluis/OneDrive - Universidade do Porto/2 ano/AEDA/aeda-cinemateca/aeda-cinemateca/Evento.h
+C:/Users/andre/OneDrive - Universidade do Porto/FEUP/2A-1S-AEDA/projeto/Evento.h
 Aderente.h
-C:/Users/dluis/OneDrive - Universidade do Porto/2 ano/AEDA/aeda-cinemateca/aeda-cinemateca/Aderente.h
+C:/Users/andre/OneDrive - Universidade do Porto/FEUP/2A-1S-AEDA/projeto/Aderente.h
 Sala.h
-C:/Users/dluis/OneDrive - Universidade do Porto/2 ano/AEDA/aeda-cinemateca/aeda-cinemateca/Sala.h
+C:/Users/andre/OneDrive - Universidade do Porto/FEUP/2A-1S-AEDA/projeto/Sala.h
 fstream
 -
 
-C:/Users/dluis/OneDrive - Universidade do Porto/2 ano/AEDA/aeda-cinemateca/aeda-cinemateca/Cliente.h
+C:/Users/andre/OneDrive - Universidade do Porto/FEUP/2A-1S-AEDA/projeto/Cliente.h
 string
 -
 iostream
 -
 
-C:/Users/dluis/OneDrive - Universidade do Porto/2 ano/AEDA/aeda-cinemateca/aeda-cinemateca/Data.h
+C:/Users/andre/OneDrive - Universidade do Porto/FEUP/2A-1S-AEDA/projeto/Data.h
 iostream
 -
 algorithm
@@ -44,21 +44,21 @@ stdexcept
 regex
 -
 
-C:/Users/dluis/OneDrive - Universidade do Porto/2 ano/AEDA/aeda-cinemateca/aeda-cinemateca/DataEHora.h
+C:/Users/andre/OneDrive - Universidade do Porto/FEUP/2A-1S-AEDA/projeto/DataEHora.h
 Data.h
-C:/Users/dluis/OneDrive - Universidade do Porto/2 ano/AEDA/aeda-cinemateca/aeda-cinemateca/Data.h
+C:/Users/andre/OneDrive - Universidade do Porto/FEUP/2A-1S-AEDA/projeto/Data.h
 Hora.h
-C:/Users/dluis/OneDrive - Universidade do Porto/2 ano/AEDA/aeda-cinemateca/aeda-cinemateca/Hora.h
+C:/Users/andre/OneDrive - Universidade do Porto/FEUP/2A-1S-AEDA/projeto/Hora.h
 
-C:/Users/dluis/OneDrive - Universidade do Porto/2 ano/AEDA/aeda-cinemateca/aeda-cinemateca/Evento.h
+C:/Users/andre/OneDrive - Universidade do Porto/FEUP/2A-1S-AEDA/projeto/Evento.h
 utility
 -
 IntervaloDeTempo.h
-C:/Users/dluis/OneDrive - Universidade do Porto/2 ano/AEDA/aeda-cinemateca/aeda-cinemateca/IntervaloDeTempo.h
+C:/Users/andre/OneDrive - Universidade do Porto/FEUP/2A-1S-AEDA/projeto/IntervaloDeTempo.h
 Aderente.h
-C:/Users/dluis/OneDrive - Universidade do Porto/2 ano/AEDA/aeda-cinemateca/aeda-cinemateca/Aderente.h
+C:/Users/andre/OneDrive - Universidade do Porto/FEUP/2A-1S-AEDA/projeto/Aderente.h
 
-C:/Users/dluis/OneDrive - Universidade do Porto/2 ano/AEDA/aeda-cinemateca/aeda-cinemateca/Hora.h
+C:/Users/andre/OneDrive - Universidade do Porto/FEUP/2A-1S-AEDA/projeto/Hora.h
 iostream
 -
 string
@@ -70,33 +70,39 @@ regex
 utility
 -
 
-C:/Users/dluis/OneDrive - Universidade do Porto/2 ano/AEDA/aeda-cinemateca/aeda-cinemateca/IntervaloDeTempo.h
+C:/Users/andre/OneDrive - Universidade do Porto/FEUP/2A-1S-AEDA/projeto/IntervaloDeTempo.h
 iostream
 -
 utility
 -
 DataEHora.h
-C:/Users/dluis/OneDrive - Universidade do Porto/2 ano/AEDA/aeda-cinemateca/aeda-cinemateca/DataEHora.h
+C:/Users/andre/OneDrive - Universidade do Porto/FEUP/2A-1S-AEDA/projeto/DataEHora.h
 
-C:/Users/dluis/OneDrive - Universidade do Porto/2 ano/AEDA/aeda-cinemateca/aeda-cinemateca/Sala.h
+C:/Users/andre/OneDrive - Universidade do Porto/FEUP/2A-1S-AEDA/projeto/Sala.h
 string
 -
 vector
 -
 IntervaloDeTempo.h
-C:/Users/dluis/OneDrive - Universidade do Porto/2 ano/AEDA/aeda-cinemateca/aeda-cinemateca/IntervaloDeTempo.h
+C:/Users/andre/OneDrive - Universidade do Porto/FEUP/2A-1S-AEDA/projeto/IntervaloDeTempo.h
 Evento.h
-C:/Users/dluis/OneDrive - Universidade do Porto/2 ano/AEDA/aeda-cinemateca/aeda-cinemateca/Evento.h
+C:/Users/andre/OneDrive - Universidade do Porto/FEUP/2A-1S-AEDA/projeto/Evento.h
 
-C:/Users/dluis/OneDrive - Universidade do Porto/2 ano/AEDA/aeda-cinemateca/aeda-cinemateca/Utils.cpp
+C:/Users/andre/OneDrive - Universidade do Porto/FEUP/2A-1S-AEDA/projeto/Utils.cpp
 Utils.h
-C:/Users/dluis/OneDrive - Universidade do Porto/2 ano/AEDA/aeda-cinemateca/aeda-cinemateca/Utils.h
+C:/Users/andre/OneDrive - Universidade do Porto/FEUP/2A-1S-AEDA/projeto/Utils.h
 
-C:/Users/dluis/OneDrive - Universidade do Porto/2 ano/AEDA/aeda-cinemateca/aeda-cinemateca/Utils.h
+C:/Users/andre/OneDrive - Universidade do Porto/FEUP/2A-1S-AEDA/projeto/Utils.h
 algorithm
 -
 Cinemateca.h
-C:/Users/dluis/OneDrive - Universidade do Porto/2 ano/AEDA/aeda-cinemateca/aeda-cinemateca/Cinemateca.h
+C:/Users/andre/OneDrive - Universidade do Porto/FEUP/2A-1S-AEDA/projeto/Cinemateca.h
 Data.h
-C:/Users/dluis/OneDrive - Universidade do Porto/2 ano/AEDA/aeda-cinemateca/aeda-cinemateca/Data.h
+C:/Users/andre/OneDrive - Universidade do Porto/FEUP/2A-1S-AEDA/projeto/Data.h
+random
+-
+
+C:/Users/andre/OneDrive - Universidade do Porto/FEUP/2A-1S-AEDA/projeto/main.cpp
+Utils.h
+C:/Users/andre/OneDrive - Universidade do Porto/FEUP/2A-1S-AEDA/projeto/Utils.h
 

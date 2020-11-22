@@ -1,8 +1,5 @@
 #include "Utils.h"
 
-// IMPLEMENTEM OUTRAS CENAS A VONTADE. PLS ADICIONEM OS COMANDOS NO MAIN E NO PRINT HELP.
-
-
 void utils::printHelp() {
     cout << "help - get commands and descriptions" << endl;
     cout << "exit - exits the menu" << endl;
@@ -55,7 +52,7 @@ void utils::setToday() try{
     setToday();
 }
 
-void utils::addEvent() /*try*/ {
+void utils::addEvent() try {
     Evento temp;
     string city;
     cout << CHOOSE_CINEMATECA_MSG;
@@ -67,21 +64,26 @@ void utils::addEvent() /*try*/ {
     }
     city = input;
     if (constructEvent(temp) != 0) return;
-    try {
-        findCinemateca(city)->AdicionarEvento(temp);
-    }
-    catch(Evento e){
-        cout << "EV: " << e.getName() << endl;
-    }
-} /*catch (...) {return;}*/ // PLS TRATEM DOS CATCHES QUE ACHO QUE DEVE HAVER TANTO DA CINEMATECA
-//COMO DA SALA DE HOUVER CONFLITO ENTRE DOIS EVENTOS
+    findCinemateca(city)->AdicionarEvento(temp);
+} catch(Evento &e){
+    cout << "EV: " << e.getName() << " already exists." << endl;
+    return;
+} catch(char const * errormsg) {
+    cout << errormsg << endl;
+    return;
+} catch(ios_base::failure &e) {
+    cout  << INVALID_INPUT_MSG << endl;
+    cin.clear();
+    cin.ignore(numeric_limits<streamsize>::max(), '\n');
+    return;
+}
 
 int utils::constructEvent(Evento &event) try {
     string room, name, inp;
     DataEHora start;
     Hora duration;
     int attn;
-    event.setPrice(2.6);
+    float prc;
     // EVENT NAME
     cout << "Input event name: ";
     while (cin.peek() == '\n') cin.ignore();
@@ -106,6 +108,9 @@ int utils::constructEvent(Evento &event) try {
     if (input == "CANCEL") return 1;
     duration.setTime(input);
     event.setDuration(duration);
+    cout << "Input event's price of admittance: ";
+    cin >> prc;
+    event.setPrice(prc);
     cout << "Input event's maximum attendance: ";
     cin >> attn;
     cin.ignore(1000, '\n');
@@ -118,6 +123,7 @@ int utils::constructEvent(Evento &event) try {
     }
     return 0;
 } catch (invalid_argument &I) {
+    cout << I.what() << endl;
     return 1;
 } catch (InvalidDate &D) {
     cout << D.getDate() << D.getMsg() << endl;
@@ -141,10 +147,11 @@ void utils::getEventsOn() try {
     string name;
     vector<Evento> res;
     cout << INPUT_DATE_MSG;
+    while (cin.peek() == '\n') cin.ignore();
     getline(cin, input);
     if (input == "CANCEL") return;
     date.setDate(input);
-    cout << CHOOSE_CINEMATECA_MSG;
+    cout << "Choose cinemateca: ";
     cin >> name;
     while (name != "Lisboa" && name != "Porto" && name != "CANCEL") {
         cout << "There are only 'Lisboa' and 'Porto'. " << CHOOSE_CINEMATECA_MSG;
@@ -177,11 +184,12 @@ void utils::getEventsAfter() try {
     vector<Evento> res;
     // INPUT DATE
     cout << INPUT_DATE_MSG;
+    while (cin.peek() == '\n') cin.ignore();
     getline(cin, input);
     if (input == "CANCEL") return;
     date.setDate(input);
     // CHOOSE CINEMATECA
-    cout << CHOOSE_CINEMATECA_MSG;
+    cout << "Choose cinemateca: ";
     cin >> name;
     while (name != "Lisboa" && name != "Porto" && name != "CANCEL") {
         cout << "There are only 'Lisboa' and 'Porto'. " << CHOOSE_CINEMATECA_MSG;
@@ -214,11 +222,11 @@ void utils::getEventsBefore() try {
     string name;
     vector<Evento> res;
     cout << INPUT_DATE_MSG;
-    cin.ignore(1000, '\n');
+    while (cin.peek() == '\n') cin.ignore();
     getline(cin, input);
     if (input == "CANCEL") return;
     date.setDate(input);
-    cout << CHOOSE_CINEMATECA_MSG;
+    cout << "Choose cinemateca: ";
     cin >> name;
     while (name != "Lisboa" && name != "Porto" && name != "CANCEL") {
         cout << "There are only 'Lisboa' and 'Porto'. " << CHOOSE_CINEMATECA_MSG;

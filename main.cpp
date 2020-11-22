@@ -17,17 +17,20 @@ int main() {
      */
     cout << WELCOME_MSG;
     utils::setToday();
-    Cinemateca Porto("Porto", today);
-    Cinemateca Lisboa("Lisboa", today);
-    Porto.LerFicheiroAderentes("AderentesPorto.txt");
-    Porto.LerFicheiroSalas("SalasPorto.txt");
-    Porto.LerFicheiroEventos("EventosPorto.txt");
-    Lisboa.LerFicheiroAderentes("AderentesLisboa.txt");
-    Lisboa.LerFicheiroSalas("SalasLisboa.txt");
-    Lisboa.LerFicheiroEventos("EventosLisboa.txt");
-    cinemas.push_back(&Porto);
-    cinemas.push_back(&Lisboa);
-    utils::avisarAderentes();
+    try {
+        Cinemateca Porto("Porto", today);
+        Cinemateca Lisboa("Lisboa", today);
+        Porto.LerFicheiroAderentes("AderentesPorto.txt");
+        Porto.LerFicheiroSalas("SalasPorto.txt");
+        Porto.LerFicheiroEventos("EventosPorto.txt");
+        Lisboa.LerFicheiroAderentes("AderentesLisboa.txt");
+        Lisboa.LerFicheiroSalas("SalasLisboa.txt");
+        Lisboa.LerFicheiroEventos("EventosLisboa.txt");
+        cinemas.push_back(&Porto);
+        cinemas.push_back(&Lisboa);
+        utils::avisarAderentes();
+    }
+    catch (char const * errormsg) {cout << errormsg;}
     while (true) {
         cout << GET_CMD_MSG;
         getline(cin, input);
