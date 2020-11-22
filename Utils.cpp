@@ -18,6 +18,8 @@ void utils::printHelp() {
     cout << "get past events - print future events" << endl;
     cout << "get present - prints the current date and time" << endl;
     cout << "get aderentes - get aderentes for a given city" << endl;
+    cout << "update event - alter a given event" << endl;
+    cout << "remove event - remove a given event" << endl;
     cout << "remove aderente - remove a given aderente" << endl;
     cout << "find aderente - find a given aderente" << endl;
     cout << "update aderente - update a parameter in a specific aderente" << endl;
@@ -25,8 +27,6 @@ void utils::printHelp() {
     cout << "get salas - print rooms on the screen" << endl;
     cout << "find sala - finds a given room" << endl;
     cout << "update sala - update a parameter in a specific Sala" << endl;
-    cout << "remove event - remove a agiven event" << endl;
-    cout << "update event - alter a given event" << endl;
     /*cout << "read file - reads a spefic file and adds what it needs to Cinemateca" << endl;*/
     cout << endl;
 }
@@ -55,8 +55,9 @@ void utils::setToday() try{
     setToday();
 }
 
-void utils::addEvent() try {
+void utils::addEvent() /*try*/ {
     Evento temp;
+    string city;
     cout << CHOOSE_CINEMATECA_MSG;
     cin >> input;
     if (input == "CANCEL") return;
@@ -64,32 +65,34 @@ void utils::addEvent() try {
         cout << "There are only 'Lisboa' and 'Porto'. " << CHOOSE_CINEMATECA_MSG;
         cin >> input;
     }
+    city = input;
     if (constructEvent(temp) != 0) return;
-    findCinemateca(input)->AdicionarEvento(temp);
-} catch (...) {return;} // PLS TRATEM DOS CATCHES QUE ACHO QUE DEVE HAVER TANTO DA CINEMATECA
+    try {
+        findCinemateca(city)->AdicionarEvento(temp);
+    }
+    catch(Evento e){
+        cout << "EV: " << e.getName() << endl;
+    }
+} /*catch (...) {return;}*/ // PLS TRATEM DOS CATCHES QUE ACHO QUE DEVE HAVER TANTO DA CINEMATECA
 //COMO DA SALA DE HOUVER CONFLITO ENTRE DOIS EVENTOS
 
 int utils::constructEvent(Evento &event) try {
-    string room, name;
+    string room, name, inp;
     DataEHora start;
     Hora duration;
     int attn;
+    event.setPrice(2.6);
     // EVENT NAME
     cout << "Input event name: ";
+    while (cin.peek() == '\n') cin.ignore();
     getline(cin, input);
     cout << endl;
     name = input;
     if (name == "CANCEL") return 1;
     event.setName(name);
-    // EVENT ROOM
-    cout << "Input event room: ";
-    getline(cin, input);
-    cout << endl;
-    room = input;
-    if (room == "CANCEL") return 1;
-    event.setRoom(room);
     // EVENT START
     cout << "Input event's start date and time (dd.mm.yyyy HHhMMmin): ";
+    while (cin.peek() == '\n') cin.ignore();
     getline(cin, input);
     cout << endl;
     if (input == "CANCEL") return 1;
@@ -97,6 +100,7 @@ int utils::constructEvent(Evento &event) try {
     event.setStart(start);
     // EVENT LENGTH
     cout << "Input event's duration (HHhMMmin): ";
+    while (cin.peek() == '\n') cin.ignore();
     getline(cin, input);
     cout << endl;
     if (input == "CANCEL") return 1;
@@ -108,6 +112,7 @@ int utils::constructEvent(Evento &event) try {
     event.setMaxAttendance(attn);
     if (attn > 0) {
         cout << "Input sala: ";
+        while (cin.peek() == '\n') cin.ignore();
         getline(cin, input);
         event.setRoom(input);
     }
@@ -953,7 +958,7 @@ void utils::buyTicket() {
     Evento *ev;
     while(true) {
         cout << "If you're interested in any, write the name, else write 'CANCEL': ";
-        cin.ignore(1000, '\n');
+        while (cin.peek() == '\n') cin.ignore();
         getline(cin, answer);
         if(answer == "CANCEL") return;
         for (vector<Evento>::iterator it = future.begin(); it != future.end(); it++){

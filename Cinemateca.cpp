@@ -146,7 +146,6 @@ void Cinemateca::SortAderentes() {
 }
 
 void Cinemateca::AdicionarEvento(Evento event){
-
     //Check if time distance isn't to large
     Data OneYearFromNow(hoje.getDay(), hoje.getMonth(), 1 + hoje.getYear());
     if(event.getStart().getDate() > OneYearFromNow){
@@ -189,11 +188,11 @@ void Cinemateca::AdicionarEvento(Evento event){
             for(auto sal : Salas){
                 if(event.getRoom() == sal.getName()){
                     sal.addEvent(event.getTimeInterval());
-                    break;
+                    EventosFuturos.push_back(event);
+                    return;
                 }
             }
         }
-
         bool NHaEspaco = true, NHaHorarios = true;
 
         for(auto sal : Salas){
