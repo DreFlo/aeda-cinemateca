@@ -56,6 +56,10 @@ int main() {
             utils::getFutureEvents();
         else if (input == "get past events")
             utils::getPastEvents();
+        else if (input == "remove event")
+            utils::removeEvent();
+        else if (input == "update event")
+            utils::updateEvent();
         else if (input == "get present")
             cout << today.str() << endl;
         else if (input == "add aderente")
