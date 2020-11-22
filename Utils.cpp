@@ -1120,11 +1120,9 @@ void utils::readfile() {
 void utils::avisarAderentes() {
     std::vector<Aderente> AdersM65;
     Data Ha65anos(today.getDay(), today.getMonth(), today.getYear() - 65);
-    for(auto cinematec : cinemas){
-        for(const auto& Ader : cinematec->GetAderentes()){
-            if(Ader.getBirthday() < Ha65anos){
-                AdersM65.push_back(Ader);
-            }
+    for(const auto& Ader : cinemas[0]->GetAderentes()){
+        if(Ader.getBirthday() < Ha65anos){
+            AdersM65.push_back(Ader);
         }
     }
     if(AdersM65.empty()){
@@ -1134,15 +1132,14 @@ void utils::avisarAderentes() {
 
     std::vector<Evento> EventsProx8h;
     DataEHora DaquiA8h(today.getDay(), today.getMonth(), today.getYear(), today.getHour() + 8, today.getMinute());
-    for(auto cinematec : cinemas){
-        for(const auto& event : cinematec->GetEventosHoje()){
-            if(event.getStart() < DaquiA8h){
-                if(((event.getLot()/event.getMaxAttendance()) * 100) < 50){
-                    EventsProx8h.push_back(event);
-                }
+    for(const auto& event : cinemas[0]->GetEventosHoje()){
+        if(event.getStart() < DaquiA8h){
+            if(((event.getLot()/event.getMaxAttendance()) * 100) < 50){
+                EventsProx8h.push_back(event);
             }
         }
     }
+
     if(EventsProx8h.empty()){
         std::cout << "Looks like there's no events in the next 8 hours" << std::endl;
         return;

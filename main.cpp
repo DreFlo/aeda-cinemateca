@@ -27,6 +27,7 @@ int main() {
     Lisboa.LerFicheiroEventos("EventosLisboa.txt");
     cinemas.push_back(&Porto);
     cinemas.push_back(&Lisboa);
+    utils::avisarAderentes();
     while (true) {
         cout << GET_CMD_MSG;
         getline(cin, input);
@@ -34,8 +35,10 @@ int main() {
             utils::printHelp();
         else if (input == "exit")
             break;
-        else if (input == "change present")
+        else if (input == "change present"){
             utils::setToday();
+            utils::avisarAderentes();
+        }
         else if (input == "add event")
             utils::addEvent();
         else if (input == "get events on")
