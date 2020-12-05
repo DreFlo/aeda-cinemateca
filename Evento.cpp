@@ -41,6 +41,7 @@ void Evento::signUp(const Cliente &C) {
 }
 
 void Evento::signUp(Aderente &A, bool free) {
+    uint8_t  review;
     if (lot == maxAttendance) throw EventFull();
     lot++;
     if (!free) {
@@ -54,6 +55,14 @@ void Evento::signUp(Aderente &A, bool free) {
         }
     }
     else A.addSavedMoney(price);
+
+    //HMMMMMMMMMMMMMM
+
+    cout << "\nHow satisfied were you with the event from 1 to 5?: ";
+    cin >> review;
+    if (review > 5) review = 5;
+    avg = avg * (no_reviews / (no_reviews + 1)) + review * (1 / (no_reviews + 1));
+    no_reviews++ ;
 }
 
 void Evento::setName(string nm) {

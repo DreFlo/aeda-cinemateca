@@ -9,10 +9,12 @@ using namespace std;
 
 class Evento: public IntervaloDeTempo {
     string name, room = "NULL";
-    int maxAttendance, lot = 0;
-    float price, total = 0.0;
+    int maxAttendance{}, lot = 0;
+    float price{}, total = 0.0;
     DataEHora start;
     Hora duration;
+
+    double avg = 0, no_reviews = 0;
 public:
     /**
      * Default constructor.
@@ -114,8 +116,18 @@ public:
      * Input operator.
      */
     friend istream& operator>>(istream& input, Evento& event);
+    /**
+     * Struct used for Event priority queue.
+     */
+    friend struct CmpAvgReview;
 };
 
 class EventFull: public exception {};
+
+struct CmpAvgReview {
+    bool operator () (const Evento &E1, const Evento &E2) {
+        return E1.avg < E2.avg;
+    }
+};
 
 #endif //PROJETO_EVENTO_H

@@ -9,6 +9,7 @@
 #include "Aderente.h"
 #include "Sala.h"
 #include <fstream>
+#include <queue>
 
 #define PLANNING2FAR_AHEAD "You are trying to schedule an event way too far ahead from today. \nWe can only schedule your event up to a year from now, \nConsider waiting some time"
 #define NO_SPACE_NOR_TIME "It is going to be impossible to schedule your event since there is no room nor time slot available"
@@ -28,7 +29,7 @@ class Cinemateca {
     std::vector<Evento> EventosAntigos;
     std::vector<Evento> EventosHoje;
     std::vector<Evento> EventosFuturos;
-
+    std::priority_queue<Evento, vector<Evento>, CmpAvgReview> EventsByAvgReview;
 public:
     /**
      * Constructor.
