@@ -158,6 +158,22 @@ namespace utils {
      * Alter a given event
      */
     void updateEvent();
+    /**
+     * Add a Trabalhador
+     */
+    void addTrabalhador();
+    /**
+     * Alter an atribute from a Trabalhador
+     */
+    void changeTrabalhador();
+    /**
+     * Fires a Trabalhador, by making it's work parameter equal to false
+     */
+    void fireTrabalhador();
+    /**
+     * Prints the Trabalhadores
+     */
+    void getTrabalhadores();
 }
 
 #endif //PROJETO_UTILS_H

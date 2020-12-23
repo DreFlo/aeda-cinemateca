@@ -29,6 +29,7 @@ int main() {
         cinemas.push_back(&Porto);
         cinemas.push_back(&Lisboa);
         utils::avisarAderentes();
+        Porto.LerHash("Trabalhadores.txt");
     }
     catch (char const * errormsg) {cout << errormsg;}
     while (true) {
@@ -82,6 +83,14 @@ int main() {
             utils::findSala();
         else if (input == "update sala")
             utils::updateSala();
+        else if (input == "add trabalhador")
+            utils::addTrabalhador();
+        else if (input == "update trabalhador")
+            utils::changeTrabalhador();
+        else if (input == "fire trabalhador")
+            utils::fireTrabalhador();
+        else if (input == "get trabalhadores")
+            utils::getTrabalhadores();
         /*
         else if (input == "read file")
             utils::readfile();*/
@@ -102,6 +111,8 @@ int main() {
         cinemas[1]->EscreverFicheiroSalas("SalasLisboa.txt");
         cinemas[1]->EscreverFicheiroAderentes("AderentesLisboa.txt");
         cinemas[1]->EscreverFicheiroEventos("EventosLisboa.txt");
+
+        cinemas[0]->EscreverHash("Trabalhadores.txt");
     }
     return 0;
 }

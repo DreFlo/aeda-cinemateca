@@ -16,6 +16,7 @@ CMakeFiles/projeto.dir/Cinemateca.cpp.obj: ../Evento.h
 CMakeFiles/projeto.dir/Cinemateca.cpp.obj: ../Hora.h
 CMakeFiles/projeto.dir/Cinemateca.cpp.obj: ../IntervaloDeTempo.h
 CMakeFiles/projeto.dir/Cinemateca.cpp.obj: ../Sala.h
+CMakeFiles/projeto.dir/Cinemateca.cpp.obj: ../Trabalhador.h
 
 CMakeFiles/projeto.dir/Cliente.cpp.obj: ../Cliente.cpp
 CMakeFiles/projeto.dir/Cliente.cpp.obj: ../Cliente.h
@@ -56,6 +57,10 @@ CMakeFiles/projeto.dir/Sala.cpp.obj: ../IntervaloDeTempo.h
 CMakeFiles/projeto.dir/Sala.cpp.obj: ../Sala.cpp
 CMakeFiles/projeto.dir/Sala.cpp.obj: ../Sala.h
 
+CMakeFiles/projeto.dir/Trabalhador.cpp.obj: ../Data.h
+CMakeFiles/projeto.dir/Trabalhador.cpp.obj: ../Trabalhador.cpp
+CMakeFiles/projeto.dir/Trabalhador.cpp.obj: ../Trabalhador.h
+
 CMakeFiles/projeto.dir/Utils.cpp.obj: ../Aderente.h
 CMakeFiles/projeto.dir/Utils.cpp.obj: ../Cinemateca.h
 CMakeFiles/projeto.dir/Utils.cpp.obj: ../Cliente.h
@@ -65,6 +70,7 @@ CMakeFiles/projeto.dir/Utils.cpp.obj: ../Evento.h
 CMakeFiles/projeto.dir/Utils.cpp.obj: ../Hora.h
 CMakeFiles/projeto.dir/Utils.cpp.obj: ../IntervaloDeTempo.h
 CMakeFiles/projeto.dir/Utils.cpp.obj: ../Sala.h
+CMakeFiles/projeto.dir/Utils.cpp.obj: ../Trabalhador.h
 CMakeFiles/projeto.dir/Utils.cpp.obj: ../Utils.cpp
 CMakeFiles/projeto.dir/Utils.cpp.obj: ../Utils.h
 
@@ -77,6 +83,7 @@ CMakeFiles/projeto.dir/main.cpp.obj: ../Evento.h
 CMakeFiles/projeto.dir/main.cpp.obj: ../Hora.h
 CMakeFiles/projeto.dir/main.cpp.obj: ../IntervaloDeTempo.h
 CMakeFiles/projeto.dir/main.cpp.obj: ../Sala.h
+CMakeFiles/projeto.dir/main.cpp.obj: ../Trabalhador.h
 CMakeFiles/projeto.dir/main.cpp.obj: ../Utils.h
 CMakeFiles/projeto.dir/main.cpp.obj: ../main.cpp
 

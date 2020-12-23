@@ -8,28 +8,28 @@
 		<Option virtualFolders="CMake Files\;"/>
 		<Build>
 			<Target title="all">
-				<Option working_dir="C:/Users/andre/OneDrive - Universidade do Porto/FEUP/2A-1S-AEDA/projeto/cmake-build-debug"/>
+				<Option working_dir="C:/Users/dluis/OneDrive - Universidade do Porto/2 ano/AEDA/aeda-cinemateca/aeda-cinemateca/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="C:/PROGRA~1/MINGW-~1/X86_64~1.0-P/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/andre/OneDrive - Universidade do Porto/FEUP/2A-1S-AEDA/projeto/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
-					<CompileFile command="C:/PROGRA~1/MINGW-~1/X86_64~1.0-P/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/andre/OneDrive - Universidade do Porto/FEUP/2A-1S-AEDA/projeto/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="C:/PROGRA~1/MINGW-~1/X86_64~1.0-P/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/andre/OneDrive - Universidade do Porto/FEUP/2A-1S-AEDA/projeto/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="C:/PROGRA~1/MINGW-~1/X86_64~1.0-P/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/andre/OneDrive - Universidade do Porto/FEUP/2A-1S-AEDA/projeto/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="C:/PROGRA~1/MINGW-~1/X86_64~1.0-P/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/dluis/OneDrive - Universidade do Porto/2 ano/AEDA/aeda-cinemateca/aeda-cinemateca/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
+					<CompileFile command="C:/PROGRA~1/MINGW-~1/X86_64~1.0-P/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/dluis/OneDrive - Universidade do Porto/2 ano/AEDA/aeda-cinemateca/aeda-cinemateca/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/PROGRA~1/MINGW-~1/X86_64~1.0-P/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/dluis/OneDrive - Universidade do Porto/2 ano/AEDA/aeda-cinemateca/aeda-cinemateca/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/PROGRA~1/MINGW-~1/X86_64~1.0-P/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/dluis/OneDrive - Universidade do Porto/2 ano/AEDA/aeda-cinemateca/aeda-cinemateca/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="edit_cache">
-				<Option working_dir="C:/Users/andre/OneDrive - Universidade do Porto/FEUP/2A-1S-AEDA/projeto/cmake-build-debug"/>
+				<Option working_dir="C:/Users/dluis/OneDrive - Universidade do Porto/2 ano/AEDA/aeda-cinemateca/aeda-cinemateca/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="C:/PROGRA~1/MINGW-~1/X86_64~1.0-P/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/andre/OneDrive - Universidade do Porto/FEUP/2A-1S-AEDA/projeto/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
-					<CompileFile command="C:/PROGRA~1/MINGW-~1/X86_64~1.0-P/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/andre/OneDrive - Universidade do Porto/FEUP/2A-1S-AEDA/projeto/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="C:/PROGRA~1/MINGW-~1/X86_64~1.0-P/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/andre/OneDrive - Universidade do Porto/FEUP/2A-1S-AEDA/projeto/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="C:/PROGRA~1/MINGW-~1/X86_64~1.0-P/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/andre/OneDrive - Universidade do Porto/FEUP/2A-1S-AEDA/projeto/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="C:/PROGRA~1/MINGW-~1/X86_64~1.0-P/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/dluis/OneDrive - Universidade do Porto/2 ano/AEDA/aeda-cinemateca/aeda-cinemateca/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
+					<CompileFile command="C:/PROGRA~1/MINGW-~1/X86_64~1.0-P/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/dluis/OneDrive - Universidade do Porto/2 ano/AEDA/aeda-cinemateca/aeda-cinemateca/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/PROGRA~1/MINGW-~1/X86_64~1.0-P/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/dluis/OneDrive - Universidade do Porto/2 ano/AEDA/aeda-cinemateca/aeda-cinemateca/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/PROGRA~1/MINGW-~1/X86_64~1.0-P/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/dluis/OneDrive - Universidade do Porto/2 ano/AEDA/aeda-cinemateca/aeda-cinemateca/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="projeto">
-				<Option output="C:/Users/andre/OneDrive - Universidade do Porto/FEUP/2A-1S-AEDA/projeto/projeto.exe" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="C:/Users/andre/OneDrive - Universidade do Porto/FEUP/2A-1S-AEDA/projeto"/>
+				<Option output="C:/Users/dluis/OneDrive - Universidade do Porto/2 ano/AEDA/aeda-cinemateca/aeda-cinemateca/projeto.exe" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="C:/Users/dluis/OneDrive - Universidade do Porto/2 ano/AEDA/aeda-cinemateca/aeda-cinemateca"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
 				<Option compiler="gcc"/>
@@ -42,15 +42,15 @@
 					<Add directory="C:/Program Files/mingw-w64/x86_64-8.1.0-posix-seh-rt_v6-rev0/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/../../../../x86_64-w64-mingw32/include"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="C:/PROGRA~1/MINGW-~1/X86_64~1.0-P/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/andre/OneDrive - Universidade do Porto/FEUP/2A-1S-AEDA/projeto/cmake-build-debug/Makefile&quot;  VERBOSE=1 projeto"/>
-					<CompileFile command="C:/PROGRA~1/MINGW-~1/X86_64~1.0-P/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/andre/OneDrive - Universidade do Porto/FEUP/2A-1S-AEDA/projeto/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="C:/PROGRA~1/MINGW-~1/X86_64~1.0-P/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/andre/OneDrive - Universidade do Porto/FEUP/2A-1S-AEDA/projeto/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="C:/PROGRA~1/MINGW-~1/X86_64~1.0-P/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/andre/OneDrive - Universidade do Porto/FEUP/2A-1S-AEDA/projeto/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="C:/PROGRA~1/MINGW-~1/X86_64~1.0-P/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/dluis/OneDrive - Universidade do Porto/2 ano/AEDA/aeda-cinemateca/aeda-cinemateca/cmake-build-debug/Makefile&quot;  VERBOSE=1 projeto"/>
+					<CompileFile command="C:/PROGRA~1/MINGW-~1/X86_64~1.0-P/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/dluis/OneDrive - Universidade do Porto/2 ano/AEDA/aeda-cinemateca/aeda-cinemateca/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/PROGRA~1/MINGW-~1/X86_64~1.0-P/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/dluis/OneDrive - Universidade do Porto/2 ano/AEDA/aeda-cinemateca/aeda-cinemateca/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/PROGRA~1/MINGW-~1/X86_64~1.0-P/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/dluis/OneDrive - Universidade do Porto/2 ano/AEDA/aeda-cinemateca/aeda-cinemateca/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="projeto/fast">
-				<Option output="C:/Users/andre/OneDrive - Universidade do Porto/FEUP/2A-1S-AEDA/projeto/projeto.exe" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="C:/Users/andre/OneDrive - Universidade do Porto/FEUP/2A-1S-AEDA/projeto"/>
+				<Option output="C:/Users/dluis/OneDrive - Universidade do Porto/2 ano/AEDA/aeda-cinemateca/aeda-cinemateca/projeto.exe" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="C:/Users/dluis/OneDrive - Universidade do Porto/2 ano/AEDA/aeda-cinemateca/aeda-cinemateca"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
 				<Option compiler="gcc"/>
@@ -63,87 +63,93 @@
 					<Add directory="C:/Program Files/mingw-w64/x86_64-8.1.0-posix-seh-rt_v6-rev0/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/../../../../x86_64-w64-mingw32/include"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="C:/PROGRA~1/MINGW-~1/X86_64~1.0-P/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/andre/OneDrive - Universidade do Porto/FEUP/2A-1S-AEDA/projeto/cmake-build-debug/Makefile&quot;  VERBOSE=1 projeto/fast"/>
-					<CompileFile command="C:/PROGRA~1/MINGW-~1/X86_64~1.0-P/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/andre/OneDrive - Universidade do Porto/FEUP/2A-1S-AEDA/projeto/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="C:/PROGRA~1/MINGW-~1/X86_64~1.0-P/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/andre/OneDrive - Universidade do Porto/FEUP/2A-1S-AEDA/projeto/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="C:/PROGRA~1/MINGW-~1/X86_64~1.0-P/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/andre/OneDrive - Universidade do Porto/FEUP/2A-1S-AEDA/projeto/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="C:/PROGRA~1/MINGW-~1/X86_64~1.0-P/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/dluis/OneDrive - Universidade do Porto/2 ano/AEDA/aeda-cinemateca/aeda-cinemateca/cmake-build-debug/Makefile&quot;  VERBOSE=1 projeto/fast"/>
+					<CompileFile command="C:/PROGRA~1/MINGW-~1/X86_64~1.0-P/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/dluis/OneDrive - Universidade do Porto/2 ano/AEDA/aeda-cinemateca/aeda-cinemateca/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/PROGRA~1/MINGW-~1/X86_64~1.0-P/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/dluis/OneDrive - Universidade do Porto/2 ano/AEDA/aeda-cinemateca/aeda-cinemateca/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/PROGRA~1/MINGW-~1/X86_64~1.0-P/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/dluis/OneDrive - Universidade do Porto/2 ano/AEDA/aeda-cinemateca/aeda-cinemateca/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="rebuild_cache">
-				<Option working_dir="C:/Users/andre/OneDrive - Universidade do Porto/FEUP/2A-1S-AEDA/projeto/cmake-build-debug"/>
+				<Option working_dir="C:/Users/dluis/OneDrive - Universidade do Porto/2 ano/AEDA/aeda-cinemateca/aeda-cinemateca/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="C:/PROGRA~1/MINGW-~1/X86_64~1.0-P/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/andre/OneDrive - Universidade do Porto/FEUP/2A-1S-AEDA/projeto/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
-					<CompileFile command="C:/PROGRA~1/MINGW-~1/X86_64~1.0-P/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/andre/OneDrive - Universidade do Porto/FEUP/2A-1S-AEDA/projeto/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="C:/PROGRA~1/MINGW-~1/X86_64~1.0-P/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/andre/OneDrive - Universidade do Porto/FEUP/2A-1S-AEDA/projeto/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="C:/PROGRA~1/MINGW-~1/X86_64~1.0-P/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/andre/OneDrive - Universidade do Porto/FEUP/2A-1S-AEDA/projeto/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="C:/PROGRA~1/MINGW-~1/X86_64~1.0-P/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/dluis/OneDrive - Universidade do Porto/2 ano/AEDA/aeda-cinemateca/aeda-cinemateca/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
+					<CompileFile command="C:/PROGRA~1/MINGW-~1/X86_64~1.0-P/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/dluis/OneDrive - Universidade do Porto/2 ano/AEDA/aeda-cinemateca/aeda-cinemateca/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/PROGRA~1/MINGW-~1/X86_64~1.0-P/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/dluis/OneDrive - Universidade do Porto/2 ano/AEDA/aeda-cinemateca/aeda-cinemateca/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/PROGRA~1/MINGW-~1/X86_64~1.0-P/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/dluis/OneDrive - Universidade do Porto/2 ano/AEDA/aeda-cinemateca/aeda-cinemateca/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 		</Build>
-		<Unit filename="C:/Users/andre/OneDrive - Universidade do Porto/FEUP/2A-1S-AEDA/projeto/Aderente.cpp">
+		<Unit filename="C:/Users/dluis/OneDrive - Universidade do Porto/2 ano/AEDA/aeda-cinemateca/aeda-cinemateca/Aderente.cpp">
 			<Option target="projeto"/>
 		</Unit>
-		<Unit filename="C:/Users/andre/OneDrive - Universidade do Porto/FEUP/2A-1S-AEDA/projeto/Aderente.h">
+		<Unit filename="C:/Users/dluis/OneDrive - Universidade do Porto/2 ano/AEDA/aeda-cinemateca/aeda-cinemateca/Aderente.h">
 			<Option target="projeto"/>
 		</Unit>
-		<Unit filename="C:/Users/andre/OneDrive - Universidade do Porto/FEUP/2A-1S-AEDA/projeto/Cinemateca.cpp">
+		<Unit filename="C:/Users/dluis/OneDrive - Universidade do Porto/2 ano/AEDA/aeda-cinemateca/aeda-cinemateca/Cinemateca.cpp">
 			<Option target="projeto"/>
 		</Unit>
-		<Unit filename="C:/Users/andre/OneDrive - Universidade do Porto/FEUP/2A-1S-AEDA/projeto/Cinemateca.h">
+		<Unit filename="C:/Users/dluis/OneDrive - Universidade do Porto/2 ano/AEDA/aeda-cinemateca/aeda-cinemateca/Cinemateca.h">
 			<Option target="projeto"/>
 		</Unit>
-		<Unit filename="C:/Users/andre/OneDrive - Universidade do Porto/FEUP/2A-1S-AEDA/projeto/Cliente.cpp">
+		<Unit filename="C:/Users/dluis/OneDrive - Universidade do Porto/2 ano/AEDA/aeda-cinemateca/aeda-cinemateca/Cliente.cpp">
 			<Option target="projeto"/>
 		</Unit>
-		<Unit filename="C:/Users/andre/OneDrive - Universidade do Porto/FEUP/2A-1S-AEDA/projeto/Cliente.h">
+		<Unit filename="C:/Users/dluis/OneDrive - Universidade do Porto/2 ano/AEDA/aeda-cinemateca/aeda-cinemateca/Cliente.h">
 			<Option target="projeto"/>
 		</Unit>
-		<Unit filename="C:/Users/andre/OneDrive - Universidade do Porto/FEUP/2A-1S-AEDA/projeto/Data.cpp">
+		<Unit filename="C:/Users/dluis/OneDrive - Universidade do Porto/2 ano/AEDA/aeda-cinemateca/aeda-cinemateca/Data.cpp">
 			<Option target="projeto"/>
 		</Unit>
-		<Unit filename="C:/Users/andre/OneDrive - Universidade do Porto/FEUP/2A-1S-AEDA/projeto/Data.h">
+		<Unit filename="C:/Users/dluis/OneDrive - Universidade do Porto/2 ano/AEDA/aeda-cinemateca/aeda-cinemateca/Data.h">
 			<Option target="projeto"/>
 		</Unit>
-		<Unit filename="C:/Users/andre/OneDrive - Universidade do Porto/FEUP/2A-1S-AEDA/projeto/DataEHora.cpp">
+		<Unit filename="C:/Users/dluis/OneDrive - Universidade do Porto/2 ano/AEDA/aeda-cinemateca/aeda-cinemateca/DataEHora.cpp">
 			<Option target="projeto"/>
 		</Unit>
-		<Unit filename="C:/Users/andre/OneDrive - Universidade do Porto/FEUP/2A-1S-AEDA/projeto/DataEHora.h">
+		<Unit filename="C:/Users/dluis/OneDrive - Universidade do Porto/2 ano/AEDA/aeda-cinemateca/aeda-cinemateca/DataEHora.h">
 			<Option target="projeto"/>
 		</Unit>
-		<Unit filename="C:/Users/andre/OneDrive - Universidade do Porto/FEUP/2A-1S-AEDA/projeto/Evento.cpp">
+		<Unit filename="C:/Users/dluis/OneDrive - Universidade do Porto/2 ano/AEDA/aeda-cinemateca/aeda-cinemateca/Evento.cpp">
 			<Option target="projeto"/>
 		</Unit>
-		<Unit filename="C:/Users/andre/OneDrive - Universidade do Porto/FEUP/2A-1S-AEDA/projeto/Evento.h">
+		<Unit filename="C:/Users/dluis/OneDrive - Universidade do Porto/2 ano/AEDA/aeda-cinemateca/aeda-cinemateca/Evento.h">
 			<Option target="projeto"/>
 		</Unit>
-		<Unit filename="C:/Users/andre/OneDrive - Universidade do Porto/FEUP/2A-1S-AEDA/projeto/Hora.cpp">
+		<Unit filename="C:/Users/dluis/OneDrive - Universidade do Porto/2 ano/AEDA/aeda-cinemateca/aeda-cinemateca/Hora.cpp">
 			<Option target="projeto"/>
 		</Unit>
-		<Unit filename="C:/Users/andre/OneDrive - Universidade do Porto/FEUP/2A-1S-AEDA/projeto/Hora.h">
+		<Unit filename="C:/Users/dluis/OneDrive - Universidade do Porto/2 ano/AEDA/aeda-cinemateca/aeda-cinemateca/Hora.h">
 			<Option target="projeto"/>
 		</Unit>
-		<Unit filename="C:/Users/andre/OneDrive - Universidade do Porto/FEUP/2A-1S-AEDA/projeto/IntervaloDeTempo.cpp">
+		<Unit filename="C:/Users/dluis/OneDrive - Universidade do Porto/2 ano/AEDA/aeda-cinemateca/aeda-cinemateca/IntervaloDeTempo.cpp">
 			<Option target="projeto"/>
 		</Unit>
-		<Unit filename="C:/Users/andre/OneDrive - Universidade do Porto/FEUP/2A-1S-AEDA/projeto/IntervaloDeTempo.h">
+		<Unit filename="C:/Users/dluis/OneDrive - Universidade do Porto/2 ano/AEDA/aeda-cinemateca/aeda-cinemateca/IntervaloDeTempo.h">
 			<Option target="projeto"/>
 		</Unit>
-		<Unit filename="C:/Users/andre/OneDrive - Universidade do Porto/FEUP/2A-1S-AEDA/projeto/Sala.cpp">
+		<Unit filename="C:/Users/dluis/OneDrive - Universidade do Porto/2 ano/AEDA/aeda-cinemateca/aeda-cinemateca/Sala.cpp">
 			<Option target="projeto"/>
 		</Unit>
-		<Unit filename="C:/Users/andre/OneDrive - Universidade do Porto/FEUP/2A-1S-AEDA/projeto/Sala.h">
+		<Unit filename="C:/Users/dluis/OneDrive - Universidade do Porto/2 ano/AEDA/aeda-cinemateca/aeda-cinemateca/Sala.h">
 			<Option target="projeto"/>
 		</Unit>
-		<Unit filename="C:/Users/andre/OneDrive - Universidade do Porto/FEUP/2A-1S-AEDA/projeto/Utils.cpp">
+		<Unit filename="C:/Users/dluis/OneDrive - Universidade do Porto/2 ano/AEDA/aeda-cinemateca/aeda-cinemateca/Trabalhador.cpp">
 			<Option target="projeto"/>
 		</Unit>
-		<Unit filename="C:/Users/andre/OneDrive - Universidade do Porto/FEUP/2A-1S-AEDA/projeto/Utils.h">
+		<Unit filename="C:/Users/dluis/OneDrive - Universidade do Porto/2 ano/AEDA/aeda-cinemateca/aeda-cinemateca/Trabalhador.h">
 			<Option target="projeto"/>
 		</Unit>
-		<Unit filename="C:/Users/andre/OneDrive - Universidade do Porto/FEUP/2A-1S-AEDA/projeto/main.cpp">
+		<Unit filename="C:/Users/dluis/OneDrive - Universidade do Porto/2 ano/AEDA/aeda-cinemateca/aeda-cinemateca/Utils.cpp">
 			<Option target="projeto"/>
 		</Unit>
-		<Unit filename="C:/Users/andre/OneDrive - Universidade do Porto/FEUP/2A-1S-AEDA/projeto/CMakeLists.txt">
+		<Unit filename="C:/Users/dluis/OneDrive - Universidade do Porto/2 ano/AEDA/aeda-cinemateca/aeda-cinemateca/Utils.h">
+			<Option target="projeto"/>
+		</Unit>
+		<Unit filename="C:/Users/dluis/OneDrive - Universidade do Porto/2 ano/AEDA/aeda-cinemateca/aeda-cinemateca/main.cpp">
+			<Option target="projeto"/>
+		</Unit>
+		<Unit filename="C:/Users/dluis/OneDrive - Universidade do Porto/2 ano/AEDA/aeda-cinemateca/aeda-cinemateca/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\"/>
 		</Unit>
 	</Project>

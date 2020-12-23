@@ -8,8 +8,10 @@
 #include "Evento.h"
 #include "Aderente.h"
 #include "Sala.h"
+#include "Trabalhador.h"
 #include <fstream>
 #include <queue>
+#include <unordered_set>
 
 #define PLANNING2FAR_AHEAD "You are trying to schedule an event way too far ahead from today. \nWe can only schedule your event up to a year from now, \nConsider waiting some time"
 #define NO_SPACE_NOR_TIME "It is going to be impossible to schedule your event since there is no room nor time slot available"
@@ -21,6 +23,21 @@
 
 using namespace std;
 
+struct TrabHashS{
+    int operator() (const Trabalhador &t) const{
+        int v;
+        for (auto num : to_string(t.getNIF())){
+            v = 37 * v + num;
+        }
+        return v;
+    }
+    bool operator() (const Trabalhador &t1, const Trabalhador &t2) const{
+        return t1.getNIF() == t2.getNIF();
+    }
+};
+
+typedef unordered_set<Trabalhador, TrabHashS, TrabHashS> TrabH;
+
 class Cinemateca {
     static DataEHora hoje;
     std::string morada;
@@ -30,6 +47,7 @@ class Cinemateca {
     std::vector<Evento> EventosHoje;
     std::vector<Evento> EventosFuturos;
     std::priority_queue<Evento, vector<Evento>, CmpAvgReview> EventsByAvgReview;
+    static TrabH Trabs;
 public:
     /**
      * Constructor.
@@ -209,6 +227,36 @@ public:
      * @throw COULDNT_OPEN_FILE + filepath if the file couldn't be open
      */
     void EscreverFicheiroSalas(const std::string& filepath);
+    /**
+     * Add element to hash table
+     * @param t - Trabalhador to add
+     * @return true if successful, else false
+     */
+    bool AddToHash(Trabalhador &t);
+    /**
+     * Remove element from hash table
+     * @param t - element to remove
+     */
+    void RemoveFromHash(Trabalhador &t);
+    /**
+     * Gets the Hash table
+     * @return Hash table
+     */
+    TrabH& getHash();
+    /**
+     * Writes to a .txt file the Trabalhadores in the hash table Trabs
+     * @param filepath - the file path for the file to write the Trabalhadores
+     * @throw COULDNT_OPEN_FILE + filepath if the file couldn't be open
+     */
+    void EscreverHash(const string& filepath);
+    /**
+    * Reads a .txt file of Trabalhadores
+    * @param filepath - the file path for the file from which to the Trabalhadores
+    * @throw COULDNT_OPEN_FILE + filepath if the file couldn't be open
+    */
+    void LerHash(string filepath);
 };
+
+
 
 #endif //PROJETO_CINEMATECA_H

@@ -24,6 +24,10 @@ void utils::printHelp() {
     cout << "get salas - print rooms on the screen" << endl;
     cout << "find sala - finds a given room" << endl;
     cout << "update sala - update a parameter in a specific Sala" << endl;
+    cout << "add trabalhador - add a new Trabalhador." << endl;
+    cout << "update trabalhador - update a parameter in a specific Trabalahdor" << endl;
+    cout << "fire trabalhador - fire a Trabalhador" << endl;
+    cout << "get trabalhadores - prints the trabalhadores" << endl;
     /*cout << "read file - reads a spefic file and adds what it needs to Cinemateca" << endl;*/
     cout << endl;
 }
@@ -1269,3 +1273,258 @@ void utils::updateEvent() try {
     res[index] = newEvent;
     findCinemateca(name)->SetEventos(res);
 } catch (...) {cout << "An unexpected error occurred."; return;}
+
+void utils::addTrabalhador() {
+    string city, name, date;
+    unsigned int NIF;
+
+    TrabH temp = findCinemateca("Porto")->getHash();
+    Trabalhador t("", NIF, "", Data(0, 0, 0), true);
+
+    for(auto trab : temp){
+        if (trab == t){
+            t = trab;
+            break;
+        }
+    }
+
+    if (t.getName() != ""){
+        while(true){
+            string answer;
+            cout << "Trabalhador with that NIF already exists." << endl <<
+            "Do you want to rehire or to type the NIF again? (Rehire/NIF)";
+            cin >> answer;
+
+            if (answer == "Rehire" || answer == "rehire"){
+                findCinemateca("Porto")->RemoveFromHash(t);
+                t.updateWorkStatus(true);
+                findCinemateca(("Porto"))->AddToHash(t);
+                return;
+            }
+            else if (answer == "NIF" || answer == "nif"){
+                break;
+            }
+            else{
+                cout << "Invalid Input." << endl;
+                continue;
+            }
+        }
+    }
+
+    int day, month, year;
+    name = inputName();
+    city = inputCity(false);
+    NIF = inputNIF();
+    while (true){
+        cout << "Input birthday (dd/mm/yyy): ";
+        cin >> date;
+        regex matchStr("[0-9][0-9].[0-9][0-9].[0-9][0-9][0-9][0-9]");
+        if(!(regex_match(date, matchStr))){
+            cout << "Invalid date.";
+            continue;
+        }
+        day = stoi(date.substr(0, 2));
+        month = stoi(date.substr(3, 2));
+        year = stoi(date.substr(6, 4));
+        if ((day == 0) || (month == 0) || (year == 0)){
+            cout << "Invalid Date.";
+            continue;
+        }
+        int longMonths[7] = {1, 3, 5, 7, 8, 10, 12};
+        if (month < 1 || month > 12 || year < 0){
+            cout << "Invalid Date.";
+            continue;
+        }
+        else if (year % 4 == 0 && month == 2)
+            if(!(day > 0 && day < 30)){
+                cout << "Invalid Date.";
+                continue;
+            }
+            else if (month == 2)
+                if(!(day > 0 && day < 29)){
+                    cout << "Invalid Date.";
+                    continue;
+                }
+                else if (find(longMonths, longMonths + 7, month))
+                    if(!(day > 0 && day < 32)){
+                        cout << "Invalid Date.";
+                        continue;
+                    }
+                    else if (!find(longMonths, longMonths + 7, month))
+                        if(!(day > 0 && day < 31)){
+                            cout << "Invalid Date.";
+                            continue;
+                        }
+        break;
+    }
+    Trabalhador t1(name, NIF, city, Data(day, month, year), true);
+    if (!(findCinemateca("Porto")->AddToHash(t1))){
+        cout << "Trabalhador with that NIF already existed." << endl;
+    }
+}
+
+void utils::changeTrabalhador() {
+    unsigned int NIF;
+
+    NIF = inputNIF();
+
+    TrabH temp = findCinemateca("Porto")->getHash();
+    Trabalhador t("", NIF, "", Data(0, 0, 0), true);
+
+    for(auto trab : temp){
+        if (trab == t){
+            t = trab;
+            break;
+        }
+    }
+
+    if(t.getName() == ""){
+        cout << "There is no Trabalahdor with that NIF." << endl;
+    }
+    else{
+        while(true) {
+            string atribute;
+            cout << "Which atribute do you want to change? ";
+            cin >> atribute;
+            if (atribute == "Name" || atribute == "name") {
+                findCinemateca("Porto")->RemoveFromHash(t);
+                string new_name = inputName();
+                t.updateName(new_name);
+                findCinemateca(("Porto"))->AddToHash(t);
+                return;
+            } else if (atribute == "City" || atribute == "city") {
+                findCinemateca("Porto")->RemoveFromHash(t);
+                string city = inputCity(false);
+                t.updateCity(city);
+                findCinemateca(("Porto"))->AddToHash(t);
+                return;
+            } else {
+                cout << "Invalid input." << endl;
+            }
+            while (true) {
+                string answer;
+                cout << "If you want to try and change another, input 'again', else input 'CANCEL': ";
+                cin >> answer;
+                if (answer == "again") {
+                    break;
+                } else if (answer == "CANCEL") {
+                    return;
+                } else {
+                    cout << "Invalid input.";
+                }
+            }
+        }
+    }
+}
+
+void utils::fireTrabalhador() {
+    unsigned int NIF;
+    while(true) {
+        TrabH temp = findCinemateca("Porto")->getHash();
+        Trabalhador t("", NIF, "", Data(0, 0, 0), true);
+
+        for(auto trab : temp){
+            if (trab == t){
+                t = trab;
+                break;
+            }
+        }
+
+        if (t.getName() != "") {
+            findCinemateca("Porto")->RemoveFromHash(t);
+            t.updateWorkStatus(true);
+            findCinemateca(("Porto"))->AddToHash(t);
+            return;
+        } else {
+            cout << "Worker with that NIF does not exist." << endl;
+            while (true) {
+                string answer;
+                cout << "If you want to try and change another, input 'again', else input 'CANCEL': ";
+                cin >> answer;
+                if (answer == "again") {
+                    break;
+                } else if (answer == "CANCEL") {
+                    return;
+                } else {
+                    cout << "Invalid input.";
+                }
+            }
+        }
+    }
+}
+
+void utils::getTrabalhadores() {
+    bool all;
+
+    while (true) {
+        string answer;
+        cout << "Do you want the Trabalhadores currently working or all of them (All/Current)? ";
+        cin >> answer;
+        if (answer == "All" || answer == "all"){
+            all = true;
+            break;
+        }
+        else if (answer == "Current" || answer == "current"){
+            all = false;
+            break;
+        }
+        else{
+            cout << "Invalid Input." << endl;
+        }
+        while(true){
+            string answer;
+            cout << "If you want to try and change another, input 'again', else input 'CANCEL': ";
+            cin >> answer;
+            if (answer == "again"){
+                break;
+            }
+            else if (answer == "CANCEL"){
+                return;
+            }
+            else{
+                cout << "Invalid input.";
+            }
+        }
+    }
+
+    string city;
+    while(true){
+        cout << "Do you want to get the Trabalhadores from 'Lisboa', 'Porto' or 'both'? ";
+        cin >> city;
+        if (city != "Lisboa" && city != "Porto" && city != "both"){
+            while(true) {
+                string answer;
+                cout << "If you want to try and change another, input 'again', else input 'CANCEL': ";
+                cin >> answer;
+                if (answer == "again") {
+                    break;
+                } else if (answer == "CANCEL") {
+                    return;
+                } else {
+                    cout << "Invalid input.";
+                }
+            }
+        }
+        else{
+            break;
+        }
+    }
+
+    TrabH temp = findCinemateca("Porto")->getHash();
+    
+    for(auto trab : temp){
+        if (city != "both"){
+            if (trab.getCity() == city){
+                cout << "Name: " << trab.getName() << ", " << "NIF: " << trab.getNIF() << endl << "Birthday: " <<
+                trab.getBirthday().getDay() << "/" << trab.getBirthday().getMonth() << "/" <<
+                trab.getBirthday().getYear() << ", Working: " << trab.getWorkingStatus() << endl << endl;
+            }
+        }
+        else{
+            cout << "Name: " << trab.getName() << ", " << "NIF: " << trab.getNIF() << endl << "Birthday: " <<
+                 trab.getBirthday().getDay() << "/" << trab.getBirthday().getMonth() << "/" <<
+                 trab.getBirthday().getYear() << ", Working: " << trab.getWorkingStatus() << endl << "City: " <<
+                 trab.getCity() << endl << endl;
+        }
+    }
+}

@@ -7,6 +7,7 @@
 #include <utility>
 
 DataEHora Cinemateca::hoje = DataEHora();
+TrabH Cinemateca::Trabs;
 
 /*
  * Construtores
@@ -420,6 +421,55 @@ void Cinemateca::EscreverFicheiroSalas(const std::string &filepath) {
     if(myfile.is_open()){
         for(const auto& sal: Salas){
             myfile << sal;
+        }
+    }
+    else{
+        throw filepath;
+    }
+
+    myfile.close();
+}
+
+bool Cinemateca::AddToHash(Trabalhador &t) {
+    if (this->Trabs.insert(t).second){
+        return true;
+    }
+    else{
+        return false;
+    }
+}
+
+void Cinemateca::RemoveFromHash(Trabalhador &t) {
+    this->Trabs.erase(t);
+}
+
+TrabH& Cinemateca::getHash() {
+    return this->Trabs;
+}
+
+void Cinemateca::EscreverHash(const string& filepath) {
+    ofstream myfile (filepath, ios::out | ios::trunc);
+
+    if(myfile.is_open()){
+        for(const auto& trab: this->Trabs){
+            myfile << trab;
+        }
+    }
+    else{
+        throw filepath;
+    }
+
+    myfile.close();
+}
+
+void Cinemateca::LerHash(string filepath) {
+    Trabalhador t("", 0, "", Data(0, 0, 0), true);
+
+    ifstream myfile(filepath);
+
+    if(myfile.is_open()){
+        while(myfile >> t){
+            AddToHash(t);
         }
     }
     else{
