@@ -174,6 +174,14 @@ namespace utils {
      * Prints the Trabalhadores
      */
     void getTrabalhadores();
+    /**
+     * Prints top event
+     */
+    void getTopEvent();
+    /**
+     * Prints top event in a price renge
+     */
+    void getTopEventBetween();
 }
 
 #endif //PROJETO_UTILS_H

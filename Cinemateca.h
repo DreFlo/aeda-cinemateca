@@ -106,6 +106,27 @@ public:
      */
     std::vector<Evento> GetEventosFuturos();
     /**
+     * @brief Shows the event heap on screen
+     */
+    void printEventHeap();
+    /**
+     * @brief Get best reviewed event
+     * @return Returns best reviewed event
+     */
+    Evento getTopEvent();
+    /**
+     * @brief Get best reviewed event priced at certain range
+     * @param min minimum price
+     * @param max maximum price
+     * @return Return best event
+     * @throws NoEventPricedBetween if there is no event in range
+     */
+    Evento getTopEventByPrice(float min, float max) noexcept(false);
+    /**
+     * @brief Fills the event heap
+     */
+    void createEventHeap();
+    /**
      * Changes the current Date and Time and moves events to the correct vector
      * @param h - Date and Time to chance to
      */
@@ -257,6 +278,11 @@ public:
     void LerHash(string filepath);
 };
 
-
+class NoEventPricedBetween {
+public:
+    const float min, max;
+    NoEventPricedBetween(float m, float M):min(m), max(M) {}
+    pair<int, int> getPriceRange() { return make_pair(min, max); }
+};
 
 #endif //PROJETO_CINEMATECA_H

@@ -59,8 +59,6 @@ std::vector<Evento> Cinemateca::GetEventosFuturos(){
     return EventosFuturos;
 }
 
-
-
 void Cinemateca::MudarAgora(const DataEHora &h){
     //caso seja o mesmo dia é so mudar a hora
     if(hoje.getDate() == h.getDate()){
@@ -477,4 +475,34 @@ void Cinemateca::LerHash(string filepath) {
     }
 
     myfile.close();
+}
+
+void Cinemateca::createEventHeap() {
+    while (!EventsByAvgReview.empty()) EventsByAvgReview.pop();
+
+    for(auto E : EventosAntigos) {
+        if (E.getStart().getDate() > Data(hoje.getDay(), hoje.getMonth(), hoje.getYear() - 1))
+            EventsByAvgReview.push(E);
+    }
+}
+
+void Cinemateca::printEventHeap() {
+    priority_queue<Evento, vector<Evento>, CmpAvgReview> buffer = EventsByAvgReview;
+    while(!buffer.empty()) {
+        cout << buffer.top().str() << endl;
+        buffer.pop();
+    }
+}
+
+Evento Cinemateca::getTopEvent() {
+    return EventsByAvgReview.top();
+}
+
+Evento Cinemateca::getTopEventByPrice(float min, float max) {
+    priority_queue<Evento, vector<Evento>, CmpAvgReview> buffer = EventsByAvgReview;
+    while(!buffer.empty()) {
+        if(buffer.top().getPrice() >= min && buffer.top().getPrice() <= max) return buffer.top();
+        buffer.pop();
+    }
+    throw NoEventPricedBetween(min, max);
 }

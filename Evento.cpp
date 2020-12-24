@@ -57,10 +57,7 @@ void Evento::signUp(Aderente &A, bool free) {
     else A.addSavedMoney(price);
 
     //HMMMMMMMMMMMMMM
-
-    cout << "\nHow satisfied were you with the event from 1 to 5?: ";
-    cin >> review;
-    if (review > 5) review = 5;
+    review = rand() % 5 + 1;
     avg = avg * (no_reviews / (no_reviews + 1)) + review * (1 / (no_reviews + 1));
     no_reviews++ ;
 }

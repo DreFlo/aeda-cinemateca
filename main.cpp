@@ -7,6 +7,7 @@ DataEHora today;
 vector<Cinemateca *> cinemas;
 
 int main() {
+    srand(time(NULL));
     // Any input that would turn cin.fail() true throws an exception of type ios_base::failure.
     cin.exceptions(ios_base::failbit | ios_base::badbit);
     /*
@@ -91,6 +92,10 @@ int main() {
             utils::fireTrabalhador();
         else if (input == "get trabalhadores")
             utils::getTrabalhadores();
+        else if (input == "get top event")
+            utils::getTopEvent();
+        else if (input == "get top event in price range")
+            utils::getTopEventBetween();
         /*
         else if (input == "read file")
             utils::readfile();*/

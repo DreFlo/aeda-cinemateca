@@ -140,10 +140,9 @@ int utils::constructEvent(Evento &event) try {
 }
 
 Cinemateca * utils::findCinemateca(const string &name) {
-    for (auto cine : cinemas)
-        if (cine->GetMorada() == name)
-            return cine;
-    return nullptr;
+    if (name == "Porto") return cinemas[0];
+    else if (name == "Lisboa") return cinemas[1];
+    else return nullptr;
 }
 
 void utils::getEventsOn() try {
@@ -1527,4 +1526,23 @@ void utils::getTrabalhadores() {
                  trab.getCity() << endl << endl;
         }
     }
+}
+
+void utils::getTopEvent() {
+    string name;
+    cin >> name;
+    if(name != "Porto" && name != "Lisboa") return;
+    findCinemateca(name)->createEventHeap();
+    cout << endl << findCinemateca(name)->getTopEvent().str() << endl;
+}
+
+void utils::getTopEventBetween() try {
+    string name;
+    float min, max;
+    cin >> name >> min >> max;
+    if(name != "Porto" && name != "Lisboa") return;
+    cinemas[1]->createEventHeap();
+    cout << endl << findCinemateca(name)->getTopEventByPrice(min, max) << endl;
+} catch(NoEventPricedBetween &N) {
+    cout << "There are no events priced between " << N.getPriceRange().first << " and " << N.getPriceRange().second << endl;
 }
