@@ -62,7 +62,7 @@ ostream &operator<<(ostream &output, const Trabalhador &t) {
     else{
         work = "false";
     }
-    output << t.name << " " << t.city << " " << t.NIF << " " << t.birthday << " " << work;
+    output << t.name << " " << t.city << " " << t.NIF << " " << t.birthday << " " << work << endl;
     return output;
 }
 

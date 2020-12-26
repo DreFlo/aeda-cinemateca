@@ -429,7 +429,7 @@ void Cinemateca::EscreverFicheiroSalas(const std::string &filepath) {
 }
 
 bool Cinemateca::AddToHash(Trabalhador &t) {
-    if (this->Trabs.insert(t).second){
+    if (Trabs.insert(t).second){
         return true;
     }
     else{
@@ -438,18 +438,18 @@ bool Cinemateca::AddToHash(Trabalhador &t) {
 }
 
 void Cinemateca::RemoveFromHash(Trabalhador &t) {
-    this->Trabs.erase(t);
+    Trabs.erase(t);
 }
 
 TrabH& Cinemateca::getHash() {
-    return this->Trabs;
+    return Trabs;
 }
 
 void Cinemateca::EscreverHash(const string& filepath) {
     ofstream myfile (filepath, ios::out | ios::trunc);
 
     if(myfile.is_open()){
-        for(const auto& trab: this->Trabs){
+        for(const auto& trab: Trabs){
             myfile << trab;
         }
     }

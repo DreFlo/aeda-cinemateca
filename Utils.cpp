@@ -1278,6 +1278,7 @@ void utils::addTrabalhador() {
     unsigned int NIF;
 
     TrabH temp = findCinemateca("Porto")->getHash();
+
     Trabalhador t("", NIF, "", Data(0, 0, 0), true);
 
     for(auto trab : temp){
@@ -1513,17 +1514,47 @@ void utils::getTrabalhadores() {
     
     for(auto trab : temp){
         if (city != "both"){
-            if (trab.getCity() == city){
-                cout << "Name: " << trab.getName() << ", " << "NIF: " << trab.getNIF() << endl << "Birthday: " <<
-                trab.getBirthday().getDay() << "/" << trab.getBirthday().getMonth() << "/" <<
-                trab.getBirthday().getYear() << ", Working: " << trab.getWorkingStatus() << endl << endl;
+            if(trab.getCity() == city) {
+                if (all) {
+                    cout << "Name: " << trab.getName() << ", " << "NIF: " << trab.getNIF() << endl << "Birthday: " <<
+                         trab.getBirthday().getDay() << "/" << trab.getBirthday().getMonth() << "/" <<
+                         trab.getBirthday().getYear();
+                    if (trab.getWorkingStatus()) {
+                        cout << ", Working: true" << trab.getWorkingStatus() << endl << endl;
+                    } else {
+                        cout << ", Working: false" << trab.getWorkingStatus() << endl << endl;
+                    }
+                }
+            }
+            else{
+                if (trab.getWorkingStatus()){
+                    cout << "Name: " << trab.getName() << ", " << "NIF: " << trab.getNIF() << endl << "Birthday: " <<
+                     trab.getBirthday().getDay() << "/" << trab.getBirthday().getMonth() << "/" <<
+                     trab.getBirthday().getYear() << ", Working: true" << endl << endl;
+                }
             }
         }
         else{
-            cout << "Name: " << trab.getName() << ", " << "NIF: " << trab.getNIF() << endl << "Birthday: " <<
-                 trab.getBirthday().getDay() << "/" << trab.getBirthday().getMonth() << "/" <<
-                 trab.getBirthday().getYear() << ", Working: " << trab.getWorkingStatus() << endl << "City: " <<
-                 trab.getCity() << endl << endl;
+            if (all) {
+                cout << "Name: " << trab.getName() << ", " << "NIF: " << trab.getNIF() << endl << "Birthday: " <<
+                     trab.getBirthday().getDay() << "/" << trab.getBirthday().getMonth() << "/" <<
+                     trab.getBirthday().getYear() << ", Working: ";
+                if(trab.getWorkingStatus()){
+                    cout << "true";
+                }
+                else{
+                    cout << "false";
+                }
+                cout << endl << "City: " << trab.getCity() << endl << endl;
+            }
+            else{
+                if(trab.getWorkingStatus()){
+                    cout << "Name: " << trab.getName() << ", " << "NIF: " << trab.getNIF() << endl << "Birthday: " <<
+                         trab.getBirthday().getDay() << "/" << trab.getBirthday().getMonth() << "/" <<
+                         trab.getBirthday().getYear() << ", Working: true" << endl << "City: " <<
+                         trab.getCity() << endl << endl;
+                }
+            }
         }
     }
 }

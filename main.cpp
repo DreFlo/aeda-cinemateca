@@ -30,6 +30,7 @@ int main() {
         cinemas.push_back(&Porto);
         cinemas.push_back(&Lisboa);
         utils::avisarAderentes();
+
         Porto.LerHash("Trabalhadores.txt");
     }
     catch (char const * errormsg) {cout << errormsg;}
@@ -109,6 +110,8 @@ int main() {
     cout << "Would you like to store changes? (Yes/No) ";
     cin >> input;
     if (input == "Yes") {
+        cinemas[0]->EscreverHash("Trabalhadores.txt");
+
         cinemas[0]->EscreverFicheiroSalas("SalasPorto.txt");
         cinemas[0]->EscreverFicheiroAderentes("AderentesPorto.txt");
         cinemas[0]->EscreverFicheiroEventos("EventosPorto.txt");
@@ -117,7 +120,7 @@ int main() {
         cinemas[1]->EscreverFicheiroAderentes("AderentesLisboa.txt");
         cinemas[1]->EscreverFicheiroEventos("EventosLisboa.txt");
 
-        cinemas[0]->EscreverHash("Trabalhadores.txt");
+
     }
     return 0;
 }
