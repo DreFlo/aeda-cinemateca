@@ -1572,8 +1572,8 @@ void utils::getTopEventBetween() try {
     float min, max;
     cin >> name >> min >> max;
     if(name != "Porto" && name != "Lisboa") return;
-    cinemas[1]->createEventHeap();
-    cout << endl << findCinemateca(name)->getTopEventByPrice(min, max) << endl;
+    findCinemateca(name)->createEventHeap();
+    cout << endl << findCinemateca(name)->getTopEventByPrice(min, max).str() << endl;
 } catch(NoEventPricedBetween &N) {
     cout << "There are no events priced between " << N.getPriceRange().first << " and " << N.getPriceRange().second << endl;
 }

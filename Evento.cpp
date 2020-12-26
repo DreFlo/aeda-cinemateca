@@ -92,7 +92,7 @@ string Evento::str() const {
     stringstream res;
     res << "Name: " << name << " Room: " << room << " Admission price: " << price << " Event total: " << total
         << " Maximum Attendance: " << maxAttendance << " Attendance: " << lot
-        << " " << start.str() << " " << duration.str();
+        << " " << start.str() << " " << duration.str() << " Avg: " << avg;
     return res.str();
 }
 
@@ -103,14 +103,15 @@ bool Evento::operator<(Evento &E2) const {
 ostream& operator<<(ostream& output, const Evento& event) {
     output << event.name << '\t' << event.room << '\t' << event.price << '\t' << event.total
            << '\t' << event.maxAttendance << '\t' << event.lot
-           << '\t' << event.start << '\t' << event.duration << '\t' << event.getTimeInterval() << endl;
+           << '\t' << event.start << '\t' << event.duration << '\t' << event.getTimeInterval()
+           << '\t' << event.no_reviews << '\t' << event.avg <<  endl;
     return output;
 }
 
 istream& operator>>(istream& input, Evento& event) {
     getline(input, event.name, '\t');
     getline(input, event.room, '\t') >> event.price >> event.total >> event.maxAttendance >> event.lot
-          >> event.start >> event.duration >> event.getTimeIntervalRef();
+          >> event.start >> event.duration >> event.getTimeIntervalRef() >> event.no_reviews >> event.avg;
     if (event.name[0] == '\n') event.name = event.name.substr(1, event.name.size());
     return input;
 }
