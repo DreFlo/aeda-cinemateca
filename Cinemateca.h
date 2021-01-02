@@ -289,7 +289,7 @@ public:
      * Adds an Event (Evento) to the BST
      * @param event - the event to add
      */
-    void BstAddEvent(Evento* event);
+    void BstAddEvent(Evento event);
     /**
      * Generates a BST from the available events, only with lot > 0
      */

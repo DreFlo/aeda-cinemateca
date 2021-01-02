@@ -513,22 +513,22 @@ BST<EventoAux> Cinemateca::getBst() {
     return BstEventosAderidos;
 }
 
-void Cinemateca::BstAddEvent(Evento* event) {
+void Cinemateca::BstAddEvent(Evento event) {
     EventoAux aux(event);
     BstEventosAderidos.insert(aux);
 }
 
 void Cinemateca::BstGenerateBstFromEvents() {
     for(const auto& ev : EventosAntigos) if(ev.getLot() > 0){
-        EventoAux temp(&ev);
+        EventoAux temp(ev);
         BstEventosAderidos.insert(temp);
     }
     for(const auto& ev : EventosHoje) if(ev.getLot() > 0){
-        EventoAux temp(&ev);
+        EventoAux temp(ev);
         BstEventosAderidos.insert(temp);
     }
     for(const auto& ev : EventosFuturos) if(ev.getLot() > 0){
-        EventoAux temp(&ev);
+        EventoAux temp(ev);
         BstEventosAderidos.insert(temp);
     }
 }

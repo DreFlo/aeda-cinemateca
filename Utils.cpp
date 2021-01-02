@@ -1594,8 +1594,15 @@ void utils::ShowBst() {
 
     }while(city != "Porto" && city != "Lisboa");
 
-    findCinemateca(city)->BstGenerateBstFromEvents();
-    auto BstEventosAder = findCinemateca(city)->getBst();
+    auto BstEventosAder = cinemas[0]->getBst();
+    if(city == "Porto") {
+        cinemas[0]->BstGenerateBstFromEvents();
+        BstEventosAder = cinemas[0]->getBst();
+    }
+    if(city == "Lisboa"){
+        cinemas[1]->BstGenerateBstFromEvents();
+        BstEventosAder = cinemas[1]->getBst();
+    }
 
     string showorder;
     do{
@@ -1613,21 +1620,21 @@ void utils::ShowBst() {
     if(showorder == "InOrder"){
         BSTItrIn<EventoAux> BstItr_InOrder(BstEventosAder);
         while( !BstItr_InOrder.isAtEnd()){
-            cout << (&BstItr_InOrder)->retrieve().Event->str() << endl ;
+            cout << (&BstItr_InOrder)->retrieve().Event.str() << endl ;
             BstItr_InOrder.advance();
         }
     }
     if(showorder == "PostOrder"){
         BSTItrPost<EventoAux> BstItr_PostOrder(BstEventosAder);
         while( !BstItr_PostOrder.isAtEnd()){
-            cout << (&BstItr_PostOrder)->retrieve().Event->str() << endl ;
+            cout << (&BstItr_PostOrder)->retrieve().Event.str() << endl ;
             BstItr_PostOrder.advance();
         }
     }
     if(showorder == "PreOrder"){
         BSTItrPre<EventoAux> BstItr_PreOrder(BstEventosAder);
         while( !BstItr_PreOrder.isAtEnd()){
-            cout << (&BstItr_PreOrder)->retrieve().Event->str() << endl ;
+            cout << (&BstItr_PreOrder)->retrieve().Event.str() << endl ;
             BstItr_PreOrder.advance();
         }
     }

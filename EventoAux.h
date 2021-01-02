@@ -7,11 +7,11 @@
 
 #include "Evento.h"
 
-static const Evento Vazio = Evento();
+const Evento Vazio = Evento();
 
 class EventoAux{
 public:
-    const Evento* Event;
+    Evento Event;
     /**
      * Default constructor
      */
@@ -20,7 +20,7 @@ public:
      * Constructor
      * @param ev - pointer to an event
      */
-    EventoAux(const Evento* ev);
+    EventoAux(Evento ev);
     /**
      * An EventAux is lesser than another if it has less lot, then its alphabetical
      * @return True if it is. False otherwise.
