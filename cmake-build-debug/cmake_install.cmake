@@ -1,4 +1,4 @@
-# Install script for directory: C:/Users/andre/OneDrive - Universidade do Porto/FEUP/2A-1S-AEDA/projeto
+# Install script for directory: C:/Users/Rafae/Desktop/School_I_guess/2_ano/1_semestre/AEDA/aeda-cinemateca
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -40,5 +40,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "C:/Users/andre/OneDrive - Universidade do Porto/FEUP/2A-1S-AEDA/projeto/cmake-build-debug/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "C:/Users/Rafae/Desktop/School_I_guess/2_ano/1_semestre/AEDA/aeda-cinemateca/cmake-build-debug/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")

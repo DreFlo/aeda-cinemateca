@@ -182,6 +182,10 @@ namespace utils {
      * Prints top event in a price renge
      */
     void getTopEventBetween();
+    /**
+     * Let's the user choose which way to traverse the BST and prints it
+     */
+    void ShowBst();
 }
 
 #endif //PROJETO_UTILS_H

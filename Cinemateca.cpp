@@ -12,22 +12,22 @@ TrabH Cinemateca::Trabs;
 /*
  * Construtores
  */
-Cinemateca::Cinemateca(std::string m, const DataEHora& h){
+Cinemateca::Cinemateca(std::string m, const DataEHora& h): BstEventosAderidos(EventoAux()){
     morada = std::move(m);
     hoje = h;
 }
-Cinemateca::Cinemateca(std::string m, const DataEHora& h, std::vector<Sala> ss){
+Cinemateca::Cinemateca(std::string m, const DataEHora& h, std::vector<Sala> ss): BstEventosAderidos(EventoAux()){
     morada = std::move(m);
     hoje = h;
     Salas = std::move(ss);
 }
-Cinemateca::Cinemateca(std::string m, const DataEHora& h, std::vector<Sala> ss, std::vector<Aderente> as){
+Cinemateca::Cinemateca(std::string m, const DataEHora& h, std::vector<Sala> ss, std::vector<Aderente> as): BstEventosAderidos(EventoAux()){
     morada = std::move(m);
     hoje = h;
     Salas = std::move(ss);
     Aderentes = std::move(as);
 }
-Cinemateca::Cinemateca(std::string m, const DataEHora& h, std::vector<Aderente> as){
+Cinemateca::Cinemateca(std::string m, const DataEHora& h, std::vector<Aderente> as): BstEventosAderidos(EventoAux()){
     morada = std::move(m);
     hoje = h;
     Aderentes = std::move(as);
@@ -505,4 +505,34 @@ Evento Cinemateca::getTopEventByPrice(float min, float max) {
         buffer.pop();
     }
     throw NoEventPricedBetween(min, max);
+}
+
+
+//BST
+BST<EventoAux> Cinemateca::getBst() {
+    return BstEventosAderidos;
+}
+
+void Cinemateca::BstAddEvent(Evento* event) {
+    EventoAux aux(event);
+    BstEventosAderidos.insert(aux);
+}
+
+void Cinemateca::BstGenerateBstFromEvents() {
+    for(const auto& ev : EventosAntigos) if(ev.getLot() > 0){
+        EventoAux temp(&ev);
+        BstEventosAderidos.insert(temp);
+    }
+    for(const auto& ev : EventosHoje) if(ev.getLot() > 0){
+        EventoAux temp(&ev);
+        BstEventosAderidos.insert(temp);
+    }
+    for(const auto& ev : EventosFuturos) if(ev.getLot() > 0){
+        EventoAux temp(&ev);
+        BstEventosAderidos.insert(temp);
+    }
+}
+
+void Cinemateca::BstClear() {
+    BstEventosAderidos.makeEmpty();
 }

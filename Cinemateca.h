@@ -12,6 +12,8 @@
 #include <fstream>
 #include <queue>
 #include <unordered_set>
+#include "bst.h"
+#include "EventoAux.h"
 
 #define PLANNING2FAR_AHEAD "You are trying to schedule an event way too far ahead from today. \nWe can only schedule your event up to a year from now, \nConsider waiting some time"
 #define NO_SPACE_NOR_TIME "It is going to be impossible to schedule your event since there is no room nor time slot available"
@@ -48,6 +50,8 @@ class Cinemateca {
     std::vector<Evento> EventosFuturos;
     std::priority_queue<Evento, vector<Evento>, CmpAvgReview> EventsByAvgReview;
     static TrabH Trabs;
+    BST<EventoAux> BstEventosAderidos;
+
 public:
     /**
      * Constructor.
@@ -276,6 +280,24 @@ public:
     * @throw COULDNT_OPEN_FILE + filepath if the file couldn't be open
     */
     void LerHash(string filepath);
+    /**
+     * Gets the BST
+     * @return the BST - BstEventosAderidos
+     */
+    BST<EventoAux> getBst();
+    /**
+     * Adds an Event (Evento) to the BST
+     * @param event - the event to add
+     */
+    void BstAddEvent(Evento* event);
+    /**
+     * Generates a BST from the available events, only with lot > 0
+     */
+    void BstGenerateBstFromEvents();
+    /**
+     * Emptys the Bst
+     */
+    void BstClear();
 };
 
 class NoEventPricedBetween {

@@ -28,6 +28,7 @@ void utils::printHelp() {
     cout << "update trabalhador - update a parameter in a specific Trabalahdor" << endl;
     cout << "fire trabalhador - fire a Trabalhador" << endl;
     cout << "get trabalhadores - prints the trabalhadores" << endl;
+    cout << "Show Bst - prints the BST in a specific way" << endl;
     /*cout << "read file - reads a spefic file and adds what it needs to Cinemateca" << endl;*/
     cout << endl;
 }
@@ -1576,4 +1577,59 @@ void utils::getTopEventBetween() try {
     cout << endl << findCinemateca(name)->getTopEventByPrice(min, max).str() << endl;
 } catch(NoEventPricedBetween &N) {
     cout << "There are no events priced between " << N.getPriceRange().first << " and " << N.getPriceRange().second << endl;
+}
+
+void utils::ShowBst() {
+    string city;
+    do{
+        city = "";
+        cout << endl << "Please input the city of your choice: ";
+        cin >> city;
+        if(city != "Porto" && city != "Lisboa"){
+            cout << "That's not a valid city, please try again \n"
+                    "(type CANCEL to go to the previous menu)" << endl;
+        }
+        if(city == "CANCEL") return;
+        cin.ignore();
+
+    }while(city != "Porto" && city != "Lisboa");
+
+    findCinemateca(city)->BstGenerateBstFromEvents();
+    auto BstEventosAder = findCinemateca(city)->getBst();
+
+    string showorder;
+    do{
+        showorder = "";
+        cout << endl << "How would you like to see the BST? \n"
+                        "InOrder PostOrder PreOrder: ";
+        cin >> showorder;
+        if(showorder != "InOrder" && showorder != "PostOrder" && showorder != "PreOrder"){
+            cout << "That's not a valid way to traverse a BST!";
+        }
+        cin.ignore();
+    }while(showorder != "InOrder" && showorder != "PostOrder" && showorder != "PreOrder");
+
+
+    if(showorder == "InOrder"){
+        BSTItrIn<EventoAux> BstItr_InOrder(BstEventosAder);
+        while( !BstItr_InOrder.isAtEnd()){
+            cout << (&BstItr_InOrder)->retrieve().Event->str() << endl ;
+            BstItr_InOrder.advance();
+        }
+    }
+    if(showorder == "PostOrder"){
+        BSTItrPost<EventoAux> BstItr_PostOrder(BstEventosAder);
+        while( !BstItr_PostOrder.isAtEnd()){
+            cout << (&BstItr_PostOrder)->retrieve().Event->str() << endl ;
+            BstItr_PostOrder.advance();
+        }
+    }
+    if(showorder == "PreOrder"){
+        BSTItrPre<EventoAux> BstItr_PreOrder(BstEventosAder);
+        while( !BstItr_PreOrder.isAtEnd()){
+            cout << (&BstItr_PreOrder)->retrieve().Event->str() << endl ;
+            BstItr_PreOrder.advance();
+        }
+    }
+    cout << endl;
 }

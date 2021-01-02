@@ -6,7 +6,7 @@
 
 #IncludeRegexTransform: 
 
-C:/Users/andre/OneDrive - Universidade do Porto/FEUP/2A-1S-AEDA/projeto/Aderente.h
+C:/Users/Rafae/Desktop/School_I_guess/2_ano/1_semestre/AEDA/aeda-cinemateca/Aderente.h
 string
 -
 iostream
@@ -14,17 +14,37 @@ iostream
 sstream
 -
 Data.h
-C:/Users/andre/OneDrive - Universidade do Porto/FEUP/2A-1S-AEDA/projeto/Data.h
+C:/Users/Rafae/Desktop/School_I_guess/2_ano/1_semestre/AEDA/aeda-cinemateca/Data.h
 Cliente.h
-C:/Users/andre/OneDrive - Universidade do Porto/FEUP/2A-1S-AEDA/projeto/Cliente.h
+C:/Users/Rafae/Desktop/School_I_guess/2_ano/1_semestre/AEDA/aeda-cinemateca/Cliente.h
 
-C:/Users/andre/OneDrive - Universidade do Porto/FEUP/2A-1S-AEDA/projeto/Cliente.h
+C:/Users/Rafae/Desktop/School_I_guess/2_ano/1_semestre/AEDA/aeda-cinemateca/Cinemateca.h
+Evento.h
+C:/Users/Rafae/Desktop/School_I_guess/2_ano/1_semestre/AEDA/aeda-cinemateca/Evento.h
+Aderente.h
+C:/Users/Rafae/Desktop/School_I_guess/2_ano/1_semestre/AEDA/aeda-cinemateca/Aderente.h
+Sala.h
+C:/Users/Rafae/Desktop/School_I_guess/2_ano/1_semestre/AEDA/aeda-cinemateca/Sala.h
+Trabalhador.h
+C:/Users/Rafae/Desktop/School_I_guess/2_ano/1_semestre/AEDA/aeda-cinemateca/Trabalhador.h
+fstream
+-
+queue
+-
+unordered_set
+-
+bst.h
+C:/Users/Rafae/Desktop/School_I_guess/2_ano/1_semestre/AEDA/aeda-cinemateca/bst.h
+EventoAux.h
+C:/Users/Rafae/Desktop/School_I_guess/2_ano/1_semestre/AEDA/aeda-cinemateca/EventoAux.h
+
+C:/Users/Rafae/Desktop/School_I_guess/2_ano/1_semestre/AEDA/aeda-cinemateca/Cliente.h
 string
 -
 iostream
 -
 
-C:/Users/andre/OneDrive - Universidade do Porto/FEUP/2A-1S-AEDA/projeto/Data.h
+C:/Users/Rafae/Desktop/School_I_guess/2_ano/1_semestre/AEDA/aeda-cinemateca/Data.h
 iostream
 -
 algorithm
@@ -34,27 +54,25 @@ stdexcept
 regex
 -
 
-C:/Users/andre/OneDrive - Universidade do Porto/FEUP/2A-1S-AEDA/projeto/DataEHora.h
+C:/Users/Rafae/Desktop/School_I_guess/2_ano/1_semestre/AEDA/aeda-cinemateca/DataEHora.h
 Data.h
-C:/Users/andre/OneDrive - Universidade do Porto/FEUP/2A-1S-AEDA/projeto/Data.h
+C:/Users/Rafae/Desktop/School_I_guess/2_ano/1_semestre/AEDA/aeda-cinemateca/Data.h
 Hora.h
-C:/Users/andre/OneDrive - Universidade do Porto/FEUP/2A-1S-AEDA/projeto/Hora.h
+C:/Users/Rafae/Desktop/School_I_guess/2_ano/1_semestre/AEDA/aeda-cinemateca/Hora.h
 
-C:/Users/andre/OneDrive - Universidade do Porto/FEUP/2A-1S-AEDA/projeto/Evento.cpp
-Evento.h
-C:/Users/andre/OneDrive - Universidade do Porto/FEUP/2A-1S-AEDA/projeto/Evento.h
-utility
--
-
-C:/Users/andre/OneDrive - Universidade do Porto/FEUP/2A-1S-AEDA/projeto/Evento.h
+C:/Users/Rafae/Desktop/School_I_guess/2_ano/1_semestre/AEDA/aeda-cinemateca/Evento.h
 utility
 -
 IntervaloDeTempo.h
-C:/Users/andre/OneDrive - Universidade do Porto/FEUP/2A-1S-AEDA/projeto/IntervaloDeTempo.h
+C:/Users/Rafae/Desktop/School_I_guess/2_ano/1_semestre/AEDA/aeda-cinemateca/IntervaloDeTempo.h
 Aderente.h
-C:/Users/andre/OneDrive - Universidade do Porto/FEUP/2A-1S-AEDA/projeto/Aderente.h
+C:/Users/Rafae/Desktop/School_I_guess/2_ano/1_semestre/AEDA/aeda-cinemateca/Aderente.h
 
-C:/Users/andre/OneDrive - Universidade do Porto/FEUP/2A-1S-AEDA/projeto/Hora.h
+C:/Users/Rafae/Desktop/School_I_guess/2_ano/1_semestre/AEDA/aeda-cinemateca/EventoAux.h
+Evento.h
+C:/Users/Rafae/Desktop/School_I_guess/2_ano/1_semestre/AEDA/aeda-cinemateca/Evento.h
+
+C:/Users/Rafae/Desktop/School_I_guess/2_ano/1_semestre/AEDA/aeda-cinemateca/Hora.h
 iostream
 -
 string
@@ -66,11 +84,51 @@ regex
 utility
 -
 
-C:/Users/andre/OneDrive - Universidade do Porto/FEUP/2A-1S-AEDA/projeto/IntervaloDeTempo.h
+C:/Users/Rafae/Desktop/School_I_guess/2_ano/1_semestre/AEDA/aeda-cinemateca/IntervaloDeTempo.h
 iostream
 -
 utility
 -
 DataEHora.h
-C:/Users/andre/OneDrive - Universidade do Porto/FEUP/2A-1S-AEDA/projeto/DataEHora.h
+C:/Users/Rafae/Desktop/School_I_guess/2_ano/1_semestre/AEDA/aeda-cinemateca/DataEHora.h
+
+C:/Users/Rafae/Desktop/School_I_guess/2_ano/1_semestre/AEDA/aeda-cinemateca/Sala.h
+string
+-
+vector
+-
+IntervaloDeTempo.h
+C:/Users/Rafae/Desktop/School_I_guess/2_ano/1_semestre/AEDA/aeda-cinemateca/IntervaloDeTempo.h
+Evento.h
+C:/Users/Rafae/Desktop/School_I_guess/2_ano/1_semestre/AEDA/aeda-cinemateca/Evento.h
+
+C:/Users/Rafae/Desktop/School_I_guess/2_ano/1_semestre/AEDA/aeda-cinemateca/Trabalhador.h
+string
+C:/Users/Rafae/Desktop/School_I_guess/2_ano/1_semestre/AEDA/aeda-cinemateca/string
+Data.h
+C:/Users/Rafae/Desktop/School_I_guess/2_ano/1_semestre/AEDA/aeda-cinemateca/Data.h
+fstream
+-
+
+C:/Users/Rafae/Desktop/School_I_guess/2_ano/1_semestre/AEDA/aeda-cinemateca/Utils.cpp
+Utils.h
+C:/Users/Rafae/Desktop/School_I_guess/2_ano/1_semestre/AEDA/aeda-cinemateca/Utils.h
+
+C:/Users/Rafae/Desktop/School_I_guess/2_ano/1_semestre/AEDA/aeda-cinemateca/Utils.h
+algorithm
+-
+Cinemateca.h
+C:/Users/Rafae/Desktop/School_I_guess/2_ano/1_semestre/AEDA/aeda-cinemateca/Cinemateca.h
+Data.h
+C:/Users/Rafae/Desktop/School_I_guess/2_ano/1_semestre/AEDA/aeda-cinemateca/Data.h
+random
+-
+
+C:/Users/Rafae/Desktop/School_I_guess/2_ano/1_semestre/AEDA/aeda-cinemateca/bst.h
+iostream
+-
+stack
+-
+queue
+-
 

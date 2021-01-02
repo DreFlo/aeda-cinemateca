@@ -1,3 +1,3 @@
-C:/Users/andre/OneDrive - Universidade do Porto/FEUP/2A-1S-AEDA/projeto/cmake-build-debug/CMakeFiles/edit_cache.dir
-C:/Users/andre/OneDrive - Universidade do Porto/FEUP/2A-1S-AEDA/projeto/cmake-build-debug/CMakeFiles/projeto.dir
-C:/Users/andre/OneDrive - Universidade do Porto/FEUP/2A-1S-AEDA/projeto/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+C:/Users/Rafae/Desktop/School_I_guess/2_ano/1_semestre/AEDA/aeda-cinemateca/cmake-build-debug/CMakeFiles/edit_cache.dir
+C:/Users/Rafae/Desktop/School_I_guess/2_ano/1_semestre/AEDA/aeda-cinemateca/cmake-build-debug/CMakeFiles/projeto.dir
+C:/Users/Rafae/Desktop/School_I_guess/2_ano/1_semestre/AEDA/aeda-cinemateca/cmake-build-debug/CMakeFiles/rebuild_cache.dir

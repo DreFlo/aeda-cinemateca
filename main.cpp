@@ -97,6 +97,8 @@ int main() {
             utils::getTopEvent();
         else if (input == "get top event in price range")
             utils::getTopEventBetween();
+        else if (input == "Show Bst")
+            utils::ShowBst();
         /*
         else if (input == "read file")
             utils::readfile();*/
