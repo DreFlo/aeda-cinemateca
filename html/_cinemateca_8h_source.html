@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.20"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>AEDA-Cinemateca: Cinemateca.h Source File</title>
+<title>AEDA Cinemateca: Cinemateca.h Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -21,7 +21,7 @@
  <tbody>
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
-   <div id="projectname">AEDA-Cinemateca
+   <div id="projectname">AEDA Cinemateca
    </div>
   </td>
  </tr>
@@ -65,81 +65,141 @@ $(function() {
 <div class="title">Cinemateca.h</div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">//</span></div>
+<a href="_cinemateca_8h.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">//</span></div>
 <div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment">// Created by andre on 10/14/2020.</span></div>
 <div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment">//</span></div>
 <div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160; </div>
 <div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#ifndef PROJETO_CINEMATECA_H</span></div>
 <div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#define PROJETO_CINEMATECA_H</span></div>
 <div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160; </div>
-<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#include &quot;Evento.h&quot;</span></div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#include &quot;Aderente.h&quot;</span></div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="preprocessor">#include &quot;Sala.h&quot;</span></div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="preprocessor">#include &lt;fstream&gt;</span></div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160; </div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="preprocessor">#define PLANNING2FAR_AHEAD &quot;You are trying to schedule an event way too far ahead from today. \nWe can only schedule your event up to a year from now, \nConsider waiting some time&quot;</span></div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="preprocessor">#define NO_SPACE_NOR_TIME &quot;It is going to be impossible to schedule your event since there is no room nor time slot available&quot;</span></div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="preprocessor">#define NO_TIME_AVAILABLE &quot;It is going to be impossible to schedule your event since there is no room available&quot;</span></div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="preprocessor">#define NO_SPACE_AVAILABLE &quot;It is going to be impossible to schedule your event since there is no time slot available&quot;</span></div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="preprocessor">#define NO_EVENTS_THERE_FUTURE &quot;Looks like there is no events schedule for that time interval \nYou can be de first ;)&quot;</span></div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="preprocessor">#define NO_EVENTS_THERE_PAST &quot;Looks like there is no events schedule for that time interval&quot;</span></div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="preprocessor">#define COULDNT_OPEN_FILE &quot;Well that file path doesn&#39;t exist \nFor reference the file path was: &quot;</span></div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160; </div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="keyword">using namespace </span>std;</div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160; </div>
-<div class="line"><a name="l00023"></a><span class="lineno"><a class="line" href="class_cinemateca.html">   23</a></span>&#160;<span class="keyword">class </span><a class="code" href="class_cinemateca.html">Cinemateca</a> {</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    <span class="keyword">static</span> <a class="code" href="class_data_e_hora.html">DataEHora</a> hoje;</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    std::string morada;</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    std::vector&lt;Sala&gt; Salas;</div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    std::vector&lt;Aderente&gt; Aderentes;</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    std::vector&lt;Evento&gt; EventosAntigos;</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    std::vector&lt;Evento&gt; EventosHoje;</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    std::vector&lt;Evento&gt; EventosFuturos;</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160; </div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="keyword">public</span>:</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    <a class="code" href="class_cinemateca.html">Cinemateca</a>(std::string m, <span class="keyword">const</span> <a class="code" href="class_data_e_hora.html">DataEHora</a>&amp; h);</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    <a class="code" href="class_cinemateca.html">Cinemateca</a>(std::string m, <span class="keyword">const</span> <a class="code" href="class_data_e_hora.html">DataEHora</a>&amp; h, std::vector&lt;Sala&gt; ss);</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    <a class="code" href="class_cinemateca.html">Cinemateca</a>(std::string m, <span class="keyword">const</span> <a class="code" href="class_data_e_hora.html">DataEHora</a>&amp; h, std::vector&lt;Sala&gt; ss, std::vector&lt;Aderente&gt; as);</div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    <a class="code" href="class_cinemateca.html">Cinemateca</a>(std::string m, <span class="keyword">const</span> <a class="code" href="class_data_e_hora.html">DataEHora</a>&amp; h, std::vector&lt;Aderente&gt; as);</div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;    <span class="keyword">static</span> <a class="code" href="class_data_e_hora.html">DataEHora</a> GetHoje();</div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;    std::string GetMorada();</div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;    std::vector&lt;Sala&gt; Getsalas();</div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;    std::vector&lt;Aderente&gt; GetAderentes();</div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;    std::vector&lt;Evento&gt; GetEventosAntigos();</div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;    std::vector&lt;Evento&gt; GetEventosHoje();</div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;    std::vector&lt;Evento&gt; GetEventosFuturos();</div>
-<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;    <span class="keywordtype">void</span> MudarAgora(<span class="keyword">const</span> <a class="code" href="class_data_e_hora.html">DataEHora</a> &amp;h);</div>
-<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;    <span class="keywordtype">void</span> AdicionarSala(<span class="keyword">const</span> <a class="code" href="class_sala.html">Sala</a> &amp;sal);</div>
-<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;    <span class="keywordtype">void</span> AdicionarSalas(<span class="keyword">const</span> std::vector&lt;Sala&gt; &amp;sals);</div>
-<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;    <span class="keywordtype">void</span> SetSalas(<span class="keyword">const</span> std::vector&lt;Sala&gt; &amp;sals);</div>
-<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;    <span class="keywordtype">void</span> SortSalas();</div>
-<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;    <span class="keywordtype">void</span> AdicionarAderente(<span class="keyword">const</span> <a class="code" href="class_aderente.html">Aderente</a> &amp;aderen);</div>
-<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;    <span class="keywordtype">void</span> AdicionarAderentes(<span class="keyword">const</span> std::vector&lt;Aderente&gt; &amp;aderens);</div>
-<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;    <span class="keywordtype">void</span> SetAderentes(<span class="keyword">const</span> std::vector&lt;Aderente&gt; &amp;aderens);</div>
-<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;    <span class="keywordtype">void</span> SortAderentes();</div>
-<div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160;    <span class="keywordtype">void</span> AdicionarEvento(<a class="code" href="class_evento.html">Evento</a> event);</div>
-<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;    <span class="keywordtype">void</span> AdicionarEventos(std::vector&lt;Evento&gt; events);</div>
-<div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;    <span class="keywordtype">void</span> SetEventos(std::vector&lt;Evento&gt; events);</div>
-<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;    <span class="keywordtype">void</span> SortEventos();</div>
-<div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;    std::vector&lt;Evento&gt; ProcurarEventosData(<span class="keyword">const</span> <a class="code" href="class_data.html">Data</a> &amp;d);</div>
-<div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;    std::vector&lt;Evento&gt; ProcurarEventosDepoisData(<span class="keyword">const</span> <a class="code" href="class_data.html">Data</a> &amp;d);</div>
-<div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;    std::vector&lt;Evento&gt; ProcurarEventosAntesData(<span class="keyword">const</span> <a class="code" href="class_data.html">Data</a> &amp;d);</div>
-<div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160;    <span class="keywordtype">void</span> LerFicheiroEventos(<span class="keyword">const</span> std::string&amp; filepath);</div>
-<div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160;    <span class="keywordtype">void</span> EscreverFicheiroEventos(<span class="keyword">const</span> std::string&amp; filepath);</div>
-<div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160;    <span class="keywordtype">void</span> LerFicheiroAderentes(<span class="keyword">const</span> std::string&amp; filepath);</div>
-<div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160;    <span class="keywordtype">void</span> EscreverFicheiroAderentes(<span class="keyword">const</span> std::string&amp; filepath);</div>
-<div class="line"><a name="l00204"></a><span class="lineno">  204</span>&#160;    <span class="keywordtype">void</span> LerFicheiroSalas(std::string filepath);</div>
-<div class="line"><a name="l00210"></a><span class="lineno">  210</span>&#160;    <span class="keywordtype">void</span> EscreverFicheiroSalas(<span class="keyword">const</span> std::string&amp; filepath);</div>
-<div class="line"><a name="l00211"></a><span class="lineno">  211</span>&#160;};</div>
-<div class="line"><a name="l00212"></a><span class="lineno">  212</span>&#160; </div>
-<div class="line"><a name="l00213"></a><span class="lineno">  213</span>&#160;<span class="preprocessor">#endif //PROJETO_CINEMATECA_H</span></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="_evento_8h.html">Evento.h</a>&quot;</span></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="_aderente_8h.html">Aderente.h</a>&quot;</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="_sala_8h.html">Sala.h</a>&quot;</span></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="_trabalhador_8h.html">Trabalhador.h</a>&quot;</span></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="preprocessor">#include &lt;fstream&gt;</span></div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="preprocessor">#include &lt;queue&gt;</span></div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="preprocessor">#include &lt;unordered_set&gt;</span></div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="bst_8h.html">bst.h</a>&quot;</span></div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="_evento_aux_8h.html">EventoAux.h</a>&quot;</span></div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160; </div>
+<div class="line"><a name="l00018"></a><span class="lineno"><a class="line" href="_cinemateca_8h.html#a4a97be2050c9b1fcc9a5f503ade05349">   18</a></span>&#160;<span class="preprocessor">#define PLANNING2FAR_AHEAD &quot;You are trying to schedule an event way too far ahead from today. \nWe can only schedule your event up to a year from now, \nConsider waiting some time&quot;</span></div>
+<div class="line"><a name="l00019"></a><span class="lineno"><a class="line" href="_cinemateca_8h.html#a3468bcc52d6bcb885e06bd88fd0e9868">   19</a></span>&#160;<span class="preprocessor">#define NO_SPACE_NOR_TIME &quot;It is going to be impossible to schedule your event since there is no room nor time slot available&quot;</span></div>
+<div class="line"><a name="l00020"></a><span class="lineno"><a class="line" href="_cinemateca_8h.html#a7d8c9c74ff03acc13da04c38b20aa269">   20</a></span>&#160;<span class="preprocessor">#define NO_TIME_AVAILABLE &quot;It is going to be impossible to schedule your event since there is no room available&quot;</span></div>
+<div class="line"><a name="l00021"></a><span class="lineno"><a class="line" href="_cinemateca_8h.html#adfb8916d824e1df5f8d932652aefbd43">   21</a></span>&#160;<span class="preprocessor">#define NO_SPACE_AVAILABLE &quot;It is going to be impossible to schedule your event since there is no time slot available&quot;</span></div>
+<div class="line"><a name="l00022"></a><span class="lineno"><a class="line" href="_cinemateca_8h.html#a8988d119d13f70b5c96646571014cd70">   22</a></span>&#160;<span class="preprocessor">#define NO_EVENTS_THERE_FUTURE &quot;Looks like there is no events schedule for that time interval \nYou can be de first ;)&quot;</span></div>
+<div class="line"><a name="l00023"></a><span class="lineno"><a class="line" href="_cinemateca_8h.html#afa3a5072c814b14b7659a985fe0f9fe6">   23</a></span>&#160;<span class="preprocessor">#define NO_EVENTS_THERE_PAST &quot;Looks like there is no events schedule for that time interval&quot;</span></div>
+<div class="line"><a name="l00024"></a><span class="lineno"><a class="line" href="_cinemateca_8h.html#a0e6db06df146ac6e3ce83847ef2ae7a2">   24</a></span>&#160;<span class="preprocessor">#define COULDNT_OPEN_FILE &quot;Well that file path doesn&#39;t exist \nFor reference the file path was: &quot;</span></div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160; </div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="keyword">using namespace </span>std;</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160; </div>
+<div class="line"><a name="l00028"></a><span class="lineno"><a class="line" href="struct_trab_hash_s.html">   28</a></span>&#160;<span class="keyword">struct </span><a class="code" href="struct_trab_hash_s.html">TrabHashS</a>{</div>
+<div class="line"><a name="l00029"></a><span class="lineno"><a class="line" href="struct_trab_hash_s.html#a6e4cf273de778a88ace026599a82a482">   29</a></span>&#160;    <span class="keywordtype">int</span> operator() (<span class="keyword">const</span> <a class="code" href="class_trabalhador.html">Trabalhador</a> &amp;t)<span class="keyword"> const</span>{</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;        <span class="keywordtype">int</span> v;</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;        <span class="keywordflow">for</span> (<span class="keyword">auto</span> num : to_string(t.<a class="code" href="class_trabalhador.html#a8e804f733ee00afe26e0fb2ce8319663">getNIF</a>())){</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;            v = 37 * v + num;</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;        }</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;        <span class="keywordflow">return</span> v;</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    }</div>
+<div class="line"><a name="l00036"></a><span class="lineno"><a class="line" href="struct_trab_hash_s.html#ac4e3714c47f4c73d89c14f5913954204">   36</a></span>&#160;    <span class="keywordtype">bool</span> operator() (<span class="keyword">const</span> <a class="code" href="class_trabalhador.html">Trabalhador</a> &amp;t1, <span class="keyword">const</span> <a class="code" href="class_trabalhador.html">Trabalhador</a> &amp;t2)<span class="keyword"> const</span>{</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;        <span class="keywordflow">return</span> t1.<a class="code" href="class_trabalhador.html#a8e804f733ee00afe26e0fb2ce8319663">getNIF</a>() == t2.<a class="code" href="class_trabalhador.html#a8e804f733ee00afe26e0fb2ce8319663">getNIF</a>();</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    }</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;};</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160; </div>
+<div class="line"><a name="l00041"></a><span class="lineno"><a class="line" href="_cinemateca_8h.html#aeb982304b26828c1fe5113f3db954f5f">   41</a></span>&#160;<span class="keyword">typedef</span> unordered_set&lt;Trabalhador, TrabHashS, TrabHashS&gt; <a class="code" href="_cinemateca_8h.html#aeb982304b26828c1fe5113f3db954f5f">TrabH</a>;</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160; </div>
+<div class="line"><a name="l00043"></a><span class="lineno"><a class="line" href="class_cinemateca.html">   43</a></span>&#160;<span class="keyword">class </span><a class="code" href="class_cinemateca.html">Cinemateca</a> {</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    <span class="keyword">static</span> <a class="code" href="class_data_e_hora.html">DataEHora</a> hoje;</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    std::string morada;</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    std::vector&lt;Sala&gt; Salas;</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    std::vector&lt;Aderente&gt; Aderentes;</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    std::vector&lt;Evento&gt; EventosAntigos;</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    std::vector&lt;Evento&gt; EventosHoje;</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    std::vector&lt;Evento&gt; EventosFuturos;</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    std::priority_queue&lt;Evento, vector&lt;Evento&gt;, <a class="code" href="struct_cmp_avg_review.html">CmpAvgReview</a>&gt; EventsByAvgReview;</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    <span class="keyword">static</span> <a class="code" href="_cinemateca_8h.html#aeb982304b26828c1fe5113f3db954f5f">TrabH</a> Trabs;</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    <a class="code" href="class_b_s_t.html">BST&lt;EventoAux&gt;</a> BstEventosAderidos;</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160; </div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    <a class="code" href="class_cinemateca.html">Cinemateca</a>(std::string m, <span class="keyword">const</span> <a class="code" href="class_data_e_hora.html">DataEHora</a>&amp; h);</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;    <a class="code" href="class_cinemateca.html">Cinemateca</a>(std::string m, <span class="keyword">const</span> <a class="code" href="class_data_e_hora.html">DataEHora</a>&amp; h, std::vector&lt;Sala&gt; ss);</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;    <a class="code" href="class_cinemateca.html">Cinemateca</a>(std::string m, <span class="keyword">const</span> <a class="code" href="class_data_e_hora.html">DataEHora</a>&amp; h, std::vector&lt;Sala&gt; ss, std::vector&lt;Aderente&gt; as);</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;    <a class="code" href="class_cinemateca.html">Cinemateca</a>(std::string m, <span class="keyword">const</span> <a class="code" href="class_data_e_hora.html">DataEHora</a>&amp; h, std::vector&lt;Aderente&gt; as);</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;    <span class="keyword">static</span> <a class="code" href="class_data_e_hora.html">DataEHora</a> GetHoje();</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;    std::string GetMorada();</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;    std::vector&lt;Sala&gt; Getsalas();</div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;    std::vector&lt;Aderente&gt; GetAderentes();</div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;    std::vector&lt;Evento&gt; GetEventosAntigos();</div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;    std::vector&lt;Evento&gt; GetEventosHoje();</div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;    std::vector&lt;Evento&gt; GetEventosFuturos();</div>
+<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;    <span class="keywordtype">void</span> printEventHeap();</div>
+<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;    <a class="code" href="class_evento.html">Evento</a> <a class="code" href="namespaceutils.html#a3e699c300b7a1ec552dc90d9d46b385b">getTopEvent</a>();</div>
+<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;    <a class="code" href="class_evento.html">Evento</a> getTopEventByPrice(<span class="keywordtype">float</span> min, <span class="keywordtype">float</span> max) noexcept(<span class="keyword">false</span>);</div>
+<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;    <span class="keywordtype">void</span> createEventHeap();</div>
+<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;    <span class="keywordtype">void</span> MudarAgora(<span class="keyword">const</span> <a class="code" href="class_data_e_hora.html">DataEHora</a> &amp;h);</div>
+<div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;    <span class="keywordtype">void</span> AdicionarSala(<span class="keyword">const</span> <a class="code" href="class_sala.html">Sala</a> &amp;sal);</div>
+<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;    <span class="keywordtype">void</span> AdicionarSalas(<span class="keyword">const</span> std::vector&lt;Sala&gt; &amp;sals);</div>
+<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;    <span class="keywordtype">void</span> SetSalas(<span class="keyword">const</span> std::vector&lt;Sala&gt; &amp;sals);</div>
+<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;    <span class="keywordtype">void</span> SortSalas();</div>
+<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;    <span class="keywordtype">void</span> AdicionarAderente(<span class="keyword">const</span> <a class="code" href="class_aderente.html">Aderente</a> &amp;aderen);</div>
+<div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;    <span class="keywordtype">void</span> AdicionarAderentes(<span class="keyword">const</span> std::vector&lt;Aderente&gt; &amp;aderens);</div>
+<div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;    <span class="keywordtype">void</span> SetAderentes(<span class="keyword">const</span> std::vector&lt;Aderente&gt; &amp;aderens);</div>
+<div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160;    <span class="keywordtype">void</span> SortAderentes();</div>
+<div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160;    <span class="keywordtype">void</span> AdicionarEvento(<a class="code" href="class_evento.html">Evento</a> event);</div>
+<div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160;    <span class="keywordtype">void</span> AdicionarEventos(std::vector&lt;Evento&gt; events);</div>
+<div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160;    <span class="keywordtype">void</span> SetEventos(std::vector&lt;Evento&gt; events);</div>
+<div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160;    <span class="keywordtype">void</span> SortEventos();</div>
+<div class="line"><a name="l00204"></a><span class="lineno">  204</span>&#160;    std::vector&lt;Evento&gt; ProcurarEventosData(<span class="keyword">const</span> <a class="code" href="class_data.html">Data</a> &amp;d);</div>
+<div class="line"><a name="l00211"></a><span class="lineno">  211</span>&#160;    std::vector&lt;Evento&gt; ProcurarEventosDepoisData(<span class="keyword">const</span> <a class="code" href="class_data.html">Data</a> &amp;d);</div>
+<div class="line"><a name="l00218"></a><span class="lineno">  218</span>&#160;    std::vector&lt;Evento&gt; ProcurarEventosAntesData(<span class="keyword">const</span> <a class="code" href="class_data.html">Data</a> &amp;d);</div>
+<div class="line"><a name="l00224"></a><span class="lineno">  224</span>&#160;    <span class="keywordtype">void</span> LerFicheiroEventos(<span class="keyword">const</span> std::string&amp; filepath);</div>
+<div class="line"><a name="l00230"></a><span class="lineno">  230</span>&#160;    <span class="keywordtype">void</span> EscreverFicheiroEventos(<span class="keyword">const</span> std::string&amp; filepath);</div>
+<div class="line"><a name="l00236"></a><span class="lineno">  236</span>&#160;    <span class="keywordtype">void</span> LerFicheiroAderentes(<span class="keyword">const</span> std::string&amp; filepath);</div>
+<div class="line"><a name="l00242"></a><span class="lineno">  242</span>&#160;    <span class="keywordtype">void</span> EscreverFicheiroAderentes(<span class="keyword">const</span> std::string&amp; filepath);</div>
+<div class="line"><a name="l00248"></a><span class="lineno">  248</span>&#160;    <span class="keywordtype">void</span> LerFicheiroSalas(std::string filepath);</div>
+<div class="line"><a name="l00254"></a><span class="lineno">  254</span>&#160;    <span class="keywordtype">void</span> EscreverFicheiroSalas(<span class="keyword">const</span> std::string&amp; filepath);</div>
+<div class="line"><a name="l00260"></a><span class="lineno">  260</span>&#160;    <span class="keywordtype">bool</span> AddToHash(<a class="code" href="class_trabalhador.html">Trabalhador</a> &amp;t);</div>
+<div class="line"><a name="l00265"></a><span class="lineno">  265</span>&#160;    <span class="keywordtype">void</span> RemoveFromHash(<a class="code" href="class_trabalhador.html">Trabalhador</a> &amp;t);</div>
+<div class="line"><a name="l00270"></a><span class="lineno">  270</span>&#160;    <a class="code" href="_cinemateca_8h.html#aeb982304b26828c1fe5113f3db954f5f">TrabH</a>&amp; getHash();</div>
+<div class="line"><a name="l00276"></a><span class="lineno">  276</span>&#160;    <span class="keywordtype">void</span> EscreverHash(<span class="keyword">const</span> <span class="keywordtype">string</span>&amp; filepath);</div>
+<div class="line"><a name="l00282"></a><span class="lineno">  282</span>&#160;    <span class="keywordtype">void</span> LerHash(<span class="keywordtype">string</span> filepath);</div>
+<div class="line"><a name="l00287"></a><span class="lineno">  287</span>&#160;    <a class="code" href="class_b_s_t.html">BST&lt;EventoAux&gt;</a> getBst();</div>
+<div class="line"><a name="l00292"></a><span class="lineno">  292</span>&#160;    <span class="keywordtype">void</span> BstAddEvent(<a class="code" href="class_evento.html">Evento</a> event);</div>
+<div class="line"><a name="l00296"></a><span class="lineno">  296</span>&#160;    <span class="keywordtype">void</span> BstGenerateBstFromEvents();</div>
+<div class="line"><a name="l00300"></a><span class="lineno">  300</span>&#160;    <span class="keywordtype">void</span> BstClear();</div>
+<div class="line"><a name="l00301"></a><span class="lineno">  301</span>&#160;};</div>
+<div class="line"><a name="l00302"></a><span class="lineno">  302</span>&#160; </div>
+<div class="line"><a name="l00303"></a><span class="lineno"><a class="line" href="class_no_event_priced_between.html">  303</a></span>&#160;<span class="keyword">class </span><a class="code" href="class_no_event_priced_between.html">NoEventPricedBetween</a> {</div>
+<div class="line"><a name="l00304"></a><span class="lineno">  304</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00305"></a><span class="lineno"><a class="line" href="class_no_event_priced_between.html#a53c2973e4a917251bd423c16482ed9dd">  305</a></span>&#160;    <span class="keyword">const</span> <span class="keywordtype">float</span> <a class="code" href="class_no_event_priced_between.html#a53c2973e4a917251bd423c16482ed9dd">min</a>, max;</div>
+<div class="line"><a name="l00306"></a><span class="lineno"><a class="line" href="class_no_event_priced_between.html#ae6b2a8d050564b27d7ad2574accd96ca">  306</a></span>&#160;    <a class="code" href="class_no_event_priced_between.html#ae6b2a8d050564b27d7ad2574accd96ca">NoEventPricedBetween</a>(<span class="keywordtype">float</span> m, <span class="keywordtype">float</span> M):min(m), max(M) {}</div>
+<div class="line"><a name="l00307"></a><span class="lineno"><a class="line" href="class_no_event_priced_between.html#a25f827e91c2dc769bbc6c22ef0610ab1">  307</a></span>&#160;    pair&lt;int, int&gt; <a class="code" href="class_no_event_priced_between.html#a25f827e91c2dc769bbc6c22ef0610ab1">getPriceRange</a>() { <span class="keywordflow">return</span> make_pair(min, max); }</div>
+<div class="line"><a name="l00308"></a><span class="lineno">  308</span>&#160;};</div>
+<div class="line"><a name="l00309"></a><span class="lineno">  309</span>&#160; </div>
+<div class="line"><a name="l00310"></a><span class="lineno">  310</span>&#160;<span class="preprocessor">#endif //PROJETO_CINEMATECA_H</span></div>
 </div><!-- fragment --></div><!-- contents -->
+<div class="ttc" id="aclass_no_event_priced_between_html"><div class="ttname"><a href="class_no_event_priced_between.html">NoEventPricedBetween</a></div><div class="ttdef"><b>Definition:</b> Cinemateca.h:303</div></div>
 <div class="ttc" id="aclass_data_e_hora_html"><div class="ttname"><a href="class_data_e_hora.html">DataEHora</a></div><div class="ttdef"><b>Definition:</b> DataEHora.h:9</div></div>
+<div class="ttc" id="a_sala_8h_html"><div class="ttname"><a href="_sala_8h.html">Sala.h</a></div></div>
 <div class="ttc" id="aclass_sala_html"><div class="ttname"><a href="class_sala.html">Sala</a></div><div class="ttdef"><b>Definition:</b> Sala.h:13</div></div>
 <div class="ttc" id="aclass_evento_html"><div class="ttname"><a href="class_evento.html">Evento</a></div><div class="ttdef"><b>Definition:</b> Evento.h:10</div></div>
+<div class="ttc" id="a_evento_aux_8h_html"><div class="ttname"><a href="_evento_aux_8h.html">EventoAux.h</a></div></div>
+<div class="ttc" id="astruct_cmp_avg_review_html"><div class="ttname"><a href="struct_cmp_avg_review.html">CmpAvgReview</a></div><div class="ttdef"><b>Definition:</b> Evento.h:127</div></div>
 <div class="ttc" id="aclass_data_html"><div class="ttname"><a href="class_data.html">Data</a></div><div class="ttdef"><b>Definition:</b> Data.h:14</div></div>
+<div class="ttc" id="aclass_trabalhador_html"><div class="ttname"><a href="class_trabalhador.html">Trabalhador</a></div><div class="ttdef"><b>Definition:</b> Trabalhador.h:11</div></div>
 <div class="ttc" id="aclass_aderente_html"><div class="ttname"><a href="class_aderente.html">Aderente</a></div><div class="ttdef"><b>Definition:</b> Aderente.h:14</div></div>
-<div class="ttc" id="aclass_cinemateca_html"><div class="ttname"><a href="class_cinemateca.html">Cinemateca</a></div><div class="ttdef"><b>Definition:</b> Cinemateca.h:23</div></div>
+<div class="ttc" id="aclass_no_event_priced_between_html_a25f827e91c2dc769bbc6c22ef0610ab1"><div class="ttname"><a href="class_no_event_priced_between.html#a25f827e91c2dc769bbc6c22ef0610ab1">NoEventPricedBetween::getPriceRange</a></div><div class="ttdeci">pair&lt; int, int &gt; getPriceRange()</div><div class="ttdef"><b>Definition:</b> Cinemateca.h:307</div></div>
+<div class="ttc" id="aclass_no_event_priced_between_html_ae6b2a8d050564b27d7ad2574accd96ca"><div class="ttname"><a href="class_no_event_priced_between.html#ae6b2a8d050564b27d7ad2574accd96ca">NoEventPricedBetween::NoEventPricedBetween</a></div><div class="ttdeci">NoEventPricedBetween(float m, float M)</div><div class="ttdef"><b>Definition:</b> Cinemateca.h:306</div></div>
+<div class="ttc" id="a_cinemateca_8h_html_aeb982304b26828c1fe5113f3db954f5f"><div class="ttname"><a href="_cinemateca_8h.html#aeb982304b26828c1fe5113f3db954f5f">TrabH</a></div><div class="ttdeci">unordered_set&lt; Trabalhador, TrabHashS, TrabHashS &gt; TrabH</div><div class="ttdef"><b>Definition:</b> Cinemateca.h:41</div></div>
+<div class="ttc" id="a_evento_8h_html"><div class="ttname"><a href="_evento_8h.html">Evento.h</a></div></div>
+<div class="ttc" id="a_trabalhador_8h_html"><div class="ttname"><a href="_trabalhador_8h.html">Trabalhador.h</a></div></div>
+<div class="ttc" id="abst_8h_html"><div class="ttname"><a href="bst_8h.html">bst.h</a></div></div>
+<div class="ttc" id="a_aderente_8h_html"><div class="ttname"><a href="_aderente_8h.html">Aderente.h</a></div></div>
+<div class="ttc" id="aclass_b_s_t_html"><div class="ttname"><a href="class_b_s_t.html">BST&lt; EventoAux &gt;</a></div></div>
+<div class="ttc" id="aclass_cinemateca_html"><div class="ttname"><a href="class_cinemateca.html">Cinemateca</a></div><div class="ttdef"><b>Definition:</b> Cinemateca.h:43</div></div>
+<div class="ttc" id="aclass_trabalhador_html_a8e804f733ee00afe26e0fb2ce8319663"><div class="ttname"><a href="class_trabalhador.html#a8e804f733ee00afe26e0fb2ce8319663">Trabalhador::getNIF</a></div><div class="ttdeci">unsigned int getNIF() const</div><div class="ttdef"><b>Definition:</b> Trabalhador.cpp:12</div></div>
+<div class="ttc" id="astruct_trab_hash_s_html"><div class="ttname"><a href="struct_trab_hash_s.html">TrabHashS</a></div><div class="ttdef"><b>Definition:</b> Cinemateca.h:28</div></div>
+<div class="ttc" id="anamespaceutils_html_a3e699c300b7a1ec552dc90d9d46b385b"><div class="ttname"><a href="namespaceutils.html#a3e699c300b7a1ec552dc90d9d46b385b">utils::getTopEvent</a></div><div class="ttdeci">void getTopEvent()</div><div class="ttdef"><b>Definition:</b> Utils.cpp:1563</div></div>
+<div class="ttc" id="aclass_no_event_priced_between_html_a53c2973e4a917251bd423c16482ed9dd"><div class="ttname"><a href="class_no_event_priced_between.html#a53c2973e4a917251bd423c16482ed9dd">NoEventPricedBetween::min</a></div><div class="ttdeci">const float min</div><div class="ttdef"><b>Definition:</b> Cinemateca.h:305</div></div>
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
 Generated by&#160;<a href="http://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.8.20

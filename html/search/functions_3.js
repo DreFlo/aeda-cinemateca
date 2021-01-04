@@ -1,7 +1,5 @@
 var searchData=
 [
-  ['escreverficheiroaderentes_142',['EscreverFicheiroAderentes',['../class_cinemateca.html#af406f027f1c43c9b0b1110d930693b0e',1,'Cinemateca']]],
-  ['escreverficheiroeventos_143',['EscreverFicheiroEventos',['../class_cinemateca.html#af20fe8e94a50b1275ddd90f3017be058',1,'Cinemateca']]],
-  ['escreverficheirosalas_144',['EscreverFicheiroSalas',['../class_cinemateca.html#a4396f3cb15f76b7ee8c4bba43512c321',1,'Cinemateca']]],
-  ['evento_145',['Evento',['../class_evento.html#a551954b755874bb132c1a0e328fffee7',1,'Evento::Evento()=default'],['../class_evento.html#aa744f7eff0cb672756175c4e079fa98b',1,'Evento::Evento(string nm, float prc, const DataEHora &amp;st, const Hora &amp;drtn, int mxAtn=0, string sala=&quot;NULL&quot;)']]]
+  ['data_372',['Data',['../class_data.html#a0e7804c3ebc7bee43b54e4c4f87261ee',1,'Data::Data()=default'],['../class_data.html#ad1acb7a3118802be73e8a33366dc4df6',1,'Data::Data(int dd, int mm, int yy)'],['../class_data.html#ab14794d90eb76fb2a78df477abf70b9a',1,'Data::Data(const Data &amp;date)']]],
+  ['dataehora_373',['DataEHora',['../class_data_e_hora.html#ae5c6827a6b3f299047d96cf80f2ca793',1,'DataEHora::DataEHora()=default'],['../class_data_e_hora.html#ae8a328b216fb4f73184fb3c2ffc714fe',1,'DataEHora::DataEHora(int dd, int mm, int yy, int hh, int min)'],['../class_data_e_hora.html#a65cbb9587afbf35d5283b8725bc30c9c',1,'DataEHora::DataEHora(const DataEHora &amp;dateAndTime)']]]
 ];

@@ -1,5 +1,6 @@
 var searchData=
 [
-  ['data_114',['Data',['../class_data.html',1,'']]],
-  ['dataehora_115',['DataEHora',['../class_data_e_hora.html',1,'']]]
+  ['cinemateca_280',['Cinemateca',['../class_cinemateca.html',1,'']]],
+  ['cliente_281',['Cliente',['../class_cliente.html',1,'']]],
+  ['cmpavgreview_282',['CmpAvgReview',['../struct_cmp_avg_review.html',1,'']]]
 ];

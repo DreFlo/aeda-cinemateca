@@ -1,4 +1,9 @@
 var searchData=
 [
-  ['valid_225',['valid',['../class_data.html#a0693535e64514ebdea90a3d3b94ba9ac',1,'Data::valid()'],['../class_data_e_hora.html#a777c421cde5946b5c70a6024d3a23bec',1,'DataEHora::valid()'],['../class_hora.html#aaf0a0682901752032e45bb0109d12341',1,'Hora::valid()'],['../class_intervalo_de_tempo.html#a851f9ec3190740286f86836e8f5723fd',1,'IntervaloDeTempo::valid()']]]
+  ['printeventheap_475',['printEventHeap',['../class_cinemateca.html#a9732fa2c1d6732ee15c43ed1910f1612',1,'Cinemateca']]],
+  ['printhelp_476',['printHelp',['../namespaceutils.html#addbe392f30555414f1046579154759d6',1,'utils']]],
+  ['printtree_477',['printTree',['../class_b_s_t.html#a91e830925c48040d4c4dbb7d971c3bfe',1,'BST']]],
+  ['procurareventosantesdata_478',['ProcurarEventosAntesData',['../class_cinemateca.html#a647cd6368dfd66ba1245ec851481d4e7',1,'Cinemateca']]],
+  ['procurareventosdata_479',['ProcurarEventosData',['../class_cinemateca.html#a44b4067ba9f508156f3ce1d833c5165d',1,'Cinemateca']]],
+  ['procurareventosdepoisdata_480',['ProcurarEventosDepoisData',['../class_cinemateca.html#a9ca24c73e7de6fe92264367980d16dea',1,'Cinemateca']]]
 ];

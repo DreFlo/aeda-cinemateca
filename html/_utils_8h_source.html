@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.20"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>AEDA-Cinemateca: Utils.h Source File</title>
+<title>AEDA Cinemateca: Utils.h Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -21,7 +21,7 @@
  <tbody>
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
-   <div id="projectname">AEDA-Cinemateca
+   <div id="projectname">AEDA Cinemateca
    </div>
   </td>
  </tr>
@@ -65,67 +65,119 @@ $(function() {
 <div class="title">Utils.h</div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#ifndef PROJETO_UTILS_H</span></div>
+<a href="_utils_8h.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#ifndef PROJETO_UTILS_H</span></div>
 <div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#define PROJETO_UTILS_H</span></div>
 <div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160; </div>
 <div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &lt;algorithm&gt;</span></div>
-<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#include &quot;Cinemateca.h&quot;</span></div>
-<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#include &quot;Data.h&quot;</span></div>
-<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160; </div>
-<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#define WELCOME_MSG &quot;Welcome!&quot;</span></div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#define INNPUT_TODAY_MSG &quot;Please input the present date and time (dd.mm.yyyy HHhMMmin): &quot;</span></div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="preprocessor">#define CHOOSE_CINEMATECA_MSG &quot;To which cinema would you like to add an event? &quot;</span></div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="preprocessor">#define INPUT_DATE_MSG &quot;Please input the date (dd.mm.yyyy): &quot;</span></div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="preprocessor">#define INVALID_INPUT_MSG &quot;Invalid input&quot;</span></div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="preprocessor">#define INVALID_DATE_MSG &quot; is not a valid date in the gregorian calendar. Try again [dd mm yy]: &quot;</span></div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="preprocessor">#define INVALID_CMD_MSG &quot; is not a specified command. Type &#39;help&#39; to get command list and description.&quot;</span></div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="preprocessor">#define GET_CMD_MSG &quot;What would you like to do? &quot;</span></div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160; </div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="keyword">using namespace </span>std;</div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160; </div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="keyword">extern</span> <span class="keywordtype">string</span> input;</div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="keyword">extern</span> <a class="code" href="class_data_e_hora.html">DataEHora</a> today;</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="keyword">extern</span> vector&lt;Cinemateca *&gt; cinemas;</div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160; </div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="keyword">namespace </span>utils {</div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    <span class="keywordtype">void</span> printHelp();</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    <span class="keywordtype">void</span> setToday();</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    <span class="keywordtype">void</span> addEvent();</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    <span class="keywordtype">int</span> constructEvent(<a class="code" href="class_evento.html">Evento</a> &amp; event);</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    <a class="code" href="class_cinemateca.html">Cinemateca</a> * findCinemateca(<span class="keyword">const</span> <span class="keywordtype">string</span> &amp; name);</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    <span class="keywordtype">void</span> getEventsOn();</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    <span class="keywordtype">void</span> getEventsAfter();</div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    <span class="keywordtype">void</span> getEventsBefore();</div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    <span class="keywordtype">void</span> getEventsToday();</div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;    <span class="keywordtype">void</span> getFutureEvents();</div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;    <span class="keywordtype">void</span> getPastEvents();</div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;    <span class="keywordtype">bool</span> validName(<span class="keywordtype">string</span> num);</div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;    <span class="keywordtype">string</span> inputName();</div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;    <span class="keywordtype">string</span> inputCity(<span class="keywordtype">bool</span> aderentes = <span class="keyword">true</span>);</div>
-<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;    <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> inputNIF();</div>
-<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;    <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> inputCell();</div>
-<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;    <span class="keywordtype">void</span> addAderente();</div>
-<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;    <span class="keywordtype">void</span> getAderentes();</div>
-<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;    <span class="keywordtype">void</span> removeAderente();</div>
-<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;    <span class="keywordtype">void</span> findAderente();</div>
-<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;    <span class="keywordtype">void</span> updateAderente();</div>
-<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;    <span class="keywordtype">string</span> inputSalaName();</div>
-<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;    <span class="keywordtype">void</span> addSala();</div>
-<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;    <span class="keywordtype">void</span> getSalas();</div>
-<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;    <span class="keywordtype">void</span> findSala();</div>
-<div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;    <span class="keywordtype">void</span> updateSala();</div>
-<div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;    <span class="keywordtype">void</span> buyTicket();</div>
-<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;     <span class="keywordtype">void</span> readfile();</div>
-<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;     <span class="keywordtype">void</span> avisarAderentes();</div>
-<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;    <span class="keywordtype">void</span> removeEvent();</div>
-<div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;    <span class="keywordtype">void</span> updateEvent();</div>
-<div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;}</div>
-<div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160; </div>
-<div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;<span class="preprocessor">#endif //PROJETO_UTILS_H</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="_cinemateca_8h.html">Cinemateca.h</a>&quot;</span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="_data_8h.html">Data.h</a>&quot;</span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="preprocessor">#include &lt;random&gt;</span></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160; </div>
+<div class="line"><a name="l00009"></a><span class="lineno"><a class="line" href="_utils_8h.html#ab82a17f3177f83c7787434c99af33b6f">    9</a></span>&#160;<span class="preprocessor">#define WELCOME_MSG &quot;Welcome!&quot;</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno"><a class="line" href="_utils_8h.html#a55836e5dd7f4ffda3482f2502b45d7aa">   10</a></span>&#160;<span class="preprocessor">#define INNPUT_TODAY_MSG &quot;Please input the present date and time (dd.mm.yyyy HHhMMmin): &quot;</span></div>
+<div class="line"><a name="l00011"></a><span class="lineno"><a class="line" href="_utils_8h.html#a97a0befa8d0466f8274f679a188cd0d4">   11</a></span>&#160;<span class="preprocessor">#define CHOOSE_CINEMATECA_MSG &quot;To which cinema would you like to add an event? &quot;</span></div>
+<div class="line"><a name="l00012"></a><span class="lineno"><a class="line" href="_utils_8h.html#a1911d30b43428495b4e623a4e697430a">   12</a></span>&#160;<span class="preprocessor">#define INPUT_DATE_MSG &quot;Please input the date (dd.mm.yyyy): &quot;</span></div>
+<div class="line"><a name="l00013"></a><span class="lineno"><a class="line" href="_utils_8h.html#a886b47847d3cb5cbbfa5170866c6d059">   13</a></span>&#160;<span class="preprocessor">#define INVALID_INPUT_MSG &quot;Invalid input&quot;</span></div>
+<div class="line"><a name="l00014"></a><span class="lineno"><a class="line" href="_utils_8h.html#a4847f5b9b39699baec7ef43312950cdf">   14</a></span>&#160;<span class="preprocessor">#define INVALID_DATE_MSG &quot; is not a valid date in the gregorian calendar. Try again [dd mm yy]: &quot;</span></div>
+<div class="line"><a name="l00015"></a><span class="lineno"><a class="line" href="_utils_8h.html#a423b20be5a8c45707c4471509cefbc50">   15</a></span>&#160;<span class="preprocessor">#define INVALID_CMD_MSG &quot; is not a specified command. Type &#39;help&#39; to get command list and description.&quot;</span></div>
+<div class="line"><a name="l00016"></a><span class="lineno"><a class="line" href="_utils_8h.html#a7766b49449c73fa134ca96f8610fe353">   16</a></span>&#160;<span class="preprocessor">#define GET_CMD_MSG &quot;What would you like to do? &quot;</span></div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160; </div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="keyword">using namespace </span>std;</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160; </div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="keyword">extern</span> <span class="keywordtype">string</span> <a class="code" href="_utils_8h.html#a508a666821904fea6b45e2a063753d13">input</a>;</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="keyword">extern</span> <a class="code" href="class_data_e_hora.html">DataEHora</a> <a class="code" href="_utils_8h.html#adf855e2091061773033044a43978a9ac">today</a>;</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="keyword">extern</span> vector&lt;Cinemateca *&gt; <a class="code" href="_utils_8h.html#a7567ee98854acb7f986f06545a2b35b4">cinemas</a>;</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160; </div>
+<div class="line"><a name="l00024"></a><span class="lineno"><a class="line" href="namespaceutils.html">   24</a></span>&#160;<span class="keyword">namespace </span><a class="code" href="namespaceutils.html">utils</a> {</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="namespaceutils.html#addbe392f30555414f1046579154759d6">printHelp</a>();</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="namespaceutils.html#aefcb6a7299320d95a594c15c16a5e540">setToday</a>();</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="namespaceutils.html#a4cf5277eb41100fa794583a82c213b4d">addEvent</a>();</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    <span class="keywordtype">int</span> <a class="code" href="namespaceutils.html#a66eef5199be9a7566847c79953091fa7">constructEvent</a>(<a class="code" href="class_evento.html">Evento</a> &amp; event);</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    <a class="code" href="class_cinemateca.html">Cinemateca</a> * <a class="code" href="namespaceutils.html#a6ca5d4541b2b7821d89558d9dcfad733">findCinemateca</a>(<span class="keyword">const</span> <span class="keywordtype">string</span> &amp; name);</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="namespaceutils.html#afc9f1d669da1b5c626aefd94a4c8b2e6">getEventsOn</a>();</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="namespaceutils.html#a3916d4b379d6b998ca555258a6df8e57">getEventsAfter</a>();</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="namespaceutils.html#ae47dd735ae73dc96d33f84714f1a1b73">getEventsBefore</a>();</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="namespaceutils.html#a7bf0383ebe8e8f233a4ac1298f37a266">getEventsToday</a>();</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="namespaceutils.html#a99cb4787e9c4b7cef7cf56daea275570">getFutureEvents</a>();</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="namespaceutils.html#ac6a3939ebfb4a8654fd0ace9da9f5af8">getPastEvents</a>();</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="namespaceutils.html#a7054442dc779dd386d45c3719b4673d9">validName</a>(<span class="keywordtype">string</span> num);</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;    <span class="keywordtype">string</span> <a class="code" href="namespaceutils.html#ac96f7311d8b92c344dcd8b5ea17de15f">inputName</a>();</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;    <span class="keywordtype">string</span> <a class="code" href="namespaceutils.html#a605db49d3b0b3d64c5a5fa811f83a186">inputCity</a>(<span class="keywordtype">bool</span> aderentes = <span class="keyword">true</span>);</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;    <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> <a class="code" href="namespaceutils.html#ae775e3b0c3958dc40e7cc94afc0e6415">inputNIF</a>();</div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;    <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> <a class="code" href="namespaceutils.html#aac838182408b440fe40b3bb0f38beebd">inputCell</a>();</div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="namespaceutils.html#a66a132f73ca9c4b6f145e5faf189e081">addAderente</a>();</div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="namespaceutils.html#a8bbc1c96fba01e86fc484cca806a8405">getAderentes</a>();</div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="namespaceutils.html#aa21a1787eb32ec6b6a8ba7500227e640">removeAderente</a>();</div>
+<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="namespaceutils.html#a9a83e58096c2c0091007cff5cc19ba99">findAderente</a>();</div>
+<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="namespaceutils.html#a51eec0ed10b71ff86cb0266f7eb2ad74">updateAderente</a>();</div>
+<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;    <span class="keywordtype">string</span> <a class="code" href="namespaceutils.html#a8b82a8fff0bc4d85fb057442a5f181db">inputSalaName</a>();</div>
+<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="namespaceutils.html#a10f6346369f5241ae075dccf3ba6c4ec">addSala</a>();</div>
+<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="namespaceutils.html#a70a19690e8bcbeeb7565571f09d2460a">getSalas</a>();</div>
+<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="namespaceutils.html#ad0edf3abd8f5d6241cb9c313b38eb18a">findSala</a>();</div>
+<div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="namespaceutils.html#a545cc7830e401a2f882b69b4662f7f48">updateSala</a>();</div>
+<div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="namespaceutils.html#aadac5adcf6a88326e34a8ff829dd59e1">buyTicket</a>();</div>
+<div class="line"><a name="l00148"></a><span class="lineno"><a class="line" href="namespaceutils.html#a2c2f6fcb4c66b3ec4e54ced10de58c28">  148</a></span>&#160;     <span class="keywordtype">void</span> <a class="code" href="namespaceutils.html#a2c2f6fcb4c66b3ec4e54ced10de58c28">readfile</a>();</div>
+<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;     <span class="keywordtype">void</span> <a class="code" href="namespaceutils.html#a772582cbc9393b634a370238c75ff335">avisarAderentes</a>();</div>
+<div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="namespaceutils.html#a97f52f96cd46a157d2b1296ceacdb0de">removeEvent</a>();</div>
+<div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="namespaceutils.html#afdd0975089fef169024494d4f8b76365">updateEvent</a>();</div>
+<div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="namespaceutils.html#a8565c913599bb01606f02251925ca02a">addTrabalhador</a>();</div>
+<div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="namespaceutils.html#acb809c0917918646c1411d5bf2f75c85">changeTrabalhador</a>();</div>
+<div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="namespaceutils.html#a9c3a8b9ccfd51d51d5025df716af82ad">fireTrabalhador</a>();</div>
+<div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="namespaceutils.html#a7c02dd3395839fc22ff2f1c7125a497e">getTrabalhadores</a>();</div>
+<div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="namespaceutils.html#a3e699c300b7a1ec552dc90d9d46b385b">getTopEvent</a>();</div>
+<div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="namespaceutils.html#ac2cd64d5e9deb54ac29f040cbc3a577c">getTopEventBetween</a>();</div>
+<div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="namespaceutils.html#a03798ce3a14a46ec8f9c2eb9bb2c97a3">ShowBst</a>();</div>
+<div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160;}</div>
+<div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160; </div>
+<div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160;<span class="preprocessor">#endif //PROJETO_UTILS_H</span></div>
 </div><!-- fragment --></div><!-- contents -->
+<div class="ttc" id="anamespaceutils_html_addbe392f30555414f1046579154759d6"><div class="ttname"><a href="namespaceutils.html#addbe392f30555414f1046579154759d6">utils::printHelp</a></div><div class="ttdeci">void printHelp()</div><div class="ttdef"><b>Definition:</b> Utils.cpp:3</div></div>
+<div class="ttc" id="anamespaceutils_html_aa21a1787eb32ec6b6a8ba7500227e640"><div class="ttname"><a href="namespaceutils.html#aa21a1787eb32ec6b6a8ba7500227e640">utils::removeAderente</a></div><div class="ttdeci">void removeAderente()</div><div class="ttdef"><b>Definition:</b> Utils.cpp:540</div></div>
+<div class="ttc" id="anamespaceutils_html_a8b82a8fff0bc4d85fb057442a5f181db"><div class="ttname"><a href="namespaceutils.html#a8b82a8fff0bc4d85fb057442a5f181db">utils::inputSalaName</a></div><div class="ttdeci">string inputSalaName()</div><div class="ttdef"><b>Definition:</b> Utils.cpp:746</div></div>
 <div class="ttc" id="aclass_data_e_hora_html"><div class="ttname"><a href="class_data_e_hora.html">DataEHora</a></div><div class="ttdef"><b>Definition:</b> DataEHora.h:9</div></div>
+<div class="ttc" id="anamespaceutils_html_a8565c913599bb01606f02251925ca02a"><div class="ttname"><a href="namespaceutils.html#a8565c913599bb01606f02251925ca02a">utils::addTrabalhador</a></div><div class="ttdeci">void addTrabalhador()</div><div class="ttdef"><b>Definition:</b> Utils.cpp:1277</div></div>
+<div class="ttc" id="anamespaceutils_html_a70a19690e8bcbeeb7565571f09d2460a"><div class="ttname"><a href="namespaceutils.html#a70a19690e8bcbeeb7565571f09d2460a">utils::getSalas</a></div><div class="ttdeci">void getSalas()</div><div class="ttdef"><b>Definition:</b> Utils.cpp:793</div></div>
+<div class="ttc" id="anamespaceutils_html_a7bf0383ebe8e8f233a4ac1298f37a266"><div class="ttname"><a href="namespaceutils.html#a7bf0383ebe8e8f233a4ac1298f37a266">utils::getEventsToday</a></div><div class="ttdeci">void getEventsToday()</div><div class="ttdef"><b>Definition:</b> Utils.cpp:260</div></div>
+<div class="ttc" id="anamespaceutils_html_a97f52f96cd46a157d2b1296ceacdb0de"><div class="ttname"><a href="namespaceutils.html#a97f52f96cd46a157d2b1296ceacdb0de">utils::removeEvent</a></div><div class="ttdeci">void removeEvent()</div><div class="ttdef"><b>Definition:</b> Utils.cpp:1206</div></div>
+<div class="ttc" id="anamespaceutils_html_aefcb6a7299320d95a594c15c16a5e540"><div class="ttname"><a href="namespaceutils.html#aefcb6a7299320d95a594c15c16a5e540">utils::setToday</a></div><div class="ttdeci">void setToday()</div><div class="ttdef"><b>Definition:</b> Utils.cpp:36</div></div>
+<div class="ttc" id="anamespaceutils_html_a4cf5277eb41100fa794583a82c213b4d"><div class="ttname"><a href="namespaceutils.html#a4cf5277eb41100fa794583a82c213b4d">utils::addEvent</a></div><div class="ttdeci">void addEvent()</div><div class="ttdef"><b>Definition:</b> Utils.cpp:60</div></div>
 <div class="ttc" id="aclass_evento_html"><div class="ttname"><a href="class_evento.html">Evento</a></div><div class="ttdef"><b>Definition:</b> Evento.h:10</div></div>
-<div class="ttc" id="aclass_cinemateca_html"><div class="ttname"><a href="class_cinemateca.html">Cinemateca</a></div><div class="ttdef"><b>Definition:</b> Cinemateca.h:23</div></div>
+<div class="ttc" id="a_cinemateca_8h_html"><div class="ttname"><a href="_cinemateca_8h.html">Cinemateca.h</a></div></div>
+<div class="ttc" id="a_utils_8h_html_a7567ee98854acb7f986f06545a2b35b4"><div class="ttname"><a href="_utils_8h.html#a7567ee98854acb7f986f06545a2b35b4">cinemas</a></div><div class="ttdeci">vector&lt; Cinemateca * &gt; cinemas</div><div class="ttdef"><b>Definition:</b> main.cpp:7</div></div>
+<div class="ttc" id="anamespaceutils_html_a03798ce3a14a46ec8f9c2eb9bb2c97a3"><div class="ttname"><a href="namespaceutils.html#a03798ce3a14a46ec8f9c2eb9bb2c97a3">utils::ShowBst</a></div><div class="ttdeci">void ShowBst()</div><div class="ttdef"><b>Definition:</b> Utils.cpp:1582</div></div>
+<div class="ttc" id="anamespaceutils_html_a605db49d3b0b3d64c5a5fa811f83a186"><div class="ttname"><a href="namespaceutils.html#a605db49d3b0b3d64c5a5fa811f83a186">utils::inputCity</a></div><div class="ttdeci">string inputCity(bool aderentes=true)</div><div class="ttdef"><b>Definition:</b> Utils.cpp:335</div></div>
+<div class="ttc" id="anamespaceutils_html_aac838182408b440fe40b3bb0f38beebd"><div class="ttname"><a href="namespaceutils.html#aac838182408b440fe40b3bb0f38beebd">utils::inputCell</a></div><div class="ttdeci">unsigned int inputCell()</div><div class="ttdef"><b>Definition:</b> Utils.cpp:377</div></div>
+<div class="ttc" id="anamespaceutils_html_acb809c0917918646c1411d5bf2f75c85"><div class="ttname"><a href="namespaceutils.html#acb809c0917918646c1411d5bf2f75c85">utils::changeTrabalhador</a></div><div class="ttdeci">void changeTrabalhador()</div><div class="ttdef"><b>Definition:</b> Utils.cpp:1367</div></div>
+<div class="ttc" id="anamespaceutils_html_a9c3a8b9ccfd51d51d5025df716af82ad"><div class="ttname"><a href="namespaceutils.html#a9c3a8b9ccfd51d51d5025df716af82ad">utils::fireTrabalhador</a></div><div class="ttdeci">void fireTrabalhador()</div><div class="ttdef"><b>Definition:</b> Utils.cpp:1421</div></div>
+<div class="ttc" id="anamespaceutils_html_a772582cbc9393b634a370238c75ff335"><div class="ttname"><a href="namespaceutils.html#a772582cbc9393b634a370238c75ff335">utils::avisarAderentes</a></div><div class="ttdeci">void avisarAderentes()</div><div class="ttdef"><b>Definition:</b> Utils.cpp:1137</div></div>
+<div class="ttc" id="anamespaceutils_html_a51eec0ed10b71ff86cb0266f7eb2ad74"><div class="ttname"><a href="namespaceutils.html#a51eec0ed10b71ff86cb0266f7eb2ad74">utils::updateAderente</a></div><div class="ttdeci">void updateAderente()</div><div class="ttdef"><b>Definition:</b> Utils.cpp:622</div></div>
+<div class="ttc" id="anamespaceutils_html_ad0edf3abd8f5d6241cb9c313b38eb18a"><div class="ttname"><a href="namespaceutils.html#ad0edf3abd8f5d6241cb9c313b38eb18a">utils::findSala</a></div><div class="ttdeci">void findSala()</div><div class="ttdef"><b>Definition:</b> Utils.cpp:852</div></div>
+<div class="ttc" id="a_utils_8h_html_a508a666821904fea6b45e2a063753d13"><div class="ttname"><a href="_utils_8h.html#a508a666821904fea6b45e2a063753d13">input</a></div><div class="ttdeci">string input</div><div class="ttdef"><b>Definition:</b> main.cpp:5</div></div>
+<div class="ttc" id="anamespaceutils_html_ac6a3939ebfb4a8654fd0ace9da9f5af8"><div class="ttname"><a href="namespaceutils.html#ac6a3939ebfb4a8654fd0ace9da9f5af8">utils::getPastEvents</a></div><div class="ttdeci">void getPastEvents()</div><div class="ttdef"><b>Definition:</b> Utils.cpp:293</div></div>
+<div class="ttc" id="anamespaceutils_html_a3916d4b379d6b998ca555258a6df8e57"><div class="ttname"><a href="namespaceutils.html#a3916d4b379d6b998ca555258a6df8e57">utils::getEventsAfter</a></div><div class="ttdeci">void getEventsAfter()</div><div class="ttdef"><b>Definition:</b> Utils.cpp:185</div></div>
+<div class="ttc" id="aclass_cinemateca_html"><div class="ttname"><a href="class_cinemateca.html">Cinemateca</a></div><div class="ttdef"><b>Definition:</b> Cinemateca.h:43</div></div>
+<div class="ttc" id="anamespaceutils_html_a10f6346369f5241ae075dccf3ba6c4ec"><div class="ttname"><a href="namespaceutils.html#a10f6346369f5241ae075dccf3ba6c4ec">utils::addSala</a></div><div class="ttdeci">void addSala()</div><div class="ttdef"><b>Definition:</b> Utils.cpp:766</div></div>
+<div class="ttc" id="a_data_8h_html"><div class="ttname"><a href="_data_8h.html">Data.h</a></div></div>
+<div class="ttc" id="anamespaceutils_html"><div class="ttname"><a href="namespaceutils.html">utils</a></div><div class="ttdef"><b>Definition:</b> Utils.h:24</div></div>
+<div class="ttc" id="anamespaceutils_html_a99cb4787e9c4b7cef7cf56daea275570"><div class="ttname"><a href="namespaceutils.html#a99cb4787e9c4b7cef7cf56daea275570">utils::getFutureEvents</a></div><div class="ttdeci">void getFutureEvents()</div><div class="ttdef"><b>Definition:</b> Utils.cpp:276</div></div>
+<div class="ttc" id="anamespaceutils_html_a9a83e58096c2c0091007cff5cc19ba99"><div class="ttname"><a href="namespaceutils.html#a9a83e58096c2c0091007cff5cc19ba99">utils::findAderente</a></div><div class="ttdeci">void findAderente()</div><div class="ttdef"><b>Definition:</b> Utils.cpp:579</div></div>
+<div class="ttc" id="anamespaceutils_html_a66a132f73ca9c4b6f145e5faf189e081"><div class="ttname"><a href="namespaceutils.html#a66a132f73ca9c4b6f145e5faf189e081">utils::addAderente</a></div><div class="ttdeci">void addAderente()</div><div class="ttdef"><b>Definition:</b> Utils.cpp:403</div></div>
+<div class="ttc" id="anamespaceutils_html_a7054442dc779dd386d45c3719b4673d9"><div class="ttname"><a href="namespaceutils.html#a7054442dc779dd386d45c3719b4673d9">utils::validName</a></div><div class="ttdeci">bool validName(string num)</div><div class="ttdef"><b>Definition:</b> Utils.cpp:309</div></div>
+<div class="ttc" id="anamespaceutils_html_a7c02dd3395839fc22ff2f1c7125a497e"><div class="ttname"><a href="namespaceutils.html#a7c02dd3395839fc22ff2f1c7125a497e">utils::getTrabalhadores</a></div><div class="ttdeci">void getTrabalhadores()</div><div class="ttdef"><b>Definition:</b> Utils.cpp:1457</div></div>
+<div class="ttc" id="anamespaceutils_html_a3e699c300b7a1ec552dc90d9d46b385b"><div class="ttname"><a href="namespaceutils.html#a3e699c300b7a1ec552dc90d9d46b385b">utils::getTopEvent</a></div><div class="ttdeci">void getTopEvent()</div><div class="ttdef"><b>Definition:</b> Utils.cpp:1563</div></div>
+<div class="ttc" id="anamespaceutils_html_ae47dd735ae73dc96d33f84714f1a1b73"><div class="ttname"><a href="namespaceutils.html#ae47dd735ae73dc96d33f84714f1a1b73">utils::getEventsBefore</a></div><div class="ttdeci">void getEventsBefore()</div><div class="ttdef"><b>Definition:</b> Utils.cpp:224</div></div>
+<div class="ttc" id="anamespaceutils_html_aadac5adcf6a88326e34a8ff829dd59e1"><div class="ttname"><a href="namespaceutils.html#aadac5adcf6a88326e34a8ff829dd59e1">utils::buyTicket</a></div><div class="ttdeci">void buyTicket()</div><div class="ttdef"><b>Definition:</b> Utils.cpp:954</div></div>
+<div class="ttc" id="anamespaceutils_html_a2c2f6fcb4c66b3ec4e54ced10de58c28"><div class="ttname"><a href="namespaceutils.html#a2c2f6fcb4c66b3ec4e54ced10de58c28">utils::readfile</a></div><div class="ttdeci">void readfile()</div></div>
+<div class="ttc" id="anamespaceutils_html_ac2cd64d5e9deb54ac29f040cbc3a577c"><div class="ttname"><a href="namespaceutils.html#ac2cd64d5e9deb54ac29f040cbc3a577c">utils::getTopEventBetween</a></div><div class="ttdeci">void getTopEventBetween()</div><div class="ttdef"><b>Definition:</b> Utils.cpp:1571</div></div>
+<div class="ttc" id="anamespaceutils_html_a66eef5199be9a7566847c79953091fa7"><div class="ttname"><a href="namespaceutils.html#a66eef5199be9a7566847c79953091fa7">utils::constructEvent</a></div><div class="ttdeci">int constructEvent(Evento &amp;event)</div><div class="ttdef"><b>Definition:</b> Utils.cpp:86</div></div>
+<div class="ttc" id="anamespaceutils_html_a545cc7830e401a2f882b69b4662f7f48"><div class="ttname"><a href="namespaceutils.html#a545cc7830e401a2f882b69b4662f7f48">utils::updateSala</a></div><div class="ttdeci">void updateSala()</div><div class="ttdef"><b>Definition:</b> Utils.cpp:879</div></div>
+<div class="ttc" id="anamespaceutils_html_a8bbc1c96fba01e86fc484cca806a8405"><div class="ttname"><a href="namespaceutils.html#a8bbc1c96fba01e86fc484cca806a8405">utils::getAderentes</a></div><div class="ttdeci">void getAderentes()</div><div class="ttdef"><b>Definition:</b> Utils.cpp:467</div></div>
+<div class="ttc" id="anamespaceutils_html_ae775e3b0c3958dc40e7cc94afc0e6415"><div class="ttname"><a href="namespaceutils.html#ae775e3b0c3958dc40e7cc94afc0e6415">utils::inputNIF</a></div><div class="ttdeci">unsigned int inputNIF()</div><div class="ttdef"><b>Definition:</b> Utils.cpp:355</div></div>
+<div class="ttc" id="anamespaceutils_html_ac96f7311d8b92c344dcd8b5ea17de15f"><div class="ttname"><a href="namespaceutils.html#ac96f7311d8b92c344dcd8b5ea17de15f">utils::inputName</a></div><div class="ttdeci">string inputName()</div><div class="ttdef"><b>Definition:</b> Utils.cpp:323</div></div>
+<div class="ttc" id="anamespaceutils_html_a6ca5d4541b2b7821d89558d9dcfad733"><div class="ttname"><a href="namespaceutils.html#a6ca5d4541b2b7821d89558d9dcfad733">utils::findCinemateca</a></div><div class="ttdeci">Cinemateca * findCinemateca(const string &amp;name)</div><div class="ttdef"><b>Definition:</b> Utils.cpp:143</div></div>
+<div class="ttc" id="anamespaceutils_html_afdd0975089fef169024494d4f8b76365"><div class="ttname"><a href="namespaceutils.html#afdd0975089fef169024494d4f8b76365">utils::updateEvent</a></div><div class="ttdeci">void updateEvent()</div><div class="ttdef"><b>Definition:</b> Utils.cpp:1240</div></div>
+<div class="ttc" id="a_utils_8h_html_adf855e2091061773033044a43978a9ac"><div class="ttname"><a href="_utils_8h.html#adf855e2091061773033044a43978a9ac">today</a></div><div class="ttdeci">DataEHora today</div><div class="ttdef"><b>Definition:</b> main.cpp:6</div></div>
+<div class="ttc" id="anamespaceutils_html_afc9f1d669da1b5c626aefd94a4c8b2e6"><div class="ttname"><a href="namespaceutils.html#afc9f1d669da1b5c626aefd94a4c8b2e6">utils::getEventsOn</a></div><div class="ttdeci">void getEventsOn()</div><div class="ttdef"><b>Definition:</b> Utils.cpp:149</div></div>
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
 Generated by&#160;<a href="http://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.8.20

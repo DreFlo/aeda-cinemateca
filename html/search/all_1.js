@@ -1,7 +1,23 @@
 var searchData=
 [
-  ['cancelevent_11',['cancelEvent',['../class_sala.html#a32f7492e7cbfbc835ee8a540252b2ede',1,'Sala']]],
-  ['checkavailability_12',['checkAvailability',['../class_sala.html#adceb21bbb44250fc843181e563d1e114',1,'Sala']]],
-  ['cinemateca_13',['Cinemateca',['../class_cinemateca.html',1,'Cinemateca'],['../class_cinemateca.html#af544121e1c4ae6c6b9d7cd09cf8e2090',1,'Cinemateca::Cinemateca(std::string m, const DataEHora &amp;h)'],['../class_cinemateca.html#af2a52efd1f813d172248b4ee9c72b37d',1,'Cinemateca::Cinemateca(std::string m, const DataEHora &amp;h, std::vector&lt; Sala &gt; ss)'],['../class_cinemateca.html#a9df3d0f100a2cd74d5aba91bf308cdce',1,'Cinemateca::Cinemateca(std::string m, const DataEHora &amp;h, std::vector&lt; Sala &gt; ss, std::vector&lt; Aderente &gt; as)'],['../class_cinemateca.html#a2243161bcf01be7ca247dabd2fda836d',1,'Cinemateca::Cinemateca(std::string m, const DataEHora &amp;h, std::vector&lt; Aderente &gt; as)']]],
-  ['cliente_14',['Cliente',['../class_cliente.html',1,'Cliente'],['../class_cliente.html#a01817b20b44c23d4b2cb1c6825333768',1,'Cliente::Cliente()']]]
+  ['begin_22',['begin',['../class_b_s_t.html#af6fa3f43aa69a00d21d206af7aef1df2',1,'BST']]],
+  ['binarynode_23',['BinaryNode',['../class_binary_node.html',1,'']]],
+  ['binarynode_3c_20eventoaux_20_3e_24',['BinaryNode&lt; EventoAux &gt;',['../class_binary_node.html',1,'']]],
+  ['birthday_25',['birthday',['../class_aderente.html#a8a3f2ae7d11708d1cea61015c697afe4',1,'Aderente']]],
+  ['bst_26',['BST',['../class_b_s_t.html',1,'BST&lt; Comparable &gt;'],['../class_b_s_t.html#a3185a79cf472271f122a97d0f59022d1',1,'BST::BST(const Comparable &amp;notFound)'],['../class_b_s_t.html#a163232cc6ffcbd1a51707efcc3fa36ca',1,'BST::BST(const BST &amp;rhs)']]],
+  ['bst_2eh_27',['bst.h',['../bst_8h.html',1,'']]],
+  ['bst_3c_20comparable_20_3e_28',['BST&lt; Comparable &gt;',['../class_binary_node.html#a28a1adb9906f3ff7e12c2cb6fa2bd54e',1,'BinaryNode::BST&lt; Comparable &gt;()'],['../classiterator_b_s_t.html#a28a1adb9906f3ff7e12c2cb6fa2bd54e',1,'iteratorBST::BST&lt; Comparable &gt;()']]],
+  ['bst_3c_20eventoaux_20_3e_29',['BST&lt; EventoAux &gt;',['../class_b_s_t.html',1,'']]],
+  ['bstaddevent_30',['BstAddEvent',['../class_cinemateca.html#a95fe8521090f79a52100cdf2b11269fc',1,'Cinemateca']]],
+  ['bstclear_31',['BstClear',['../class_cinemateca.html#a79511614b45c4421d69737ab19ef1f42',1,'Cinemateca']]],
+  ['bstgeneratebstfromevents_32',['BstGenerateBstFromEvents',['../class_cinemateca.html#a954822686cffebe4d2166d9d2fc96961',1,'Cinemateca']]],
+  ['bstitrin_33',['BSTItrIn',['../class_b_s_t_itr_in.html',1,'BSTItrIn&lt; Comparable &gt;'],['../class_b_s_t_itr_in.html#ac836e2f560fed9cc7ef8e5431a2836cc',1,'BSTItrIn::BSTItrIn()']]],
+  ['bstitrin_3c_20comparable_20_3e_34',['BSTItrIn&lt; Comparable &gt;',['../class_binary_node.html#aab3993acac2ab24a0b59edb0c3acc775',1,'BinaryNode::BSTItrIn&lt; Comparable &gt;()'],['../class_b_s_t.html#aab3993acac2ab24a0b59edb0c3acc775',1,'BST::BSTItrIn&lt; Comparable &gt;()']]],
+  ['bstitrlevel_35',['BSTItrLevel',['../class_b_s_t_itr_level.html',1,'BSTItrLevel&lt; Comparable &gt;'],['../class_b_s_t_itr_level.html#a8fd5cdde93eb182c4cd5cf6b2c5efaeb',1,'BSTItrLevel::BSTItrLevel()']]],
+  ['bstitrlevel_3c_20comparable_20_3e_36',['BSTItrLevel&lt; Comparable &gt;',['../class_binary_node.html#a26ff00bc0d87069aed877f10fd3c80a8',1,'BinaryNode::BSTItrLevel&lt; Comparable &gt;()'],['../class_b_s_t.html#a26ff00bc0d87069aed877f10fd3c80a8',1,'BST::BSTItrLevel&lt; Comparable &gt;()']]],
+  ['bstitrpost_37',['BSTItrPost',['../class_b_s_t_itr_post.html',1,'BSTItrPost&lt; Comparable &gt;'],['../class_b_s_t_itr_post.html#acf7e537dea01978f40c40909c55c56c2',1,'BSTItrPost::BSTItrPost()']]],
+  ['bstitrpost_3c_20comparable_20_3e_38',['BSTItrPost&lt; Comparable &gt;',['../class_binary_node.html#a5dc153694be266f6e772659486219da7',1,'BinaryNode::BSTItrPost&lt; Comparable &gt;()'],['../class_b_s_t.html#a5dc153694be266f6e772659486219da7',1,'BST::BSTItrPost&lt; Comparable &gt;()']]],
+  ['bstitrpre_39',['BSTItrPre',['../class_b_s_t_itr_pre.html',1,'BSTItrPre&lt; Comparable &gt;'],['../class_b_s_t_itr_pre.html#a11b1cd4e783f153b9c1b64ce2ec8077e',1,'BSTItrPre::BSTItrPre()']]],
+  ['bstitrpre_3c_20comparable_20_3e_40',['BSTItrPre&lt; Comparable &gt;',['../class_binary_node.html#a45a55df6f11541416d4ea7684c575c1a',1,'BinaryNode::BSTItrPre&lt; Comparable &gt;()'],['../class_b_s_t.html#a45a55df6f11541416d4ea7684c575c1a',1,'BST::BSTItrPre&lt; Comparable &gt;()']]],
+  ['buyticket_41',['buyTicket',['../namespaceutils.html#aadac5adcf6a88326e34a8ff829dd59e1',1,'utils']]]
 ];

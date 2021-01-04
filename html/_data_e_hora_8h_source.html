@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.20"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>AEDA-Cinemateca: DataEHora.h Source File</title>
+<title>AEDA Cinemateca: DataEHora.h Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -21,7 +21,7 @@
  <tbody>
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
-   <div id="projectname">AEDA-Cinemateca
+   <div id="projectname">AEDA Cinemateca
    </div>
   </td>
  </tr>
@@ -65,17 +65,17 @@ $(function() {
 <div class="title">DataEHora.h</div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#ifndef PROJETO_DATAEHORA_H</span></div>
+<a href="_data_e_hora_8h.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#ifndef PROJETO_DATAEHORA_H</span></div>
 <div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#define PROJETO_DATAEHORA_H</span></div>
 <div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160; </div>
-<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &quot;Data.h&quot;</span></div>
-<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#include &quot;Hora.h&quot;</span></div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="_data_8h.html">Data.h</a>&quot;</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="_hora_8h.html">Hora.h</a>&quot;</span></div>
 <div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160; </div>
 <div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="keyword">using namespace </span>std;</div>
 <div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160; </div>
 <div class="line"><a name="l00009"></a><span class="lineno"><a class="line" href="class_data_e_hora.html">    9</a></span>&#160;<span class="keyword">class </span><a class="code" href="class_data_e_hora.html">DataEHora</a>: <span class="keyword">public</span> <a class="code" href="class_data.html">Data</a>, <span class="keyword">public</span> <a class="code" href="class_hora.html">Hora</a>{</div>
 <div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="keyword">public</span>:</div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;    <a class="code" href="class_data_e_hora.html">DataEHora</a>() = <span class="keywordflow">default</span>;</div>
+<div class="line"><a name="l00011"></a><span class="lineno"><a class="line" href="class_data_e_hora.html#ae5c6827a6b3f299047d96cf80f2ca793">   11</a></span>&#160;    <a class="code" href="class_data_e_hora.html#ae5c6827a6b3f299047d96cf80f2ca793">DataEHora</a>() = <span class="keywordflow">default</span>;</div>
 <div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    <a class="code" href="class_data_e_hora.html">DataEHora</a>(<span class="keywordtype">int</span> dd, <span class="keywordtype">int</span> mm, <span class="keywordtype">int</span> yy, <span class="keywordtype">int</span> hh, <span class="keywordtype">int</span> min);</div>
 <div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    <a class="code" href="class_data_e_hora.html">DataEHora</a>(<span class="keyword">const</span> <a class="code" href="class_data_e_hora.html">DataEHora</a> &amp;dateAndTime);</div>
 <div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    <span class="keywordtype">void</span> setDateAndTime(<span class="keywordtype">int</span> dd, <span class="keywordtype">int</span> mm, <span class="keywordtype">int</span> yy, <span class="keywordtype">int</span> hh, <span class="keywordtype">int</span> min) noexcept(<span class="keyword">false</span>);</div>
@@ -89,16 +89,22 @@ $(function() {
 <div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;    <span class="keywordtype">bool</span> operator&lt;(<span class="keyword">const</span> <a class="code" href="class_data_e_hora.html">DataEHora</a>&amp; dateTime) <span class="keyword">const</span>;</div>
 <div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;    <span class="keywordtype">bool</span> operator&gt;(<span class="keyword">const</span> <a class="code" href="class_data_e_hora.html">DataEHora</a>&amp; dateTime) <span class="keyword">const</span>;</div>
 <div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;    <span class="keywordtype">bool</span> operator==(<span class="keyword">const</span> <a class="code" href="class_data_e_hora.html">DataEHora</a>&amp; dateTime) <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;    <span class="keyword">friend</span> ostream&amp; operator&lt;&lt;(ostream&amp; output, <span class="keyword">const</span> <a class="code" href="class_data_e_hora.html">DataEHora</a>&amp; dateAndTime);</div>
-<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;    <span class="keyword">friend</span> istream&amp; operator&gt;&gt;(istream&amp; input, <a class="code" href="class_data_e_hora.html">DataEHora</a>&amp; dateAndTime) noexcept(<span class="keyword">false</span>);</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;    <span class="keyword">friend</span> ostream&amp; <a class="code" href="_aderente_8cpp.html#a7f9a535f9580d1423623523358d1e9a5">operator&lt;&lt;</a>(ostream&amp; output, <span class="keyword">const</span> <a class="code" href="class_data_e_hora.html">DataEHora</a>&amp; dateAndTime);</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;    <span class="keyword">friend</span> istream&amp; <a class="code" href="_aderente_8cpp.html#a2fc841bf379ba516599b3c41e80ff381">operator&gt;&gt;</a>(istream&amp; <a class="code" href="main_8cpp.html#a508a666821904fea6b45e2a063753d13">input</a>, <a class="code" href="class_data_e_hora.html">DataEHora</a>&amp; dateAndTime) noexcept(<span class="keyword">false</span>);</div>
 <div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;};</div>
 <div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160; </div>
 <div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160; </div>
 <div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;<span class="preprocessor">#endif //PROJETO_DATAEHORA_H</span></div>
 </div><!-- fragment --></div><!-- contents -->
 <div class="ttc" id="aclass_data_e_hora_html"><div class="ttname"><a href="class_data_e_hora.html">DataEHora</a></div><div class="ttdef"><b>Definition:</b> DataEHora.h:9</div></div>
+<div class="ttc" id="a_hora_8h_html"><div class="ttname"><a href="_hora_8h.html">Hora.h</a></div></div>
+<div class="ttc" id="a_aderente_8cpp_html_a7f9a535f9580d1423623523358d1e9a5"><div class="ttname"><a href="_aderente_8cpp.html#a7f9a535f9580d1423623523358d1e9a5">operator&lt;&lt;</a></div><div class="ttdeci">ostream &amp; operator&lt;&lt;(ostream &amp;output, const Aderente &amp;p1)</div><div class="ttdef"><b>Definition:</b> Aderente.cpp:38</div></div>
 <div class="ttc" id="aclass_data_html"><div class="ttname"><a href="class_data.html">Data</a></div><div class="ttdef"><b>Definition:</b> Data.h:14</div></div>
 <div class="ttc" id="aclass_hora_html"><div class="ttname"><a href="class_hora.html">Hora</a></div><div class="ttdef"><b>Definition:</b> Hora.h:14</div></div>
+<div class="ttc" id="amain_8cpp_html_a508a666821904fea6b45e2a063753d13"><div class="ttname"><a href="main_8cpp.html#a508a666821904fea6b45e2a063753d13">input</a></div><div class="ttdeci">string input</div><div class="ttdef"><b>Definition:</b> main.cpp:5</div></div>
+<div class="ttc" id="a_data_8h_html"><div class="ttname"><a href="_data_8h.html">Data.h</a></div></div>
+<div class="ttc" id="aclass_data_e_hora_html_ae5c6827a6b3f299047d96cf80f2ca793"><div class="ttname"><a href="class_data_e_hora.html#ae5c6827a6b3f299047d96cf80f2ca793">DataEHora::DataEHora</a></div><div class="ttdeci">DataEHora()=default</div></div>
+<div class="ttc" id="a_aderente_8cpp_html_a2fc841bf379ba516599b3c41e80ff381"><div class="ttname"><a href="_aderente_8cpp.html#a2fc841bf379ba516599b3c41e80ff381">operator&gt;&gt;</a></div><div class="ttdeci">istream &amp; operator&gt;&gt;(istream &amp;input, Aderente &amp;p1)</div><div class="ttdef"><b>Definition:</b> Aderente.cpp:30</div></div>
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
 Generated by&#160;<a href="http://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.8.20

@@ -1,27 +1,5 @@
 var searchData=
 [
-  ['sala_196',['Sala',['../class_sala.html#a46e43446040de10092410a3a0ea0dc44',1,'Sala']]],
-  ['set_197',['set',['../class_intervalo_de_tempo.html#a82614f64b35f4d35f0d06bf554828deb',1,'IntervaloDeTempo']]],
-  ['setaderentes_198',['SetAderentes',['../class_cinemateca.html#ae159097af4c078430a3078a63e29548b',1,'Cinemateca']]],
-  ['setdate_199',['setDate',['../class_data.html#a4c1ee0adb38528d59d04ef529fb9dd44',1,'Data::setDate(int dd, int mm, int yy) noexcept(false)'],['../class_data.html#af7b12889da0a3696f5ea04cec2efca02',1,'Data::setDate(const Data &amp;date) noexcept(false)'],['../class_data.html#ad679e26590bb762a22829fa109d32892',1,'Data::setDate(const string &amp;in) noexcept(false)']]],
-  ['setdateandtime_200',['setDateAndTime',['../class_data_e_hora.html#afc3a48aa4e8bac68abfb01ccd572f7d1',1,'DataEHora::setDateAndTime(int dd, int mm, int yy, int hh, int min) noexcept(false)'],['../class_data_e_hora.html#a91ac46d442ec376e1b28446aab7c977c',1,'DataEHora::setDateAndTime(const DataEHora &amp;dateAndTime) noexcept(false)'],['../class_data_e_hora.html#a8325d990fcb6db37da0a6a8e5823fa14',1,'DataEHora::setDateAndTime(const string &amp;in) noexcept(false)']]],
-  ['setday_201',['setDay',['../class_data.html#a55d305bf5ebd42613173e3ce0253228a',1,'Data']]],
-  ['setduration_202',['setDuration',['../class_evento.html#a41fb2659d328fab6a0f41be0b3dc9522',1,'Evento']]],
-  ['seteventos_203',['SetEventos',['../class_cinemateca.html#aca84c3cf69f3bdd15ba916d5dcad1603',1,'Cinemateca']]],
-  ['sethour_204',['setHour',['../class_hora.html#a886bd34818b3f0c5b8a48544bc1208b9',1,'Hora']]],
-  ['setmaxattendance_205',['setMaxAttendance',['../class_evento.html#a4da0702ac100c53af1f13862e9ac5cf1',1,'Evento']]],
-  ['setminute_206',['setMinute',['../class_hora.html#a9b52abed1d0c5fede8f6ef344d572d37',1,'Hora']]],
-  ['setmonth_207',['setMonth',['../class_data.html#afb0a4ca2e7068b312fb3460ff09c242c',1,'Data']]],
-  ['setname_208',['setName',['../class_evento.html#af2da3f86a9fb891113235944484ed8ea',1,'Evento']]],
-  ['setprice_209',['setPrice',['../class_evento.html#a5970fc0d4a0ad0db94585f6b0fa2e62d',1,'Evento']]],
-  ['setroom_210',['setRoom',['../class_evento.html#a0c73cea91ab9926f41bc8308a6abf856',1,'Evento']]],
-  ['setsalas_211',['SetSalas',['../class_cinemateca.html#a4818f75cb301738bc6e270020531bb6e',1,'Cinemateca']]],
-  ['setstart_212',['setStart',['../class_evento.html#a533f7197b61fc2d2fe6ece5d753c9ebc',1,'Evento']]],
-  ['settime_213',['setTime',['../class_hora.html#a800e8561545fd8f3271c85478d105501',1,'Hora::setTime(int hh, int mm) noexcept(false)'],['../class_hora.html#ae3bb248de3b184a36b1c44953f4de605',1,'Hora::setTime(const Hora &amp;time) noexcept(false)'],['../class_hora.html#a67106b7597c8f3a6a08b19c1a52b8de1',1,'Hora::setTime(const string &amp;in) noexcept(false)']]],
-  ['setyear_214',['setYear',['../class_data.html#aa73da01ec87738e8bcb9078cdb48d748',1,'Data']]],
-  ['signup_215',['signUp',['../class_evento.html#a95e375ba6274f3d6336b844bd7d9763a',1,'Evento::signUp(const Cliente &amp;C) noexcept(false)'],['../class_evento.html#ab82d828ef1039ce08e4fd4f677a87620',1,'Evento::signUp(Aderente &amp;A, bool free=false) noexcept(false)']]],
-  ['sortaderentes_216',['SortAderentes',['../class_cinemateca.html#ac9a5cc5c36c330ba1baf455afe52a64b',1,'Cinemateca']]],
-  ['sorteventos_217',['SortEventos',['../class_cinemateca.html#a57e92a996f05c76f08485698f933284e',1,'Cinemateca']]],
-  ['sortsalas_218',['SortSalas',['../class_cinemateca.html#ae6e6674e9d39705eb7fbfc03cf367e47',1,'Cinemateca']]],
-  ['str_219',['str',['../class_data.html#a52023474fde40e9d9f6a9331af763c13',1,'Data::str()'],['../class_data_e_hora.html#abd1d4f163725a1daa24806958d60fd96',1,'DataEHora::str()'],['../class_evento.html#ae6cbb885507fd6ffea9ec28a3dcc4589',1,'Evento::str()'],['../class_hora.html#ae7c1909a8da2809ec4a7b035dbad4eb6',1,'Hora::str()'],['../class_intervalo_de_tempo.html#a594f7878654c5e255be8974a01de2dee',1,'IntervaloDeTempo::str()']]]
+  ['noeventpricedbetween_461',['NoEventPricedBetween',['../class_no_event_priced_between.html#ae6b2a8d050564b27d7ad2574accd96ca',1,'NoEventPricedBetween']]],
+  ['noeventscheduled_462',['NoEventScheduled',['../class_no_event_scheduled.html#a55ce40eb64a060bc9629851c5ded82ed',1,'NoEventScheduled']]]
 ];

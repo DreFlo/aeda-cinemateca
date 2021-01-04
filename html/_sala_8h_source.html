@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.20"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>AEDA-Cinemateca: Sala.h Source File</title>
+<title>AEDA Cinemateca: Sala.h Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -21,7 +21,7 @@
  <tbody>
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
-   <div id="projectname">AEDA-Cinemateca
+   <div id="projectname">AEDA Cinemateca
    </div>
   </td>
  </tr>
@@ -65,15 +65,15 @@ $(function() {
 <div class="title">Sala.h</div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160; </div>
+<a href="_sala_8h.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160; </div>
 <div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#ifndef CINEMATECA_H_SALA_H</span></div>
 <div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="preprocessor">#define CINEMATECA_H_SALA_H</span></div>
 <div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160; </div>
 <div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#include &lt;string&gt;</span></div>
 <div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#include &lt;vector&gt;</span></div>
 <div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160; </div>
-<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#include &quot;IntervaloDeTempo.h&quot;</span></div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#include &quot;Evento.h&quot;</span></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="_intervalo_de_tempo_8h.html">IntervaloDeTempo.h</a>&quot;</span></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="_evento_8h.html">Evento.h</a>&quot;</span></div>
 <div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160; </div>
 <div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="keyword">using namespace </span>std;</div>
 <div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160; </div>
@@ -85,14 +85,14 @@ $(function() {
 <div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    <span class="keywordtype">string</span> getName() <span class="keyword">const</span>;</div>
 <div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    <span class="keywordtype">int</span> getCapacity() <span class="keyword">const</span>;</div>
 <div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    <span class="keywordtype">bool</span> checkAvailability(<span class="keyword">const</span> <a class="code" href="class_intervalo_de_tempo.html">IntervaloDeTempo</a> time) <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    <span class="keywordtype">void</span> addEvent(<span class="keyword">const</span> <a class="code" href="class_intervalo_de_tempo.html">IntervaloDeTempo</a> time);</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="namespaceutils.html#a4cf5277eb41100fa794583a82c213b4d">addEvent</a>(<span class="keyword">const</span> <a class="code" href="class_intervalo_de_tempo.html">IntervaloDeTempo</a> time);</div>
 <div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    <span class="keywordtype">void</span> cancelEvent(<span class="keyword">const</span> <a class="code" href="class_intervalo_de_tempo.html">IntervaloDeTempo</a> time);</div>
 <div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    <span class="keywordtype">void</span> updateSalaName(<span class="keywordtype">string</span> new_name);</div>
 <div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    <span class="keywordtype">void</span> updateSalaCap(<span class="keywordtype">int</span> new_cap);</div>
 <div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    <span class="keywordtype">bool</span> operator==(<span class="keyword">const</span> <a class="code" href="class_sala.html">Sala</a> &amp;s1) <span class="keyword">const</span>;</div>
 <div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;    <span class="keywordtype">bool</span> operator&lt;(<span class="keyword">const</span> <a class="code" href="class_sala.html">Sala</a> &amp;s1) <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;    <span class="keyword">friend</span> istream&amp; operator&gt;&gt;(istream&amp; input, <a class="code" href="class_sala.html">Sala</a> &amp;s1);</div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;    <span class="keyword">friend</span> ostream&amp; operator&lt;&lt;(ostream&amp; output, <span class="keyword">const</span> <a class="code" href="class_sala.html">Sala</a> &amp;s1);</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;    <span class="keyword">friend</span> istream&amp; <a class="code" href="_aderente_8cpp.html#a2fc841bf379ba516599b3c41e80ff381">operator&gt;&gt;</a>(istream&amp; <a class="code" href="main_8cpp.html#a508a666821904fea6b45e2a063753d13">input</a>, <a class="code" href="class_sala.html">Sala</a> &amp;s1);</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;    <span class="keyword">friend</span> ostream&amp; <a class="code" href="_aderente_8cpp.html#a7f9a535f9580d1423623523358d1e9a5">operator&lt;&lt;</a>(ostream&amp; output, <span class="keyword">const</span> <a class="code" href="class_sala.html">Sala</a> &amp;s1);</div>
 <div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;<span class="keyword">private</span>:</div>
 <div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;    vector&lt;IntervaloDeTempo&gt; ocupacao;</div>
 <div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;};</div>
@@ -101,24 +101,34 @@ $(function() {
 <div class="line"><a name="l00082"></a><span class="lineno"><a class="line" href="class_already_scheduled.html">   82</a></span>&#160;<span class="keyword">class </span><a class="code" href="class_already_scheduled.html">AlreadyScheduled</a>{</div>
 <div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;    <a class="code" href="class_intervalo_de_tempo.html">IntervaloDeTempo</a> time;</div>
 <div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;<span class="keyword">public</span>:</div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;    <a class="code" href="class_already_scheduled.html">AlreadyScheduled</a>(<a class="code" href="class_intervalo_de_tempo.html">IntervaloDeTempo</a> t) : time(t) {}</div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;    <a class="code" href="class_intervalo_de_tempo.html">IntervaloDeTempo</a> getTime()<span class="keyword"> const </span>{<span class="keywordflow">return</span> time;}</div>
+<div class="line"><a name="l00085"></a><span class="lineno"><a class="line" href="class_already_scheduled.html#a31d683eec0b6eabd1ff2b83c94f57a74">   85</a></span>&#160;    <a class="code" href="class_already_scheduled.html#a31d683eec0b6eabd1ff2b83c94f57a74">AlreadyScheduled</a>(<a class="code" href="class_intervalo_de_tempo.html">IntervaloDeTempo</a> t) : time(t) {}</div>
+<div class="line"><a name="l00086"></a><span class="lineno"><a class="line" href="class_already_scheduled.html#abc64cb8ae5167f7760f0bdad1c6e2ea3">   86</a></span>&#160;    <a class="code" href="class_intervalo_de_tempo.html">IntervaloDeTempo</a> <a class="code" href="class_already_scheduled.html#abc64cb8ae5167f7760f0bdad1c6e2ea3">getTime</a>()<span class="keyword"> const </span>{<span class="keywordflow">return</span> time;}</div>
 <div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;};</div>
 <div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160; </div>
 <div class="line"><a name="l00089"></a><span class="lineno"><a class="line" href="class_no_event_scheduled.html">   89</a></span>&#160;<span class="keyword">class </span><a class="code" href="class_no_event_scheduled.html">NoEventScheduled</a>{</div>
 <div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;    <a class="code" href="class_intervalo_de_tempo.html">IntervaloDeTempo</a> time;</div>
 <div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;<span class="keyword">public</span>:</div>
-<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;    <a class="code" href="class_no_event_scheduled.html">NoEventScheduled</a>(<a class="code" href="class_intervalo_de_tempo.html">IntervaloDeTempo</a> t) : time(t) {}</div>
-<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;    <a class="code" href="class_intervalo_de_tempo.html">IntervaloDeTempo</a> getTime()<span class="keyword"> const </span>{<span class="keywordflow">return</span> time;}</div>
+<div class="line"><a name="l00092"></a><span class="lineno"><a class="line" href="class_no_event_scheduled.html#a55ce40eb64a060bc9629851c5ded82ed">   92</a></span>&#160;    <a class="code" href="class_no_event_scheduled.html#a55ce40eb64a060bc9629851c5ded82ed">NoEventScheduled</a>(<a class="code" href="class_intervalo_de_tempo.html">IntervaloDeTempo</a> t) : time(t) {}</div>
+<div class="line"><a name="l00093"></a><span class="lineno"><a class="line" href="class_no_event_scheduled.html#a309ec44c90a7c849c75d6d6f94d599dd">   93</a></span>&#160;    <a class="code" href="class_intervalo_de_tempo.html">IntervaloDeTempo</a> <a class="code" href="class_no_event_scheduled.html#a309ec44c90a7c849c75d6d6f94d599dd">getTime</a>()<span class="keyword"> const </span>{<span class="keywordflow">return</span> time;}</div>
 <div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;};</div>
 <div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160; </div>
 <div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160; </div>
 <div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;<span class="preprocessor">#endif //CINEMATECA_H_SALA_H</span></div>
 </div><!-- fragment --></div><!-- contents -->
 <div class="ttc" id="aclass_sala_html"><div class="ttname"><a href="class_sala.html">Sala</a></div><div class="ttdef"><b>Definition:</b> Sala.h:13</div></div>
+<div class="ttc" id="aclass_already_scheduled_html_abc64cb8ae5167f7760f0bdad1c6e2ea3"><div class="ttname"><a href="class_already_scheduled.html#abc64cb8ae5167f7760f0bdad1c6e2ea3">AlreadyScheduled::getTime</a></div><div class="ttdeci">IntervaloDeTempo getTime() const</div><div class="ttdef"><b>Definition:</b> Sala.h:86</div></div>
+<div class="ttc" id="anamespaceutils_html_a4cf5277eb41100fa794583a82c213b4d"><div class="ttname"><a href="namespaceutils.html#a4cf5277eb41100fa794583a82c213b4d">utils::addEvent</a></div><div class="ttdeci">void addEvent()</div><div class="ttdef"><b>Definition:</b> Utils.cpp:60</div></div>
+<div class="ttc" id="a_aderente_8cpp_html_a7f9a535f9580d1423623523358d1e9a5"><div class="ttname"><a href="_aderente_8cpp.html#a7f9a535f9580d1423623523358d1e9a5">operator&lt;&lt;</a></div><div class="ttdeci">ostream &amp; operator&lt;&lt;(ostream &amp;output, const Aderente &amp;p1)</div><div class="ttdef"><b>Definition:</b> Aderente.cpp:38</div></div>
 <div class="ttc" id="aclass_already_scheduled_html"><div class="ttname"><a href="class_already_scheduled.html">AlreadyScheduled</a></div><div class="ttdef"><b>Definition:</b> Sala.h:82</div></div>
 <div class="ttc" id="aclass_no_event_scheduled_html"><div class="ttname"><a href="class_no_event_scheduled.html">NoEventScheduled</a></div><div class="ttdef"><b>Definition:</b> Sala.h:89</div></div>
+<div class="ttc" id="amain_8cpp_html_a508a666821904fea6b45e2a063753d13"><div class="ttname"><a href="main_8cpp.html#a508a666821904fea6b45e2a063753d13">input</a></div><div class="ttdeci">string input</div><div class="ttdef"><b>Definition:</b> main.cpp:5</div></div>
 <div class="ttc" id="aclass_intervalo_de_tempo_html"><div class="ttname"><a href="class_intervalo_de_tempo.html">IntervaloDeTempo</a></div><div class="ttdef"><b>Definition:</b> IntervaloDeTempo.h:22</div></div>
+<div class="ttc" id="a_intervalo_de_tempo_8h_html"><div class="ttname"><a href="_intervalo_de_tempo_8h.html">IntervaloDeTempo.h</a></div></div>
+<div class="ttc" id="aclass_already_scheduled_html_a31d683eec0b6eabd1ff2b83c94f57a74"><div class="ttname"><a href="class_already_scheduled.html#a31d683eec0b6eabd1ff2b83c94f57a74">AlreadyScheduled::AlreadyScheduled</a></div><div class="ttdeci">AlreadyScheduled(IntervaloDeTempo t)</div><div class="ttdef"><b>Definition:</b> Sala.h:85</div></div>
+<div class="ttc" id="a_evento_8h_html"><div class="ttname"><a href="_evento_8h.html">Evento.h</a></div></div>
+<div class="ttc" id="aclass_no_event_scheduled_html_a309ec44c90a7c849c75d6d6f94d599dd"><div class="ttname"><a href="class_no_event_scheduled.html#a309ec44c90a7c849c75d6d6f94d599dd">NoEventScheduled::getTime</a></div><div class="ttdeci">IntervaloDeTempo getTime() const</div><div class="ttdef"><b>Definition:</b> Sala.h:93</div></div>
+<div class="ttc" id="aclass_no_event_scheduled_html_a55ce40eb64a060bc9629851c5ded82ed"><div class="ttname"><a href="class_no_event_scheduled.html#a55ce40eb64a060bc9629851c5ded82ed">NoEventScheduled::NoEventScheduled</a></div><div class="ttdeci">NoEventScheduled(IntervaloDeTempo t)</div><div class="ttdef"><b>Definition:</b> Sala.h:92</div></div>
+<div class="ttc" id="a_aderente_8cpp_html_a2fc841bf379ba516599b3c41e80ff381"><div class="ttname"><a href="_aderente_8cpp.html#a2fc841bf379ba516599b3c41e80ff381">operator&gt;&gt;</a></div><div class="ttdeci">istream &amp; operator&gt;&gt;(istream &amp;input, Aderente &amp;p1)</div><div class="ttdef"><b>Definition:</b> Aderente.cpp:30</div></div>
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
 Generated by&#160;<a href="http://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.8.20

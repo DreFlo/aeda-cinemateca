@@ -1,8 +1,7 @@
 var searchData=
 [
-  ['operator_2b_188',['operator+',['../class_data_e_hora.html#ac459d93094128e9661d3b1c8659b6fc0',1,'DataEHora']]],
-  ['operator_3c_189',['operator&lt;',['../class_aderente.html#a0326baa251391a77f48525727eea0c9d',1,'Aderente::operator&lt;()'],['../class_cliente.html#a75e9bc3d99a8589c17472bc41a522602',1,'Cliente::operator&lt;()'],['../class_data.html#aefc8b751b1acdac21b7f195275c69b3f',1,'Data::operator&lt;()'],['../class_data_e_hora.html#ad7973d3114e4c3ce96bf0c37807d690b',1,'DataEHora::operator&lt;()'],['../class_evento.html#a8e8d1eb14d017e8ed9a6dd4adc78dbca',1,'Evento::operator&lt;()'],['../class_hora.html#a1893dd1e0c68018fba42e6ac4cd9919d',1,'Hora::operator&lt;()'],['../class_sala.html#aafa6035469cb5a3df5f9fc7984225614',1,'Sala::operator&lt;()']]],
-  ['operator_3d_3d_190',['operator==',['../class_aderente.html#aa3908c8e95d3f9ca49555cd31ed4d2b1',1,'Aderente::operator==()'],['../class_cliente.html#aefe53640f19d85e31aa20b37f78210ec',1,'Cliente::operator==()'],['../class_data.html#a39dbb3a08d1693bd3427c4452aa864d4',1,'Data::operator==()'],['../class_data_e_hora.html#a485e4a9b474b6c89c33e9bcc7db11279',1,'DataEHora::operator==()'],['../class_evento.html#a0e7f43923a07f1964113a535078f6cd5',1,'Evento::operator==()'],['../class_hora.html#aa3813a4ad7cdc4a2b1e251d353e22ff7',1,'Hora::operator==()'],['../class_intervalo_de_tempo.html#a78ef8a196631d2bf8021f2449e4b3617',1,'IntervaloDeTempo::operator==()'],['../class_sala.html#ab4a2671395f44d472401b9d84a82c5ca',1,'Sala::operator==()']]],
-  ['operator_3e_191',['operator&gt;',['../class_data.html#a398691fb71b370b2e0323f60396d2cf0',1,'Data::operator&gt;()'],['../class_data_e_hora.html#a4ffcae9006ebf3918cb210adb424f73f',1,'DataEHora::operator&gt;()'],['../class_hora.html#adeaaaaacf5de69513b58bc6ce4924684',1,'Hora::operator&gt;()']]],
-  ['operator_5e_192',['operator^',['../class_intervalo_de_tempo.html#a6cbaece7a75c0d21c4c4814ceb44a90a',1,'IntervaloDeTempo']]]
+  ['lerficheiroaderentes_454',['LerFicheiroAderentes',['../class_cinemateca.html#a2ab69d051ff22936c393cce6e9b764da',1,'Cinemateca']]],
+  ['lerficheiroeventos_455',['LerFicheiroEventos',['../class_cinemateca.html#a1fa7ec5534f5d551a6ef4efb2e24ce4f',1,'Cinemateca']]],
+  ['lerficheirosalas_456',['LerFicheiroSalas',['../class_cinemateca.html#a0b535707f274833199a39f9bf844ad5d',1,'Cinemateca']]],
+  ['lerhash_457',['LerHash',['../class_cinemateca.html#a9f22de9b651b002dcdda3e9a64bfe489',1,'Cinemateca']]]
 ];

@@ -1,4 +1,10 @@
 var searchData=
 [
-  ['valid_109',['valid',['../class_data.html#a0693535e64514ebdea90a3d3b94ba9ac',1,'Data::valid()'],['../class_data_e_hora.html#a777c421cde5946b5c70a6024d3a23bec',1,'DataEHora::valid()'],['../class_hora.html#aaf0a0682901752032e45bb0109d12341',1,'Hora::valid()'],['../class_intervalo_de_tempo.html#a851f9ec3190740286f86836e8f5723fd',1,'IntervaloDeTempo::valid()']]]
+  ['readfile_207',['readfile',['../namespaceutils.html#a2c2f6fcb4c66b3ec4e54ced10de58c28',1,'utils']]],
+  ['readme_2emd_208',['README.md',['../_r_e_a_d_m_e_8md.html',1,'']]],
+  ['remove_209',['remove',['../class_b_s_t.html#a63a3529c7070687c4a3e5a417c625715',1,'BST']]],
+  ['removeaderente_210',['removeAderente',['../namespaceutils.html#aa21a1787eb32ec6b6a8ba7500227e640',1,'utils']]],
+  ['removeevent_211',['removeEvent',['../namespaceutils.html#a97f52f96cd46a157d2b1296ceacdb0de',1,'utils']]],
+  ['removefromhash_212',['RemoveFromHash',['../class_cinemateca.html#a350d2699b0ba6ba6da206599ed28d65b',1,'Cinemateca']]],
+  ['retrieve_213',['retrieve',['../class_b_s_t_itr_post.html#a1e9f3953f7ae5712bf3c7c6d05059718',1,'BSTItrPost::retrieve()'],['../class_b_s_t_itr_pre.html#ace3c36566d09f71eff8807c9a4fff7fe',1,'BSTItrPre::retrieve()'],['../class_b_s_t_itr_in.html#a434375a2d263bf132ab3c4ac878af8ef',1,'BSTItrIn::retrieve()'],['../class_b_s_t_itr_level.html#a7932a172129cc6ca14b6efeee1b4dd87',1,'BSTItrLevel::retrieve()']]]
 ];

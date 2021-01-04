@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.20"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>AEDA-Cinemateca: Hora.h Source File</title>
+<title>AEDA Cinemateca: Hora.h Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -21,7 +21,7 @@
  <tbody>
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
-   <div id="projectname">AEDA-Cinemateca
+   <div id="projectname">AEDA Cinemateca
    </div>
   </td>
  </tr>
@@ -65,7 +65,7 @@ $(function() {
 <div class="title">Hora.h</div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#ifndef PROJETO_HORA_H</span></div>
+<a href="_hora_8h.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#ifndef PROJETO_HORA_H</span></div>
 <div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#define PROJETO_HORA_H</span></div>
 <div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160; </div>
 <div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &lt;iostream&gt;</span></div>
@@ -99,24 +99,30 @@ $(function() {
 <div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;    <span class="keywordtype">bool</span> operator&lt;(<span class="keyword">const</span> <a class="code" href="class_hora.html">Hora</a> &amp;time) <span class="keyword">const</span>;</div>
 <div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;    <span class="keywordtype">bool</span> operator&gt;(<span class="keyword">const</span> <a class="code" href="class_hora.html">Hora</a> &amp;time) <span class="keyword">const</span>;</div>
 <div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;    <span class="keywordtype">bool</span> operator==(<span class="keyword">const</span> <a class="code" href="class_hora.html">Hora</a> &amp;time) <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;    <span class="keyword">friend</span> ostream&amp; operator&lt;&lt;(ostream&amp; output, <span class="keyword">const</span> <a class="code" href="class_hora.html">Hora</a>&amp; time);</div>
-<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;    <span class="keyword">friend</span> istream&amp; operator&gt;&gt;(istream&amp; input, <a class="code" href="class_hora.html">Hora</a>&amp; time) noexcept(<span class="keyword">false</span>);</div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;    <span class="keyword">friend</span> ostream&amp; <a class="code" href="_aderente_8cpp.html#a7f9a535f9580d1423623523358d1e9a5">operator&lt;&lt;</a>(ostream&amp; output, <span class="keyword">const</span> <a class="code" href="class_hora.html">Hora</a>&amp; time);</div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;    <span class="keyword">friend</span> istream&amp; <a class="code" href="_aderente_8cpp.html#a2fc841bf379ba516599b3c41e80ff381">operator&gt;&gt;</a>(istream&amp; <a class="code" href="main_8cpp.html#a508a666821904fea6b45e2a063753d13">input</a>, <a class="code" href="class_hora.html">Hora</a>&amp; time) noexcept(<span class="keyword">false</span>);</div>
 <div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;};</div>
 <div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160; </div>
 <div class="line"><a name="l00112"></a><span class="lineno"><a class="line" href="class_invalid_time.html">  112</a></span>&#160;<span class="keyword">class </span><a class="code" href="class_invalid_time.html">InvalidTime</a>: <span class="keyword">public</span> exception {</div>
 <div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;    <span class="keyword">const</span> <a class="code" href="class_hora.html">Hora</a> time;</div>
 <div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">string</span> msg;</div>
 <div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;<span class="keyword">public</span>:</div>
-<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;    <a class="code" href="class_invalid_time.html">InvalidTime</a>(<span class="keyword">const</span> <a class="code" href="class_hora.html">Hora</a> &amp;T, <span class="keywordtype">string</span> M):time(T), msg(std::move(M)) {}</div>
-<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;    <span class="keyword">const</span> <a class="code" href="class_hora.html">Hora</a> &amp; getTime() { <span class="keywordflow">return</span> time; }</div>
-<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;    <span class="keywordtype">string</span> getMsg() { <span class="keywordflow">return</span> msg; }</div>
+<div class="line"><a name="l00116"></a><span class="lineno"><a class="line" href="class_invalid_time.html#af86759f9169b12bed3561faba5923b5c">  116</a></span>&#160;    <a class="code" href="class_invalid_time.html#af86759f9169b12bed3561faba5923b5c">InvalidTime</a>(<span class="keyword">const</span> <a class="code" href="class_hora.html">Hora</a> &amp;T, <span class="keywordtype">string</span> M):time(T), msg(std::move(M)) {}</div>
+<div class="line"><a name="l00117"></a><span class="lineno"><a class="line" href="class_invalid_time.html#a0a4442f9658154a1ca27f6bd585b84a7">  117</a></span>&#160;    <span class="keyword">const</span> <a class="code" href="class_hora.html">Hora</a> &amp; <a class="code" href="class_invalid_time.html#a0a4442f9658154a1ca27f6bd585b84a7">getTime</a>() { <span class="keywordflow">return</span> time; }</div>
+<div class="line"><a name="l00118"></a><span class="lineno"><a class="line" href="class_invalid_time.html#a46145939f6288c738a07752522ded25a">  118</a></span>&#160;    <span class="keywordtype">string</span> <a class="code" href="class_invalid_time.html#a46145939f6288c738a07752522ded25a">getMsg</a>() { <span class="keywordflow">return</span> msg; }</div>
 <div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;};</div>
 <div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160; </div>
 <div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;<span class="preprocessor">#endif //PROJETO_HORA_H</span></div>
 </div><!-- fragment --></div><!-- contents -->
 <div class="ttc" id="aclass_invalid_time_html"><div class="ttname"><a href="class_invalid_time.html">InvalidTime</a></div><div class="ttdef"><b>Definition:</b> Hora.h:112</div></div>
+<div class="ttc" id="aclass_invalid_time_html_a0a4442f9658154a1ca27f6bd585b84a7"><div class="ttname"><a href="class_invalid_time.html#a0a4442f9658154a1ca27f6bd585b84a7">InvalidTime::getTime</a></div><div class="ttdeci">const Hora &amp; getTime()</div><div class="ttdef"><b>Definition:</b> Hora.h:117</div></div>
+<div class="ttc" id="a_aderente_8cpp_html_a7f9a535f9580d1423623523358d1e9a5"><div class="ttname"><a href="_aderente_8cpp.html#a7f9a535f9580d1423623523358d1e9a5">operator&lt;&lt;</a></div><div class="ttdeci">ostream &amp; operator&lt;&lt;(ostream &amp;output, const Aderente &amp;p1)</div><div class="ttdef"><b>Definition:</b> Aderente.cpp:38</div></div>
 <div class="ttc" id="aclass_hora_html"><div class="ttname"><a href="class_hora.html">Hora</a></div><div class="ttdef"><b>Definition:</b> Hora.h:14</div></div>
+<div class="ttc" id="amain_8cpp_html_a508a666821904fea6b45e2a063753d13"><div class="ttname"><a href="main_8cpp.html#a508a666821904fea6b45e2a063753d13">input</a></div><div class="ttdeci">string input</div><div class="ttdef"><b>Definition:</b> main.cpp:5</div></div>
+<div class="ttc" id="aclass_invalid_time_html_af86759f9169b12bed3561faba5923b5c"><div class="ttname"><a href="class_invalid_time.html#af86759f9169b12bed3561faba5923b5c">InvalidTime::InvalidTime</a></div><div class="ttdeci">InvalidTime(const Hora &amp;T, string M)</div><div class="ttdef"><b>Definition:</b> Hora.h:116</div></div>
+<div class="ttc" id="aclass_invalid_time_html_a46145939f6288c738a07752522ded25a"><div class="ttname"><a href="class_invalid_time.html#a46145939f6288c738a07752522ded25a">InvalidTime::getMsg</a></div><div class="ttdeci">string getMsg()</div><div class="ttdef"><b>Definition:</b> Hora.h:118</div></div>
 <div class="ttc" id="aclass_hora_html_ae05fd06528302df59fbf8ffe8ad7f9bc"><div class="ttname"><a href="class_hora.html#ae05fd06528302df59fbf8ffe8ad7f9bc">Hora::Hora</a></div><div class="ttdeci">Hora()=default</div></div>
+<div class="ttc" id="a_aderente_8cpp_html_a2fc841bf379ba516599b3c41e80ff381"><div class="ttname"><a href="_aderente_8cpp.html#a2fc841bf379ba516599b3c41e80ff381">operator&gt;&gt;</a></div><div class="ttdeci">istream &amp; operator&gt;&gt;(istream &amp;input, Aderente &amp;p1)</div><div class="ttdef"><b>Definition:</b> Aderente.cpp:30</div></div>
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
 Generated by&#160;<a href="http://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.8.20

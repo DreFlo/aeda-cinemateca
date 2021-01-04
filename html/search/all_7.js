@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['lerficheiroaderentes_64',['LerFicheiroAderentes',['../class_cinemateca.html#a2ab69d051ff22936c393cce6e9b764da',1,'Cinemateca']]],
-  ['lerficheiroeventos_65',['LerFicheiroEventos',['../class_cinemateca.html#a1fa7ec5534f5d551a6ef4efb2e24ce4f',1,'Cinemateca']]],
-  ['lerficheirosalas_66',['LerFicheiroSalas',['../class_cinemateca.html#a0b535707f274833199a39f9bf844ad5d',1,'Cinemateca']]]
+  ['hora_144',['Hora',['../class_hora.html',1,'Hora'],['../class_hora.html#ae05fd06528302df59fbf8ffe8ad7f9bc',1,'Hora::Hora()=default'],['../class_hora.html#a81063d589b0fb2da8ed796349dc45cc8',1,'Hora::Hora(int hh, int mm)'],['../class_hora.html#a6ebaa6b208e37e26c4c50fb954afe97a',1,'Hora::Hora(const Hora &amp;time)']]],
+  ['hora_2ecpp_145',['Hora.cpp',['../_hora_8cpp.html',1,'']]],
+  ['hora_2eh_146',['Hora.h',['../_hora_8h.html',1,'']]]
 ];
